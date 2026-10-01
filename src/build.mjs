@@ -107,6 +107,8 @@ function imageEntries(lang, page) {
     .map((img) => `    <image:image><image:loc>${xml(img.contentUrl)}</image:loc></image:image>\n`)
     .join("");
 }
+// GitHub Pages reads the custom domain from this file.
+await write("CNAME", new URL(site.origin).host + "\n");
 await write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.origin}/sitemap.xml\n`);
 
 console.log(`Built ${count} pages + root, 404, sitemap and robots into ${out}`);
