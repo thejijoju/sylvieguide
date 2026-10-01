@@ -157,6 +157,20 @@ export const details = {
       ru: "На фоне серо-голубых панелей — мраморный бюст пожилого Вольтера и картина в золочёной раме с табличкой «Jeaurat»: весёлое общество за столом под деревьями, к которому приближаются бедняки.",
     },
   },
+  "12-statue-de-voltaire.jpg": {
+    title: {
+      fr: "Statue de Voltaire",
+      en: "Statue of Voltaire",
+      de: "Statue Voltaires",
+      ru: "Статуя Вольтера",
+    },
+    legend: {
+      fr: "Dans sa niche de pierre, Voltaire en pied, coiffé de son bonnet, la main sur la hanche, une canne et un livre : le sourire malicieux du « patriarche de Ferney ».",
+      en: "In a stone niche, Voltaire stands full-length in his cap, hand on hip, with a cane and a book: the mischievous smile of the “Patriarch of Ferney”.",
+      de: "In einer Steinnische steht Voltaire in voller Größe, mit Mütze, die Hand an der Hüfte, mit Stock und Buch: das verschmitzte Lächeln des „Patriarchen von Ferney“.",
+      ru: "В каменной нише — Вольтер в полный рост, в своём колпаке, рука на бедре, с тростью и книгой: лукавая улыбка «фернейского патриарха».",
+    },
+  },
   "10-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
