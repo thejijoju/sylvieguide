@@ -70,13 +70,12 @@ ${imageEntries(lang, page)}  </url>`,
 `;
 await write("sitemap.xml", sitemap);
 
-// Gallery photos are listed in the image sitemap for the gallery page (all)
-// and the home page (the three it shows), so they can rank in image search.
+// Gallery photos are listed in the image sitemap for the gallery page and the
+// home page (whose filmstrip shows them all), so they can rank in image search.
 function imageEntries(lang, page) {
   if (page !== "gallery" && page !== "home") return "";
   const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
   return galleryImages(all[lang])
-    .slice(0, page === "home" ? 3 : undefined)
     .map((img) => `    <image:image><image:loc>${xml(img.contentUrl)}</image:loc></image:image>\n`)
     .join("");
 }

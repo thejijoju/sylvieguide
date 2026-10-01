@@ -62,7 +62,9 @@ Then check the copy in `src/i18n/*.mjs`:
   `03-chateau-de-voltaire-charmilles.jpg`: the number sets the order and the words help image
   search. Give each photo a **title and a legend** in the four languages in
   `src/gallery.mjs`. The title becomes the alt text, and both show under the photo and in the
-  full-screen view. Keep files under ~400 KB, about 2000 px. Photos are listed in the image
+  full-screen view. Keep files under ~400 KB, about 2000 px. On the home page every photo appears in a
+  horizontal filmstrip you can swipe or scroll with arrows; the gallery page shows them as a
+  grid. Both open a photo full-screen with its legend. Photos are listed in the image
   sitemap and in `ImageGallery` structured data, and the first one is the gallery page's
   sharing image.
 - **Portrait and hero:** a real photo of Sylvie should replace the portrait placeholder

@@ -289,6 +289,32 @@ cite { font-style: italic; }
 .gallery-placeholder .ph { display: grid; place-content: center; justify-items: center; gap: 10px; background: var(--cream); border: 1px dashed #c9c5bc; color: var(--muted); font-family: var(--font-display); font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .gallery-placeholder .ph .icon { width: 36px; height: 36px; color: #b9b2a3; }
 
+/* Home page filmstrip: one horizontal line of photos, swipe or arrows */
+.strip { position: relative; margin: 8px 0 8px; }
+.strip-track {
+  list-style: none; margin: 0; padding: 4px max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))) 18px;
+  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  scroll-padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+  scrollbar-width: thin; scrollbar-color: #3a3a40 transparent; overscroll-behavior-x: contain;
+}
+.strip-track:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.strip-track::-webkit-scrollbar { height: 6px; }
+.strip-track::-webkit-scrollbar-thumb { background: #3a3a40; border-radius: 3px; }
+.strip-item { flex: none; scroll-snap-align: start; }
+.strip-item figure { margin: 0; }
+.strip-item a { display: block; overflow: hidden; background: #000; }
+.strip-item img { height: clamp(280px, 38vw, 480px); width: auto; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .5s; }
+.strip-item a:hover img { transform: scale(1.03); }
+.strip-item figcaption { max-width: calc(clamp(280px, 38vw, 480px) * .75); padding-top: 12px; font-family: var(--font-display); font-size: .9rem; font-weight: 600; color: var(--white); }
+.strip-btn { position: absolute; top: calc(clamp(280px, 38vw, 480px) / 2 - 26px); z-index: 2; width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .45); background: rgba(0, 0, 0, .6); color: var(--white); cursor: pointer; transition: background .2s; }
+.strip-btn:hover { background: rgba(0, 0, 0, .9); }
+.strip-btn[hidden] { display: none; }
+.strip-btn .icon { width: 22px; height: 22px; }
+.strip-prev { left: 16px; transform: scaleX(-1); }
+.strip-next { right: 16px; }
+@media (hover: none) { .strip-btn { display: none; } }
+.gallery-home .center { margin-top: 28px; }
+
 /* Black ground so the photographs stand out */
 .gallery-dark { background: #0b0b0d; color: #e9e6df; }
 .gallery-dark .section-title { color: var(--white); }

@@ -408,15 +408,18 @@ ${featuredQuote(t)}
   </div>
 </section>
 
-<section class="section gallery-dark" aria-labelledby="gallery-teaser-title">
+<section class="section gallery-dark gallery-home" aria-labelledby="gallery-teaser-title">
   <div class="container">
     <h2 id="gallery-teaser-title" class="section-title">${esc(t.gallery.h1)}</h2>
     ${ornament}
     <p class="section-lead">${esc(t.gallery.lead)}</p>
-    ${galleryGrid(t, 3)}
+  </div>
+  ${galleryStrip(t)}
+  <div class="container">
     <p class="center"><a class="text-link" href="${pathFor(t.lang, "gallery")}">${esc(t.gallery.homeLink)} ${icon("arrow")}</a></p>
   </div>
 </section>
+${photos.length ? lightbox(t) : ""}
 
 <section class="section section-tinted" aria-labelledby="steps-title">
   <div class="container">
@@ -546,6 +549,35 @@ function galleryGrid(t, limit = Infinity) {
     .join("")}</ul>`;
 }
 
+function lightbox(t) {
+  const g = t.gallery;
+  return `<dialog class="lightbox" data-lightbox-dialog aria-label="${esc(g.h1)}">
+  <figure><img alt=""><figcaption><strong></strong><span></span></figcaption></figure>
+  <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="${esc(g.close)}">${icon("close")}</button>
+  <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="${esc(g.prev)}">${icon("arrow")}</button>
+  <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="${esc(g.next)}">${icon("arrow")}</button>
+</dialog>`;
+}
+
+// Home page filmstrip: every photo in one horizontal, swipeable line with
+// arrow buttons; a photo opens full-screen with its legend. Falls back to the
+// placeholder grid while there are no photos.
+function galleryStrip(t) {
+  if (!photos.length) return galleryGrid(t, 3);
+  const items = photos
+    .map((p, i) => {
+      const { title, legend } = photoText(t, p);
+      const dims = p.width ? ` width="${p.width}" height="${p.height}"` : "";
+      return `<li class="strip-item"><figure><a href="${photoUrl(p)}" data-lightbox="${i}" data-title="${esc(title)}" data-legend="${esc(legend)}"><img src="${photoUrl(p)}" alt="${esc(photoAlt(t, p))}"${dims} loading="${i < 4 ? "eager" : "lazy"}" decoding="async"></a><figcaption>${esc(title)}</figcaption></figure></li>`;
+    })
+    .join("");
+  return `<div class="strip" data-strip>
+      <button type="button" class="strip-btn strip-prev" data-strip-prev aria-label="${esc(t.gallery.prev)}" hidden>${icon("arrow")}</button>
+      <ul class="strip-track" data-strip-track tabindex="0" aria-label="${esc(t.gallery.h1)}">${items}</ul>
+      <button type="button" class="strip-btn strip-next" data-strip-next aria-label="${esc(t.gallery.next)}" hidden>${icon("arrow")}</button>
+    </div>`;
+}
+
 // ImageObject entries for structured data and the sitemap.
 export function galleryImages(t) {
   return photos.map((p) => {
@@ -575,12 +607,7 @@ ${pageHero(t, "gallery", g.h1, g.lead)}
     ${galleryGrid(t)}
   </div>
 </section>
-<dialog class="lightbox" data-lightbox-dialog aria-label="${esc(g.h1)}">
-  <figure><img alt=""><figcaption><strong></strong><span></span></figcaption></figure>
-  <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="${esc(g.close)}">${icon("close")}</button>
-  <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="${esc(g.prev)}">${icon("arrow")}</button>
-  <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="${esc(g.next)}">${icon("arrow")}</button>
-</dialog>
+${lightbox(t)}
 ${featuredQuote(t)}
 ${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
   const images = galleryImages(t);

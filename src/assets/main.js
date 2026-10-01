@@ -33,6 +33,27 @@
     });
   });
 
+  // Home page filmstrip: arrows scroll by about one screen of photos and hide
+  // at either end; swipe, trackpad and keyboard scrolling work natively.
+  document.querySelectorAll("[data-strip]").forEach(function (strip) {
+    var track = strip.querySelector("[data-strip-track]");
+    var prev = strip.querySelector("[data-strip-prev]");
+    var next = strip.querySelector("[data-strip-next]");
+    var update = function () {
+      prev.hidden = track.scrollLeft < 8;
+      next.hidden = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+    };
+    var step = function (dir) {
+      track.scrollBy({ left: dir * Math.max(track.clientWidth * 0.8, 280), behavior: "smooth" });
+    };
+    prev.addEventListener("click", function () { step(-1); });
+    next.addEventListener("click", function () { step(1); });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    window.addEventListener("load", update);
+    update();
+  });
+
   // Gallery lightbox (plain links to the full image without JavaScript)
   var dialog = document.querySelector("[data-lightbox-dialog]");
   var shots = Array.prototype.slice.call(document.querySelectorAll("[data-lightbox]"));
