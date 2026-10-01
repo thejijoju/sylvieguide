@@ -101,7 +101,21 @@ export const details = {
       ru: "Голубые панели, золотистые шёлка и потолок с орнаментом: кровать с балдахином и большой императорский портрет, надпись на котором гласит, что он был «подарен г-ну де Вольтеру 15 июля 1770 года».",
     },
   },
-  "07-chateau-de-voltaire-chambre-alcove.jpg": {
+  "07-chateau-de-voltaire-peintures-mythologiques.jpg": {
+    title: {
+      fr: "Peintures mythologiques du château",
+      en: "Mythological paintings in the château",
+      de: "Mythologische Gemälde im Schloss",
+      ru: "Мифологические картины в замке",
+    },
+    legend: {
+      fr: "Sur les boiseries vert d’eau, deux toiles dans leurs cadres dorés : en haut, la toilette de Vénus, entourée d’amours, avec son char tiré par des cygnes ; en dessous, une scène mythologique éclairée par les candélabres.",
+      en: "On the pale green panelling, two canvases in gilded frames: above, the toilette of Venus, surrounded by cupids, with her swan-drawn chariot; below, a mythological scene lit by the candelabra.",
+      de: "Auf der blassgrünen Täfelung zwei Gemälde in vergoldeten Rahmen: oben die Toilette der Venus, umgeben von Amoretten, mit ihrem von Schwänen gezogenen Wagen; darunter eine mythologische Szene im Schein der Kerzenleuchter.",
+      ru: "На светло-зелёных панелях — два полотна в золочёных рамах: вверху туалет Венеры в окружении амуров, с её колесницей, запряжённой лебедями; внизу — мифологическая сцена в свете канделябров.",
+    },
+  },
+  "08-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
