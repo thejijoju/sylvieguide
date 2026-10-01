@@ -10,7 +10,7 @@ import { site, languages, pages } from "./config.mjs";
 import { favicon } from "./art.mjs";
 import {
   pathFor, urlFor,
-  homePage, toursPage, aboutPage, galleryPage, practicalPage, contactPage, notFoundPage, rootPage,
+  homePage, toursPage, aboutPage, galleryPage, galleryImages, practicalPage, contactPage, notFoundPage, rootPage,
 } from "./templates.mjs";
 
 import fr from "./i18n/fr.mjs";
@@ -51,7 +51,7 @@ await write("assets/favicon.svg", favicon);
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${pages
   .flatMap((page) =>
     languages.map(
@@ -62,13 +62,24 @@ ${pages
     <priority>${page === "home" ? "1.0" : page === "tours" || page === "contact" ? "0.9" : "0.7"}</priority>
 ${languages.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${urlFor(l, page)}"/>`).join("\n")}
     <xhtml:link rel="alternate" hreflang="x-default" href="${page === "home" ? `${site.origin}/` : urlFor("en", page)}"/>
-  </url>`,
+${imageEntries(lang, page)}  </url>`,
     ),
   )
   .join("\n")}
 </urlset>
 `;
 await write("sitemap.xml", sitemap);
+
+// Gallery photos are listed in the image sitemap for the gallery page (all)
+// and the home page (the three it shows), so they can rank in image search.
+function imageEntries(lang, page) {
+  if (page !== "gallery" && page !== "home") return "";
+  const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  return galleryImages(all[lang])
+    .slice(0, page === "home" ? 3 : undefined)
+    .map((img) => `    <image:image><image:loc>${xml(img.contentUrl)}</image:loc></image:image>\n`)
+    .join("");
+}
 await write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.origin}/sitemap.xml\n`);
 
 console.log(`Built ${count} pages + root, 404, sitemap and robots into ${out}`);

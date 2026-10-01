@@ -1,24 +1,51 @@
-// Gallery photos. Any image placed in src/assets/gallery/ (JPEG, PNG or
-// WebP — ideally ~2000px on the long side and under ~400 KB) is shown
-// automatically, sorted by file name: prefix names with 01-, 02-… to choose
-// the order. The caption (also the alt text, which matters for image
-// search) comes from the file name — "02-le-salon.jpg" becomes "Le salon" —
-// unless you give translated captions below.
+// Gallery photos.
 //
-// While the folder is empty the gallery shows framed placeholders.
+// Any image in src/assets/gallery/ (JPEG, PNG or WebP, ideally ~2000px on
+// the long side and under ~400 KB) is shown automatically, sorted by file
+// name: prefix names with 01-, 02-… to choose the order. Descriptive,
+// hyphenated names help image search ("03-chateau-de-voltaire-charmilles.jpg").
+//
+// Give each photo a title and a legend in every language below. The title
+// is the alt text, and both appear under the photo and in the full-screen
+// view. Photos without an entry get a title made from the file name
+// ("03-les-charmilles.jpg" → "Les charmilles") until one is written.
+//
+// While there are fewer than six photos, placeholder frames fill the grid.
 
-import { readdirSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Optional captions per file, in each language. Example:
-//   "01-facade.jpg": {
-//     fr: "La façade du Château de Voltaire",
-//     en: "The façade of the Château de Voltaire",
-//     de: "Die Fassade des Schlosses Voltaire",
-//     ru: "Фасад замка Вольтера",
-//   },
-export const captions = {};
+export const details = {
+  "01-chateau-de-voltaire-salon.jpg": {
+    title: {
+      fr: "Le salon du Château de Voltaire",
+      en: "The salon of the Château de Voltaire",
+      de: "Der Salon im Schloss Voltaire",
+      ru: "Салон в замке Вольтера",
+    },
+    legend: {
+      fr: "Tentures rayées rouge et vert, portrait de Voltaire jeune dans son cadre ovale, cheminée de marbre et tables de jeu dressées : c’est dans ce décor que l’on recevait les visiteurs du château.",
+      en: "Red-and-green striped hangings, a portrait of the young Voltaire in its oval frame, a marble fireplace and game tables laid out: the setting in which the château’s visitors were received.",
+      de: "Rot-grün gestreifte Wandbespannungen, ein Porträt des jungen Voltaire im ovalen Rahmen, ein Marmorkamin und gedeckte Spieltische: In diesem Rahmen empfing man die Gäste des Schlosses.",
+      ru: "Красно-зелёные полосатые обивки стен, портрет молодого Вольтера в овальной раме, мраморный камин и накрытые игровые столики — в этой обстановке принимали гостей замка.",
+    },
+  },
+  "02-chateau-de-voltaire-chambre-alcove.jpg": {
+    title: {
+      fr: "Une chambre à alcôve du château",
+      en: "An alcove bedroom in the château",
+      de: "Ein Alkovenzimmer im Schloss",
+      ru: "Спальня с альковом в замке",
+    },
+    legend: {
+      fr: "Lit en alcôve tendu de soie jaune à grands motifs, rideaux assortis, faïence peinte et table de toilette : l’intimité d’une chambre du XVIIIe siècle.",
+      en: "An alcove bed hung with richly patterned yellow silk, matching curtains, painted faience and a dressing table: the intimacy of an 18th-century bedroom.",
+      de: "Ein Alkovenbett mit gelber, reich gemusterter Seide, passende Vorhänge, bemalte Fayence und ein Toilettentisch: die Intimität eines Schlafzimmers des 18. Jahrhunderts.",
+      ru: "Кровать в алькове, обтянутая жёлтым узорчатым шёлком, такие же занавеси, расписной фаянс и туалетный столик — уют спальни XVIII века.",
+    },
+  },
+};
 
 const dir = join(dirname(fileURLToPath(import.meta.url)), "assets", "gallery");
 
@@ -27,7 +54,36 @@ const fromFileName = (file) => {
   return words.charAt(0).toUpperCase() + words.slice(1);
 };
 
+// Pixel size from the file header (JPEG, PNG, WebP), so pages can reserve
+// the space before the image loads and structured data can state it.
+function imageSize(file) {
+  const b = readFileSync(join(dir, file));
+  if (b[0] === 0x89 && b.toString("ascii", 1, 4) === "PNG") return { width: b.readUInt32BE(16), height: b.readUInt32BE(20) };
+  if (b.toString("ascii", 0, 4) === "RIFF" && b.toString("ascii", 8, 12) === "WEBP") {
+    const kind = b.toString("ascii", 12, 16);
+    if (kind === "VP8X") return { width: 1 + b.readUIntLE(24, 3), height: 1 + b.readUIntLE(27, 3) };
+    if (kind === "VP8 ") return { width: b.readUInt16LE(26) & 0x3fff, height: b.readUInt16LE(28) & 0x3fff };
+    if (kind === "VP8L") { const n = b.readUInt32LE(21); return { width: 1 + (n & 0x3fff), height: 1 + ((n >> 14) & 0x3fff) }; }
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    for (let i = 2; i < b.length - 9; ) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const marker = b[i + 1];
+      if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+        return { width: b.readUInt16BE(i + 7), height: b.readUInt16BE(i + 5) };
+      }
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  return {};
+}
+
 export const photos = readdirSync(dir)
-  .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
+  .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
   .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-  .map((file) => ({ file, caption: captions[file] || { fr: fromFileName(file) } }));
+  .map((file) => ({
+    file,
+    ...imageSize(file),
+    title: details[file]?.title || { fr: fromFileName(file) },
+    legend: details[file]?.legend || {},
+  }));

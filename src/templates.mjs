@@ -46,9 +46,9 @@ const fmtDuration = (t, min) => {
 
 // ---------------------------------------------------------------- layout
 
-function head(t, page, { title, description }) {
+function head(t, page, { title, description }, og = null) {
   const canonical = urlFor(t.lang, page);
-  const ogImage = `${site.origin}/assets/og/og-${t.lang}.png`;
+  const ogImage = og?.url || `${site.origin}/assets/og/og-${t.lang}.png`;
   const alternates = languages
     .map((l) => `<link rel="alternate" hreflang="${l}" href="${urlFor(l, page)}">`)
     .join("\n  ");
@@ -77,9 +77,9 @@ function head(t, page, { title, description }) {
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${ogImage}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${esc(t.ogImageAlt)}">
+  ${og?.width || !og ? `<meta property="og:image:width" content="${og?.width || 1200}">
+  <meta property="og:image:height" content="${og?.height || 630}">` : ""}
+  <meta property="og:image:alt" content="${esc(og?.alt || t.ogImageAlt)}">
   <meta property="og:locale" content="${t.locale}">
   ${otherLocales}
   <meta name="twitter:card" content="summary_large_image">
@@ -283,11 +283,11 @@ function pageHero(t, page, h1, lead) {
   </section>`;
 }
 
-export function layout(t, page, body, extraLd = []) {
+export function layout(t, page, body, extraLd = [], { og = null } = {}) {
   const meta = t.meta[page];
   return `<!doctype html>
 <html lang="${t.lang}" dir="ltr">
-${head(t, page, meta)}
+${head(t, page, meta, og)}
 <body class="page-${page}">
 ${header(t, page)}
 <main id="main" tabindex="-1">
@@ -408,7 +408,7 @@ ${featuredQuote(t)}
   </div>
 </section>
 
-<section class="section" aria-labelledby="gallery-teaser-title">
+<section class="section gallery-dark" aria-labelledby="gallery-teaser-title">
   <div class="container">
     <h2 id="gallery-teaser-title" class="section-title">${esc(t.gallery.h1)}</h2>
     ${ornament}
@@ -511,45 +511,94 @@ function featuredQuote(t) {
 </section>`;
 }
 
-// Photo grid; falls back to captioned placeholders until photos are added
-// in src/gallery.mjs.
+// Photo grid on a black ground, each photo with its title and legend. Until
+// there are six photos, captioned placeholder frames fill the gaps, skipping
+// any subject a photo already covers ("Le salon du château…" replaces the
+// "Le salon" frame).
+const MIN_TILES = 6;
+const photoUrl = (p) => `/assets/gallery/${encodeURIComponent(p.file)}`;
+const photoText = (t, p) => ({
+  title: p.title[t.lang] || p.title.fr,
+  legend: p.legend[t.lang] || p.legend.fr || "",
+});
+const photoAlt = (t, p) => {
+  const { title } = photoText(t, p);
+  return /voltaire/i.test(title) ? `${title}, Ferney-Voltaire` : `${title} — Château de Voltaire, Ferney-Voltaire`;
+};
+
 function galleryGrid(t, limit = Infinity) {
-  const items = photos.length
-    ? photos.map((p) => ({ src: `/assets/gallery/${encodeURIComponent(p.file)}`, caption: p.caption[t.lang] || p.caption.fr }))
-    : t.gallery.placeholders.map((caption) => ({ src: null, caption }));
-  return `<ul class="gallery-grid" data-gallery>${items
+  const real = photos.map((p) => ({ p, ...photoText(t, p) }));
+  const covered = (ph) => real.some((r) => r.title.toLowerCase().startsWith(ph.toLowerCase()));
+  const fillers = t.gallery.placeholders
+    .filter((ph) => !covered(ph))
+    .slice(0, Math.max(0, MIN_TILES - real.length))
+    .map((title) => ({ title }));
+  return `<ul class="gallery-grid" data-gallery>${[...real, ...fillers]
     .slice(0, limit)
-    .map((p, i) =>
-      p.src
-        ? `<li><figure><a href="${p.src}" data-lightbox="${i}"><img src="${p.src}" alt="${esc(p.caption)}" loading="lazy" decoding="async"></a><figcaption>${esc(p.caption)}</figcaption></figure></li>`
-        : `<li><figure class="gallery-placeholder"><div class="ph">${icon("columns")}<span>${esc(t.gallery.comingSoon)}</span></div><figcaption>${esc(p.caption)}</figcaption></figure></li>`,
-    )
+    .map((item, i) => {
+      const caption = `<figcaption><strong>${esc(item.title)}</strong>${item.legend ? `<span>${esc(item.legend)}</span>` : ""}</figcaption>`;
+      if (!item.p) {
+        return `<li><figure class="gallery-placeholder"><div class="ph">${icon("columns")}<span>${esc(t.gallery.comingSoon)}</span></div>${caption}</figure></li>`;
+      }
+      const dims = item.p.width ? ` width="${item.p.width}" height="${item.p.height}"` : "";
+      return `<li><figure><a href="${photoUrl(item.p)}" data-lightbox="${i}" data-title="${esc(item.title)}" data-legend="${esc(item.legend)}"><img src="${photoUrl(item.p)}" alt="${esc(photoAlt(t, item.p))}"${dims} loading="${i < 3 ? "eager" : "lazy"}" decoding="async"></a>${caption}</figure></li>`;
+    })
     .join("")}</ul>`;
+}
+
+// ImageObject entries for structured data and the sitemap.
+export function galleryImages(t) {
+  return photos.map((p) => {
+    const { title, legend } = photoText(t, p);
+    return {
+      "@type": "ImageObject",
+      contentUrl: site.origin + photoUrl(p),
+      url: site.origin + photoUrl(p),
+      name: title,
+      caption: legend || title,
+      description: legend || title,
+      ...(p.width ? { width: p.width, height: p.height } : {}),
+      inLanguage: t.lang,
+      contentLocation: { "@id": `${site.origin}/#chateau` },
+      creditText: site.guideName,
+      copyrightNotice: `© ${site.guideName}`,
+    };
+  });
 }
 
 export function galleryPage(t) {
   const g = t.gallery;
   const body = `
 ${pageHero(t, "gallery", g.h1, g.lead)}
-<section class="section">
+<section class="section gallery-dark" aria-label="${esc(g.h1)}">
   <div class="container">
     ${galleryGrid(t)}
   </div>
 </section>
 <dialog class="lightbox" data-lightbox-dialog aria-label="${esc(g.h1)}">
-  <figure><img alt=""><figcaption></figcaption></figure>
+  <figure><img alt=""><figcaption><strong></strong><span></span></figcaption></figure>
   <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="${esc(g.close)}">${icon("close")}</button>
   <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="${esc(g.prev)}">${icon("arrow")}</button>
   <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="${esc(g.next)}">${icon("arrow")}</button>
 </dialog>
 ${featuredQuote(t)}
 ${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
-  const imageLd = photos.map((p) => ({
-    "@type": "ImageObject",
-    contentUrl: `${site.origin}/assets/gallery/${encodeURIComponent(p.file)}`,
-    caption: p.caption[t.lang] || p.caption.fr,
-  }));
-  return layout(t, "gallery", body, imageLd.length ? [{ "@type": "ImageGallery", "@id": `${urlFor(t.lang, "gallery")}#gallery`, name: g.h1, image: imageLd }] : []);
+  const images = galleryImages(t);
+  const ld = images.length
+    ? [{
+        "@type": "ImageGallery",
+        "@id": `${urlFor(t.lang, "gallery")}#gallery`,
+        name: g.h1,
+        description: t.meta.gallery.description,
+        inLanguage: t.lang,
+        about: { "@id": `${site.origin}/#chateau` },
+        primaryImageOfPage: images[0],
+        image: images,
+      }]
+    : [];
+  // Share the first real photo when the gallery link is posted on social networks.
+  const og = photos[0] ? { url: site.origin + photoUrl(photos[0]), width: photos[0].width, height: photos[0].height, alt: photoAlt(t, photos[0]) } : null;
+  return layout(t, "gallery", body, ld, { og });
 }
 
 export function aboutPage(t) {

@@ -38,7 +38,8 @@
   var shots = Array.prototype.slice.call(document.querySelectorAll("[data-lightbox]"));
   if (dialog && shots.length && dialog.showModal) {
     var img = dialog.querySelector("img");
-    var cap = dialog.querySelector("figcaption");
+    var capTitle = dialog.querySelector("figcaption strong");
+    var capLegend = dialog.querySelector("figcaption span");
     var current = 0;
     var showShot = function (i) {
       current = (i + shots.length) % shots.length;
@@ -46,8 +47,12 @@
       var thumb = link.querySelector("img");
       img.src = link.href;
       img.alt = thumb.alt;
-      cap.textContent = thumb.alt;
+      capTitle.textContent = link.getAttribute("data-title");
+      capLegend.textContent = link.getAttribute("data-legend") || "";
     };
+    if (shots.length < 2) {
+      dialog.querySelectorAll('[data-lb="prev"], [data-lb="next"]').forEach(function (b) { b.hidden = true; });
+    }
     shots.forEach(function (link, i) {
       link.addEventListener("click", function (e) { e.preventDefault(); showShot(i); dialog.showModal(); });
     });

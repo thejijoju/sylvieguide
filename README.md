@@ -58,11 +58,13 @@ Then check the copy in `src/i18n/*.mjs`:
 - Confirm the practical details with the monument: meeting points, parking, bus access and accessibility.
 - **Gallery photos:** upload them to `src/assets/gallery/`. On GitHub you can do this
   from the web: open the folder, then *Add file → Upload files*. Every image there appears
-  automatically, sorted by file name. Prefix names with `01-`, `02-`… to set the order. The
-  caption comes from the name, so `03-les-charmilles.jpg` becomes "Les charmilles"; add
-  translated captions in `src/gallery.mjs` if you like. Keep each photo under ~400 KB, about
-  2000 px wide. While the folder is empty the gallery shows six placeholders. The home page
-  shows the first three photos, and the gallery page opens them in a lightbox.
+  automatically on a black background, sorted by file name. Use descriptive names like
+  `03-chateau-de-voltaire-charmilles.jpg`: the number sets the order and the words help image
+  search. Give each photo a **title and a legend** in the four languages in
+  `src/gallery.mjs`. The title becomes the alt text, and both show under the photo and in the
+  full-screen view. Keep files under ~400 KB, about 2000 px. Photos are listed in the image
+  sitemap and in `ImageGallery` structured data, and the first one is the gallery page's
+  sharing image.
 - **Portrait and hero:** a real photo of Sylvie should replace the portrait placeholder
   (`portraitSvg` in `src/art.mjs`). For the hero, a wide photo of the château can replace the
   illustration: put an `<img>` inside `.hero-media` in `src/templates.mjs`. It is styled as a
