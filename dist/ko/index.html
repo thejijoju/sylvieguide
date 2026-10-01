@@ -66,20 +66,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+KR:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="/assets/styles.css?v=mupshpih">
+  <link rel="stylesheet" href="/assets/styles.css?v=mupssjsq">
   <script>(function(){try{var w=+localStorage.getItem("navw-ko");if(w&&innerWidth<w)document.documentElement.classList.add("nav-compact")}catch(e){}})();
 (function(){try{var a={"fr":"/fr/","en":"/en/","de":"/de/","ru":"/ru/","es":"/es/","it":"/it/","pt":"/pt/","nl":"/nl/","pl":"/pl/","uk":"/uk/","zh":"/zh/","ja":"/ja/","ko":"/ko/","ar":"/ar/","hi":"/hi/","tr":"/tr/"},cur="ko",s=null;try{s=localStorage.getItem("lang")}catch(e){}
 if(/bot|crawl|spider|slurp|lighthouse|inspection|preview|facebookexternalhit|embedly|whatsapp|telegram|headless/i.test(navigator.userAgent)||/[?&]lang=keep/.test(location.search))return;
 if(s){if(s!==cur&&a[s])location.replace(a[s]+location.search+location.hash);return}
 var p=navigator.languages||[navigator.language||""];for(var i=0;i<p.length;i++){var c=String(p[i]).slice(0,2).toLowerCase();if(a[c]){if(c!==cur)location.replace(a[c]+location.search+location.hash);return}}}catch(e){}})();</script>
-  <script src="/assets/main.js?v=mupshpih" defer></script>
+  <script src="/assets/main.js?v=mupssjsq" defer></script>
 </head>
 <body class="page-home">
 <a class="skip-link" href="#main">본문으로 바로가기</a>
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="/ko/" aria-label="Sylvie · Guide Château de Voltaire">
-      <span class="brand-mark" aria-hidden="true">S</span>
+      <img class="brand-mark" src="/assets/img/voltaire-buste-marbre.jpg" alt="" width="50" height="50" decoding="async">
       <span class="brand-text"><span class="brand-name">Sylvie</span><span class="brand-sub">Château de Voltaire</span></span>
     </a>
     <nav class="main-nav" id="main-nav" aria-label="메뉴" data-nav>
@@ -99,16 +99,23 @@ var p=navigator.languages||[navigator.language||""];for(var i=0;i<p.length;i++){
 
 <section class="hero">
   <div class="hero-media"><picture>
-    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" sizes="100vw">
-    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1470" height="780" alt="제네바에서 가까운 볼테르 성" fetchpriority="high" decoding="async">
+    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1340w" sizes="100vw">
+    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1340" height="700" alt="제네바에서 가까운 볼테르 성" fetchpriority="high" decoding="async">
   </picture></div>
   <div class="container hero-content">
-    <p class="eyebrow">공인 가이드 · 볼테르 성 · 페르네볼테르</p>
     <h1>실비와 함께하는 볼테르 성 &amp; 페르네볼테르 가이드 투어</h1>
-    <p class="lead">볼테르가 20년 가까이 살았던 집 안으로 들어가 보세요. 그의 삶과 투쟁, 그리고 그가 일군 영지 이야기를 여러분 단체의 속도에 맞춰 영어, 프랑스어, 독일어, 러시아어로 들려 드립니다.</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="/ko/contact/?type=individual#booking">투어 예약하기</a>
       <a class="btn btn-ghost-light" href="/ko/contact/?type=tourist#booking">단체 견적 요청</a>
+    </div>
+  </div>
+</section>
+
+<section class="hero-bar">
+  <div class="container hero-bar-inner">
+    <div>
+      <p class="eyebrow">공인 가이드 · 볼테르 성 · 페르네볼테르</p>
+      <p class="lead">볼테르가 20년 가까이 살았던 집 안으로 들어가 보세요. 그의 삶과 투쟁, 그리고 그가 일군 영지 이야기를 여러분 단체의 속도에 맞춰 영어, 프랑스어, 독일어, 러시아어로 들려 드립니다.</p>
     </div>
     <ul class="hero-facts">
       <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19C5 10 11 5 20 4c-1 9-6 15-15 15Z"/><path d="M5 19 14 10"/></svg>모든 투어에 볼테르의 정원이 포함됩니다</li>
@@ -321,7 +328,7 @@ var p=navigator.languages||[navigator.language||""];for(var i=0;i<p.length;i++){
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <p class="footer-logo"><span class="brand-mark" aria-hidden="true">S</span> Sylvie</p>
+      <p class="footer-logo"><img class="brand-mark" src="/assets/img/voltaire-buste-marbre.jpg" alt="" width="50" height="50" decoding="async"> Sylvie</p>
       <p>제네바 바로 옆 페르네볼테르에서 즐기는 볼테르 성 가이드 투어.</p>
       <p class="footer-langs">영어 투어 · Français · Deutsch · Русский</p>
       <figure class="footer-photo">

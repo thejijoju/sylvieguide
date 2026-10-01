@@ -169,7 +169,7 @@ function header(t, page) {
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="${pathFor(t.lang, "home")}" aria-label="${esc(site.brand)}">
-      <span class="brand-mark" aria-hidden="true">S</span>
+      <img class="brand-mark" src="/assets/img/voltaire-buste-marbre.jpg" alt="" width="50" height="50" decoding="async">
       <span class="brand-text"><span class="brand-name">${esc(site.guideName)}</span><span class="brand-sub">Château de Voltaire</span></span>
     </a>
     <nav class="main-nav" id="main-nav" aria-label="${esc(t.nav.menu)}" data-nav>
@@ -189,7 +189,7 @@ function footer(t, page) {
   return `<footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <p class="footer-logo"><span class="brand-mark" aria-hidden="true">S</span> ${esc(site.guideName)}</p>
+      <p class="footer-logo"><img class="brand-mark" src="/assets/img/voltaire-buste-marbre.jpg" alt="" width="50" height="50" decoding="async"> ${esc(site.guideName)}</p>
       <p>${esc(t.footer.tagline)}</p>
       <p class="footer-langs">${esc(t.common.languagesSpoken)}</p>
       <figure class="footer-photo">
@@ -478,16 +478,23 @@ export function homePage(t) {
   const body = `
 <section class="hero">
   <div class="hero-media"><picture>
-    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" sizes="100vw">
-    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1470" height="780" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async">
+    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1340w" sizes="100vw">
+    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1340" height="700" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async">
   </picture></div>
   <div class="container hero-content">
-    <p class="eyebrow">${esc(h.eyebrow)}</p>
     <h1>${esc(h.h1)}</h1>
-    <p class="lead">${esc(h.lead)}</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="${contact}?type=individual#booking">${esc(t.cta.book)}</a>
       <a class="btn btn-ghost-light" href="${contact}?type=tourist#booking">${esc(t.cta.quote)}</a>
+    </div>
+  </div>
+</section>
+
+<section class="hero-bar">
+  <div class="container hero-bar-inner">
+    <div>
+      <p class="eyebrow">${esc(h.eyebrow)}</p>
+      <p class="lead">${esc(h.lead)}</p>
     </div>
     <ul class="hero-facts">
       <li>${icon("leaf")}${esc(t.common.gardensIncluded)}</li>
@@ -1286,7 +1293,7 @@ export function rootPage(all) {
 <body>
 <main class="section notfound">
   <div class="container narrow">
-    <p class="brand-mark brand-mark-lg" aria-hidden="true">S</p>
+    <p><img class="brand-mark brand-mark-lg" src="/assets/img/voltaire-buste-marbre.jpg" alt="" width="72" height="72" decoding="async"></p>
     <h1>Château de Voltaire · Ferney-Voltaire</h1>
     ${ornament}
     <ul class="root-langs">

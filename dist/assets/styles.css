@@ -98,8 +98,9 @@ cite { font-style: italic; }
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--white); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; gap: 28px; min-height: var(--header-h); max-width: 1640px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); margin-right: auto; }
-.brand-mark { display: inline-grid; place-items: center; width: 44px; height: 44px; background: var(--ink); color: var(--white); font-family: var(--font-quote); font-style: italic; font-size: 1.6rem; line-height: 1; flex: none; }
-.brand-mark-lg { width: 72px; height: 72px; font-size: 2.6rem; margin: 0 auto 1rem; }
+/* Round marble bust of Voltaire (Château de Voltaire) as the logo */
+.brand-mark { display: block; width: 50px; height: 50px; border-radius: 50%; object-fit: cover; flex: none; box-shadow: 0 0 0 2px var(--white), 0 0 0 3px var(--gold); }
+.brand-mark-lg { width: 72px; height: 72px; margin: 0 auto 1rem; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; white-space: nowrap; }
 .brand-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; letter-spacing: .02em; }
 .brand-sub { font-family: var(--font-display); font-size: .66rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
@@ -143,7 +144,7 @@ cite { font-style: italic; }
 @media (max-width: 1240px) {
   :root { --header-h: 66px; }
   .header-inner { gap: 10px; }
-  .brand-mark { width: 40px; height: 40px; font-size: 1.4rem; }
+  .brand-mark { width: 40px; height: 40px; }
   .nav-toggle { display: grid; }
   .main-nav {
     position: fixed; inset: var(--header-h) 0 auto 0; z-index: 40;
@@ -161,7 +162,7 @@ cite { font-style: italic; }
 /* Same collapsed menu when the labels do not fit (set by main.js) */
 .nav-compact { --header-h: 66px; }
 .nav-compact .header-inner { gap: 10px; }
-.nav-compact .brand-mark { width: 40px; height: 40px; font-size: 1.4rem; }
+.nav-compact .brand-mark { width: 40px; height: 40px; }
 .nav-compact .nav-toggle { display: grid; }
 .nav-compact .main-nav {
   position: fixed; inset: var(--header-h) 0 auto 0; z-index: 40;
@@ -189,14 +190,19 @@ cite { font-style: italic; }
 .hero { position: relative; min-height: min(78vh, 720px); display: flex; align-items: flex-end; overflow: hidden; background: var(--ink); color: var(--white); }
 .hero-media { position: absolute; inset: 0; }
 .hero-media > svg, .hero-media > img, .hero-media > picture img { width: 100%; height: 100%; object-fit: cover; }
-.hero-media picture img { object-position: 62% 70%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20, 28, 48, .92) 0%, rgba(20, 28, 48, .78) 38%, rgba(20, 28, 48, .15) 75%, rgba(20, 28, 48, 0) 100%), linear-gradient(0deg, rgba(20, 28, 48, .55), rgba(20, 28, 48, 0) 45%); }
-.hero-content { position: relative; z-index: 1; padding-top: 96px; padding-bottom: clamp(48px, 7vw, 88px); }
-.hero-content > * { max-width: 620px; }
-.hero h1 { color: var(--white); }
-.hero .lead { color: rgba(255, 255, 255, .9); }
+.hero-media picture img { object-position: 50% 100%; }
+/* Only a soft wash at the bottom so the château itself stays clear */
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20, 28, 48, .88) 0%, rgba(20, 28, 48, .45) 30%, rgba(20, 28, 48, 0) 55%); }
+.hero-content { position: relative; z-index: 1; padding-top: 96px; padding-bottom: clamp(32px, 4vw, 48px); }
+.hero-content > * { max-width: 900px; }
+.hero h1 { color: var(--white); font-size: clamp(1.7rem, 2.5vw, 2.3rem); text-shadow: 0 2px 18px rgba(0, 0, 0, .35); }
+.hero .btn-row { margin-top: 1.4em; }
+.hero-bar .lead { color: rgba(255, 255, 255, .9); margin: 0; }
+.hero-bar { background: var(--ink); color: var(--white); padding: clamp(32px, 4vw, 48px) 0; }
+.hero-bar-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px 56px; align-items: center; }
+.hero-bar .hero-facts { margin: 0; flex-direction: column; }
 .eyebrow { font-family: var(--font-display); font-size: .74rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 1.1rem; }
-.hero .eyebrow { color: #e3c891; }
+.hero-bar .eyebrow { color: #e3c891; }
 .lead { font-size: clamp(1.1rem, 1.6vw, 1.25rem); color: var(--ink-soft); line-height: 1.65; }
 .hero-facts { list-style: none; padding: 0; margin: 2em 0 0; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: .95rem; color: rgba(255, 255, 255, .85); }
 .hero-facts li { display: flex; align-items: center; gap: 10px; }
@@ -544,7 +550,7 @@ cite { font-style: italic; }
 .site-footer a { color: var(--white); }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.3fr 1fr; gap: 40px; }
 .footer-logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 1.3rem; color: var(--white); font-weight: 700; }
-.footer-logo .brand-mark { background: transparent; box-shadow: inset 0 0 0 1px var(--gold); }
+.footer-logo .brand-mark { box-shadow: 0 0 0 2px var(--gold); }
 .footer-langs { color: #e3c891; font-size: .9rem; }
 .footer-photo { margin: 22px 0 0; max-width: 300px; }
 .footer-photo img { display: block; width: 100%; height: auto; border: 1px solid rgba(184, 149, 90, .55); padding: 4px; }
@@ -586,7 +592,9 @@ cite { font-style: italic; }
   .hero-media { position: relative; height: 56vw; max-height: 380px; }
   .hero .chateau { transform: none; }
   .hero::after { display: none; }
-  .hero-content { padding-top: 36px; }
+  .hero-content { padding-top: 28px; }
+  .hero-bar { padding-top: 8px; }
+  .hero-bar-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   body { font-size: 1rem; }
@@ -602,7 +610,6 @@ cite { font-style: italic; }
 [dir="rtl"] .breadcrumbs li + li::before { content: "\\"; }
 [dir="rtl"] .pull-quote { border-left: 0; border-right: 3px solid var(--burgundy); padding: 8px 32px 8px 0; }
 [dir="rtl"] .text-link .icon, [dir="rtl"] .audience-more .icon, [dir="rtl"] .btn .icon { transform: scaleX(-1); }
-[dir="rtl"] .hero::after { background: linear-gradient(270deg, rgba(20, 28, 48, .92) 0%, rgba(20, 28, 48, .78) 38%, rgba(20, 28, 48, .15) 75%, rgba(20, 28, 48, 0) 100%), linear-gradient(0deg, rgba(20, 28, 48, .55), rgba(20, 28, 48, 0) 45%); }
 [dir="rtl"] .lang-list a[aria-current="true"] { box-shadow: inset -3px 0 0 var(--burgundy); }
 [dir="rtl"] .form-status { border-left: 0; border-right: 3px solid var(--ink); }
 [dir="rtl"] .steps-compact li { padding-left: 0; padding-right: 52px; }
