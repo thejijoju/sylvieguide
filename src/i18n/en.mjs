@@ -1,0 +1,337 @@
+export default {
+  lang: "en",
+  locale: "en_GB",
+  langName: "English",
+
+  nav: {
+    home: "Home",
+    tours: "Tours",
+    about: "About Sylvie",
+    gallery: "Gallery",
+    practical: "Practical info",
+    contact: "Contact",
+    skip: "Skip to content",
+    menu: "Menu",
+    close: "Close",
+    langLabel: "Choose language",
+  },
+  cta: {
+    book: "Book a Tour",
+    quote: "Request a Group Quote",
+  },
+
+  meta: {
+    home: {
+      title: "Voltaire Castle Tour in Ferney-Voltaire | Sylvie, Official Private Guide",
+      description: "Guided tours of the Château de Voltaire in Ferney-Voltaire, 10 minutes from Geneva. Private guide Sylvie leads individual, group, corporate, senior and school tours in English, French, German and Russian.",
+    },
+    tours: {
+      title: "Voltaire Castle Tours for Groups & Individuals | Ferney-Voltaire near Geneva",
+      description: "Every guided tour of the Château de Voltaire: classic visit, group tours, themed tours (Enlightenment, château life, gardens), corporate team-building, senior-friendly and school visits.",
+    },
+    about: {
+      title: "About Sylvie, Official Guide at the Château de Voltaire | Ferney-Voltaire",
+      description: "Meet Sylvie, a passionate official guide at Voltaire’s château in Ferney: a storyteller who brings Voltaire and the Enlightenment to life in four languages.",
+    },
+    gallery: {
+      title: "Photo Gallery of the Château de Voltaire | Guided Tours with Sylvie",
+      description: "Photos of the Château de Voltaire, its park and hornbeam walks, and guided tours with Sylvie in Ferney-Voltaire near Geneva.",
+    },
+    practical: {
+      title: "Practical Info: Meeting Points, Getting There, Accessibility | Château de Voltaire",
+      description: "Meeting points in Ferney-Voltaire, how to get there from Geneva, tour durations, accessibility and tips for your guided tour of the Château de Voltaire.",
+    },
+    contact: {
+      title: "Book a Guided Tour of Voltaire’s Château | Group Quote Request",
+      description: "Book your private guided tour of the Château de Voltaire or request a quote for your group, company or school class. Personal reply within 48 hours.",
+    },
+  },
+  ogImageAlt: "Illustration of the Château de Voltaire in Ferney — guided tours with Sylvie",
+
+  common: {
+    breadcrumbHome: "Home",
+    languagesSpoken: "Tours in English · Français · Deutsch · Русский",
+    quote: "We must cultivate our garden.",
+    quoteSource: "Voltaire, <cite>Candide</cite> (1759)",
+    featuredQuote: "I have done a little good; that is my best work.",
+    featuredQuoteSource: "Voltaire, <cite>Epistle to Horace</cite> (1772)",
+    featuredQuoteContext: "Voltaire wrote these words at Ferney, thinking of the village he had revived: houses, watchmaking workshops, a church and a fountain.",
+    minutes: "min",
+    people: "people",
+  },
+
+  footer: {
+    tagline: "Guided tours of the Château de Voltaire in Ferney-Voltaire, on the doorstep of Geneva.",
+    explore: "Explore",
+    contact: "Contact",
+    languages: "Languages",
+    rights: "All rights reserved.",
+    note: "The Château de Voltaire is a national monument managed by the Centre des monuments nationaux, which sets the monument’s admission fees.",
+  },
+
+  home: {
+    eyebrow: "Official guide · Château de Voltaire · Ferney-Voltaire",
+    h1: "Guided tours of Voltaire’s château, with Sylvie",
+    lead: "Step inside the house where Voltaire lived for nearly twenty years. I’ll tell you about the man, his battles and his estate — at your group’s pace and in your language.",
+    heroNote: "10 minutes from Geneva Airport",
+
+    introTitle: "Welcome to Voltaire’s home",
+    introText: [
+      "My name is Sylvie and I am an official guide at the Château de Voltaire. Here, between 1759 and 1778, the philosopher wrote, entertained the whole of Europe, defended the persecuted and turned a hamlet into a town.",
+      "My job is to bring that story to life. Anecdotes, letters, objects, gardens: every tour is prepared for the people in front of me, whether a curious family, a corporate team or a class of twelve-year-olds.",
+    ],
+    introLink: "Read my story",
+
+    valuesTitle: "Why tour with me",
+    values: [
+      { title: "An official guide of the estate", text: "I know every room, every path, and the stories you won’t find on the information panels." },
+      { title: "Four languages", text: "English, French, German and Russian — every one of your guests can follow with ease." },
+      { title: "Tailor-made tours", text: "Length, theme, pace and depth are adapted to your group, from children to specialists." },
+      { title: "Effortless planning", text: "One contact, a clear quote, and advice on access, coaches and timings." },
+    ],
+
+    audiencesTitle: "A tour for every audience",
+    audiencesLead: "Travellers, tour groups, companies, senior clubs or schools: choose the format that suits you.",
+    audiences: [
+      { key: "individual", title: "Individuals & families", text: "Classic or private visit, at your own pace." },
+      { key: "groups", title: "Groups & tour operators", text: "Discovery tours of the château and Voltaire’s town." },
+      { key: "corporate", title: "Corporate & seminars", text: "Team-building, Enlightenment challenge, delegations." },
+      { key: "seniors", title: "Senior clubs", text: "A gentle pace, seated breaks and an adapted route." },
+      { key: "schools", title: "Schools & children", text: "Interactive tours adapted to every age group." },
+    ],
+    audiencesLink: "See the tour",
+
+    themesTitle: "Themed tours",
+    themesLead: "Three ways to go deeper and discover a different Voltaire.",
+
+    stepsTitle: "Book in three steps",
+    steps: [
+      { title: "Your request", text: "Tell me your preferred date, group size and language using the form." },
+      { title: "Your programme", text: "I reply with a tailored proposal and a clear quote." },
+      { title: "Your tour", text: "I meet you at the meeting point — all that’s left is to enjoy it." },
+    ],
+
+    ctaTitle: "Ready to meet Voltaire?",
+    ctaText: "Tell me who you are and what you would enjoy, and I’ll suggest a tour made for you.",
+  },
+
+  tours: {
+    h1: "Guided tours of the Château de Voltaire",
+    lead: "Tours for curious travellers, groups, history lovers, companies and pupils. Every format can be adjusted — just ask.",
+    jump: "Jump to",
+    labels: {
+      duration: "Duration",
+      size: "Group",
+      idealFor: "Ideal for",
+      book: "Book this tour",
+      quote: "Request a quote",
+    },
+    categories: {
+      individual: { title: "Individual & standard tours", intro: "For travellers, couples and families who want to discover the château with a guide." },
+      groups: { title: "Group tours (adults & tourists)", intro: "For associations, tour operators, coach companies and groups of friends. Large groups are split into sub-groups with coordinated timings." },
+      thematic: { title: "Themed group tours", intro: "A common thread to explore one side of Voltaire’s life and work in depth." },
+      special: { title: "Special audiences", intro: "Formats designed for companies, seniors and school groups." },
+    },
+    items: {
+      classic: {
+        title: "The classic château tour",
+        summary: "The estate’s highlights in one hour: the house, the salon, Voltaire’s bedroom and the park with its view of Mont Blanc.",
+        highlights: ["Voltaire, “the innkeeper of Europe”", "The restored rooms and their décor", "The park and the view of the Alps"],
+        idealFor: "First-time visitors, travellers passing through",
+      },
+      private: {
+        title: "Private tour for individuals",
+        summary: "Just for you and your companions: we take time for your questions and your interests.",
+        highlights: ["Time and pace chosen together", "Child-friendly content if needed", "Can be offered as a gift"],
+        idealFor: "Families, couples, history lovers",
+      },
+      discovery: {
+        title: "Group discovery tour",
+        summary: "The château and its gardens, told through Voltaire’s daily life and his great causes.",
+        highlights: ["Welcome for the group and the driver", "Tour of the château and park", "Suggested free time afterwards"],
+        idealFor: "Associations, tour operators, clubs, friends",
+      },
+      town: {
+        title: "Château & Voltaire’s town",
+        summary: "From the château to the town centre: see how Voltaire turned a village into a town of watchmakers and tolerance.",
+        highlights: ["The church inscribed “Deo erexit Voltaire”", "Ferney’s watchmaking boom", "Voltaire’s statue in the heart of town"],
+        idealFor: "Groups wanting a full half-day",
+      },
+      enlightenment: {
+        title: "Voltaire and the Age of Enlightenment",
+        summary: "Candide, the Treatise on Tolerance, the Calas affair: how one man fought the battles of his century from Ferney.",
+        highlights: ["Letters with Catherine the Great and Frederick II", "The defence of Calas and Sirven", "“Écrasez l’infâme”: freedom of thought"],
+        idealFor: "History lovers, students, cultural societies",
+      },
+      "chateau-life": {
+        title: "Life at the château",
+        summary: "Dinners, theatre, illustrious guests, servants and a niece: step into the everyday life of the “Patriarch of Ferney”.",
+        highlights: ["Madame Denis, mistress of the house", "Theatre and celebrations", "Famous visitors to the estate"],
+        idealFor: "Groups who love daily life and anecdotes",
+      },
+      gardens: {
+        title: "Gardens & charmilles",
+        summary: "A walk through the park, its hornbeam arbours (charmilles) and its views of the Alps, following Voltaire the gardener and agronomist.",
+        highlights: ["The charmille, a leafy covered walk", "“We must cultivate our garden”", "Voltaire as farmer and builder"],
+        idealFor: "Garden lovers, spring to autumn",
+      },
+      corporate: {
+        title: "Corporate events & team-building",
+        summary: "A cultural break for your seminars in the Geneva area: a private tour, an Enlightenment team challenge, or a welcome for international delegations.",
+        highlights: ["“Enlightenment Rally” in teams", "Multilingual tours for delegations", "Quote and invoice in your company’s name"],
+        idealFor: "Seminars, incentives, international organisations",
+      },
+      seniors: {
+        title: "Senior-friendly paced tour",
+        summary: "A calm, warm visit with regular seated breaks and a route that limits walking and stairs.",
+        highlights: ["Gentle pace and regular pauses", "Route adapted to the group’s mobility", "Adjustable length"],
+        idealFor: "Senior clubs, retirement homes, alumni associations",
+      },
+      schools: {
+        title: "School classes & children",
+        summary: "A lively, hands-on visit for primary to secondary pupils, linked to Enlightenment topics in the curriculum.",
+        highlights: ["Content adapted to each age group", "Observation games and questions", "Worksheets on request"],
+        idealFor: "Primary and secondary schools, holiday clubs",
+      },
+    },
+    customTitle: "Something special in mind?",
+    customText: "A birthday, a study trip, a combined visit with Geneva — I’m happy to build a tailor-made programme.",
+  },
+
+  about: {
+    h1: "Sylvie, your guide at the Château de Voltaire",
+    lead: "Official guide, storyteller and Enlightenment enthusiast, I have spent many years sharing the history of Voltaire’s estate with visitors from all over the world.",
+    portraitAlt: "Portrait of Sylvie, guide at the Château de Voltaire",
+    storyTitle: "My story with Voltaire",
+    story: [
+      "Like many people, I first met Voltaire in books. The second meeting happened here in Ferney, walking along the paths he laid out. I realised this place tells the story of a more human Voltaire: the builder, the host, the neighbour, the man outraged by injustice.",
+      "Since then I have guided at the château with the same pleasure. I prepare each tour as an encounter — with business leaders over from Geneva, pupils discovering Candide, retirees taking their time, or Russian travellers moved to find Catherine the Great’s name in one of his letters.",
+    ],
+    approachTitle: "How I guide",
+    approach: [
+      { title: "Telling, not reciting", text: "Dates matter, but stories are what stay with you: I favour anecdotes, letters and objects." },
+      { title: "Adapting to everyone", text: "I tune the pace, vocabulary and depth to my audience, from eight-year-olds to specialists." },
+      { title: "Welcoming you in your language", text: "I guide in English, French, German and Russian, so that nobody is left out." },
+    ],
+    factsTitle: "At a glance",
+    facts: [
+      "Official guide at the Château de Voltaire",
+      "Tours in English, French, German and Russian",
+      "Groups, companies, seniors, schools and individuals",
+      "Based in Ferney-Voltaire, on the doorstep of Geneva",
+    ],
+    quoteText: "The best compliment? When a visitor tells me they’re going to re-read Voltaire when they get home.",
+    ctaTitle: "Let’s get acquainted",
+    ctaText: "Tell me about your group and what you have in mind — I reply personally.",
+  },
+
+  practical: {
+    h1: "Practical information",
+    lead: "Everything you need to plan your guided tour of the Château de Voltaire: meeting points, getting there, durations and accessibility.",
+    meetingTitle: "Meeting points",
+    meeting: [
+      { title: "In front of the Château de Voltaire", text: "Main meeting point, at the entrance to the estate, Allée du Château, 01210 Ferney-Voltaire, France." },
+      { title: "Ferney-Voltaire town centre", text: "For the “Château & Voltaire’s town” tour, we meet on the Grand’Rue, near the statue of Voltaire." },
+      { title: "Coach drop-off", text: "For coach groups, I’ll tell you the most convenient drop-off point when you book." },
+    ],
+    accessTitle: "Getting to Ferney-Voltaire",
+    access: [
+      { title: "By car", text: "About 10 minutes from Geneva Airport and 20 minutes from central Geneva. Parking is available near the château." },
+      { title: "By public transport", text: "Bus lines connect Geneva with Ferney-Voltaire. Check the TPG timetable before you set off; the château is then a few minutes’ walk away." },
+      { title: "By plane or train", text: "Geneva International Airport and Genève-Cornavin station are the nearest hubs." },
+    ],
+    durationTitle: "Tour durations",
+    durationLead: "Durations are indicative and can be adapted to your schedule.",
+    durationRows: [
+      ["Classic tour", "1 h"],
+      ["Private tour", "1 h 15"],
+      ["Group tour", "1 h 30"],
+      ["Themed tour", "1 h 15 – 1 h 30"],
+      ["Château & town", "2 h"],
+      ["School classes", "1 h – 1 h 30"],
+      ["Corporate", "1 h 30 – 2 h, tailor-made"],
+    ],
+    accessibilityTitle: "Accessibility",
+    accessibility: [
+      "The château is an 18th-century historic house and the park has gravel paths. Please let me know about any specific needs when booking (wheelchair, pushchair, limited mobility): I’ll adapt the route and check access conditions with the monument.",
+      "Senior-friendly tours include regular seated breaks and a route that keeps stairs to a minimum.",
+    ],
+    tipsTitle: "Good to know",
+    tips: [
+      "The château’s opening hours and admission fees are set by the Centre des monuments nationaux; I’ll help you check availability.",
+      "Wear comfortable shoes for the park, and bring a warm layer out of season.",
+      "Please arrive 10 minutes before the meeting time, especially with large groups.",
+      "Groups should book several weeks ahead where possible, especially in spring.",
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Which languages are the tours offered in?", a: "English, French, German and Russian. For mixed groups I can alternate between two languages." },
+      { q: "How many people per group?", a: "Group tours usually welcome up to 30 people. Larger parties are split into sub-groups with coordinated timings." },
+      { q: "Is admission to the château included?", a: "The monument’s admission fee is separate from the guiding service. My quote states clearly what is included." },
+      { q: "Can we visit with children?", a: "Of course. The tour then includes observation games and stories suited to their age." },
+      { q: "How far ahead should we book?", a: "As early as possible for groups, ideally four to six weeks ahead. For a private tour a few days is often enough." },
+    ],
+  },
+
+  contact: {
+    h1: "Book a tour or request a quote",
+    lead: "Fill in this form and I’ll reply personally within 48 hours with a tailored proposal.",
+    formTitle: "Your request",
+    fields: {
+      name: "Full name",
+      email: "Email",
+      phone: "Phone (optional)",
+      groupType: "Group type",
+      groupSize: "Number of people",
+      date: "Preferred date",
+      language: "Tour language",
+      message: "Your message",
+      messagePlaceholder: "Tour you’re interested in, timings, special needs, questions…",
+      consent: "I agree that my data may be used to answer my request.",
+      required: "required",
+      choose: "Choose…",
+      submit: "Send my request",
+      sending: "Sending…",
+    },
+    groupTypes: {
+      individual: "Individual / family",
+      private: "Private group",
+      corporate: "Corporate",
+      school: "School / children",
+      seniors: "Senior club",
+      tourist: "Tourist group / tour operator",
+    },
+    tourPrefix: "Tour of interest:",
+    success: "Thank you! Your request has been sent. I’ll reply within 48 hours.",
+    mailtoNotice: "Your email app will open with your request pre-filled — just press send.",
+    error: "Sending failed. Please try again or email me directly.",
+    invalid: "Please complete the required fields.",
+    mailSubject: "Guided tour request – Château de Voltaire",
+    directTitle: "Contact me directly",
+    directText: "Prefer phone or email? You can reach me that way too.",
+    responseTitle: "What happens next",
+    response: [
+      "I read your request and check my availability.",
+      "I send you a proposal and a quote within 48 hours.",
+      "Once you agree, I confirm the booking and practical details.",
+    ],
+    privacy: "Your data is used only to handle your request and is never shared with third parties.",
+  },
+
+  gallery: {
+    h1: "Gallery",
+    lead: "The château, its gardens and the tours, in pictures.",
+    homeLink: "View the gallery",
+    comingSoon: "Photo coming soon",
+    close: "Close",
+    prev: "Previous photo",
+    next: "Next photo",
+    placeholders: ["The château façade", "The salon", "Voltaire’s bedroom", "The charmilles", "The park and the view of the Alps", "A group tour"],
+  },
+
+  notFound: {
+    title: "Page not found",
+    text: "This page seems to have wandered off down one of the park’s paths.",
+    back: "Back to home",
+  },
+};

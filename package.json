@@ -1,0 +1,15 @@
+{
+  "name": "sylvie-voltaire",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multilingual (FR/EN/DE/RU) static website for Sylvie, official guide at the Château de Voltaire in Ferney-Voltaire.",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "og": "node src/og.mjs",
+    "serve": "npx --yes http-server dist -p 8080 -c-1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

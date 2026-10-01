@@ -1,0 +1,337 @@
+export default {
+  lang: "de",
+  locale: "de_DE",
+  langName: "Deutsch",
+
+  nav: {
+    home: "Startseite",
+    tours: "Führungen",
+    about: "Über mich",
+    gallery: "Galerie",
+    practical: "Praktische Infos",
+    contact: "Kontakt",
+    skip: "Zum Inhalt springen",
+    menu: "Menü",
+    close: "Schließen",
+    langLabel: "Sprache wählen",
+  },
+  cta: {
+    book: "Führung buchen",
+    quote: "Gruppenangebot anfragen",
+  },
+
+  meta: {
+    home: {
+      title: "Führungen im Schloss Voltaire in Ferney | Sylvie, offizielle Gästeführerin",
+      description: "Führungen im Schloss Voltaire (Château de Voltaire) in Ferney-Voltaire, 10 Minuten von Genf. Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen auf Deutsch, Französisch, Englisch und Russisch.",
+    },
+    tours: {
+      title: "Führungen Schloss Voltaire für Gruppen & Einzelgäste | Ferney-Voltaire bei Genf",
+      description: "Alle Führungen im Château de Voltaire: klassische Besichtigung, Gruppenführungen, Themenführungen (Aufklärung, Schlossleben, Gärten), Firmenevents, Seniorenführungen und Schulklassen.",
+    },
+    about: {
+      title: "Über Sylvie, offizielle Gästeführerin im Schloss Voltaire | Ferney-Voltaire",
+      description: "Lernen Sie Sylvie kennen: offizielle Gästeführerin im Schloss Voltaire in Ferney, die Voltaire und die Aufklärung in vier Sprachen lebendig werden lässt.",
+    },
+    gallery: {
+      title: "Fotogalerie Schloss Voltaire | Führungen mit Sylvie",
+      description: "Fotos vom Château de Voltaire, seinem Park und den Charmilles sowie von Führungen mit Sylvie in Ferney-Voltaire bei Genf.",
+    },
+    practical: {
+      title: "Praktische Infos: Treffpunkte, Anreise, Barrierefreiheit | Schloss Voltaire",
+      description: "Treffpunkte in Ferney-Voltaire, Anreise aus Genf, Dauer der Führungen, Barrierefreiheit und Tipps für Ihre Führung im Château de Voltaire.",
+    },
+    contact: {
+      title: "Führung im Schloss Voltaire buchen | Gruppenangebot anfragen",
+      description: "Buchen Sie Ihre Führung im Château de Voltaire oder fragen Sie ein Angebot für Ihre Gruppe, Firma oder Schulklasse an. Persönliche Antwort innerhalb von 48 Stunden.",
+    },
+  },
+  ogImageAlt: "Illustration des Schlosses Voltaire in Ferney – Führungen mit Sylvie",
+
+  common: {
+    breadcrumbHome: "Startseite",
+    languagesSpoken: "Führungen auf Deutsch · Français · English · Русский",
+    quote: "Wir müssen unseren Garten bestellen.",
+    quoteSource: "Voltaire, <cite>Candide</cite> (1759)",
+    featuredQuote: "Ich habe ein wenig Gutes getan; das ist mein bestes Werk.",
+    featuredQuoteSource: "Voltaire, <cite>Epistel an Horaz</cite> (1772)",
+    featuredQuoteContext: "Voltaire schrieb diese Worte in Ferney – mit Blick auf das Dorf, das er wiederbelebt hatte: Häuser, Uhrmacherwerkstätten, Kirche und Brunnen.",
+    minutes: "Min.",
+    people: "Pers.",
+  },
+
+  footer: {
+    tagline: "Führungen im Château de Voltaire in Ferney-Voltaire, vor den Toren Genfs.",
+    explore: "Entdecken",
+    contact: "Kontakt",
+    languages: "Sprachen",
+    rights: "Alle Rechte vorbehalten.",
+    note: "Das Château de Voltaire ist ein nationales Baudenkmal, das vom Centre des monuments nationaux verwaltet wird; dieses legt auch die Eintrittspreise fest.",
+  },
+
+  home: {
+    eyebrow: "Offizielle Gästeführerin · Château de Voltaire · Ferney-Voltaire",
+    h1: "Führungen im Schloss Voltaire – mit Sylvie",
+    lead: "Treten Sie ein in das Haus, in dem Voltaire fast zwanzig Jahre lebte. Ich erzähle Ihnen vom Menschen, seinen Kämpfen und seinem Landgut – im Tempo Ihrer Gruppe und in Ihrer Sprache.",
+    heroNote: "10 Minuten vom Flughafen Genf",
+
+    introTitle: "Willkommen bei Voltaire",
+    introText: [
+      "Mein Name ist Sylvie, ich bin offizielle Gästeführerin im Château de Voltaire. Hier schrieb der Philosoph zwischen 1759 und 1778, empfing Gäste aus ganz Europa, verteidigte Verfolgte und machte aus einem Weiler eine Stadt.",
+      "Meine Aufgabe ist es, diese Geschichte lebendig werden zu lassen. Anekdoten, Briefe, Gegenstände, Gärten: Jede Führung bereite ich für mein Publikum vor – ob neugierige Familie, Firmenteam oder Schulklasse.",
+    ],
+    introLink: "Mehr über mich",
+
+    valuesTitle: "Warum mit mir?",
+    values: [
+      { title: "Offizielle Führerin vor Ort", text: "Ich kenne jeden Raum, jeden Weg – und die Geschichten, die auf keiner Infotafel stehen." },
+      { title: "Vier Sprachen", text: "Deutsch, Französisch, Englisch und Russisch: Alle Ihre Gäste können mühelos folgen." },
+      { title: "Maßgeschneiderte Führungen", text: "Dauer, Thema, Tempo und Tiefe passe ich Ihrer Gruppe an – von Kindern bis zu Fachleuten." },
+      { title: "Unkomplizierte Planung", text: "Eine Ansprechpartnerin, ein klares Angebot und Tipps zu Anreise, Bussen und Zeiten." },
+    ],
+
+    audiencesTitle: "Eine Führung für jedes Publikum",
+    audiencesLead: "Reisende, Reisegruppen, Unternehmen, Seniorenclubs oder Schulen: Wählen Sie das passende Format.",
+    audiences: [
+      { key: "individual", title: "Einzelgäste & Familien", text: "Klassische oder private Führung in Ihrem Tempo." },
+      { key: "groups", title: "Gruppen & Reiseveranstalter", text: "Entdeckungsführungen durch Schloss und Voltaires Stadt." },
+      { key: "corporate", title: "Firmen & Seminare", text: "Teambuilding, Aufklärungs-Rallye, Delegationen." },
+      { key: "seniors", title: "Seniorengruppen", text: "Ruhiges Tempo, Sitzpausen, angepasster Rundgang." },
+      { key: "schools", title: "Schulen & Kinder", text: "Interaktive Führungen für jede Altersstufe." },
+    ],
+    audiencesLink: "Zur Führung",
+
+    themesTitle: "Themenführungen",
+    themesLead: "Drei Wege, Voltaire noch tiefer und ganz anders zu entdecken.",
+
+    stepsTitle: "In drei Schritten buchen",
+    steps: [
+      { title: "Ihre Anfrage", text: "Nennen Sie Wunschtermin, Gruppengröße und Sprache über das Formular." },
+      { title: "Ihr Programm", text: "Sie erhalten ein maßgeschneidertes Programm und ein klares Angebot." },
+      { title: "Ihre Führung", text: "Ich empfange Sie am Treffpunkt – Sie müssen nur noch genießen." },
+    ],
+
+    ctaTitle: "Bereit, Voltaire zu begegnen?",
+    ctaText: "Erzählen Sie mir, wer Sie sind und was Sie sich wünschen – ich schlage Ihnen die passende Führung vor.",
+  },
+
+  tours: {
+    h1: "Führungen im Schloss Voltaire",
+    lead: "Führungen für neugierige Reisende, Gruppen, Geschichtsfreunde, Unternehmen und Schüler. Jedes Format lässt sich anpassen – sprechen Sie mich an.",
+    jump: "Springen zu",
+    labels: {
+      duration: "Dauer",
+      size: "Gruppe",
+      idealFor: "Ideal für",
+      book: "Diese Führung buchen",
+      quote: "Angebot anfragen",
+    },
+    categories: {
+      individual: { title: "Einzel- & Standardführungen", intro: "Für Reisende, Paare und Familien, die das Schloss in Begleitung einer Führerin entdecken möchten." },
+      groups: { title: "Gruppenführungen (Erwachsene & Touristen)", intro: "Für Vereine, Reiseveranstalter, Busunternehmen und Freundeskreise. Große Gruppen werden in Untergruppen mit abgestimmten Zeiten aufgeteilt." },
+      thematic: { title: "Thematische Gruppenführungen", intro: "Ein roter Faden, um einen Aspekt von Voltaires Leben und Werk zu vertiefen." },
+      special: { title: "Besondere Zielgruppen", intro: "Formate für Unternehmen, Senioren und Schulklassen." },
+    },
+    items: {
+      classic: {
+        title: "Die klassische Schlossführung",
+        summary: "Das Wesentliche in einer Stunde: das Wohnhaus, der Salon, Voltaires Schlafzimmer und der Park mit Blick auf den Mont Blanc.",
+        highlights: ["Voltaire, der „Gastwirt Europas“", "Die restaurierten Räume und ihre Ausstattung", "Der Park und der Blick auf die Alpen"],
+        idealFor: "Erstbesucher, Durchreisende",
+      },
+      private: {
+        title: "Privatführung für Einzelgäste",
+        summary: "Nur für Sie und Ihre Begleitung: Wir nehmen uns Zeit für Ihre Fragen und Interessen.",
+        highlights: ["Uhrzeit und Tempo nach Absprache", "Kindgerechte Inhalte auf Wunsch", "Auch als Geschenk möglich"],
+        idealFor: "Familien, Paare, Geschichtsinteressierte",
+      },
+      discovery: {
+        title: "Entdeckungsführung für Gruppen",
+        summary: "Schloss und Gärten, erzählt anhand von Voltaires Alltag und seinen großen Anliegen.",
+        highlights: ["Empfang von Gruppe und Fahrer", "Führung durch Schloss und Park", "Empfohlene freie Zeit im Anschluss"],
+        idealFor: "Vereine, Reiseveranstalter, Clubs, Freundeskreise",
+      },
+      town: {
+        title: "Schloss & Voltaires Stadt",
+        summary: "Vom Schloss ins Stadtzentrum: Erleben Sie, wie Voltaire ein Dorf in eine Stadt der Uhrmacher und der Toleranz verwandelte.",
+        highlights: ["Die Kirche mit der Inschrift „Deo erexit Voltaire“", "Der Aufschwung der Uhrmacherei in Ferney", "Voltaires Statue im Herzen der Stadt"],
+        idealFor: "Gruppen mit einem halben Tag Zeit",
+      },
+      enlightenment: {
+        title: "Voltaire und das Zeitalter der Aufklärung",
+        summary: "Candide, die Abhandlung über die Toleranz, die Affäre Calas: wie ein Mann von Ferney aus die Kämpfe seines Jahrhunderts führte.",
+        highlights: ["Briefwechsel mit Katharina der Großen und Friedrich II.", "Der Einsatz für Calas und Sirven", "„Écrasez l’infâme“: die Freiheit des Denkens"],
+        idealFor: "Geschichtsfreunde, Oberstufe, Kulturvereine",
+      },
+      "chateau-life": {
+        title: "Das Leben im Schloss",
+        summary: "Diners, Theater, berühmte Gäste, Dienerschaft und eine Nichte: Tauchen Sie ein in den Alltag des „Patriarchen von Ferney“.",
+        highlights: ["Madame Denis, die Hausherrin", "Theater und Feste", "Berühmte Besucher des Anwesens"],
+        idealFor: "Gruppen, die Alltagsgeschichte und Anekdoten lieben",
+      },
+      gardens: {
+        title: "Gärten & Charmilles",
+        summary: "Ein Spaziergang durch den Park, seine Hainbuchen-Laubengänge (Charmilles) und die Ausblicke auf die Alpen – auf den Spuren des Gärtners und Agronomen Voltaire.",
+        highlights: ["Die Charmille, ein grüner Laubengang", "„Wir müssen unseren Garten bestellen“", "Voltaire als Landwirt und Bauherr"],
+        idealFor: "Gartenfreunde, Frühling bis Herbst",
+      },
+      corporate: {
+        title: "Firmenevents & Teambuilding",
+        summary: "Eine kulturelle Auszeit für Ihre Seminare in der Region Genf: Privatführung, Team-Challenge rund um die Aufklärung oder Empfang internationaler Delegationen.",
+        highlights: ["„Aufklärungs-Rallye“ in Teams", "Mehrsprachige Führungen für Delegationen", "Angebot und Rechnung auf Ihre Firma"],
+        idealFor: "Seminare, Incentives, internationale Organisationen",
+      },
+      seniors: {
+        title: "Seniorengerechte Führung",
+        summary: "Eine ruhige, herzliche Führung mit regelmäßigen Sitzpausen und einem Rundgang mit wenig Wegstrecke und Treppen.",
+        highlights: ["Gemächliches Tempo, regelmäßige Pausen", "Rundgang angepasst an die Mobilität", "Flexible Dauer"],
+        idealFor: "Seniorenclubs, Wohnstifte, Vereine",
+      },
+      schools: {
+        title: "Schulklassen & Kinder",
+        summary: "Eine lebendige, interaktive Führung von der Grundschule bis zur Oberstufe, verknüpft mit dem Unterrichtsthema Aufklärung.",
+        highlights: ["Inhalte für jede Altersstufe", "Beobachtungsspiele und Fragen", "Arbeitsblätter auf Anfrage"],
+        idealFor: "Grund- und weiterführende Schulen, Ferienclubs",
+      },
+    },
+    customTitle: "Haben Sie eine besondere Idee?",
+    customText: "Geburtstag, Studienreise, Kombination mit einem Genf-Besuch – gern stelle ich Ihnen ein individuelles Programm zusammen.",
+  },
+
+  about: {
+    h1: "Sylvie, Ihre Führerin im Schloss Voltaire",
+    lead: "Als offizielle Gästeführerin, Erzählerin und Liebhaberin der Aufklärung teile ich seit vielen Jahren die Geschichte von Voltaires Landgut mit Besuchern aus aller Welt.",
+    portraitAlt: "Porträt von Sylvie, Gästeführerin im Château de Voltaire",
+    storyTitle: "Meine Geschichte mit Voltaire",
+    story: [
+      "Wie viele habe ich Voltaire zuerst in Büchern kennengelernt. Die zweite Begegnung fand hier in Ferney statt, auf den Wegen, die er selbst angelegt hat. Da verstand ich, dass dieser Ort einen menschlicheren Voltaire zeigt: den Bauherrn, den Gastgeber, den Nachbarn, den Mann, den Ungerechtigkeit empörte.",
+      "Seitdem führe ich mit derselben Freude durch das Schloss. Jede Führung bereite ich wie eine Begegnung vor – mit Führungskräften aus Genf, mit Schülern, die Candide entdecken, mit Senioren, die sich Zeit nehmen, oder mit russischen Reisenden, die gerührt den Namen Katharinas der Großen in einem seiner Briefe wiederfinden.",
+    ],
+    approachTitle: "Wie ich führe",
+    approach: [
+      { title: "Erzählen statt aufsagen", text: "Jahreszahlen sind wichtig, aber Geschichten bleiben im Gedächtnis: Ich setze auf Anekdoten, Briefe und Gegenstände." },
+      { title: "Auf jeden eingehen", text: "Tempo, Wortwahl und Tiefe stimme ich auf mein Publikum ab – von Achtjährigen bis zu Fachleuten." },
+      { title: "In Ihrer Sprache", text: "Ich führe auf Deutsch, Französisch, Englisch und Russisch, damit niemand außen vor bleibt." },
+    ],
+    factsTitle: "Auf einen Blick",
+    facts: [
+      "Offizielle Gästeführerin im Château de Voltaire",
+      "Führungen auf Deutsch, Französisch, Englisch und Russisch",
+      "Gruppen, Firmen, Senioren, Schulen und Einzelgäste",
+      "Ansässig in Ferney-Voltaire, vor den Toren Genfs",
+    ],
+    quoteText: "Das schönste Kompliment? Wenn mir ein Gast sagt, dass er zu Hause wieder Voltaire lesen wird.",
+    ctaTitle: "Lernen wir uns kennen",
+    ctaText: "Erzählen Sie mir von Ihrer Gruppe und Ihren Wünschen – ich antworte Ihnen persönlich.",
+  },
+
+  practical: {
+    h1: "Praktische Informationen",
+    lead: "Alles, was Sie für Ihre Führung im Château de Voltaire wissen müssen: Treffpunkte, Anreise, Dauer und Barrierefreiheit.",
+    meetingTitle: "Treffpunkte",
+    meeting: [
+      { title: "Vor dem Château de Voltaire", text: "Haupttreffpunkt am Eingang des Anwesens, Allée du Château, 01210 Ferney-Voltaire, Frankreich." },
+      { title: "Stadtzentrum Ferney-Voltaire", text: "Für die Führung „Schloss & Voltaires Stadt“ treffen wir uns in der Grand’Rue, nahe der Voltaire-Statue." },
+      { title: "Bushaltepunkt für Reisebusse", text: "Für Busgruppen nenne ich Ihnen bei der Buchung den günstigsten Ausstiegspunkt." },
+    ],
+    accessTitle: "Anreise nach Ferney-Voltaire",
+    access: [
+      { title: "Mit dem Auto", text: "Etwa 10 Minuten vom Flughafen Genf und 20 Minuten vom Genfer Zentrum. Parkmöglichkeiten in der Nähe des Schlosses." },
+      { title: "Mit öffentlichen Verkehrsmitteln", text: "Buslinien verbinden Genf mit Ferney-Voltaire. Prüfen Sie vorab den TPG-Fahrplan; vom Zentrum sind es wenige Gehminuten bis zum Schloss." },
+      { title: "Mit Flugzeug oder Bahn", text: "Der internationale Flughafen Genf und der Bahnhof Genève-Cornavin sind die nächsten Knotenpunkte." },
+    ],
+    durationTitle: "Dauer der Führungen",
+    durationLead: "Die Angaben sind Richtwerte und lassen sich an Ihr Programm anpassen.",
+    durationRows: [
+      ["Klassische Führung", "1 Std."],
+      ["Privatführung", "1 Std. 15"],
+      ["Gruppenführung", "1 Std. 30"],
+      ["Themenführung", "1 Std. 15 – 1 Std. 30"],
+      ["Schloss & Stadt", "2 Std."],
+      ["Schulklassen", "1 – 1 Std. 30"],
+      ["Firmen", "1 Std. 30 – 2 Std., individuell"],
+    ],
+    accessibilityTitle: "Barrierefreiheit",
+    accessibility: [
+      "Das Schloss ist ein historisches Gebäude aus dem 18. Jahrhundert, der Park hat Kieswege. Teilen Sie mir bei der Buchung bitte besondere Bedürfnisse mit (Rollstuhl, Kinderwagen, eingeschränkte Mobilität): Ich passe den Rundgang an und kläre die Zugangsbedingungen mit dem Monument.",
+      "Seniorenführungen beinhalten regelmäßige Sitzpausen und einen Rundgang mit möglichst wenigen Treppen.",
+    ],
+    tipsTitle: "Gut zu wissen",
+    tips: [
+      "Öffnungszeiten und Eintrittspreise des Schlosses legt das Centre des monuments nationaux fest; ich helfe Ihnen bei der Prüfung der Verfügbarkeit.",
+      "Bequeme Schuhe für den Park und außerhalb der Saison eine warme Jacke einplanen.",
+      "Bitte 10 Minuten vor Treffzeit da sein, besonders bei großen Gruppen.",
+      "Gruppen buchen am besten mehrere Wochen im Voraus, besonders im Frühjahr.",
+    ],
+    faqTitle: "Häufige Fragen",
+    faq: [
+      { q: "In welchen Sprachen finden die Führungen statt?", a: "Auf Deutsch, Französisch, Englisch und Russisch. Bei gemischten Gruppen kann ich zwischen zwei Sprachen wechseln." },
+      { q: "Wie viele Personen pro Gruppe?", a: "Gruppenführungen sind in der Regel für bis zu 30 Personen ausgelegt. Größere Gruppen werden in Untergruppen mit abgestimmten Zeiten aufgeteilt." },
+      { q: "Ist der Eintritt ins Schloss inbegriffen?", a: "Der Eintritt in das Monument ist von der Führungsleistung getrennt. Mein Angebot weist klar aus, was enthalten ist." },
+      { q: "Können wir mit Kindern kommen?", a: "Selbstverständlich. Die Führung enthält dann Beobachtungsspiele und kindgerechte Geschichten." },
+      { q: "Wie früh sollten wir buchen?", a: "Gruppen möglichst früh, idealerweise vier bis sechs Wochen im Voraus. Für eine Privatführung reichen oft wenige Tage." },
+    ],
+  },
+
+  contact: {
+    h1: "Führung buchen oder Angebot anfragen",
+    lead: "Füllen Sie dieses Formular aus – ich antworte Ihnen persönlich innerhalb von 48 Stunden mit einem passenden Vorschlag.",
+    formTitle: "Ihre Anfrage",
+    fields: {
+      name: "Vor- und Nachname",
+      email: "E-Mail",
+      phone: "Telefon (optional)",
+      groupType: "Art der Gruppe",
+      groupSize: "Anzahl Personen",
+      date: "Wunschtermin",
+      language: "Sprache der Führung",
+      message: "Ihre Nachricht",
+      messagePlaceholder: "Gewünschte Führung, Uhrzeiten, besondere Bedürfnisse, Fragen …",
+      consent: "Ich bin einverstanden, dass meine Daten zur Beantwortung meiner Anfrage verwendet werden.",
+      required: "Pflichtfeld",
+      choose: "Bitte wählen …",
+      submit: "Anfrage senden",
+      sending: "Wird gesendet …",
+    },
+    groupTypes: {
+      individual: "Einzelperson / Familie",
+      private: "Private Gruppe",
+      corporate: "Unternehmen",
+      school: "Schulklasse / Kinder",
+      seniors: "Seniorengruppe",
+      tourist: "Reisegruppe / Reiseveranstalter",
+    },
+    tourPrefix: "Gewünschte Führung:",
+    success: "Vielen Dank! Ihre Anfrage wurde gesendet. Ich antworte innerhalb von 48 Stunden.",
+    mailtoNotice: "Ihr E-Mail-Programm öffnet sich mit Ihrer vorausgefüllten Anfrage – Sie müssen sie nur noch absenden.",
+    error: "Das Senden ist fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt eine E-Mail.",
+    invalid: "Bitte füllen Sie die Pflichtfelder aus.",
+    mailSubject: "Anfrage Führung – Château de Voltaire",
+    directTitle: "Direkter Kontakt",
+    directText: "Lieber per Telefon oder E-Mail? Auch so erreichen Sie mich.",
+    responseTitle: "So geht es weiter",
+    response: [
+      "Ich lese Ihre Anfrage und prüfe meine Verfügbarkeit.",
+      "Sie erhalten innerhalb von 48 Stunden einen Vorschlag und ein Angebot.",
+      "Nach Ihrer Zusage bestätige ich die Buchung und alle Details.",
+    ],
+    privacy: "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nie an Dritte weitergegeben.",
+  },
+
+  gallery: {
+    h1: "Galerie",
+    lead: "Das Schloss, seine Gärten und die Führungen in Bildern.",
+    homeLink: "Zur Galerie",
+    comingSoon: "Foto folgt",
+    close: "Schließen",
+    prev: "Vorheriges Foto",
+    next: "Nächstes Foto",
+    placeholders: ["Die Schlossfassade", "Der Salon", "Voltaires Schlafzimmer", "Die Charmilles", "Der Park und der Blick auf die Alpen", "Eine Gruppenführung"],
+  },
+
+  notFound: {
+    title: "Seite nicht gefunden",
+    text: "Diese Seite hat sich wohl in den Alleen des Parks verlaufen.",
+    back: "Zur Startseite",
+  },
+};
