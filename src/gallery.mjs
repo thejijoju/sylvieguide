@@ -87,7 +87,21 @@ export const details = {
       ru: "Бассейн с кувшинками и бронзовой статуей, подстриженные конусом тисы, гравийные дорожки, а под застеклённой галереей — тенистая терраса: идеальное место для отдыха после экскурсии.",
     },
   },
-  "06-chateau-de-voltaire-chambre-alcove.jpg": {
+  "06-chambre-de-voltaire-ferney.jpg": {
+    title: {
+      fr: "La chambre de Voltaire",
+      en: "Voltaire’s bedroom",
+      de: "Voltaires Schlafzimmer",
+      ru: "Спальня Вольтера",
+    },
+    legend: {
+      fr: "Boiseries bleues, soieries dorées et plafond orné de rinceaux : un lit à baldaquin et un grand portrait impérial dont l’inscription précise qu’il fut « donné à M. de Voltaire le 15 juillet 1770 ».",
+      en: "Blue panelling, golden silks and a ceiling of scrolling ornament: a canopy bed and a large imperial portrait whose inscription records that it was “given to M. de Voltaire on 15 July 1770”.",
+      de: "Blaue Täfelung, goldene Seide und eine mit Rankenwerk verzierte Decke: ein Himmelbett und ein großes kaiserliches Bildnis, dessen Inschrift vermerkt, es sei „Herrn de Voltaire am 15. Juli 1770 geschenkt“ worden.",
+      ru: "Голубые панели, золотистые шёлка и потолок с орнаментом: кровать с балдахином и большой императорский портрет, надпись на котором гласит, что он был «подарен г-ну де Вольтеру 15 июля 1770 года».",
+    },
+  },
+  "07-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
