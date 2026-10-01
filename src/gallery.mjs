@@ -115,7 +115,35 @@ export const details = {
       ru: "На светло-зелёных панелях — два полотна в золочёных рамах: вверху туалет Венеры в окружении амуров, с её колесницей, запряжённой лебедями; внизу — мифологическая сцена в свете канделябров.",
     },
   },
-  "08-chateau-de-voltaire-chambre-alcove.jpg": {
+  "08-chateau-de-voltaire-boiseries-tableaux.jpg": {
+    title: {
+      fr: "Tableaux et boiseries vert d’eau",
+      en: "Paintings and pale green panelling",
+      de: "Gemälde und blassgrüne Täfelung",
+      ru: "Картины и светло-зелёные панели",
+    },
+    legend: {
+      fr: "Sous un plafond aux rinceaux dorés, des toiles mythologiques dans leurs cadres sculptés, une console dorée aux candélabres et des fauteuils couverts de tapisserie fleurie.",
+      en: "Beneath a ceiling of gilded scrolls: mythological canvases in carved frames, a gilded console with candelabra and armchairs covered in floral tapestry.",
+      de: "Unter einer Decke mit vergoldetem Rankenwerk: mythologische Gemälde in geschnitzten Rahmen, eine vergoldete Konsole mit Kerzenleuchtern und Sessel mit geblümtem Gobelinbezug.",
+      ru: "Под потолком с золочёным орнаментом — мифологические полотна в резных рамах, золочёная консоль с канделябрами и кресла, обитые цветочным гобеленом.",
+    },
+  },
+  "09-tableau-allegorique-gloire-de-voltaire.jpg": {
+    title: {
+      fr: "Tableau allégorique à la gloire de Voltaire",
+      en: "Allegorical painting in honour of Voltaire",
+      de: "Allegorisches Gemälde zu Ehren Voltaires",
+      ru: "Аллегорическая картина во славу Вольтера",
+    },
+    legend: {
+      fr: "Apollon, couronné de lumière, accueille le philosophe et ses écrits ; la Renommée sonne de la trompette près d’un temple à l’antique, tandis qu’à droite ses adversaires et leurs libelles sont précipités dans les flammes.",
+      en: "Apollo, crowned with light, welcomes the philosopher and his writings; Fame sounds her trumpet beside a classical temple, while on the right his adversaries and their pamphlets are cast into the flames.",
+      de: "Apollon, von Licht bekrönt, empfängt den Philosophen und seine Schriften; Fama bläst die Posaune neben einem antiken Tempel, während rechts seine Gegner und ihre Pamphlete in die Flammen stürzen.",
+      ru: "Аполлон в сиянии принимает философа и его сочинения; Слава трубит у античного храма, а справа его противники и их пасквили низвергаются в пламя.",
+    },
+  },
+  "10-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
