@@ -17,6 +17,20 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const details = {
+  "02-chateau-de-voltaire-chambre-toilette.webp": {
+    title: {
+      fr: "La table de toilette d’une chambre du château",
+      en: "The dressing table of a bedroom in the château",
+      de: "Der Toilettentisch eines Schlafzimmers im Schloss",
+      ru: "Туалетный столик в спальне замка",
+    },
+    legend: {
+      fr: "Soieries jaunes à motifs pourpres, cheminée de marbre surmontée d’un trumeau, fauteuils assortis et tapis fleuri : la toilette, avec son miroir et ses pots de porcelaine, évoque les rituels du matin au XVIIIe siècle.",
+      en: "Yellow silks patterned in crimson, a marble fireplace beneath a tall mirror, matching armchairs and a floral carpet: the dressing table, with its mirror and porcelain pots, recalls the morning rituals of the 18th century.",
+      de: "Gelbe Seide mit purpurroten Mustern, ein Marmorkamin unter einem hohen Spiegel, passende Sessel und ein geblümter Teppich: Der Toilettentisch mit Spiegel und Porzellandosen erinnert an die Morgenrituale des 18. Jahrhunderts.",
+      ru: "Жёлтые шелка с пурпурным узором, мраморный камин под высоким зеркалом, кресла в тон и цветочный ковёр: туалетный столик с зеркалом и фарфоровыми баночками напоминает об утренних ритуалах XVIII века.",
+    },
+  },
   "01-chateau-de-voltaire-salon.jpg": {
     title: {
       fr: "Le salon du Château de Voltaire",
@@ -31,7 +45,7 @@ export const details = {
       ru: "Красно-зелёные полосатые обивки стен, портрет молодого Вольтера в овальной раме, мраморный камин и накрытые игровые столики — в этой обстановке принимали гостей замка.",
     },
   },
-  "02-chateau-de-voltaire-chambre-alcove.jpg": {
+  "03-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
