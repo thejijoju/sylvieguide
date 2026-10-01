@@ -1,3 +1,7 @@
+import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
 // Site-wide settings. Edit these before going live — everything marked
 // REPLACE is a placeholder that Sylvie must confirm.
 
@@ -27,6 +31,12 @@ export const site = {
   // content="…" value). Leave empty until you have them.
   verification: { google: "", bing: "", yandex: "" },
 
+  // Optional starting prices (guiding fee) for structured data, e.g.
+  // { group: { from: 180 }, corporate: { from: 250 }, seniors: { from: 180 },
+  //   thematic: { from: 200 } }. Leave empty until Sylvie confirms prices.
+  currency: "EUR",
+  prices: {},
+
   address: {
     name: "Château de Voltaire",
     street: "Allée du Château",
@@ -37,18 +47,51 @@ export const site = {
   },
 };
 
-export const languages = ["fr", "en", "de", "ru"];
+// Every language the site can be published in. A language goes live as soon
+// as its translation file src/i18n/<code>.mjs exists. `flag` names a file in
+// src/assets/flags/ (flag-icons, MIT); `font` adds a Google font for scripts
+// that Montserrat/Inter do not cover.
+export const langMeta = {
+  fr: { name: "Français", flag: "fr", locale: "fr_FR" },
+  en: { name: "English", flag: "gb", locale: "en_GB" },
+  de: { name: "Deutsch", flag: "de", locale: "de_DE" },
+  ru: { name: "Русский", flag: "ru", locale: "ru_RU" },
+  es: { name: "Español", flag: "es", locale: "es_ES" },
+  it: { name: "Italiano", flag: "it", locale: "it_IT" },
+  pt: { name: "Português", flag: "pt", locale: "pt_PT" },
+  nl: { name: "Nederlands", flag: "nl", locale: "nl_NL" },
+  pl: { name: "Polski", flag: "pl", locale: "pl_PL" },
+  uk: { name: "Українська", flag: "ua", locale: "uk_UA" },
+  zh: { name: "中文", flag: "cn", locale: "zh_CN", font: "Noto+Sans+SC:wght@400;500;700" },
+  ja: { name: "日本語", flag: "jp", locale: "ja_JP", font: "Noto+Sans+JP:wght@400;500;700" },
+  ko: { name: "한국어", flag: "kr", locale: "ko_KR", font: "Noto+Sans+KR:wght@400;500;700" },
+  ar: { name: "العربية", flag: "arab", locale: "ar_AR", dir: "rtl", font: "Noto+Sans+Arabic:wght@400;500;700" },
+  hi: { name: "हिन्दी", flag: "in", locale: "hi_IN", font: "Noto+Sans+Devanagari:wght@400;500;700" },
+  tr: { name: "Türkçe", flag: "tr", locale: "tr_TR" },
+};
+
+const i18nDir = join(dirname(fileURLToPath(import.meta.url)), "i18n");
+export const languages = Object.keys(langMeta).filter((l) => existsSync(join(i18nDir, `${l}.mjs`)));
 export const defaultLanguage = "fr";
 
-// Page keys → localized slugs. "" is the language home page.
-export const pages = ["home", "tours", "about", "gallery", "practical", "contact"];
+// Languages Sylvie guides in (the booking form offers these).
+export const tourLanguages = ["fr", "en", "de", "ru"];
 
-export const slugs = {
-  fr: { home: "", tours: "visites", about: "a-propos", gallery: "galerie", practical: "infos-pratiques", contact: "contact" },
-  en: { home: "", tours: "tours", about: "about", gallery: "gallery", practical: "practical-info", contact: "contact" },
-  de: { home: "", tours: "fuehrungen", about: "ueber-mich", gallery: "galerie", practical: "praktische-infos", contact: "kontakt" },
-  ru: { home: "", tours: "ekskursii", about: "obo-mne", gallery: "galereya", practical: "prakticheskaya-informatsiya", contact: "kontakty" },
+// Page keys → localized slugs. "" is the language home page. A slug may
+// contain "/" for sub-pages; `parents` sets their breadcrumb parent.
+export const pages = ["home", "tours", "group", "corporate", "seniors", "thematic", "about", "gallery", "practical", "contact"];
+export const parents = { corporate: "group", seniors: "group" };
+export const headerPages = ["tours", "group", "thematic", "about", "gallery", "practical"];
+
+const enSlugs = { home: "", tours: "tours", group: "group-tours", corporate: "group-tours/corporate-groups", seniors: "group-tours/senior-groups", thematic: "thematic-tours", about: "about", gallery: "gallery", practical: "practical-info", contact: "contact" };
+const localSlugs = {
+  fr: { home: "", tours: "visites", group: "visites-de-groupe", corporate: "visites-de-groupe/entreprises", seniors: "visites-de-groupe/seniors", thematic: "visites-thematiques", about: "a-propos", gallery: "galerie", practical: "infos-pratiques", contact: "contact" },
+  en: enSlugs,
+  de: { home: "", tours: "fuehrungen", group: "gruppenfuehrungen", corporate: "gruppenfuehrungen/firmen", seniors: "gruppenfuehrungen/senioren", thematic: "themenfuehrungen", about: "ueber-mich", gallery: "galerie", practical: "praktische-infos", contact: "kontakt" },
+  ru: { home: "", tours: "ekskursii", group: "gruppovye-ekskursii", corporate: "gruppovye-ekskursii/kompanii", seniors: "gruppovye-ekskursii/starshee-pokolenie", thematic: "tematicheskie-ekskursii", about: "obo-mne", gallery: "galereya", practical: "prakticheskaya-informatsiya", contact: "kontakty" },
 };
+// Other languages use the English slugs.
+export const slugs = Object.fromEntries(Object.keys(langMeta).map((l) => [l, localSlugs[l] || enSlugs]));
 
 // Tour catalogue structure shared by every language. Texts live in i18n/*.
 // duration is in minutes; group sizes are indicative and can be edited here.

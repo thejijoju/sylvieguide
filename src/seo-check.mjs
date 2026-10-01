@@ -5,7 +5,7 @@
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { site, languages } from "./config.mjs";
+import { site, languages, slugs } from "./config.mjs";
 
 const dist = join(dirname(fileURLToPath(import.meta.url)), "..", "dist");
 const errors = [];
@@ -44,7 +44,7 @@ for (const file of pages) {
 
   if (!lang) errors.push(`${where}: missing <html lang>`);
   if (!title) errors.push(`${where}: missing <title>`);
-  else if (title.length > 65) warnings.push(`${where}: title is ${title.length} chars (keep ≤ 65 so it is not cut in results): "${title}"`);
+  else if (title.length > 75) warnings.push(`${where}: title is ${title.length} chars (Google shows about 60–70; keep ≤ 75 with keywords first): "${title}"`);
   if (!desc) errors.push(`${where}: missing meta description`);
   else if (desc.length < 110 || desc.length > 165) warnings.push(`${where}: description is ${desc.length} chars (aim for 110–165)`);
   if (titles.has(title)) errors.push(`${where}: duplicate title with ${titles.get(title)}`);
@@ -97,6 +97,54 @@ for (const file of pages) {
   const text = decode(html.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ")).toLowerCase();
   for (const k of keywords[lang] || []) {
     if (where.split("/").length === 2 && !text.includes(k)) warnings.push(`${where}: home page never mentions "${k}"`);
+  }
+}
+
+// Target search phrases, each tied to the page meant to rank for it. The
+// page's main content (not the menu or footer) must contain all the words.
+const targets = {
+  en: [
+    ["chateau de voltaire guided tour", "home"], ["guided tour ferney voltaire", "home"], ["things to do near geneva day trip", "home"],
+    ["voltaire castle tour from geneva", "home"], ["private tour castle of voltaire", "tours"], ["ferney voltaire historical tour english", "tours"],
+    ["corporate group tours geneva border", "corporate"], ["team building historical tour ferney voltaire", "corporate"],
+    ["corporate event tour chateau de voltaire", "corporate"], ["private group tour chateau voltaire companies", "corporate"],
+    ["geneva incentive tours historical chateau", "corporate"], ["accessible guided tour chateau de voltaire", "seniors"],
+    ["senior group visits ferney voltaire", "seniors"], ["cultural tours for seniors near geneva", "seniors"],
+    ["coach tour chateau de voltaire parking", "seniors"], ["coach parking geneva airport palexpo tpg", "practical"],
+    ["enlightenment history tour ferney voltaire", "thematic"], ["voltaire and geneva history guided visit", "thematic"],
+    ["literary tour chateau de voltaire", "thematic"], ["thematic guided tours ferney voltaire", "thematic"],
+    ["group booking chateau de voltaire guided visits", "group"],
+  ],
+  fr: [
+    ["visite guidée château de voltaire", "home"], ["visite guidée ferney voltaire", "home"], ["que faire autour de genève", "home"],
+    ["excursion château de voltaire depuis genève", "home"], ["visite privée château de voltaire", "tours"],
+    ["visite historique ferney voltaire", "tours"], ["visites de groupe entreprises genève frontière", "corporate"],
+    ["team building visite historique ferney voltaire", "corporate"], ["visite château de voltaire événement entreprise", "corporate"],
+    ["incentives genève château historique", "corporate"], ["visite guidée accessible château de voltaire", "seniors"],
+    ["groupes seniors ferney voltaire", "seniors"], ["sortie culturelle seniors genève", "seniors"],
+    ["parking autocars château de voltaire", "seniors"], ["parking autocars aéroport genève palexpo tpg", "practical"],
+    ["histoire des lumières ferney voltaire", "thematic"], ["voltaire et genève visite guidée", "thematic"],
+    ["visite littéraire château de voltaire", "thematic"], ["visites guidées thématiques ferney voltaire", "thematic"],
+    ["réservation visites guidées groupe château de voltaire", "group"],
+  ],
+};
+const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[’'-]/g, " ");
+const stop = new Set(["de", "of", "the", "for", "and", "from", "to", "near", "du", "des", "la", "le", "les", "et", "a", "d", "l", "depuis"]);
+const mainText = (file) => {
+  const html = readFileSync(file, "utf8");
+  const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1] || "";
+  const main = (html.match(/<main[\s\S]*?<\/main>/) || [""])[0];
+  return norm(decode(title + " " + main.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ")));
+};
+for (const [lang, list] of Object.entries(targets)) {
+  for (const [phrase, page] of list) {
+    const slug = slugs[lang][page];
+    const file = join(dist, lang, slug, "index.html");
+    if (!existsSync(file)) { errors.push(`[${lang}] page "${page}" missing for "${phrase}"`); continue; }
+    const text = mainText(file);
+    const missing = norm(phrase).split(/\s+/).filter((w) => w && !stop.has(w) && !new RegExp(`\\b${w}`).test(text));
+    if (missing.length) errors.push(`[${lang}] ${relative(dist, file)} does not cover "${phrase}" (missing: ${missing.join(", ")})`);
+    else console.log(`ok    [${lang}] "${phrase}" → ${relative(dist, file)}`);
   }
 }
 

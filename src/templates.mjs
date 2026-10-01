@@ -1,4 +1,7 @@
-import { site, languages, pages, slugs, tourCategories, groupTypes } from "./config.mjs";
+import { site, languages, langMeta, pages, parents, headerPages, tourLanguages, slugs, tourCategories, groupTypes } from "./config.mjs";
+import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { chateauSvg, ornament, icon } from "./art.mjs";
 import { photos } from "./gallery.mjs";
 
@@ -30,10 +33,15 @@ const tourGroupType = {
   corporate: "corporate", seniors: "seniors", schools: "school",
 };
 
-const audienceAnchor = {
-  individual: "cat-individual", groups: "cat-groups",
-  corporate: "corporate", seniors: "seniors", schools: "schools",
-};
+// Where each home-page audience card leads.
+const audienceHref = (t, key) =>
+  ({
+    individual: `${pathFor(t.lang, "tours")}#cat-individual`,
+    groups: pathFor(t.lang, "group"),
+    corporate: pathFor(t.lang, "corporate"),
+    seniors: pathFor(t.lang, "seniors"),
+    schools: `${pathFor(t.lang, "tours")}#schools`,
+  })[key];
 const audienceIcon = { individual: "key", groups: "users", corporate: "handshake", seniors: "bench", schools: "pupil" };
 
 const fmtDuration = (t, min) => {
@@ -48,14 +56,14 @@ const fmtDuration = (t, min) => {
 
 function head(t, page, { title, description }, og = null) {
   const canonical = urlFor(t.lang, page);
-  const ogImage = og?.url || `${site.origin}/assets/og/og-${t.lang}.png`;
+  const ogImage = og?.url || `${site.origin}/assets/og/og-${ogLang(t.lang)}.png`;
   const alternates = languages
     .map((l) => `<link rel="alternate" hreflang="${l}" href="${urlFor(l, page)}">`)
     .join("\n  ");
   const xDefault = page === "home" ? `${site.origin}/` : urlFor("en", page);
   const otherLocales = languages
     .filter((l) => l !== t.lang)
-    .map((l) => `<meta property="og:locale:alternate" content="${LOCALES[l]}">`)
+    .map((l) => `<meta property="og:locale:alternate" content="${langMeta[l].locale}">`)
     .join("\n  ");
 
   return `<head>
@@ -94,35 +102,53 @@ function head(t, page, { title, description }, og = null) {
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="${FONTS_URL}">
+  <link rel="stylesheet" href="${fontsUrl(t.lang)}">
   <link rel="stylesheet" href="/assets/styles.css?v=${ASSET_VERSION}">
+  ${languageScript(t, page)}
   <script src="/assets/main.js?v=${ASSET_VERSION}" defer></script>
 </head>`;
 }
 
-export const FONTS_URL =
-  "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap";
+const BASE_FONTS = "family=Montserrat:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400";
+export const fontsUrl = (lang) =>
+  `https://fonts.googleapis.com/css2?${BASE_FONTS}${langMeta[lang]?.font ? `&family=${langMeta[lang].font}` : ""}&display=swap`;
+export const FONTS_URL = fontsUrl("en");
 
-const LOCALES = { fr: "fr_FR", en: "en_GB", de: "de_DE", ru: "ru_RU" };
-const SHORT = { fr: "FR", en: "EN", de: "DE", ru: "RU" };
+const here = dirname(fileURLToPath(import.meta.url));
+// Languages without their own social card share the English one.
+const ogLang = (lang) => (existsSync(join(here, "assets", "og", `og-${lang}.png`)) ? lang : "en");
+const flagImg = (l, size = 20) =>
+  `<img class="flag" src="/assets/flags/${langMeta[l].flag}.svg" alt="" width="${size}" height="${Math.round(size * 0.75)}" loading="lazy" decoding="async">`;
 
+// Header: a flag dropdown (works without JavaScript thanks to <details>).
+// Footer: every language listed with its flag.
 function langSwitcher(t, page, extraClass = "") {
-  return `<nav class="lang-switch ${extraClass}" aria-label="${esc(t.nav.langLabel)}">
-      <ul>${languages
-        .map((l) => {
-          const current = l === t.lang;
-          return `<li><a href="${pathFor(l, page)}" hreflang="${l}" lang="${l}" data-lang="${l}"${
-            current ? ' aria-current="true"' : ""
-          } title="${esc(LANG_NAMES[l])}"><span aria-hidden="true">${SHORT[l]}</span><span class="sr-only">${esc(LANG_NAMES[l])}</span></a></li>`;
-        })
-        .join("")}</ul>
-    </nav>`;
+  const items = languages
+    .map((l) => `<li><a href="${pathFor(l, page)}" hreflang="${l}" lang="${l}" data-lang="${l}"${l === t.lang ? ' aria-current="true"' : ""}>${flagImg(l)}<span>${esc(langMeta[l].name)}</span></a></li>`)
+    .join("");
+  if (extraClass === "lang-switch-footer") {
+    return `<nav class="lang-switch lang-switch-footer" aria-label="${esc(t.nav.langLabel)}"><ul>${items}</ul></nav>`;
+  }
+  return `<details class="lang-menu" data-lang-menu>
+      <summary aria-label="${esc(t.nav.langLabel)}: ${esc(langMeta[t.lang].name)}">${flagImg(t.lang, 22).replace(' loading="lazy"', "")}<span class="lang-code">${t.lang.toUpperCase()}</span><svg class="icon lang-caret" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <nav aria-label="${esc(t.nav.langLabel)}"><ul class="lang-list">${items}</ul></nav>
+    </details>`;
 }
-const LANG_NAMES = { fr: "Français", en: "English", de: "Deutsch", ru: "Русский" };
+
+// Runs before the page paints. First visit, no saved choice: switch to the
+// browser's language when that version exists. A choice made in the menu is
+// saved and always wins. Crawlers are never redirected, so every language
+// version stays indexable.
+function languageScript(t, page) {
+  const alternates = Object.fromEntries(languages.map((l) => [l, pathFor(l, page)]));
+  return `<script>(function(){try{var a=${JSON.stringify(alternates)},cur=${JSON.stringify(t.lang)},s=null;try{s=localStorage.getItem("lang")}catch(e){}
+if(/bot|crawl|spider|slurp|lighthouse|inspection|preview|facebookexternalhit|embedly|whatsapp|telegram|headless/i.test(navigator.userAgent)||/[?&]lang=keep/.test(location.search))return;
+if(s){if(s!==cur&&a[s])location.replace(a[s]+location.search+location.hash);return}
+var p=navigator.languages||[navigator.language||""];for(var i=0;i<p.length;i++){var c=String(p[i]).slice(0,2).toLowerCase();if(a[c]){if(c!==cur)location.replace(a[c]+location.search+location.hash);return}}}catch(e){}})();</script>`;
+}
 
 function header(t, page) {
-  const links = pages
-    .filter((p) => p !== "contact")
+  const links = headerPages
     .map(
       (p) =>
         `<li><a href="${pathFor(t.lang, p)}"${p === page ? ' aria-current="page"' : ""}>${esc(t.nav[p])}</a></li>`,
@@ -184,9 +210,19 @@ function footer(t, page) {
 </footer>`;
 }
 
-function breadcrumbs(t, page, label) {
+function crumbTrail(t, page) {
+  const trail = [{ name: t.common.breadcrumbHome, page: "home" }];
+  if (parents[page]) trail.push({ name: t.nav[parents[page]], page: parents[page] });
+  trail.push({ name: t.nav[page], page });
+  return trail;
+}
+
+function breadcrumbs(t, page) {
+  const trail = crumbTrail(t, page);
   return `<nav class="breadcrumbs" aria-label="Breadcrumb">
-      <ol><li><a href="${pathFor(t.lang, "home")}">${esc(t.common.breadcrumbHome)}</a></li><li aria-current="page">${esc(label)}</li></ol>
+      <ol>${trail
+        .map((c, i) => (i < trail.length - 1 ? `<li><a href="${pathFor(t.lang, c.page)}">${esc(c.name)}</a></li>` : `<li aria-current="page">${esc(c.name)}</li>`))
+        .join("")}</ol>
     </nav>`;
 }
 
@@ -194,10 +230,7 @@ function breadcrumbLd(t, page) {
   return {
     "@type": "BreadcrumbList",
     "@id": `${urlFor(t.lang, page)}#breadcrumb`,
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: t.common.breadcrumbHome, item: urlFor(t.lang, "home") },
-      { "@type": "ListItem", position: 2, name: t.nav[page], item: urlFor(t.lang, page) },
-    ],
+    itemListElement: crumbTrail(t, page).map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: urlFor(t.lang, c.page) })),
   };
 }
 
@@ -286,7 +319,7 @@ function ctaBand(t, title, text) {
 function pageHero(t, page, h1, lead) {
   return `<section class="page-hero">
     <div class="container">
-      ${breadcrumbs(t, page, t.nav[page])}
+      ${breadcrumbs(t, page)}
       <h1>${esc(h1)}</h1>
       ${ornament}
       <p class="lead">${esc(lead)}</p>
@@ -297,7 +330,7 @@ function pageHero(t, page, h1, lead) {
 export function layout(t, page, body, extraLd = [], { og = null } = {}) {
   const meta = t.meta[page];
   return `<!doctype html>
-<html lang="${t.lang}" dir="ltr">
+<html lang="${t.lang}" dir="${langMeta[t.lang].dir || "ltr"}">
 ${head(t, page, meta, og)}
 <body class="page-${page}">
 ${header(t, page)}
@@ -312,6 +345,10 @@ ${jsonLd({ "@context": "https://schema.org", "@graph": [...baseGraph(t, page), .
 }
 
 // ---------------------------------------------------------------- pages
+
+// Tour categories and tours that have their own landing page.
+const categoryLanding = { groups: "group", thematic: "thematic", special: "group" };
+const tourLanding = { corporate: "corporate", seniors: "seniors", enlightenment: "thematic", "chateau-life": "thematic", gardens: "thematic", discovery: "group", town: "group" };
 
 const tourById = Object.fromEntries(
   tourCategories.flatMap((c) => c.tours.map((tour) => [tour.id, { ...tour, category: c.id }])),
@@ -342,6 +379,7 @@ function tourCard(t, tour, { compact = false } = {}) {
       <ul class="checklist">${item.highlights.map((h) => `<li>${icon("check")}${esc(h)}</li>`).join("")}</ul>
       ${meta}
       <p class="ideal"><strong>${esc(t.tours.labels.idealFor)}${colon(t)}</strong> ${esc(item.idealFor)}</p>
+      ${tourLanding[tour.id] ? `<p class="more-link"><a class="text-link" href="${pathFor(t.lang, tourLanding[tour.id])}">${esc(t.common.more)} ${icon("arrow")}</a></p>` : ""}
       <a class="btn btn-outline btn-sm" href="${bookHref}">${esc(
         ["individual"].includes(tourGroupType[tour.id]) ? t.tours.labels.book : t.tours.labels.quote,
       )} ${icon("arrow")}</a>
@@ -437,7 +475,7 @@ export function homePage(t) {
     ${ornament}
     <p class="section-lead">${esc(h.audiencesLead)}</p>
     <ul class="audience-grid">
-      ${h.audiences.map((a) => `<li><a class="card audience-card" href="${pathFor(t.lang, "tours")}#${audienceAnchor[a.key]}">
+      ${h.audiences.map((a) => `<li><a class="card audience-card" href="${audienceHref(t, a.key)}">
         <span class="card-icon">${icon(audienceIcon[a.key])}</span>
         <span class="audience-title">${esc(a.title)}</span>
         <span class="audience-text">${esc(a.text)}</span>
@@ -448,6 +486,19 @@ export function homePage(t) {
 </section>
 
 ${featuredQuote(t)}
+
+<section class="section daytrip" aria-labelledby="daytrip-title">
+  <div class="container daytrip-grid">
+    <div>
+      <h2 id="daytrip-title">${esc(h.daytrip.title)}</h2>
+      ${ornament}
+      ${h.daytrip.text.map((x) => `<p>${esc(x)}</p>`).join("")}
+      <p class="btn-row"><a class="btn btn-primary" href="${pathFor(t.lang, "tours")}">${esc(h.daytrip.link)}</a>
+      <a class="btn btn-outline" href="${pathFor(t.lang, "practical")}">${esc(t.nav.practical)}</a></p>
+    </div>
+    <figure class="daytrip-photo"><img src="/assets/img/chateau-de-voltaire-facade.jpg" alt="${esc(h.daytrip.imgAlt)}" width="640" height="480" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="section" aria-labelledby="themes-title">
   <div class="container">
@@ -500,6 +551,7 @@ ${tourCategories
     ${ornament}
     <p class="section-lead">${esc(tt.categories[c.id].intro)}</p>
     <div class="tour-grid">${c.tours.map((tour) => tourCard(t, tour)).join("")}</div>
+    ${categoryLanding[c.id] ? `<p class="center"><a class="text-link" href="${pathFor(t.lang, categoryLanding[c.id])}">${esc(t.nav[categoryLanding[c.id]])} · ${esc(t.common.more)} ${icon("arrow")}</a></p>` : ""}
   </div>
 </section>`,
   )
@@ -678,6 +730,103 @@ ${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
   return layout(t, "gallery", body, ld, { og });
 }
 
+// Landing pages (group hub, corporate, seniors, thematic) share one layout:
+// intro, formats, reasons, a note for organisers, FAQ and call to action.
+const landingFormatLinks = {
+  group: (t) => [pathFor(t.lang, "corporate"), pathFor(t.lang, "seniors"), pathFor(t.lang, "thematic"), `${pathFor(t.lang, "tours")}#cat-groups`, `${pathFor(t.lang, "tours")}#schools`],
+};
+const landingIcons = {
+  group: ["handshake", "bench", "book", "columns", "pupil"],
+  corporate: ["users", "handshake", "key"],
+  seniors: ["bench", "access", "quill"],
+  thematic: ["book", "map", "quill", "leaf"],
+};
+const landingContactType = { group: "tourist", corporate: "corporate", seniors: "seniors", thematic: "private" };
+const landingTripTypes = { group: "Groups", corporate: "Business travellers", seniors: "Seniors", thematic: "Cultural groups" };
+
+export function landingPage(t, key) {
+  const d = t[key];
+  const links = landingFormatLinks[key]?.(t) || [];
+  const contact = `${pathFor(t.lang, "contact")}?type=${landingContactType[key]}#booking`;
+  const body = `
+${pageHero(t, key, d.h1, d.lead)}
+<section class="section">
+  <div class="container narrow landing-intro">
+    <h2>${esc(d.introTitle)}</h2>
+    ${ornament}
+    ${d.intro.map((x) => `<p>${esc(x)}</p>`).join("")}
+    <p class="btn-row"><a class="btn btn-primary" href="${contact}">${esc(t.cta.quote)}</a></p>
+  </div>
+</section>
+<section class="section section-tinted" aria-labelledby="formats-title">
+  <div class="container">
+    <h2 id="formats-title" class="section-title">${esc(d.formatsTitle)}</h2>
+    ${ornament}
+    <div class="info-grid${d.formats.length === 4 ? " info-grid-2" : ""}">
+      ${d.formats
+        .map((f, i) => {
+          const title = links[i] ? `<a href="${links[i]}">${esc(f.title)}</a>` : esc(f.title);
+          return `<article class="card info-card${links[i] ? " link-card" : ""}"><span class="card-icon">${icon(landingIcons[key][i] || "check")}</span><h3>${title}</h3><p>${esc(f.text)}</p></article>`;
+        })
+        .join("")}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container about-split">
+    <div class="facts">
+      <h2>${esc(d.whyTitle)}</h2>
+      <ul class="checklist checklist-lg">${d.why.map((x) => `<li>${icon("check")}${esc(x)}</li>`).join("")}</ul>
+    </div>
+    <aside class="pull-quote note-box"><h2>${esc(d.noteTitle)}</h2><p>${esc(d.noteText)}</p></aside>
+  </div>
+</section>
+<section class="section section-tinted" aria-labelledby="landing-faq-title">
+  <div class="container narrow">
+    <h2 id="landing-faq-title" class="section-title">${esc(d.faqTitle)}</h2>
+    ${ornament}
+    <div class="faq">${d.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("")}</div>
+  </div>
+</section>
+${ctaBand(t, d.ctaTitle, d.ctaText)}`;
+
+  const ld = [
+    {
+      "@type": "TouristTrip",
+      "@id": `${urlFor(t.lang, key)}#trip`,
+      name: d.h1,
+      description: t.meta[key].description,
+      url: urlFor(t.lang, key),
+      touristType: landingTripTypes[key],
+      inLanguage: tourLanguages,
+      provider: { "@id": `${site.origin}/#business` },
+      itinerary: { "@id": `${site.origin}/#chateau` },
+      ...offerLd(t, key),
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${urlFor(t.lang, key)}#faq`,
+      mainEntity: d.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ];
+  return layout(t, key, body, ld);
+}
+
+// Price data for structured data, only when real prices are set in config.
+function offerLd(t, key) {
+  const price = site.prices?.[key];
+  if (!price) return {};
+  return {
+    offers: {
+      "@type": "Offer",
+      price: price.from,
+      priceCurrency: site.currency || "EUR",
+      url: `${site.origin}${pathFor(t.lang, "contact")}`,
+      ...(price.description ? { description: price.description } : {}),
+    },
+  };
+}
+
 export function aboutPage(t) {
   const a = t.about;
   const body = `
@@ -716,7 +865,7 @@ ${ctaBand(t, a.ctaTitle, a.ctaText)}`;
 
 export function practicalPage(t) {
   const p = t.practical;
-  const accessIcons = ["car", "bus", "plane"];
+  const accessIcons = ["car", "bus", "users", "plane"];
   const body = `
 ${pageHero(t, "practical", p.h1, p.lead)}
 <section class="section" aria-labelledby="meet-title">
@@ -738,7 +887,15 @@ ${pageHero(t, "practical", p.h1, p.lead)}
     </div>
   </div>
 </section>
-<section class="section" aria-labelledby="dur-title">
+<section class="section" aria-labelledby="prices-title">
+  <div class="container narrow prices">
+    <h2 id="prices-title" class="section-title">${esc(p.pricesTitle)}</h2>
+    ${ornament}
+    <ul class="checklist checklist-lg">${p.prices.map((x) => `<li>${icon("check")}${esc(x)}</li>`).join("")}</ul>
+    <p class="center"><a class="btn btn-primary" href="${pathFor(t.lang, "contact")}?type=tourist#booking">${esc(p.pricesLink)}</a></p>
+  </div>
+</section>
+<section class="section section-tinted" aria-labelledby="dur-title">
   <div class="container two-col">
     <div>
       <h2 id="dur-title">${icon("clock", "icon icon-title")} ${esc(p.durationTitle)}</h2>
@@ -826,7 +983,7 @@ ${pageHero(t, "contact", c.h1, c.lead)}
         <div class="field">
           <label for="f-lang">${esc(f.language)} ${req}</label>
           <select id="f-lang" name="tour_language" required>
-            ${languages.map((l) => `<option value="${LANG_NAMES[l]}"${l === t.lang ? " selected" : ""}>${LANG_NAMES[l]}</option>`).join("")}
+            ${tourLanguages.map((l) => `<option value="${langMeta[l].name}"${l === (tourLanguages.includes(t.lang) ? t.lang : "en") ? " selected" : ""}>${langMeta[l].name}</option>`).join("")}
           </select>
         </div>
         <div class="field field-full">
@@ -877,7 +1034,7 @@ export function notFoundPage(t) {
   <title>404 — ${esc(t.notFound.title)} | ${esc(site.brand)}</title>
   <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="${FONTS_URL}">
+  <link rel="stylesheet" href="${fontsUrl(t.lang)}">
   <link rel="stylesheet" href="/assets/styles.css?v=${ASSET_VERSION}">
 </head>
 <body>
@@ -887,7 +1044,7 @@ export function notFoundPage(t) {
     <h1>${esc(t.notFound.title)}</h1>
     ${ornament}
     <p class="lead">${esc(t.notFound.text)}</p>
-    <p class="btn-row btn-row-center">${languages.map((l) => `<a class="btn btn-outline btn-sm" href="/${l}/" lang="${l}">${esc(LANG_NAMES[l])}</a>`).join("")}</p>
+    <p class="btn-row btn-row-center">${languages.map((l) => `<a class="btn btn-outline btn-sm" href="/${l}/" lang="${l}">${flagImg(l)} ${esc(langMeta[l].name)}</a>`).join("")}</p>
   </div>
 </main>
 </body>
@@ -943,7 +1100,7 @@ export function rootPage(all) {
     <h1>Château de Voltaire · Ferney-Voltaire</h1>
     ${ornament}
     <ul class="root-langs">
-      ${languages.map((l) => `<li><a class="btn btn-outline" href="/${l}/" lang="${l}" hreflang="${l}">${esc(LANG_NAMES[l])}<span>${esc(all[l].home.h1)}</span></a></li>`).join("")}
+      ${languages.map((l) => `<li><a class="btn btn-outline" href="/${l}/" lang="${l}" hreflang="${l}" dir="${langMeta[l].dir || "ltr"}">${flagImg(l, 28)}<strong>${esc(langMeta[l].name)}</strong><span>${esc(all[l].home.h1)}</span></a></li>`).join("")}
     </ul>
   </div>
 </main>

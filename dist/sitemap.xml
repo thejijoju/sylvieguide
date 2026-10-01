@@ -161,6 +161,182 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/tours/"/>
   </url>
   <url>
+    <loc>https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/en/group-tours/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/entreprises/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/entreprises/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/firmen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/kompanii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/entreprises/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/firmen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/kompanii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/firmen/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/entreprises/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/firmen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/kompanii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/kompanii/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/entreprises/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/firmen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/kompanii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/corporate-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/seniors/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/seniors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/senioren/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/starshee-pokolenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/seniors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/senioren/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/starshee-pokolenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/senioren/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/seniors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/senioren/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/starshee-pokolenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/starshee-pokolenie/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-de-groupe/seniors/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/gruppenfuehrungen/senioren/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/gruppovye-ekskursii/starshee-pokolenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/group-tours/senior-groups/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/fr/visites-thematiques/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-thematiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/themenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/tematicheskie-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/en/thematic-tours/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-thematiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/themenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/tematicheskie-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/de/themenfuehrungen/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-thematiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/themenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/tematicheskie-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+  </url>
+  <url>
+    <loc>https://www.sylvie-guide-voltaire.com/ru/tematicheskie-ekskursii/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.sylvie-guide-voltaire.com/fr/visites-thematiques/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sylvie-guide-voltaire.com/de/themenfuehrungen/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sylvie-guide-voltaire.com/ru/tematicheskie-ekskursii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/thematic-tours/"/>
+  </url>
+  <url>
     <loc>https://www.sylvie-guide-voltaire.com/fr/a-propos/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>

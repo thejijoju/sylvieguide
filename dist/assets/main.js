@@ -26,7 +26,7 @@
   // Links in the switcher keep the current anchor and query (e.g. a
   // pre-selected tour) when changing language.
   try { localStorage.setItem("lang", document.documentElement.lang); } catch (e) {}
-  document.querySelectorAll(".lang-switch a[data-lang]").forEach(function (a) {
+  document.querySelectorAll("a[data-lang]").forEach(function (a) {
     a.addEventListener("click", function () {
       try { localStorage.setItem("lang", a.getAttribute("data-lang")); } catch (e) {}
       if (location.search || location.hash) a.href = a.pathname + location.search + location.hash;
@@ -113,6 +113,14 @@
       if (e.key === "ArrowRight") showShot(current + 1);
     });
   }
+
+  // Language menu: close on outside click or Escape
+  document.querySelectorAll("[data-lang-menu]").forEach(function (menu) {
+    document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+    menu.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); }
+    });
+  });
 
   // Booking form
   var form = document.querySelector("[data-booking-form]");
