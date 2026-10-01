@@ -61,12 +61,9 @@ structure exactly.
 
 ## Before going live — checklist
 
-**Facts to verify first.** These were supplied for SEO but could not be checked from here:
-- TPG bus lines **60 and 61** to Ferney-Voltaire (Practical info, Senior groups).
-- **Coach parking on site** (Practical info, Senior groups, Group tours).
-- **15 minutes from Geneva Airport (GVA) and Palexpo** (several pages).
-Edit them in `src/i18n/*.mjs` if anything is wrong; a wrong bus number on a guide's site costs
-trust.
+**Access facts (confirmed by Sylvie's team, October 2026):** TPG bus lines 60 and 61 to
+Ferney-Voltaire, coach parking on site, and 15 minutes from Geneva Airport (GVA) and
+Palexpo. If any of these change, update them in `src/i18n/*.mjs` (all 16 languages).
 
 **Search-result extras:** add starting prices in `site.prices` in `src/config.mjs`, and they
 appear as offers in structured data. Review stars need real reviews (Google Business Profile,
