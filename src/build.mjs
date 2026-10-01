@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 
 import { site, languages, pages } from "./config.mjs";
 import { favicon } from "./art.mjs";
+import { photos, details } from "./gallery.mjs";
 import {
   pathFor, urlFor,
   homePage, toursPage, aboutPage, galleryPage, galleryImages, practicalPage, contactPage, notFoundPage, rootPage,
@@ -24,6 +25,11 @@ const all = { fr, en, de, ru };
 const renderers = { home: homePage, tours: toursPage, about: aboutPage, gallery: galleryPage, practical: practicalPage, contact: contactPage };
 
 checkTranslations();
+
+// Photos without a title and legend still appear (titled from their file
+// name), but say so, so captions are never forgotten.
+const uncaptioned = photos.filter((p) => !details[p.file]).map((p) => p.file);
+if (uncaptioned.length) console.warn(`Gallery photos without a title/legend in src/gallery.mjs: ${uncaptioned.join(", ")}`);
 
 // Social images and the touch icon live in src/assets (made by `npm run og`)
 // and are copied along with the CSS and JS.
