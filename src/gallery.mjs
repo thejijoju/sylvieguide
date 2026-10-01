@@ -73,7 +73,21 @@ export const details = {
       ru: "За гравийными дорожками и стрижеными живыми изгородями — небольшая церковь, перестроенная Вольтером в 1761 году. На её фронтоне знаменитое посвящение «Deo erexit Voltaire» — «Богу воздвиг Вольтер».",
     },
   },
-  "05-chateau-de-voltaire-chambre-alcove.jpg": {
+  "05-chateau-de-voltaire-jardin-fontaine.jpg": {
+    title: {
+      fr: "Le jardin et sa fontaine, vus du perron",
+      en: "The garden and its fountain, seen from the steps",
+      de: "Der Garten mit seinem Brunnen, von der Freitreppe aus",
+      ru: "Сад и фонтан, вид с крыльца",
+    },
+    legend: {
+      fr: "Bassin aux nénuphars et sa statue de bronze, ifs taillés en cône, allées de gravier et, sous la galerie vitrée, une terrasse ombragée : l’endroit idéal pour une pause après la visite.",
+      en: "A water-lily basin with its bronze statue, cone-shaped yews, gravel paths and, beneath the glazed gallery, a shaded terrace: the ideal spot for a break after the tour.",
+      de: "Ein Seerosenbecken mit Bronzestatue, kegelförmig geschnittene Eiben, Kieswege und unter der verglasten Galerie eine schattige Terrasse: der ideale Ort für eine Pause nach der Führung.",
+      ru: "Бассейн с кувшинками и бронзовой статуей, подстриженные конусом тисы, гравийные дорожки, а под застеклённой галереей — тенистая терраса: идеальное место для отдыха после экскурсии.",
+    },
+  },
+  "06-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
