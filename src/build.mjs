@@ -14,14 +14,14 @@ import {
   homePage, toursPage, aboutPage, galleryPage, landingPage, galleryImages, VIDEO, practicalPage, contactPage, notFoundPage, rootPage,
 } from "./templates.mjs";
 
-import fr from "./i18n/fr.mjs";
-import en from "./i18n/en.mjs";
-import de from "./i18n/de.mjs";
-import ru from "./i18n/ru.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const out = join(here, "..", "dist");
-const all = { fr, en, de, ru };
+// Every language that has a translation file (see config.mjs).
+const all = Object.fromEntries(
+  await Promise.all(languages.map(async (l) => [l, (await import(`./i18n/${l}.mjs`)).default])),
+);
+const { fr, en } = all;
 const renderers = {
   home: homePage, tours: toursPage, about: aboutPage, gallery: galleryPage, practical: practicalPage, contact: contactPage,
   group: (t) => landingPage(t, "group"), corporate: (t) => landingPage(t, "corporate"),

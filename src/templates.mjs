@@ -20,8 +20,13 @@ const jsonLd = (data) =>
   `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`;
 
 // Typographic conventions differ: « » with spaces in French, „ “ in German…
-const QUOTES = { fr: ["« ", " »"], en: ["“", "”"], de: ["„", "“"], ru: ["«", "»"] };
-const quoted = (t, s) => `${QUOTES[t.lang][0]}${esc(s)}${QUOTES[t.lang][1]}`;
+const QUOTES = {
+  fr: ["« ", " »"], en: ["“", "”"], de: ["„", "“"], ru: ["«", "»"], es: ["«", "»"], it: ["«", "»"],
+  pt: ["«", "»"], nl: ["“", "”"], pl: ["„", "”"], uk: ["«", "»"], zh: ["“", "”"], ja: ["「", "」"],
+  ko: ["“", "”"], ar: ["«", "»"], hi: ["“", "”"], tr: ["“", "”"],
+};
+const quoteMarks = (t) => QUOTES[t.lang] || QUOTES.en;
+const quoted = (t, s) => `${quoteMarks(t)[0]}${esc(s)}${quoteMarks(t)[1]}`;
 const colon = (t) => (t.lang === "fr" ? "\u00a0:" : ":");
 
 const ASSET_VERSION = Date.now().toString(36);
@@ -48,8 +53,10 @@ const fmtDuration = (t, min) => {
   if (min < 60) return `${min} ${t.common.minutes}`;
   const h = Math.floor(min / 60);
   const m = min % 60;
-  const hour = { fr: "h", en: "h", de: "Std.", ru: "ч" }[t.lang];
-  return m ? `${h} ${hour} ${m}` : `${h} ${hour}`;
+  const hour = { fr: "h", en: "h", de: "Std.", ru: "ч", es: "h", it: "h", pt: "h", nl: "u", pl: "godz.", uk: "год", zh: "小时", ja: "時間", ko: "시간", ar: "س", hi: "घंटा", tr: "sa" }[t.lang] || "h";
+  if (!m) return `${h} ${hour}`;
+  // FR/EN/DE/RU write "1 h 15"; other languages spell out the minutes.
+  return ["fr", "en", "de", "ru"].includes(t.lang) ? `${h} ${hour} ${m}` : `${h} ${hour} ${m} ${t.common.minutes}`;
 };
 
 // ---------------------------------------------------------------- layout
@@ -559,7 +566,7 @@ ${tourCategories
 <section class="quote-band quote-band-white" aria-label="Voltaire">
   <div class="container">
     <blockquote lang="${t.lang}">
-      <span class="quote-mark" aria-hidden="true">${QUOTES[t.lang][0].trim()}</span>
+      <span class="quote-mark" aria-hidden="true">${quoteMarks(t)[0].trim()}</span>
       <p>${esc(t.common.quote)}</p>
       <footer>${t.common.quoteSource}</footer>
     </blockquote>
@@ -606,7 +613,7 @@ function featuredQuote(t) {
   return `<section class="quote-band" aria-label="Voltaire">
   <div class="container">
     <blockquote lang="${t.lang}">
-      <span class="quote-mark" aria-hidden="true">${QUOTES[t.lang][0].trim()}</span>
+      <span class="quote-mark" aria-hidden="true">${quoteMarks(t)[0].trim()}</span>
       <p>${esc(t.common.featuredQuote)}</p>
       <footer>${t.common.featuredQuoteSource}</footer>
     </blockquote>
@@ -623,8 +630,8 @@ function featuredQuote(t) {
 const MIN_TILES = 6;
 const photoUrl = (p) => `/assets/gallery/${encodeURIComponent(p.file)}`;
 const photoText = (t, p) => ({
-  title: p.title[t.lang] || p.title.fr,
-  legend: p.legend[t.lang] || p.legend.fr || "",
+  title: p.title[t.lang] || p.title.en || p.title.fr,
+  legend: p.legend[t.lang] || p.legend.en || p.legend.fr || "",
 });
 const photoAlt = (t, p) => {
   const { title } = photoText(t, p);

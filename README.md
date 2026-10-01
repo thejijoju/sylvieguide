@@ -10,19 +10,39 @@ senior clubs, schools, tour operators) and individual tours.
 *build command* to `npm run build` and the *publish directory* to `dist`. Every change
 pushed to GitHub, including photos uploaded from the web, then goes live automatically.
 
-## Pages (×4 languages = 24 pages)
+## Site structure (10 pages per language)
 
-| Page | FR | EN | DE | RU |
-|---|---|---|---|---|
-| Home | `/fr/` | `/en/` | `/de/` | `/ru/` |
-| Tours | `/fr/visites/` | `/en/tours/` | `/de/fuehrungen/` | `/ru/ekskursii/` |
-| About | `/fr/a-propos/` | `/en/about/` | `/de/ueber-mich/` | `/ru/obo-mne/` |
-| Gallery | `/fr/galerie/` | `/en/gallery/` | `/de/galerie/` | `/ru/galereya/` |
-| Practical info | `/fr/infos-pratiques/` | `/en/practical-info/` | `/de/praktische-infos/` | `/ru/prakticheskaya-informatsiya/` |
-| Contact / booking | `/fr/contact/` | `/en/contact/` | `/de/kontakt/` | `/ru/kontakty/` |
+| Page | Focus | EN | FR |
+|---|---|---|---|
+| Home | Guided tours Château de Voltaire & Ferney-Voltaire, day trip from Geneva | `/en/` | `/fr/` |
+| Tours | All tours, private tour of the Castle of Voltaire | `/en/tours/` | `/fr/visites/` |
+| Group tours | Group booking, guided visits | `/en/group-tours/` | `/fr/visites-de-groupe/` |
+| ↳ Corporate groups | Corporate outings, team building, incentives (MICE) | `/en/group-tours/corporate-groups/` | `/fr/visites-de-groupe/entreprises/` |
+| ↳ Senior groups | Accessible senior visits, coach tours and parking | `/en/group-tours/senior-groups/` | `/fr/visites-de-groupe/seniors/` |
+| Thematic tours | Enlightenment, Voltaire and Geneva, literary tours | `/en/thematic-tours/` | `/fr/visites-thematiques/` |
+| About | Sylvie | `/en/about/` | `/fr/a-propos/` |
+| Gallery | Photos | `/en/gallery/` | `/fr/galerie/` |
+| Practical info | Prices, coach parking, access from GVA, Palexpo, TPG | `/en/practical-info/` | `/fr/infos-pratiques/` |
+| Contact | Booking form | `/en/contact/` | `/fr/contact/` |
 
-`/` sends visitors to their language: first their saved choice, then their browser language.
-It also serves as the `x-default` language chooser.
+German and Russian have their own localized URLs (see `src/config.mjs`). Every other
+language uses the English URLs under its own prefix (`/es/group-tours/…`).
+
+## Languages
+
+The site supports 16 languages: FR, EN, DE, RU, ES, IT, PT, NL, PL, UK, ZH, JA, KO, AR
+(right-to-left), HI and TR. A language goes live as soon as its file `src/i18n/<code>.mjs`
+exists. `node src/check-i18n.mjs <code>` verifies that a translation matches the English
+structure exactly.
+
+- **Header:** a flag dropdown with every language. **Footer:** all languages with flags.
+  Flags come from [flag-icons](https://github.com/lipis/flag-icons) (MIT).
+- **Browser language:** `/` sends visitors to their browser's language. On a first visit to
+  any page, they are switched to their language's version of that page. A language chosen in
+  the menu is remembered and always wins. Crawlers are never redirected, so every language
+  stays indexable, and `?lang=keep` disables the switch for a link.
+- **Tour languages:** Sylvie guides in FR, EN, DE and RU. The other translations say so;
+  they don't promise tours in, say, Spanish.
 
 ## SEO built in
 
@@ -40,6 +60,18 @@ It also serves as the `x-default` language chooser.
   small deferred JS file. Fonts load with `display=swap`.
 
 ## Before going live — checklist
+
+**Facts to verify first.** These were supplied for SEO but could not be checked from here:
+- TPG bus lines **60 and 61** to Ferney-Voltaire (Practical info, Senior groups).
+- **Coach parking on site** (Practical info, Senior groups, Group tours).
+- **15 minutes from Geneva Airport (GVA) and Palexpo** (several pages).
+Edit them in `src/i18n/*.mjs` if anything is wrong; a wrong bus number on a guide's site costs
+trust.
+
+**Search-result extras:** add starting prices in `site.prices` in `src/config.mjs`, and they
+appear as offers in structured data. Review stars need real reviews (Google Business Profile,
+TripAdvisor); never add invented ratings.
+
 
 All placeholders live in **`src/config.mjs`**:
 
