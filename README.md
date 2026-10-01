@@ -74,6 +74,15 @@ Then check the copy in `src/i18n/*.mjs`:
   the château can replace the illustration: put an `<img>` inside `.hero-media` in
   `src/templates.mjs`.
 
+**SEO check:** `npm run build && npm run seo` audits every page. It checks title and
+description lengths, duplicates, a single `h1`, canonical and `hreflang` (all present and
+pointing at real pages), Open Graph, image alt text and sizes, broken internal links, valid
+JSON-LD, sitemap coverage and the target keywords. It fails on errors. Run it after every
+change.
+
+At launch, also fill in `sameAs` (Sylvie's profiles) and `verification` (Google Search
+Console, Bing, Yandex codes) in `src/config.mjs`.
+
 Finally, submit `https://<domain>/sitemap.xml` in Google Search Console and Yandex Webmaster.
 Yandex matters for the Russian-speaking audience. Also create or claim a Google Business Profile.
 

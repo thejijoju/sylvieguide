@@ -18,6 +18,15 @@ export const site = {
   // back to opening the visitor's e-mail client with the request pre-filled.
   formEndpoint: "",
 
+  // Profiles that belong to Sylvie (Instagram, Facebook, LinkedIn,
+  // TripAdvisor, Google Business Profile…). Search engines use them to tie
+  // the site to her. Full URLs.
+  sameAs: [],
+
+  // Ownership codes from each search engine's webmaster tools (only the
+  // content="…" value). Leave empty until you have them.
+  verification: { google: "", bing: "", yandex: "" },
+
   address: {
     name: "Château de Voltaire",
     street: "Allée du Château",

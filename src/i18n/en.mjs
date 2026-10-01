@@ -22,23 +22,23 @@ export default {
 
   meta: {
     home: {
-      title: "Voltaire Castle Tour in Ferney-Voltaire | Sylvie, Official Private Guide",
-      description: "Guided tours of the Château de Voltaire in Ferney-Voltaire, 10 minutes from Geneva. Private guide Sylvie leads individual, group, corporate, senior and school tours in English, French, German and Russian.",
+      title: "Voltaire Castle Tour, Ferney-Voltaire | Sylvie, Private Guide",
+      description: "Guided tours of the Château de Voltaire, 10 min from Geneva. Private guide Sylvie leads individual, group, corporate and school tours in 4 languages.",
     },
     tours: {
-      title: "Voltaire Castle Tours for Groups & Individuals | Ferney-Voltaire near Geneva",
-      description: "Every guided tour of the Château de Voltaire: classic visit, group tours, themed tours (Enlightenment, château life, gardens), corporate team-building, senior-friendly and school visits.",
+      title: "Voltaire Castle Tours for Groups & Individuals near Geneva",
+      description: "Classic visit, group tours, themed tours (Enlightenment, château life, gardens), team-building, senior-friendly and school visits at Voltaire’s château.",
     },
     about: {
-      title: "About Sylvie, Official Guide at the Château de Voltaire | Ferney-Voltaire",
+      title: "About Sylvie, Official Guide at the Château de Voltaire",
       description: "Meet Sylvie, a passionate official guide at Voltaire’s château in Ferney: a storyteller who brings Voltaire and the Enlightenment to life in four languages.",
     },
     gallery: {
-      title: "Photo Gallery of the Château de Voltaire | Guided Tours with Sylvie",
+      title: "Château de Voltaire Photo Gallery | Tours with Sylvie",
       description: "Photos of the Château de Voltaire, its park and hornbeam walks, and guided tours with Sylvie in Ferney-Voltaire near Geneva.",
     },
     practical: {
-      title: "Practical Info: Meeting Points, Getting There, Accessibility | Château de Voltaire",
+      title: "Getting There, Meeting Points & Access | Château de Voltaire",
       description: "Meeting points in Ferney-Voltaire, how to get there from Geneva, tour durations, accessibility and tips for your guided tour of the Château de Voltaire.",
     },
     contact: {
@@ -62,7 +62,7 @@ export default {
       play: "Play the video",
       description: "Sylvie, official guide, opens the door of the Château de Voltaire and welcomes visitors into the entrance hall, in Ferney-Voltaire.",
     },
-    sylviePhotoAlt: "Sylvie, your guide, in the entrance hall of the Château de Voltaire",
+    sylviePhotoAlt: "Sylvie, official guide, in front of the Château de Voltaire in Ferney-Voltaire",
     minutes: "min",
     people: "people",
   },

@@ -7,7 +7,8 @@
   "scripts": {
     "build": "node src/build.mjs",
     "og": "node src/og.mjs",
-    "serve": "npx --yes http-server dist -p 8080 -c-1"
+    "serve": "npx --yes http-server dist -p 8080 -c-1",
+    "seo": "node src/seo-check.mjs"
   },
   "engines": {
     "node": ">=18"

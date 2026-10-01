@@ -68,6 +68,9 @@ function head(t, page, { title, description }, og = null) {
   ${alternates}
   <link rel="alternate" hreflang="x-default" href="${xDefault}">
   <meta name="theme-color" content="#1f2a44">
+  ${site.verification.google ? `<meta name="google-site-verification" content="${esc(site.verification.google)}">` : ""}
+  ${site.verification.bing ? `<meta name="msvalidate.01" content="${esc(site.verification.bing)}">` : ""}
+  ${site.verification.yandex ? `<meta name="yandex-verification" content="${esc(site.verification.yandex)}">` : ""}
   <meta name="geo.region" content="FR-01">
   <meta name="geo.placename" content="Ferney-Voltaire">
 
@@ -225,6 +228,7 @@ function baseGraph(t, page) {
       knowsLanguage: ["fr", "en", "de", "ru"],
       worksFor: { "@id": `${site.origin}/#business` },
       image: site.origin + SYLVIE_PHOTO,
+      ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
       url: urlFor(t.lang, "about"),
     },
     {
@@ -239,6 +243,8 @@ function baseGraph(t, page) {
       address: addr,
       areaServed: ["Ferney-Voltaire", "Pays de Gex", "Genève", "Geneva"],
       founder: { "@id": `${site.origin}/#sylvie` },
+      logo: `${site.origin}/assets/apple-touch-icon.png`,
+      ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
       availableLanguage: ["French", "English", "German", "Russian"],
     },
     {
@@ -705,7 +711,7 @@ ${pageHero(t, "about", a.h1, a.lead)}
   </div>
 </section>
 ${ctaBand(t, a.ctaTitle, a.ctaText)}`;
-  return layout(t, "about", body);
+  return layout(t, "about", body, [], { og: { url: site.origin + SYLVIE_PHOTO, width: 800, height: 1000, alt: t.common.sylviePhotoAlt } });
 }
 
 export function practicalPage(t) {

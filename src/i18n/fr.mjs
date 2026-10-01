@@ -22,23 +22,23 @@ export default {
 
   meta: {
     home: {
-      title: "Visite guidée du Château de Voltaire à Ferney | Sylvie, guide officielle",
-      description: "Visite guidée du Château de Voltaire à Ferney-Voltaire avec Sylvie, guide officielle. Visites privées, groupes, scolaires, seniors et séminaires d’entreprise, en français, anglais, allemand et russe.",
+      title: "Visite guidée du Château de Voltaire | Sylvie, guide officielle",
+      description: "Visite guidée du Château de Voltaire à Ferney-Voltaire avec Sylvie, guide officielle : particuliers, groupes, scolaires, seniors et entreprises, en 4 langues.",
     },
     tours: {
-      title: "Visites guidées & tarifs groupes au Château de Voltaire | Ferney-Voltaire",
-      description: "Toutes les visites guidées du Château de Voltaire : visite classique, groupes, visites thématiques (Lumières, vie au château, jardins et charmilles), entreprises, seniors et classes.",
+      title: "Visites guidées du Château de Voltaire : groupes et particuliers",
+      description: "Visite classique, groupes, visites thématiques (Lumières, vie au château, jardins), entreprises, seniors et scolaires au Château de Voltaire, Ferney.",
     },
     about: {
-      title: "Sylvie, guide officielle au Château de Voltaire | Ferney-Voltaire",
+      title: "Sylvie, guide officielle au Château de Voltaire, Ferney",
       description: "Découvrez Sylvie, guide officielle passionnée au Château de Voltaire : une conteuse qui fait revivre Voltaire et les Lumières en quatre langues.",
     },
     gallery: {
-      title: "Galerie photos du Château de Voltaire | Visites guidées avec Sylvie",
+      title: "Galerie photos du Château de Voltaire | Sylvie, guide",
       description: "Photos du Château de Voltaire, de son parc, de ses charmilles et des visites guidées avec Sylvie à Ferney-Voltaire.",
     },
     practical: {
-      title: "Infos pratiques : accès, points de rendez-vous, accessibilité | Château de Voltaire",
+      title: "Accès, rendez-vous et accessibilité | Château de Voltaire",
       description: "Points de rendez-vous à Ferney-Voltaire, accès depuis Genève, durée des visites, accessibilité et conseils pour préparer votre visite guidée du Château de Voltaire.",
     },
     contact: {
@@ -62,7 +62,7 @@ export default {
       play: "Lire la vidéo",
       description: "Sylvie, guide officielle, ouvre la porte du Château de Voltaire et accueille les visiteurs dans le vestibule, à Ferney-Voltaire.",
     },
-    sylviePhotoAlt: "Sylvie, votre guide, dans le vestibule du Château de Voltaire",
+    sylviePhotoAlt: "Sylvie, guide officielle, devant le Château de Voltaire à Ferney-Voltaire",
     minutes: "min",
     people: "pers.",
   },

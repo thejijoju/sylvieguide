@@ -22,15 +22,15 @@ export default {
 
   meta: {
     home: {
-      title: "Führungen im Schloss Voltaire in Ferney | Sylvie, offizielle Gästeführerin",
-      description: "Führungen im Schloss Voltaire (Château de Voltaire) in Ferney-Voltaire, 10 Minuten von Genf. Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen auf Deutsch, Französisch, Englisch und Russisch.",
+      title: "Führungen im Schloss Voltaire, Ferney | Sylvie, Gästeführerin",
+      description: "Führungen im Schloss Voltaire in Ferney-Voltaire, 10 Min. von Genf: Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen in 4 Sprachen.",
     },
     tours: {
-      title: "Führungen Schloss Voltaire für Gruppen & Einzelgäste | Ferney-Voltaire bei Genf",
-      description: "Alle Führungen im Château de Voltaire: klassische Besichtigung, Gruppenführungen, Themenführungen (Aufklärung, Schlossleben, Gärten), Firmenevents, Seniorenführungen und Schulklassen.",
+      title: "Führungen Schloss Voltaire für Gruppen & Einzelgäste",
+      description: "Klassische Führung, Gruppen, Themenführungen (Aufklärung, Schlossleben, Gärten), Firmen, Senioren und Schulklassen im Château de Voltaire bei Genf.",
     },
     about: {
-      title: "Über Sylvie, offizielle Gästeführerin im Schloss Voltaire | Ferney-Voltaire",
+      title: "Über Sylvie, Gästeführerin im Schloss Voltaire",
       description: "Lernen Sie Sylvie kennen: offizielle Gästeführerin im Schloss Voltaire in Ferney, die Voltaire und die Aufklärung in vier Sprachen lebendig werden lässt.",
     },
     gallery: {
@@ -38,7 +38,7 @@ export default {
       description: "Fotos vom Château de Voltaire, seinem Park und den Charmilles sowie von Führungen mit Sylvie in Ferney-Voltaire bei Genf.",
     },
     practical: {
-      title: "Praktische Infos: Treffpunkte, Anreise, Barrierefreiheit | Schloss Voltaire",
+      title: "Anreise, Treffpunkte & Barrierefreiheit | Schloss Voltaire",
       description: "Treffpunkte in Ferney-Voltaire, Anreise aus Genf, Dauer der Führungen, Barrierefreiheit und Tipps für Ihre Führung im Château de Voltaire.",
     },
     contact: {
@@ -62,7 +62,7 @@ export default {
       play: "Video abspielen",
       description: "Sylvie, offizielle Gästeführerin, öffnet die Tür des Schlosses Voltaire und empfängt die Besucher in der Eingangshalle, in Ferney-Voltaire.",
     },
-    sylviePhotoAlt: "Sylvie, Ihre Führerin, in der Eingangshalle des Schlosses Voltaire",
+    sylviePhotoAlt: "Sylvie, offizielle Gästeführerin, vor dem Schloss Voltaire in Ferney-Voltaire",
     minutes: "Min.",
     people: "Pers.",
   },

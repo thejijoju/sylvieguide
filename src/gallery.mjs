@@ -75,10 +75,10 @@ export const details = {
   },
   "05-chateau-de-voltaire-jardin-fontaine.jpg": {
     title: {
-      fr: "Le jardin et sa fontaine, vus du perron",
-      en: "The garden and its fountain, seen from the steps",
-      de: "Der Garten mit seinem Brunnen, von der Freitreppe aus",
-      ru: "Сад и фонтан, вид с крыльца",
+      fr: "Sylvie descend vers le jardin et sa fontaine",
+      en: "Sylvie walks down to the garden and its fountain",
+      de: "Sylvie auf dem Weg zum Garten und seinem Brunnen",
+      ru: "Сильви спускается в сад к фонтану",
     },
     legend: {
       fr: "Bassin aux nénuphars et sa statue de bronze, ifs taillés en cône, allées de gravier et, sous la galerie vitrée, une terrasse ombragée : l’endroit idéal pour une pause après la visite.",
@@ -169,6 +169,20 @@ export const details = {
       en: "In a stone niche, Voltaire stands full-length in his cap, hand on hip, with a cane and a book: the mischievous smile of the “Patriarch of Ferney”.",
       de: "In einer Steinnische steht Voltaire in voller Größe, mit Mütze, die Hand an der Hüfte, mit Stock und Buch: das verschmitzte Lächeln des „Patriarchen von Ferney“.",
       ru: "В каменной нише — Вольтер в полный рост, в своём колпаке, рука на бедре, с тростью и книгой: лукавая улыбка «фернейского патриарха».",
+    },
+  },
+  "13-sylvie-guide-devant-chateau-de-voltaire.jpg": {
+    title: {
+      fr: "Sylvie, guide officielle, devant le Château de Voltaire",
+      en: "Sylvie, official guide, in front of the Château de Voltaire",
+      de: "Sylvie, offizielle Gästeführerin, vor dem Schloss Voltaire",
+      ru: "Сильви, официальный гид, перед замком Вольтера",
+    },
+    legend: {
+      fr: "Sur la pelouse du parc, Sylvie devant la façade rose et blanche du château que Voltaire fit reconstruire à Ferney : le point de départ de vos visites guidées.",
+      en: "On the park lawn, Sylvie stands before the pink-and-white façade of the château Voltaire rebuilt at Ferney: the starting point of your guided tours.",
+      de: "Auf dem Rasen des Parks steht Sylvie vor der rosa-weißen Fassade des Schlosses, das Voltaire in Ferney neu errichten ließ: der Ausgangspunkt Ihrer Führungen.",
+      ru: "На лужайке парка Сильви стоит перед розово-белым фасадом замка, перестроенного Вольтером в Ферне: отсюда начинаются ваши экскурсии.",
     },
   },
   "10-chateau-de-voltaire-chambre-alcove.jpg": {
