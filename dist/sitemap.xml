@@ -2518,6 +2518,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie vous guide dans le parc jusqu’à la porte du château</video:title>
+      <video:description>Sylvie, guide officielle, accueille les visiteurs dans le parc du Château de Voltaire et les conduit jusqu’au perron du château, à Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/en/about/</loc>
@@ -2541,6 +2548,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie guides you through the park to the château’s front door</video:title>
+      <video:description>Sylvie, official guide, welcomes visitors in the park of the Château de Voltaire and leads them to the château’s front steps, in Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/de/ueber-mich/</loc>
@@ -2564,6 +2578,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie führt Sie durch den Park bis zur Schlosstür</video:title>
+      <video:description>Sylvie, offizielle Gästeführerin, empfängt die Besucher im Park des Schlosses Voltaire und führt sie bis zur Freitreppe des Schlosses, in Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/ru/obo-mne/</loc>
@@ -2587,6 +2608,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Сильви ведёт вас через парк к дверям замка</video:title>
+      <video:description>Сильви, официальный гид, встречает гостей в парке замка Вольтера и проводит их к крыльцу замка в Ферне-Вольтер.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/es/about/</loc>
@@ -2610,6 +2638,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie le guía por el parque hasta la puerta del castillo</video:title>
+      <video:description>Sylvie, guía oficial, recibe a los visitantes en el parque del Château de Voltaire y los acompaña hasta la escalinata del castillo, en Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/it/about/</loc>
@@ -2633,6 +2668,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie vi guida nel parco fino alla porta del castello</video:title>
+      <video:description>Sylvie, guida ufficiale, accoglie i visitatori nel parco del Château de Voltaire e li accompagna fino alla scalinata del castello, a Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/pt/about/</loc>
@@ -2656,6 +2698,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie guia-o pelo parque até à porta do castelo</video:title>
+      <video:description>Sylvie, guia oficial, recebe os visitantes no parque do Château de Voltaire e acompanha-os até à escadaria do castelo, em Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/nl/about/</loc>
@@ -2679,6 +2728,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie leidt u door het park naar de deur van het kasteel</video:title>
+      <video:description>Sylvie, officiële gids, verwelkomt bezoekers in het park van het Château de Voltaire en brengt hen naar de trappen van het kasteel, in Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/pl/about/</loc>
@@ -2702,6 +2758,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie prowadzi Państwa przez park do drzwi zamku</video:title>
+      <video:description>Sylvie, oficjalna przewodniczka, wita zwiedzających w parku Château de Voltaire i prowadzi ich na schody zamku w Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/uk/about/</loc>
@@ -2725,6 +2788,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Сільві веде вас парком до дверей замку</video:title>
+      <video:description>Сільві, офіційна гідеса, зустрічає відвідувачів у парку замку Вольтера й веде їх до ґанку замку у Ферне-Вольтер.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/zh/about/</loc>
@@ -2748,6 +2818,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>西尔维带您穿过公园，来到城堡大门前</video:title>
+      <video:description>官方导游西尔维在伏尔泰城堡的公园中迎接游客，并带领大家走到城堡的台阶前（费尔奈-伏尔泰）。</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/ja/about/</loc>
@@ -2771,6 +2848,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>シルヴィが公園を抜けて城の扉までご案内</video:title>
+      <video:description>公式ガイドのシルヴィが、ヴォルテール城の公園で訪問者をお迎えし、城の正面階段までご案内します（フェルネー＝ヴォルテール）。</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/ko/about/</loc>
@@ -2794,6 +2878,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>실비가 공원을 지나 성의 정문까지 안내합니다</video:title>
+      <video:description>공식 가이드 실비가 볼테르 성의 공원에서 방문객을 맞이하고 성의 정면 계단까지 안내합니다(페르네볼테르).</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/ar/about/</loc>
@@ -2817,6 +2908,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>سيلفي ترافقكم عبر الحديقة حتى باب القصر</video:title>
+      <video:description>تستقبل سيلفي، المرشدة الرسمية، الزوار في حديقة قصر فولتير وترافقهم حتى درج القصر، في فيرني-فولتير.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/hi/about/</loc>
@@ -2840,6 +2938,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>सिल्वी आपको पार्क से होते हुए शातो के दरवाज़े तक ले जाती हैं</video:title>
+      <video:description>आधिकारिक गाइड सिल्वी वोल्टेयर के शातो के पार्क में आगंतुकों का स्वागत करती हैं और उन्हें शातो की सीढ़ियों तक ले जाती हैं, फ़र्ने-वोल्टेयर में।</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/tr/about/</loc>
@@ -2863,6 +2968,13 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://www.sylvie-guide-voltaire.com/hi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.sylvie-guide-voltaire.com/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sylvie-guide-voltaire.com/en/about/"/>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie sizi parktan şatonun kapısına kadar götürüyor</video:title>
+      <video:description>Resmî rehber Sylvie, ziyaretçileri Château de Voltaire’in parkında karşılıyor ve onları Ferney-Voltaire’de şatonun merdivenlerine kadar götürüyor.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-parc.mp4</video:content_loc>
+      <video:duration>23</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/fr/galerie/</loc>

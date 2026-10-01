@@ -79,6 +79,10 @@ export default {
       "play": "Odtwórz film",
       "description": "Sylvie, oficjalna przewodniczka, otwiera drzwi Château de Voltaire i wita zwiedzających w holu wejściowym, w Ferney-Voltaire."
     },
+    "video2": {
+      "caption": "Sylvie prowadzi Państwa przez park do drzwi zamku",
+      "description": "Sylvie, oficjalna przewodniczka, wita zwiedzających w parku Château de Voltaire i prowadzi ich na schody zamku w Ferney-Voltaire."
+    },
     "sylviePhotoAlt": "Sylvie, oficjalna przewodniczka, przed Château de Voltaire w Ferney-Voltaire",
     "minutes": "min",
     "people": "osób",

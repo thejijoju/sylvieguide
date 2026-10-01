@@ -11,7 +11,7 @@ import { favicon } from "./art.mjs";
 import { photos, details } from "./gallery.mjs";
 import {
   pathFor, urlFor,
-  homePage, toursPage, aboutPage, galleryPage, landingPage, galleryImages, VIDEO, practicalPage, contactPage, notFoundPage, rootPage,
+  homePage, toursPage, aboutPage, galleryPage, landingPage, galleryImages, VIDEOS, practicalPage, contactPage, notFoundPage, rootPage,
 } from "./templates.mjs";
 
 
@@ -80,18 +80,22 @@ ${imageEntries(lang, page)}${videoEntry(lang, page)}  </url>`,
 `;
 await write("sitemap.xml", sitemap);
 
-// The welcome video, listed on each language's home page.
+// Videos, listed on the page that shows them (in every language).
 function videoEntry(lang, page) {
-  if (page !== "home") return "";
   const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-  const v = all[lang].common.video;
-  return `    <video:video>
-      <video:thumbnail_loc>${site.origin}${VIDEO.poster}</video:thumbnail_loc>
-      <video:title>${xml(v.caption)}</video:title>
-      <video:description>${xml(v.description)}</video:description>
-      <video:content_loc>${site.origin}${VIDEO.src}</video:content_loc>
-      <video:duration>${VIDEO.seconds}</video:duration>
+  return Object.values(VIDEOS)
+    .filter((v) => v.page === page)
+    .map((v) => {
+      const text = all[lang].common[v.text];
+      return `    <video:video>
+      <video:thumbnail_loc>${site.origin}${v.poster}</video:thumbnail_loc>
+      <video:title>${xml(text.caption)}</video:title>
+      <video:description>${xml(text.description)}</video:description>
+      <video:content_loc>${site.origin}${v.src}</video:content_loc>
+      <video:duration>${v.seconds}</video:duration>
     </video:video>\n`;
+    })
+    .join("");
 }
 
 // Gallery photos are listed in the image sitemap for the gallery page and the

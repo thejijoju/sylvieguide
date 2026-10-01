@@ -79,6 +79,10 @@ export default {
       "play": "Video abspielen",
       "description": "Sylvie, offizielle Gästeführerin, öffnet die Tür des Schlosses Voltaire und empfängt die Besucher in der Eingangshalle, in Ferney-Voltaire."
     },
+    "video2": {
+      "caption": "Sylvie führt Sie durch den Park bis zur Schlosstür",
+      "description": "Sylvie, offizielle Gästeführerin, empfängt die Besucher im Park des Schlosses Voltaire und führt sie bis zur Freitreppe des Schlosses, in Ferney-Voltaire."
+    },
     "sylviePhotoAlt": "Sylvie, offizielle Gästeführerin, vor dem Schloss Voltaire in Ferney-Voltaire",
     "minutes": "Min.",
     "people": "Pers.",

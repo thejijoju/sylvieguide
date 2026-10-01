@@ -96,12 +96,15 @@ Then check the copy in `src/i18n/*.mjs`:
   grid. Both open a photo full-screen with its legend. Photos are listed in the image
   sitemap and in `ImageGallery` structured data, and the first one is the gallery page's
   sharing image.
-- **Video and portrait:** the home page plays Sylvie's welcome video (`src/assets/video/`,
-  silent, 10 s, WebM + MP4, with a pause button; it stays still for visitors who reduce
-  motion). It is described as a `VideoObject` and listed in the video sitemap. A still from it
-  is Sylvie's portrait on the About page (`src/assets/img/`). For the hero, a wide photo of
-  the château can replace the illustration: put an `<img>` inside `.hero-media` in
-  `src/templates.mjs`.
+- **Videos and portrait:** two silent looping clips of Sylvie (`src/assets/video/`, WebM + MP4,
+  listed in `VIDEOS` in `src/templates.mjs`):
+  - **Welcome** (home page, 10 s): she opens the château door.
+  - **Park** (About page, 23 s): she leads visitors to the front steps.
+
+  Each plays only while on screen, has a pause button, and stays still for visitors who
+  reduce motion. Both are described as `VideoObject` and listed in the video sitemap in all
+  languages. Sylvie's portrait in front of the château is the About-page photo and sharing
+  image (`src/assets/img/`).
 
 **SEO check:** `npm run build && npm run seo` audits every page. It checks title and
 description lengths, duplicates, a single `h1`, canonical and `hreflang` (all present and

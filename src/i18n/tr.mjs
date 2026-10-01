@@ -79,6 +79,10 @@ export default {
       "play": "Videoyu oynat",
       "description": "Resmî rehber Sylvie, Ferney-Voltaire'deki Château de Voltaire'in kapısını açıyor ve ziyaretçileri giriş holünde karşılıyor."
     },
+    "video2": {
+      "caption": "Sylvie sizi parktan şatonun kapısına kadar götürüyor",
+      "description": "Resmî rehber Sylvie, ziyaretçileri Château de Voltaire’in parkında karşılıyor ve onları Ferney-Voltaire’de şatonun merdivenlerine kadar götürüyor."
+    },
     "sylviePhotoAlt": "Resmî rehber Sylvie, Ferney-Voltaire'deki Château de Voltaire'in önünde",
     "minutes": "dk",
     "people": "kişi",

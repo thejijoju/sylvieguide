@@ -79,6 +79,10 @@ export default {
       "play": "Lire la vidéo",
       "description": "Sylvie, guide officielle, ouvre la porte du Château de Voltaire et accueille les visiteurs dans le vestibule, à Ferney-Voltaire."
     },
+    "video2": {
+      "caption": "Sylvie vous guide dans le parc jusqu’à la porte du château",
+      "description": "Sylvie, guide officielle, accueille les visiteurs dans le parc du Château de Voltaire et les conduit jusqu’au perron du château, à Ferney-Voltaire."
+    },
     "sylviePhotoAlt": "Sylvie, guide officielle, devant le Château de Voltaire à Ferney-Voltaire",
     "minutes": "min",
     "people": "pers.",

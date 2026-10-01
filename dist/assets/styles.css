@@ -317,6 +317,7 @@ cite { font-style: italic; }
 .welcome-video.is-playing .icon-pause { display: block; }
 .welcome-video.is-playing .icon-play { display: none; }
 .portrait img { display: block; width: 100%; height: auto; }
+.about-video .facts .pull-quote { margin-top: 32px; }
 
 /* Home page filmstrip: one horizontal line of photos, swipe or arrows */
 .strip { position: relative; margin: 8px 0 8px; }

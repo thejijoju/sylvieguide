@@ -395,38 +395,47 @@ function tourCard(t, tour, { compact = false } = {}) {
 
 // Welcome video of Sylvie: silent, looping, starts by itself unless the
 // visitor prefers reduced motion; a button pauses and resumes it.
-export const VIDEO = { src: "/assets/video/sylvie-accueil.mp4", webm: "/assets/video/sylvie-accueil.webm", poster: "/assets/video/sylvie-accueil-poster.jpg", seconds: 10, width: 720, height: 1280 };
+// Silent looping videos of Sylvie. Each plays only while on screen (and not
+// at all for visitors who prefer reduced motion); a button pauses it.
+// `text` names the caption/description block in t.common.
+export const VIDEOS = {
+  welcome: { page: "home", text: "video", src: "/assets/video/sylvie-accueil.mp4", webm: "/assets/video/sylvie-accueil.webm", poster: "/assets/video/sylvie-accueil-poster.jpg", seconds: 10, width: 720, height: 1280, preload: "metadata" },
+  park: { page: "about", text: "video2", src: "/assets/video/sylvie-parc.mp4", webm: "/assets/video/sylvie-parc.webm", poster: "/assets/video/sylvie-parc-poster.jpg", seconds: 23, width: 720, height: 1280, preload: "none" },
+};
 const SYLVIE_PHOTO = "/assets/img/sylvie-guide-chateau-de-voltaire.jpg";
 
-function welcomeVideo(t) {
-  const v = t.common.video;
+function videoFigure(t, key) {
+  const v = VIDEOS[key];
+  const text = t.common[v.text];
+  const labels = t.common.video;
   return `<figure class="portrait welcome-video" data-video>
       <div class="video-frame">
-      <video poster="${VIDEO.poster}" width="${VIDEO.width}" height="${VIDEO.height}" muted loop playsinline preload="metadata" aria-label="${esc(v.caption)}" data-autoplay>
-        <source src="${VIDEO.webm}" type="video/webm">
-        <source src="${VIDEO.src}" type="video/mp4">
+      <video poster="${v.poster}" width="${v.width}" height="${v.height}" muted loop playsinline preload="${v.preload}" aria-label="${esc(text.caption)}" data-autoplay>
+        <source src="${v.webm}" type="video/webm">
+        <source src="${v.src}" type="video/mp4">
       </video>
-      <button type="button" class="video-toggle" data-video-toggle data-label-pause="${esc(v.pause)}" data-label-play="${esc(v.play)}" aria-label="${esc(v.play)}" hidden>
+      <button type="button" class="video-toggle" data-video-toggle data-label-pause="${esc(labels.pause)}" data-label-play="${esc(labels.play)}" aria-label="${esc(labels.play)}" hidden>
         <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14"/></svg>
         <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l12-7.5z"/></svg>
       </button>
       </div>
-      <figcaption>${esc(v.caption)}</figcaption>
+      <figcaption>${esc(text.caption)}</figcaption>
     </figure>`;
 }
 
-function videoLd(t) {
+export function videoLd(t, key) {
+  const v = VIDEOS[key];
   return {
     "@type": "VideoObject",
-    "@id": `${urlFor(t.lang, "home")}#welcome-video`,
-    name: t.common.video.caption,
-    description: t.common.video.description,
-    thumbnailUrl: site.origin + VIDEO.poster,
-    contentUrl: site.origin + VIDEO.src,
+    "@id": `${urlFor(t.lang, v.page)}#video-${key}`,
+    name: t.common[v.text].caption,
+    description: t.common[v.text].description,
+    thumbnailUrl: site.origin + v.poster,
+    contentUrl: site.origin + v.src,
     uploadDate: "2026-10-01",
-    duration: `PT${VIDEO.seconds}S`,
-    width: VIDEO.width,
-    height: VIDEO.height,
+    duration: `PT${v.seconds}S`,
+    width: v.width,
+    height: v.height,
     inLanguage: t.lang,
     contentLocation: { "@id": `${site.origin}/#chateau` },
   };
@@ -456,7 +465,7 @@ export function homePage(t) {
 
 <section class="section intro" aria-labelledby="intro-title">
   <div class="container intro-grid">
-    ${welcomeVideo(t)}
+    ${videoFigure(t, "welcome")}
     <div>
       <h2 id="intro-title">${esc(h.introTitle)}</h2>
       ${ornament}
@@ -540,7 +549,7 @@ ${photos.length ? lightbox(t) : ""}
 </section>
 
 ${ctaBand(t, h.ctaTitle, h.ctaText)}`;
-  return layout(t, "home", body, [videoLd(t)]);
+  return layout(t, "home", body, [videoLd(t, "welcome")]);
 }
 
 export function toursPage(t) {
@@ -858,16 +867,18 @@ ${pageHero(t, "about", a.h1, a.lead)}
   </div>
 </section>
 <section class="section">
-  <div class="container about-split">
+  <div class="container intro-grid about-video">
+    ${videoFigure(t, "park")}
     <div class="facts">
       <h2>${esc(a.factsTitle)}</h2>
+      ${ornament}
       <ul class="checklist checklist-lg">${a.facts.map((f) => `<li>${icon("check")}${esc(f)}</li>`).join("")}</ul>
+      <blockquote class="pull-quote"><p>${quoted(t, a.quoteText)}</p><footer>— ${esc(site.guideName)}</footer></blockquote>
     </div>
-    <blockquote class="pull-quote"><p>${quoted(t, a.quoteText)}</p><footer>— ${esc(site.guideName)}</footer></blockquote>
   </div>
 </section>
 ${ctaBand(t, a.ctaTitle, a.ctaText)}`;
-  return layout(t, "about", body, [], { og: { url: site.origin + SYLVIE_PHOTO, width: 800, height: 1000, alt: t.common.sylviePhotoAlt } });
+  return layout(t, "about", body, [videoLd(t, "park")], { og: { url: site.origin + SYLVIE_PHOTO, width: 800, height: 1000, alt: t.common.sylviePhotoAlt } });
 }
 
 export function practicalPage(t) {

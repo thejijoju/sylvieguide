@@ -79,6 +79,10 @@ export default {
       "play": "Play the video",
       "description": "Sylvie, official guide, opens the door of the Château de Voltaire and welcomes visitors into the entrance hall, in Ferney-Voltaire."
     },
+    "video2": {
+      "caption": "Sylvie guides you through the park to the château’s front door",
+      "description": "Sylvie, official guide, welcomes visitors in the park of the Château de Voltaire and leads them to the château’s front steps, in Ferney-Voltaire."
+    },
     "sylviePhotoAlt": "Sylvie, official guide, in front of the Château de Voltaire in Ferney-Voltaire",
     "minutes": "min",
     "people": "people",

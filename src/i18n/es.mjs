@@ -79,6 +79,10 @@ export default {
       "play": "Reproducir el vídeo",
       "description": "Sylvie, guía oficial, abre la puerta del Château de Voltaire y recibe a los visitantes en el vestíbulo, en Ferney-Voltaire."
     },
+    "video2": {
+      "caption": "Sylvie le guía por el parque hasta la puerta del castillo",
+      "description": "Sylvie, guía oficial, recibe a los visitantes en el parque del Château de Voltaire y los acompaña hasta la escalinata del castillo, en Ferney-Voltaire."
+    },
     "sylviePhotoAlt": "Sylvie, guía oficial, delante del Château de Voltaire en Ferney-Voltaire",
     "minutes": "min",
     "people": "personas",

@@ -33,26 +33,34 @@
     });
   });
 
-  // Welcome video: plays silently on a loop unless the visitor prefers
-  // reduced motion; the button pauses and resumes it.
+  // Videos: silent loops that play only while on screen, never for visitors
+  // who prefer reduced motion. Pausing with the button sticks.
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.querySelectorAll("[data-video]").forEach(function (box) {
     var video = box.querySelector("video");
     var btn = box.querySelector("[data-video-toggle]");
-    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var userPaused = still;
     var sync = function () {
       var playing = !video.paused;
       box.classList.toggle("is-playing", playing);
       btn.setAttribute("aria-label", btn.getAttribute(playing ? "data-label-pause" : "data-label-play"));
     };
+    var play = function () { var p = video.play(); if (p && p.catch) p.catch(function () {}); };
     btn.hidden = false;
     btn.addEventListener("click", function () {
-      if (video.paused) video.play(); else video.pause();
+      if (video.paused) { userPaused = false; play(); } else { userPaused = true; video.pause(); }
     });
     video.addEventListener("play", sync);
     video.addEventListener("pause", sync);
-    if (!still) {
-      var p = video.play();
-      if (p && p.catch) p.catch(function () {});
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !userPaused) play();
+          else if (!e.isIntersecting && !video.paused) video.pause();
+        });
+      }, { threshold: 0.35 }).observe(video);
+    } else if (!userPaused) {
+      play();
     }
     sync();
   });

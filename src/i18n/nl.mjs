@@ -79,6 +79,10 @@ export default {
       "play": "Video afspelen",
       "description": "Sylvie, officiële gids, opent de deur van het Château de Voltaire en verwelkomt bezoekers in de hal, in Ferney-Voltaire."
     },
+    "video2": {
+      "caption": "Sylvie leidt u door het park naar de deur van het kasteel",
+      "description": "Sylvie, officiële gids, verwelkomt bezoekers in het park van het Château de Voltaire en brengt hen naar de trappen van het kasteel, in Ferney-Voltaire."
+    },
     "sylviePhotoAlt": "Sylvie, officiële gids, voor het Château de Voltaire in Ferney-Voltaire",
     "minutes": "min",
     "people": "personen",
