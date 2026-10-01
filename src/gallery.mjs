@@ -45,7 +45,21 @@ export const details = {
       ru: "Красно-зелёные полосатые обивки стен, портрет молодого Вольтера в овальной раме, мраморный камин и накрытые игровые столики — в этой обстановке принимали гостей замка.",
     },
   },
-  "03-chateau-de-voltaire-chambre-alcove.jpg": {
+  "03-chateau-de-voltaire-salon-tables-de-jeu.jpg": {
+    title: {
+      fr: "Les tables de jeu du salon et le portrait de Frédéric II",
+      en: "The salon’s game tables and the portrait of Frederick II",
+      de: "Die Spieltische des Salons und das Bildnis Friedrichs II.",
+      ru: "Игровые столики салона и портрет Фридриха II",
+    },
+    legend: {
+      fr: "Cartes, éventail et tasses sur la table de jeu, damier marqueté, canapé de velours cramoisi et pendule de bronze doré sur la cheminée de marbre. Au mur, Frédéric II de Prusse, ami et correspondant de Voltaire.",
+      en: "Cards, a fan and cups on the game table, an inlaid chessboard, a crimson velvet sofa and a gilt-bronze clock on the marble fireplace. On the wall, Frederick II of Prussia, Voltaire’s friend and correspondent.",
+      de: "Karten, Fächer und Tassen auf dem Spieltisch, ein eingelegtes Schachbrett, ein karmesinrotes Samtsofa und eine vergoldete Bronzeuhr auf dem Marmorkamin. An der Wand Friedrich II. von Preußen, Voltaires Freund und Briefpartner.",
+      ru: "Карты, веер и чашки на игровом столе, инкрустированная шахматная доска, малиновый бархатный диван и часы из золочёной бронзы на мраморном камине. На стене — Фридрих II Прусский, друг и корреспондент Вольтера.",
+    },
+  },
+  "04-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
