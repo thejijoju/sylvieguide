@@ -68,6 +68,7 @@ export default {
   },
 
   footer: {
+    photoAlt: "Die Fassade des Schlosses Voltaire am Ende der Parkallee",
     tagline: "Führungen im Château de Voltaire in Ferney-Voltaire, vor den Toren Genfs.",
     explore: "Entdecken",
     contact: "Kontakt",

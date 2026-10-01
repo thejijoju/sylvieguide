@@ -152,6 +152,10 @@ function footer(t, page) {
       <p class="footer-logo"><span class="brand-mark" aria-hidden="true">S</span> ${esc(site.guideName)}</p>
       <p>${esc(t.footer.tagline)}</p>
       <p class="footer-langs">${esc(t.common.languagesSpoken)}</p>
+      <figure class="footer-photo">
+        <img src="/assets/img/chateau-de-voltaire-facade.jpg" alt="${esc(t.footer.photoAlt)}" width="640" height="480" loading="lazy" decoding="async">
+        <figcaption>Château de Voltaire · Ferney-Voltaire</figcaption>
+      </figure>
     </div>
     <nav aria-label="${esc(t.footer.explore)}">
       <h2 class="footer-title">${esc(t.footer.explore)}</h2>

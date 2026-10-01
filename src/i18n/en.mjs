@@ -68,6 +68,7 @@ export default {
   },
 
   footer: {
+    photoAlt: "The façade of the Château de Voltaire at the end of the park drive",
     tagline: "Guided tours of the Château de Voltaire in Ferney-Voltaire, on the doorstep of Geneva.",
     explore: "Explore",
     contact: "Contact",

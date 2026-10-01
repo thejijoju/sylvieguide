@@ -68,6 +68,7 @@ export default {
   },
 
   footer: {
+    photoAlt: "La façade du Château de Voltaire, au bout de l’allée du parc",
     tagline: "Visites guidées du Château de Voltaire, à Ferney-Voltaire, aux portes de Genève.",
     explore: "Explorer",
     contact: "Contact",

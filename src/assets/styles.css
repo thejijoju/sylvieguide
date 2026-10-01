@@ -452,6 +452,9 @@ cite { font-style: italic; }
 .footer-logo { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 1.3rem; color: var(--white); font-weight: 700; }
 .footer-logo .brand-mark { background: transparent; box-shadow: inset 0 0 0 1px var(--gold); }
 .footer-langs { color: #e3c891; font-size: .9rem; }
+.footer-photo { margin: 22px 0 0; max-width: 300px; }
+.footer-photo img { display: block; width: 100%; height: auto; border: 1px solid rgba(184, 149, 90, .55); padding: 4px; }
+.footer-photo figcaption { margin-top: 8px; font-size: .78rem; letter-spacing: .06em; color: #98a0b3; }
 .footer-title { font-family: var(--font-display); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: #e3c891; margin-bottom: 1.2rem; font-weight: 600; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .site-footer .lang-switch-footer ul { display: inline-flex; gap: 0; }
