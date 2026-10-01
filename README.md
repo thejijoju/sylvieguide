@@ -72,7 +72,7 @@ TripAdvisor); never add invented ratings.
 
 All placeholders live in **`src/config.mjs`**:
 
-1. `origin`: the real domain. Canonical, hreflang, OG and the sitemap all depend on it.
+1. `origin`: **done: `https://www.guidevoltaire.com`** (domain at Namecheap, hosted on Netlify; set `www.guidevoltaire.com` as the primary domain in Netlify so `guidevoltaire.com` redirects to it).
 2. `email`, `phone`, `phoneHref`: Sylvie's real contact details.
 3. `formEndpoint`: a form service URL that accepts JSON, for example Formspree
    (`https://formspree.io/f/xxxx`). If it is left empty, the form opens the visitor's mail app

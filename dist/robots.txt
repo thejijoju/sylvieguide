@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sylvie-guide-voltaire.com/sitemap.xml
+Sitemap: https://www.guidevoltaire.com/sitemap.xml

@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 export const site = {
   // Production origin, no trailing slash. Used for canonical, hreflang,
   // OpenGraph and the sitemap, which all need absolute URLs.
-  origin: "https://www.sylvie-guide-voltaire.com", // REPLACE with the real domain
+  origin: "https://www.guidevoltaire.com",
 
   brand: "Sylvie · Guide Château de Voltaire",
   guideName: "Sylvie",

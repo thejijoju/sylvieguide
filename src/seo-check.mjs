@@ -153,6 +153,7 @@ const sitemap = readFileSync(join(dist, "sitemap.xml"), "utf8");
 for (const file of pages) if (!sitemap.includes(`<loc>${urlOf(file)}</loc>`)) errors.push(`sitemap.xml: missing ${urlOf(file)}`);
 if (!readFileSync(join(dist, "robots.txt"), "utf8").includes("Sitemap:")) errors.push("robots.txt: no Sitemap line");
 if (/sylvie-guide-voltaire\.com/.test(site.origin)) warnings.push(`config: origin is still the placeholder ${site.origin}; set the real domain before launch`);
+if (/sylvie-guide-voltaire\.com/.test(site.email) || /00 00 00/.test(site.phone)) warnings.push(`config: email (${site.email}) or phone (${site.phone}) is still a placeholder; visitors cannot reach Sylvie`);
 
 for (const w of warnings) console.log("warn  " + w);
 for (const e of errors) console.log("ERROR " + e);
