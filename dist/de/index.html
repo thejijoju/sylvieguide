@@ -39,8 +39,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <link rel="stylesheet" href="/assets/styles.css?v=mupewf80">
-  <script src="/assets/main.js?v=mupewf80" defer></script>
+  <link rel="stylesheet" href="/assets/styles.css?v=mupf3oh4">
+  <script src="/assets/main.js?v=mupf3oh4" defer></script>
 </head>
 <body class="page-home">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -135,11 +135,19 @@
 
 <section class="section intro" aria-labelledby="intro-title">
   <div class="container intro-grid">
-    <figure class="portrait"><svg class="portrait-art" viewBox="0 0 320 400" role="img" aria-label="Porträt von Sylvie, Gästeführerin im Château de Voltaire" xmlns="http://www.w3.org/2000/svg">
-  <rect class="portrait-bg" width="320" height="400"/>
-  <path class="portrait-figure" d="M160 112 a52 56 0 1 1 0.1 0Z M48 400 C52 300 100 262 160 262 C220 262 268 300 272 400Z"/>
-  <text class="portrait-initial" x="160" y="186" text-anchor="middle">S</text>
-</svg></figure>
+    <figure class="portrait welcome-video" data-video>
+      <div class="video-frame">
+      <video poster="/assets/video/sylvie-accueil-poster.jpg" width="720" height="1280" muted loop playsinline preload="metadata" aria-label="Sylvie öffnet Ihnen die Türen des Schlosses Voltaire" data-autoplay>
+        <source src="/assets/video/sylvie-accueil.webm" type="video/webm">
+        <source src="/assets/video/sylvie-accueil.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="video-toggle" data-video-toggle data-label-pause="Video pausieren" data-label-play="Video abspielen" aria-label="Video abspielen" hidden>
+        <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l12-7.5z"/></svg>
+      </button>
+      </div>
+      <figcaption>Sylvie öffnet Ihnen die Türen des Schlosses Voltaire</figcaption>
+    </figure>
     <div>
       <h2 id="intro-title">Willkommen bei Voltaire</h2>
       <span class="rule" aria-hidden="true"></span>
@@ -315,6 +323,6 @@
     <p class="footer-note">Das Château de Voltaire ist ein nationales Baudenkmal, das vom Centre des monuments nationaux verwaltet wird; dieses legt auch die Eintrittspreise fest.</p>
   </div>
 </footer>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.sylvie-guide-voltaire.com/#website","url":"https://www.sylvie-guide-voltaire.com/","name":"Sylvie · Guide Château de Voltaire","inLanguage":["fr","en","de","ru"],"publisher":{"@id":"https://www.sylvie-guide-voltaire.com/#business"}},{"@type":"Person","@id":"https://www.sylvie-guide-voltaire.com/#sylvie","name":"Sylvie","jobTitle":"Offizielle Gästeführerin","knowsLanguage":["fr","en","de","ru"],"worksFor":{"@id":"https://www.sylvie-guide-voltaire.com/#business"},"url":"https://www.sylvie-guide-voltaire.com/de/ueber-mich/"},{"@type":["LocalBusiness","ProfessionalService"],"@id":"https://www.sylvie-guide-voltaire.com/#business","name":"Sylvie · Guide Château de Voltaire","description":"Führungen im Schloss Voltaire (Château de Voltaire) in Ferney-Voltaire, 10 Minuten von Genf. Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen auf Deutsch, Französisch, Englisch und Russisch.","url":"https://www.sylvie-guide-voltaire.com/de/","email":"contact@sylvie-guide-voltaire.com","telephone":"+33 6 00 00 00 00","image":"https://www.sylvie-guide-voltaire.com/assets/og/og-de.png","address":{"@type":"PostalAddress","streetAddress":"Allée du Château","postalCode":"01210","addressLocality":"Ferney-Voltaire","addressRegion":"Auvergne-Rhône-Alpes","addressCountry":"FR"},"areaServed":["Ferney-Voltaire","Pays de Gex","Genève","Geneva"],"founder":{"@id":"https://www.sylvie-guide-voltaire.com/#sylvie"},"availableLanguage":["French","English","German","Russian"]},{"@type":["TouristAttraction","LandmarksOrHistoricalBuildings"],"@id":"https://www.sylvie-guide-voltaire.com/#chateau","name":"Château de Voltaire","address":{"@type":"PostalAddress","streetAddress":"Allée du Château","postalCode":"01210","addressLocality":"Ferney-Voltaire","addressRegion":"Auvergne-Rhône-Alpes","addressCountry":"FR"},"sameAs":["https://www.chateau-ferney-voltaire.fr/"]},{"@type":"WebPage","@id":"https://www.sylvie-guide-voltaire.com/de/#webpage","url":"https://www.sylvie-guide-voltaire.com/de/","name":"Führungen im Schloss Voltaire in Ferney | Sylvie, offizielle Gästeführerin","description":"Führungen im Schloss Voltaire (Château de Voltaire) in Ferney-Voltaire, 10 Minuten von Genf. Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen auf Deutsch, Französisch, Englisch und Russisch.","inLanguage":"de","isPartOf":{"@id":"https://www.sylvie-guide-voltaire.com/#website"},"about":{"@id":"https://www.sylvie-guide-voltaire.com/#chateau"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.sylvie-guide-voltaire.com/#website","url":"https://www.sylvie-guide-voltaire.com/","name":"Sylvie · Guide Château de Voltaire","inLanguage":["fr","en","de","ru"],"publisher":{"@id":"https://www.sylvie-guide-voltaire.com/#business"}},{"@type":"Person","@id":"https://www.sylvie-guide-voltaire.com/#sylvie","name":"Sylvie","jobTitle":"Offizielle Gästeführerin","knowsLanguage":["fr","en","de","ru"],"worksFor":{"@id":"https://www.sylvie-guide-voltaire.com/#business"},"image":"https://www.sylvie-guide-voltaire.com/assets/img/sylvie-guide-chateau-de-voltaire.jpg","url":"https://www.sylvie-guide-voltaire.com/de/ueber-mich/"},{"@type":["LocalBusiness","ProfessionalService"],"@id":"https://www.sylvie-guide-voltaire.com/#business","name":"Sylvie · Guide Château de Voltaire","description":"Führungen im Schloss Voltaire (Château de Voltaire) in Ferney-Voltaire, 10 Minuten von Genf. Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen auf Deutsch, Französisch, Englisch und Russisch.","url":"https://www.sylvie-guide-voltaire.com/de/","email":"contact@sylvie-guide-voltaire.com","telephone":"+33 6 00 00 00 00","image":"https://www.sylvie-guide-voltaire.com/assets/og/og-de.png","address":{"@type":"PostalAddress","streetAddress":"Allée du Château","postalCode":"01210","addressLocality":"Ferney-Voltaire","addressRegion":"Auvergne-Rhône-Alpes","addressCountry":"FR"},"areaServed":["Ferney-Voltaire","Pays de Gex","Genève","Geneva"],"founder":{"@id":"https://www.sylvie-guide-voltaire.com/#sylvie"},"availableLanguage":["French","English","German","Russian"]},{"@type":["TouristAttraction","LandmarksOrHistoricalBuildings"],"@id":"https://www.sylvie-guide-voltaire.com/#chateau","name":"Château de Voltaire","address":{"@type":"PostalAddress","streetAddress":"Allée du Château","postalCode":"01210","addressLocality":"Ferney-Voltaire","addressRegion":"Auvergne-Rhône-Alpes","addressCountry":"FR"},"sameAs":["https://www.chateau-ferney-voltaire.fr/"]},{"@type":"WebPage","@id":"https://www.sylvie-guide-voltaire.com/de/#webpage","url":"https://www.sylvie-guide-voltaire.com/de/","name":"Führungen im Schloss Voltaire in Ferney | Sylvie, offizielle Gästeführerin","description":"Führungen im Schloss Voltaire (Château de Voltaire) in Ferney-Voltaire, 10 Minuten von Genf. Sylvie führt Einzelgäste, Gruppen, Firmen, Senioren und Schulklassen auf Deutsch, Französisch, Englisch und Russisch.","inLanguage":"de","isPartOf":{"@id":"https://www.sylvie-guide-voltaire.com/#website"},"about":{"@id":"https://www.sylvie-guide-voltaire.com/#chateau"}},{"@type":"VideoObject","@id":"https://www.sylvie-guide-voltaire.com/de/#welcome-video","name":"Sylvie öffnet Ihnen die Türen des Schlosses Voltaire","description":"Sylvie, offizielle Gästeführerin, öffnet die Tür des Schlosses Voltaire und empfängt die Besucher in der Eingangshalle, in Ferney-Voltaire.","thumbnailUrl":"https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil-poster.jpg","contentUrl":"https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil.mp4","uploadDate":"2026-10-01","duration":"PT10S","width":720,"height":1280,"inLanguage":"de","contentLocation":{"@id":"https://www.sylvie-guide-voltaire.com/#chateau"}}]}</script>
 </body>
 </html>

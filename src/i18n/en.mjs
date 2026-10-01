@@ -56,6 +56,13 @@ export default {
     featuredQuote: "I have done a little good; that is my best work.",
     featuredQuoteSource: "Voltaire, <cite>Epistle to Horace</cite> (1772)",
     featuredQuoteContext: "Voltaire wrote these words at Ferney, thinking of the village he had revived: houses, watchmaking workshops, a church and a fountain.",
+    video: {
+      caption: "Sylvie opens the doors of the Château de Voltaire for you",
+      pause: "Pause the video",
+      play: "Play the video",
+      description: "Sylvie, official guide, opens the door of the Château de Voltaire and welcomes visitors into the entrance hall, in Ferney-Voltaire.",
+    },
+    sylviePhotoAlt: "Sylvie, your guide, in the entrance hall of the Château de Voltaire",
     minutes: "min",
     people: "people",
   },

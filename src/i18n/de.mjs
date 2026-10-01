@@ -56,6 +56,13 @@ export default {
     featuredQuote: "Ich habe ein wenig Gutes getan; das ist mein bestes Werk.",
     featuredQuoteSource: "Voltaire, <cite>Epistel an Horaz</cite> (1772)",
     featuredQuoteContext: "Voltaire schrieb diese Worte in Ferney – mit Blick auf das Dorf, das er wiederbelebt hatte: Häuser, Uhrmacherwerkstätten, Kirche und Brunnen.",
+    video: {
+      caption: "Sylvie öffnet Ihnen die Türen des Schlosses Voltaire",
+      pause: "Video pausieren",
+      play: "Video abspielen",
+      description: "Sylvie, offizielle Gästeführerin, öffnet die Tür des Schlosses Voltaire und empfängt die Besucher in der Eingangshalle, in Ferney-Voltaire.",
+    },
+    sylviePhotoAlt: "Sylvie, Ihre Führerin, in der Eingangshalle des Schlosses Voltaire",
     minutes: "Min.",
     people: "Pers.",
   },

@@ -56,6 +56,13 @@ export default {
     featuredQuote: "J’ai fait un peu de bien ; c’est mon meilleur ouvrage.",
     featuredQuoteSource: "Voltaire, <cite>Épître à Horace</cite> (1772)",
     featuredQuoteContext: "Voltaire écrit ces mots à Ferney, en pensant au village qu’il a relevé : maisons, ateliers d’horlogerie, église et fontaine.",
+    video: {
+      caption: "Sylvie vous ouvre les portes du Château de Voltaire",
+      pause: "Mettre la vidéo en pause",
+      play: "Lire la vidéo",
+      description: "Sylvie, guide officielle, ouvre la porte du Château de Voltaire et accueille les visiteurs dans le vestibule, à Ferney-Voltaire.",
+    },
+    sylviePhotoAlt: "Sylvie, votre guide, dans le vestibule du Château de Voltaire",
     minutes: "min",
     people: "pers.",
   },

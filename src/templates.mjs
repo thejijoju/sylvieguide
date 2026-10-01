@@ -1,5 +1,5 @@
 import { site, languages, pages, slugs, tourCategories, groupTypes } from "./config.mjs";
-import { chateauSvg, portraitSvg, ornament, icon } from "./art.mjs";
+import { chateauSvg, ornament, icon } from "./art.mjs";
 import { photos } from "./gallery.mjs";
 
 // ---------------------------------------------------------------- helpers
@@ -220,6 +220,7 @@ function baseGraph(t, page) {
       jobTitle: stripTags(t.home.eyebrow.split("·")[0].trim()),
       knowsLanguage: ["fr", "en", "de", "ru"],
       worksFor: { "@id": `${site.origin}/#business` },
+      image: site.origin + SYLVIE_PHOTO,
       url: urlFor(t.lang, "about"),
     },
     {
@@ -337,6 +338,45 @@ function tourCard(t, tour, { compact = false } = {}) {
     </article>`;
 }
 
+// Welcome video of Sylvie: silent, looping, starts by itself unless the
+// visitor prefers reduced motion; a button pauses and resumes it.
+export const VIDEO = { src: "/assets/video/sylvie-accueil.mp4", webm: "/assets/video/sylvie-accueil.webm", poster: "/assets/video/sylvie-accueil-poster.jpg", seconds: 10, width: 720, height: 1280 };
+const SYLVIE_PHOTO = "/assets/img/sylvie-guide-chateau-de-voltaire.jpg";
+
+function welcomeVideo(t) {
+  const v = t.common.video;
+  return `<figure class="portrait welcome-video" data-video>
+      <div class="video-frame">
+      <video poster="${VIDEO.poster}" width="${VIDEO.width}" height="${VIDEO.height}" muted loop playsinline preload="metadata" aria-label="${esc(v.caption)}" data-autoplay>
+        <source src="${VIDEO.webm}" type="video/webm">
+        <source src="${VIDEO.src}" type="video/mp4">
+      </video>
+      <button type="button" class="video-toggle" data-video-toggle data-label-pause="${esc(v.pause)}" data-label-play="${esc(v.play)}" aria-label="${esc(v.play)}" hidden>
+        <svg class="icon icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14"/></svg>
+        <svg class="icon icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l12-7.5z"/></svg>
+      </button>
+      </div>
+      <figcaption>${esc(v.caption)}</figcaption>
+    </figure>`;
+}
+
+function videoLd(t) {
+  return {
+    "@type": "VideoObject",
+    "@id": `${urlFor(t.lang, "home")}#welcome-video`,
+    name: t.common.video.caption,
+    description: t.common.video.description,
+    thumbnailUrl: site.origin + VIDEO.poster,
+    contentUrl: site.origin + VIDEO.src,
+    uploadDate: "2026-10-01",
+    duration: `PT${VIDEO.seconds}S`,
+    width: VIDEO.width,
+    height: VIDEO.height,
+    inLanguage: t.lang,
+    contentLocation: { "@id": `${site.origin}/#chateau` },
+  };
+}
+
 export function homePage(t) {
   const h = t.home;
   const contact = pathFor(t.lang, "contact");
@@ -361,7 +401,7 @@ export function homePage(t) {
 
 <section class="section intro" aria-labelledby="intro-title">
   <div class="container intro-grid">
-    <figure class="portrait">${portraitSvg(t.about.portraitAlt)}</figure>
+    ${welcomeVideo(t)}
     <div>
       <h2 id="intro-title">${esc(h.introTitle)}</h2>
       ${ornament}
@@ -432,7 +472,7 @@ ${photos.length ? lightbox(t) : ""}
 </section>
 
 ${ctaBand(t, h.ctaTitle, h.ctaText)}`;
-  return layout(t, "home", body);
+  return layout(t, "home", body, [videoLd(t)]);
 }
 
 export function toursPage(t) {
@@ -634,7 +674,7 @@ export function aboutPage(t) {
 ${pageHero(t, "about", a.h1, a.lead)}
 <section class="section">
   <div class="container intro-grid">
-    <figure class="portrait">${portraitSvg(a.portraitAlt)}</figure>
+    <figure class="portrait"><img src="${SYLVIE_PHOTO}" alt="${esc(t.common.sylviePhotoAlt)}" width="800" height="1000" loading="lazy" decoding="async"></figure>
     <div>
       <h2>${esc(a.storyTitle)}</h2>
       ${ornament}

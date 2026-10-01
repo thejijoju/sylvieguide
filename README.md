@@ -67,10 +67,12 @@ Then check the copy in `src/i18n/*.mjs`:
   grid. Both open a photo full-screen with its legend. Photos are listed in the image
   sitemap and in `ImageGallery` structured data, and the first one is the gallery page's
   sharing image.
-- **Portrait and hero:** a real photo of Sylvie should replace the portrait placeholder
-  (`portraitSvg` in `src/art.mjs`). For the hero, a wide photo of the château can replace the
-  illustration: put an `<img>` inside `.hero-media` in `src/templates.mjs`. It is styled as a
-  cover image already.
+- **Video and portrait:** the home page plays Sylvie's welcome video (`src/assets/video/`,
+  silent, 10 s, WebM + MP4, with a pause button; it stays still for visitors who reduce
+  motion). It is described as a `VideoObject` and listed in the video sitemap. A still from it
+  is Sylvie's portrait on the About page (`src/assets/img/`). For the hero, a wide photo of
+  the château can replace the illustration: put an `<img>` inside `.hero-media` in
+  `src/templates.mjs`.
 
 Finally, submit `https://<domain>/sitemap.xml` in Google Search Console and Yandex Webmaster.
 Yandex matters for the Russian-speaking audience. Also create or claim a Google Business Profile.

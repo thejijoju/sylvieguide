@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/fr/</loc>
     <lastmod>2026-10-01</lastmod>
@@ -20,6 +20,13 @@
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/09-tableau-allegorique-gloire-de-voltaire.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/11-buste-de-voltaire-tableau-jeaurat.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/12-statue-de-voltaire.jpg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie vous ouvre les portes du Château de Voltaire</video:title>
+      <video:description>Sylvie, guide officielle, ouvre la porte du Château de Voltaire et accueille les visiteurs dans le vestibule, à Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/en/</loc>
@@ -41,6 +48,13 @@
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/09-tableau-allegorique-gloire-de-voltaire.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/11-buste-de-voltaire-tableau-jeaurat.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/12-statue-de-voltaire.jpg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie opens the doors of the Château de Voltaire for you</video:title>
+      <video:description>Sylvie, official guide, opens the door of the Château de Voltaire and welcomes visitors into the entrance hall, in Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/de/</loc>
@@ -62,6 +76,13 @@
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/09-tableau-allegorique-gloire-de-voltaire.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/11-buste-de-voltaire-tableau-jeaurat.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/12-statue-de-voltaire.jpg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil-poster.jpg</video:thumbnail_loc>
+      <video:title>Sylvie öffnet Ihnen die Türen des Schlosses Voltaire</video:title>
+      <video:description>Sylvie, offizielle Gästeführerin, öffnet die Tür des Schlosses Voltaire und empfängt die Besucher in der Eingangshalle, in Ferney-Voltaire.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/ru/</loc>
@@ -83,6 +104,13 @@
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/09-tableau-allegorique-gloire-de-voltaire.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/11-buste-de-voltaire-tableau-jeaurat.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sylvie-guide-voltaire.com/assets/gallery/12-statue-de-voltaire.jpg</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil-poster.jpg</video:thumbnail_loc>
+      <video:title>Сильви открывает вам двери замка Вольтера</video:title>
+      <video:description>Сильви, официальный гид, открывает дверь замка Вольтера и встречает гостей в вестибюле, в Ферне-Вольтер.</video:description>
+      <video:content_loc>https://www.sylvie-guide-voltaire.com/assets/video/sylvie-accueil.mp4</video:content_loc>
+      <video:duration>10</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://www.sylvie-guide-voltaire.com/fr/visites/</loc>

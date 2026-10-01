@@ -33,6 +33,30 @@
     });
   });
 
+  // Welcome video: plays silently on a loop unless the visitor prefers
+  // reduced motion; the button pauses and resumes it.
+  document.querySelectorAll("[data-video]").forEach(function (box) {
+    var video = box.querySelector("video");
+    var btn = box.querySelector("[data-video-toggle]");
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var sync = function () {
+      var playing = !video.paused;
+      box.classList.toggle("is-playing", playing);
+      btn.setAttribute("aria-label", btn.getAttribute(playing ? "data-label-pause" : "data-label-play"));
+    };
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      if (video.paused) video.play(); else video.pause();
+    });
+    video.addEventListener("play", sync);
+    video.addEventListener("pause", sync);
+    if (!still) {
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    sync();
+  });
+
   // Home page filmstrip: arrows scroll by about one screen of photos and hide
   // at either end; swipe, trackpad and keyboard scrolling work natively.
   document.querySelectorAll("[data-strip]").forEach(function (strip) {

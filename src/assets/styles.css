@@ -289,6 +289,23 @@ cite { font-style: italic; }
 .gallery-placeholder .ph { display: grid; place-content: center; justify-items: center; gap: 10px; background: var(--cream); border: 1px dashed #c9c5bc; color: var(--muted); font-family: var(--font-display); font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .gallery-placeholder .ph .icon { width: 36px; height: 36px; color: #b9b2a3; }
 
+/* Welcome video of Sylvie (portrait format, beside the introduction) */
+.welcome-video { max-width: 360px; }
+.welcome-video::after { display: none; }
+.video-frame { position: relative; z-index: 0; }
+.video-frame::after { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--burgundy); z-index: -1; }
+.welcome-video video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000; }
+.welcome-video figcaption { margin-top: 32px; font-size: .9rem; font-style: italic; color: var(--muted); text-align: center; }
+.video-toggle { position: absolute; right: 12px; bottom: 12px; z-index: 1; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .6); background: rgba(0, 0, 0, .55); color: var(--white); cursor: pointer; }
+.video-toggle:hover { background: rgba(0, 0, 0, .85); }
+.video-toggle[hidden] { display: none; }
+.video-toggle .icon { width: 20px; height: 20px; }
+.video-toggle .icon-play { fill: currentColor; }
+.welcome-video .icon-pause { display: none; }
+.welcome-video.is-playing .icon-pause { display: block; }
+.welcome-video.is-playing .icon-play { display: none; }
+.portrait img { display: block; width: 100%; height: auto; }
+
 /* Home page filmstrip: one horizontal line of photos, swipe or arrows */
 .strip { position: relative; margin: 8px 0 8px; }
 .strip-track {

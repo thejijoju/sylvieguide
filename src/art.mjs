@@ -89,16 +89,6 @@ export function chateauSvg({ title, className = "", cover = false }) {
 </svg>`;
 }
 
-// Placeholder portrait (4:5). Replace with a real
-// photo of Sylvie (see README).
-export function portraitSvg(label) {
-  return `<svg class="portrait-art" viewBox="0 0 320 400" role="img" aria-label="${label}" xmlns="http://www.w3.org/2000/svg">
-  <rect class="portrait-bg" width="320" height="400"/>
-  <path class="portrait-figure" d="M160 112 a52 56 0 1 1 0.1 0Z M48 400 C52 300 100 262 160 262 C220 262 268 300 272 400Z"/>
-  <text class="portrait-initial" x="160" y="186" text-anchor="middle">S</text>
-</svg>`;
-}
-
 export const ornament = `<span class="rule" aria-hidden="true"></span>`;
 
 export const quill = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 3c-6 1-11 6-13 13l-2 5"/><path d="M20 3c0 6-4 11-10 12"/><path d="M9.5 11.5 14 9"/></svg>`;

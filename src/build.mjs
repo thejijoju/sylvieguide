@@ -11,7 +11,7 @@ import { favicon } from "./art.mjs";
 import { photos, details } from "./gallery.mjs";
 import {
   pathFor, urlFor,
-  homePage, toursPage, aboutPage, galleryPage, galleryImages, practicalPage, contactPage, notFoundPage, rootPage,
+  homePage, toursPage, aboutPage, galleryPage, galleryImages, VIDEO, practicalPage, contactPage, notFoundPage, rootPage,
 } from "./templates.mjs";
 
 import fr from "./i18n/fr.mjs";
@@ -57,7 +57,7 @@ await write("assets/favicon.svg", favicon);
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${pages
   .flatMap((page) =>
     languages.map(
@@ -68,13 +68,27 @@ ${pages
     <priority>${page === "home" ? "1.0" : page === "tours" || page === "contact" ? "0.9" : "0.7"}</priority>
 ${languages.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${urlFor(l, page)}"/>`).join("\n")}
     <xhtml:link rel="alternate" hreflang="x-default" href="${page === "home" ? `${site.origin}/` : urlFor("en", page)}"/>
-${imageEntries(lang, page)}  </url>`,
+${imageEntries(lang, page)}${videoEntry(lang, page)}  </url>`,
     ),
   )
   .join("\n")}
 </urlset>
 `;
 await write("sitemap.xml", sitemap);
+
+// The welcome video, listed on each language's home page.
+function videoEntry(lang, page) {
+  if (page !== "home") return "";
+  const xml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const v = all[lang].common.video;
+  return `    <video:video>
+      <video:thumbnail_loc>${site.origin}${VIDEO.poster}</video:thumbnail_loc>
+      <video:title>${xml(v.caption)}</video:title>
+      <video:description>${xml(v.description)}</video:description>
+      <video:content_loc>${site.origin}${VIDEO.src}</video:content_loc>
+      <video:duration>${VIDEO.seconds}</video:duration>
+    </video:video>\n`;
+}
 
 // Gallery photos are listed in the image sitemap for the gallery page and the
 // home page (whose filmstrip shows them all), so they can rank in image search.
