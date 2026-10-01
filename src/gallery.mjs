@@ -59,7 +59,21 @@ export const details = {
       ru: "Карты, веер и чашки на игровом столе, инкрустированная шахматная доска, малиновый бархатный диван и часы из золочёной бронзы на мраморном камине. На стене — Фридрих II Прусский, друг и корреспондент Вольтера.",
     },
   },
-  "04-chateau-de-voltaire-chambre-alcove.jpg": {
+  "04-chateau-de-voltaire-eglise-deo-erexit-voltaire.jpg": {
+    title: {
+      fr: "L’église « Deo erexit Voltaire » dans le parc",
+      en: "The “Deo erexit Voltaire” church in the park",
+      de: "Die Kirche „Deo erexit Voltaire“ im Park",
+      ru: "Церковь «Deo erexit Voltaire» в парке",
+    },
+    legend: {
+      fr: "Au bout des allées de gravier et des haies taillées, la petite église que Voltaire fit rebâtir en 1761 : son fronton porte la célèbre dédicace « Deo erexit Voltaire », « Voltaire l’a élevée à Dieu ».",
+      en: "Beyond the gravel paths and clipped hedges stands the little church Voltaire had rebuilt in 1761. Its pediment bears the famous dedication “Deo erexit Voltaire”, “Voltaire raised it to God”.",
+      de: "Hinter Kieswegen und geschnittenen Hecken steht die kleine Kirche, die Voltaire 1761 neu errichten ließ. Ihr Giebel trägt die berühmte Widmung „Deo erexit Voltaire“ – „Voltaire hat sie Gott errichtet“.",
+      ru: "За гравийными дорожками и стрижеными живыми изгородями — небольшая церковь, перестроенная Вольтером в 1761 году. На её фронтоне знаменитое посвящение «Deo erexit Voltaire» — «Богу воздвиг Вольтер».",
+    },
+  },
+  "05-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
       en: "An alcove bedroom in the château",
