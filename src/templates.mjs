@@ -200,8 +200,7 @@ function footer(t, page) {
     <div>
       <h2 class="footer-title">${esc(t.footer.contact)}</h2>
       <ul class="footer-contact">
-        <li>${icon("mail")}<a href="mailto:${site.email}">${site.email}</a></li>
-        <li>${icon("phone")}<a href="tel:${site.phoneHref}">${esc(site.phone)}</a></li>
+        <li>${icon("mail")}<a href="${pathFor(t.lang, "contact")}#booking">${esc(t.contact.formTitle)}</a></li>
         <li>${icon("pin")}<span>${esc(site.address.name)}<br>${esc(site.address.street)}, ${site.address.postalCode} ${esc(site.address.locality)}</span></li>
       </ul>
     </div>
@@ -277,8 +276,8 @@ function baseGraph(t, page) {
       name: site.brand,
       description: t.meta.home.description,
       url: urlFor(t.lang, "home"),
-      email: site.email,
-      telephone: site.phone,
+      ...(site.email ? { email: site.email } : {}),
+      ...(site.phone ? { telephone: site.phone } : {}),
       image: `${site.origin}/assets/og/og-${t.lang}.png`,
       address: addr,
       areaServed: ["Ferney-Voltaire", "Pays de Gex", "Genève", "Geneva"],
@@ -989,7 +988,7 @@ export function contactPage(t) {
   const f = c.fields;
   const req = `<span class="req" aria-hidden="true">*</span>`;
   const tourTitles = Object.fromEntries(Object.keys(t.tours.items).map((id) => [id, t.tours.items[id].title]));
-  const action = site.formEndpoint || `mailto:${site.email}`;
+  const action = site.formEndpoint || (site.email ? `mailto:${site.email}` : "#booking");
   const body = `
 ${pageHero(t, "contact", c.h1, c.lead)}
 <section class="section" id="booking">
@@ -1056,12 +1055,10 @@ ${pageHero(t, "contact", c.h1, c.lead)}
 
     <aside class="contact-aside">
       <div class="card">
-        <h2>${esc(c.directTitle)}</h2>
-        <p>${esc(c.directText)}</p>
+        <h2>${esc(t.footer.languages)}</h2>
         <ul class="footer-contact contact-list">
-          <li>${icon("mail")}<a href="mailto:${site.email}">${site.email}</a></li>
-          <li>${icon("phone")}<a href="tel:${site.phoneHref}">${esc(site.phone)}</a></li>
           <li>${icon("globe")}<span>${esc(t.common.languagesSpoken)}</span></li>
+          <li>${icon("leaf")}<span>${esc(t.common.gardensIncluded)}</span></li>
         </ul>
       </div>
       <div class="card">

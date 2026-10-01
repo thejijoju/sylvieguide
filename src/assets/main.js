@@ -191,6 +191,11 @@
     if (typeSelect.value) data.group_type = typeSelect.options[typeSelect.selectedIndex].text;
 
     var endpoint = form.getAttribute("data-endpoint");
+    if (!endpoint && !form.getAttribute("data-email")) {
+      // No form service connected yet: say so instead of silently failing.
+      show(form.getAttribute("data-msg-error"), "error");
+      return;
+    }
     if (!endpoint) {
       // No form service configured: hand the request to the visitor's mail app.
       var lines = Object.keys(data).filter(function (k) { return k !== "consent"; }).map(function (k) {

@@ -13,9 +13,10 @@ export const site = {
   brand: "Sylvie · Guide Château de Voltaire",
   guideName: "Sylvie",
 
-  email: "contact@sylvie-guide-voltaire.com", // REPLACE
-  phone: "+33 6 00 00 00 00", // REPLACE (displayed)
-  phoneHref: "+33600000000", // REPLACE (tel: link)
+  // Contact details are deliberately not shown on the site: visitors use the
+  // booking form. Leave email/phone empty to keep them off every page.
+  email: "",
+  phone: "",
 
   // Where the booking form is POSTed (Formspree, Basin, Getform, your own
   // endpoint…). It must accept a JSON body. Leave empty and the form falls
