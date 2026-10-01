@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Início",
     "languagesSpoken": "Visitas em inglês · Français · Deutsch · Русский",
+    "gardensIncluded": "Todas as visitas incluem os jardins de Voltaire",
     "quote": "É preciso cultivar o nosso jardim.",
     "quoteSource": "Voltaire, <cite>Cândido ou o Otimismo</cite> (1759)",
     "featuredQuote": "Fiz um pouco de bem; é a minha melhor obra.",

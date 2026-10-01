@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "الرئيسية",
     "languagesSpoken": "جولات بالإنجليزية · Français · Deutsch · Русский",
+    "gardensIncluded": "تشمل جميع الجولات حدائق فولتير",
     "quote": "علينا أن نزرع حديقتنا.",
     "quoteSource": "فولتير، <cite>كانديد</cite> (1759)",
     "featuredQuote": "لقد فعلتُ قليلًا من الخير؛ وهذا أفضل أعمالي.",

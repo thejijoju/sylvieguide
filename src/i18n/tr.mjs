@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Ana sayfa",
     "languagesSpoken": "İngilizce turlar · Français · Deutsch · Русский",
+    "gardensIncluded": "Tüm turlara Voltaire’in bahçeleri dahildir",
     "quote": "Bahçemizi işlemeliyiz.",
     "quoteSource": "Voltaire, <cite>Candide</cite> (1759)",
     "featuredQuote": "Biraz iyilik yaptım; bu benim en iyi eserimdir.",

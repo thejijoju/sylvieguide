@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Home",
     "languagesSpoken": "Tours in English · Français · Deutsch · Русский",
+    "gardensIncluded": "Every tour includes Voltaire’s gardens",
     "quote": "We must cultivate our garden.",
     "quoteSource": "Voltaire, <cite>Candide</cite> (1759)",
     "featuredQuote": "I have done a little good; that is my best work.",

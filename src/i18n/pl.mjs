@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Strona główna",
     "languagesSpoken": "Zwiedzanie po angielsku · Français · Deutsch · Русский",
+    "gardensIncluded": "Każde zwiedzanie obejmuje ogrody Woltera",
     "quote": "Trzeba uprawiać nasz ogród.",
     "quoteSource": "Voltaire, <cite>Kandyd</cite> (1759)",
     "featuredQuote": "Zrobiłem trochę dobrego; to moje najlepsze dzieło.",

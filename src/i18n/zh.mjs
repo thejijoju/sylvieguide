@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "首页",
     "languagesSpoken": "英语讲解 · Français · Deutsch · Русский",
+    "gardensIncluded": "每次导览均包含伏尔泰的花园",
     "quote": "我们应当耕种自己的园地。",
     "quoteSource": "伏尔泰，<cite>《老实人》</cite>（1759）",
     "featuredQuote": "我做了一点好事；这是我最好的作品。",

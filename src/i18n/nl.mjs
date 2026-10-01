@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Home",
     "languagesSpoken": "Rondleidingen in het Engels · Français · Deutsch · Русский",
+    "gardensIncluded": "Elke rondleiding omvat de tuinen van Voltaire",
     "quote": "Wij moeten onze tuin bewerken.",
     "quoteSource": "Voltaire, <cite>Candide, of het optimisme</cite> (1759)",
     "featuredQuote": "Ik heb een beetje goed gedaan; dat is mijn beste werk.",

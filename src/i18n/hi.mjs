@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "होम",
     "languagesSpoken": "अंग्रेज़ी में टूर · Français · Deutsch · Русский",
+    "gardensIncluded": "हर टूर में वोल्टेयर के बगीचे शामिल हैं",
     "quote": "हमें अपने बगीचे की खेती करनी चाहिए।",
     "quoteSource": "वोल्टेयर, <cite>कैंडिड</cite> (1759)",
     "featuredQuote": "मैंने थोड़ी-सी भलाई की है; यही मेरी सबसे अच्छी रचना है।",

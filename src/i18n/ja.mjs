@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "ホーム",
     "languagesSpoken": "英語ガイド · Français · Deutsch · Русский",
+    "gardensIncluded": "すべてのツアーにヴォルテールの庭園の見学が含まれます",
     "quote": "われわれの畑を耕さねばならない。",
     "quoteSource": "ヴォルテール、<cite>『カンディード』</cite>（1759）",
     "featuredQuote": "私は少しばかりの善をなした。それが私の最高の作品である。",

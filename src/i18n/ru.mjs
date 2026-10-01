@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Главная",
     "languagesSpoken": "Экскурсии на русском · Français · English · Deutsch",
+    "gardensIncluded": "Каждая экскурсия включает сады Вольтера",
     "quote": "Надо возделывать свой сад.",
     "quoteSource": "Вольтер, <cite>Кандид</cite> (1759)",
     "featuredQuote": "Я сделал немного добра — это лучшее моё творение.",

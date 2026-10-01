@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Inicio",
     "languagesSpoken": "Visitas en inglés · Français · Deutsch · Русский",
+    "gardensIncluded": "Todas las visitas incluyen los jardines de Voltaire",
     "quote": "Hay que cultivar nuestro jardín.",
     "quoteSource": "Voltaire, <cite>Cándido</cite> (1759)",
     "featuredQuote": "He hecho un poco de bien; es mi mejor obra.",

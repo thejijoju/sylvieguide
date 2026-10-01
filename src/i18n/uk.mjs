@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Головна",
     "languagesSpoken": "Екскурсії англійською · Français · Deutsch · Русский",
+    "gardensIncluded": "Кожна екскурсія включає сади Вольтера",
     "quote": "Треба обробляти свій сад.",
     "quoteSource": "Вольтер, <cite>Кандід</cite> (1759)",
     "featuredQuote": "Я зробив трохи добра; це мій найкращий твір.",

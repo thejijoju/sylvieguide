@@ -330,9 +330,12 @@ function pageHero(t, page, h1, lead) {
       <h1>${esc(h1)}</h1>
       ${ornament}
       <p class="lead">${esc(lead)}</p>
+      ${GARDEN_PAGES.includes(page) ? `<p class="hero-badge">${icon("leaf")}${esc(t.common.gardensIncluded)}</p>` : ""}
     </div>
   </section>`;
 }
+// Pages that remind visitors the gardens are part of every tour.
+const GARDEN_PAGES = ["tours", "group", "corporate", "seniors", "thematic", "practical"];
 
 export function layout(t, page, body, extraLd = [], { og = null } = {}) {
   const meta = t.meta[page];
@@ -457,6 +460,7 @@ export function homePage(t) {
       <a class="btn btn-ghost-light" href="${contact}?type=tourist#booking">${esc(t.cta.quote)}</a>
     </div>
     <ul class="hero-facts">
+      <li>${icon("leaf")}${esc(t.common.gardensIncluded)}</li>
       <li>${icon("globe")}${esc(t.common.languagesSpoken)}</li>
       <li>${icon("plane")}${esc(h.heroNote)}</li>
     </ul>

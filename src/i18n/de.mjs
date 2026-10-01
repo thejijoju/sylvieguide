@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "Startseite",
     "languagesSpoken": "Führungen auf Deutsch · Français · English · Русский",
+    "gardensIncluded": "Jede Führung schließt Voltaires Gärten ein",
     "quote": "Wir müssen unseren Garten bestellen.",
     "quoteSource": "Voltaire, <cite>Candide</cite> (1759)",
     "featuredQuote": "Ich habe ein wenig Gutes getan; das ist mein bestes Werk.",

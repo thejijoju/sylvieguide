@@ -68,6 +68,7 @@ export default {
   "common": {
     "breadcrumbHome": "홈",
     "languagesSpoken": "영어 투어 · Français · Deutsch · Русский",
+    "gardensIncluded": "모든 투어에 볼테르의 정원이 포함됩니다",
     "quote": "우리는 우리의 정원을 가꾸어야 합니다.",
     "quoteSource": "볼테르, <cite>캉디드</cite> (1759)",
     "featuredQuote": "나는 약간의 선을 행했습니다. 그것이 나의 가장 훌륭한 작품입니다.",
