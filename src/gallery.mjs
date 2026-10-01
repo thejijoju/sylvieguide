@@ -143,6 +143,20 @@ export const details = {
       ru: "Аполлон в сиянии принимает философа и его сочинения; Слава трубит у античного храма, а справа его противники и их пасквили низвергаются в пламя.",
     },
   },
+  "11-buste-de-voltaire-tableau-jeaurat.jpg": {
+    title: {
+      fr: "Buste de Voltaire et repas champêtre",
+      en: "Bust of Voltaire and a country meal",
+      de: "Büste Voltaires und ländliches Mahl",
+      ru: "Бюст Вольтера и сельская трапеза",
+    },
+    legend: {
+      fr: "Devant les boiseries gris-bleu, un buste de Voltaire âgé, en marbre, et un tableau au cadre doré dont le cartel porte le nom de Jeaurat : une joyeuse compagnie attablée sous les arbres, tandis que des pauvres s’approchent.",
+      en: "Against grey-blue panelling, a marble bust of the elderly Voltaire and a painting in a gilded frame whose label bears the name Jeaurat: a merry company dining under the trees as poor folk approach.",
+      de: "Vor graublauer Täfelung eine Marmorbüste des betagten Voltaire und ein Gemälde im vergoldeten Rahmen, dessen Schild den Namen Jeaurat trägt: eine fröhliche Gesellschaft tafelt unter Bäumen, während sich Arme nähern.",
+      ru: "На фоне серо-голубых панелей — мраморный бюст пожилого Вольтера и картина в золочёной раме с табличкой «Jeaurat»: весёлое общество за столом под деревьями, к которому приближаются бедняки.",
+    },
+  },
   "10-chateau-de-voltaire-chambre-alcove.jpg": {
     title: {
       fr: "Une chambre à alcôve du château",
