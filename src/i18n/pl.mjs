@@ -16,7 +16,8 @@ export default {
     "corporate": "Firmy",
     "group": "Wycieczki grupowe",
     "seniors": "Grupy seniorów",
-    "thematic": "Zwiedzanie tematyczne"
+    "thematic": "Zwiedzanie tematyczne",
+    "voltaire": "Wolter"
   },
   "cta": {
     "book": "Zarezerwuj zwiedzanie",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Oświecenie i literatura: zwiedzanie tematyczne | Château de Voltaire",
       "description": "Zwiedzanie tematyczne w Ferney-Voltaire: historia oświecenia, Voltaire i Genewa, literackie zwiedzanie Château de Voltaire, życie na zamku i ogrody."
+    },
+    "voltaire": {
+      "title": "Wolter w Ferney: biografia, cytaty i jego zamek",
+      "description": "Kim był Wolter? Jego życie w najważniejszych datach, słynne cytaty i historia Château de Voltaire w Ferney, gdzie filozof mieszkał blisko dwadzieścia lat."
     }
   },
   "ogImageAlt": "Ilustracja przedstawiająca Château de Voltaire w Ferney — zwiedzanie z przewodnikiem z Sylvie",
@@ -99,21 +104,21 @@ export default {
     "note": "Château de Voltaire to zabytek narodowy zarządzany przez Centre des monuments nationaux, które ustala ceny biletów wstępu do zabytku."
   },
   "home": {
-    "eyebrow": "Oficjalna przewodniczka · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Akredytowana przewodniczka · Château de Voltaire · Ferney-Voltaire",
     "h1": "Zwiedzanie z przewodnikiem Château de Voltaire i Ferney-Voltaire z Sylvie",
     "lead": "Zapraszam do domu, w którym Voltaire mieszkał przez prawie dwadzieścia lat. Opowiem Państwu o tym człowieku, jego walkach i jego posiadłości — w tempie Państwa grupy, po angielsku, francusku, niemiecku lub rosyjsku.",
     "heroNote": "15 minut od lotniska w Genewie (GVA)",
     "introTitle": "Witamy w domu Voltaire’a",
     "introText": [
-      "Nazywam się Sylvie i jestem oficjalną przewodniczką oraz prywatną przewodniczką po Château de Voltaire. To tutaj, w latach 1759–1778, filozof pisał, gościł całą Europę, bronił prześladowanych i zamienił przysiółek w miasto.",
+      "Nazywam się Sylvie, jestem akredytowaną przewodniczką i prywatną przewodniczką w Château de Voltaire, gdzie oprowadzam zwiedzających od ponad 8 lat. To tutaj, w latach 1759–1778, filozof pisał, gościł całą Europę, bronił prześladowanych i zmienił wioskę w miasto.",
       "Moim zadaniem jest ożywić tę historię. Anegdoty, listy, przedmioty, ogrody: każde zwiedzanie przygotowuję z myślą o osobach, które mam przed sobą — czy to ciekawa świata rodzina, zespół firmowy, czy klasa dwunastolatków."
     ],
     "introLink": "Poznaj moją historię",
     "valuesTitle": "Dlaczego warto zwiedzać ze mną",
     "values": [
       {
-        "title": "Oficjalna przewodniczka posiadłości",
-        "text": "Znam każdą salę, każdą ścieżkę i historie, których nie znajdą Państwo na tablicach informacyjnych."
+        "title": "Akredytowana przewodniczka posiadłości",
+        "text": "Ponad 8 lat oprowadzania po zamku: znam każdą salę, każdą alejkę i historie, których nie znajdziesz na tablicach informacyjnych."
       },
       {
         "title": "Cztery języki",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "Zobacz ofertę zwiedzania",
       "imgAlt": "Château de Voltaire, niedaleko Genewy"
-    }
+    },
+    "voltaireLink": "Poznaj Woltera",
+    "saturdayEyebrow": "W sobotnie poranki"
   },
   "tours": {
     "h1": "Zwiedzanie z przewodnikiem Château de Voltaire",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, Państwa przewodniczka po Château de Voltaire",
-    "lead": "Jestem oficjalną przewodniczką, gawędziarką i entuzjastką oświecenia; od wielu lat przybliżam historię posiadłości Voltaire’a gościom z całego świata.",
+    "lead": "Akredytowana przewodniczka, gawędziarka i miłośniczka oświecenia — od ponad 8 lat przybliżam historię posiadłości Woltera gościom z całego świata.",
     "portraitAlt": "Portret Sylvie, przewodniczki po Château de Voltaire",
     "storyTitle": "Moja historia z Voltaire’em",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "W skrócie",
     "facts": [
-      "Oficjalna przewodniczka po Château de Voltaire",
+      "Akredytowana przewodniczka w Château de Voltaire od ponad 8 lat",
       "Zwiedzanie po angielsku, francusku, niemiecku i rosyjsku",
       "Grupy, firmy, seniorzy, szkoły i osoby indywidualne",
       "Mieszkam w Ferney-Voltaire, tuż obok Genewy"
@@ -467,14 +474,7 @@ export default {
         "q": "Czy historyczne zwiedzanie Ferney-Voltaire jest dostępne po angielsku?",
         "a": "Tak. Każde zwiedzanie, w tym historyczne zwiedzanie Ferney-Voltaire i zamku, jest dostępne po angielsku, a także po francusku, niemiecku i rosyjsku."
       }
-    ],
-    "pricesTitle": "Ceny",
-    "prices": [
-      "Cena usługi przewodnickiej zależy od liczebności grupy, czasu trwania zwiedzania i języka. Przejrzystą, indywidualną wycenę otrzymają Państwo w ciągu 48 godzin.",
-      "Ceny biletów wstępu do zamku ustala Centre des monuments nationaux; są one podawane osobno.",
-      "Firmy, stowarzyszenia i biura podróży otrzymują fakturę."
-    ],
-    "pricesLink": "Poproś o wycenę"
+    ]
   },
   "contact": {
     "h1": "Rezerwacja zwiedzania lub prośba o wycenę",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Wolter w Ferney: człowiek, dzieło, dom",
+    "lead": "Filozof, pisarz, obrońca prześladowanych i budowniczy: poznaj Woltera, zanim przekroczysz próg jego domu.",
+    "chateauTitle": "Château de Voltaire w Ferney",
+    "chateau": [
+      "W 1758 roku, w wieku 64 lat, François-Marie Arouet, zwany Wolterem, kupił posiadłość Ferney tuż pod Genewą. Mieszkał tu blisko dwadzieścia lat, napisał niektóre ze swoich najsłynniejszych dzieł i toczył wielkie batalie sądowe w imię tolerancji i sprawiedliwości.",
+      "Fetowany za życia przez gości z całej Europy, po śmierci w 1778 roku otoczony był chwałą, aż do przeniesienia do Panthéonu w 1791 roku. Kolejni właściciele przebudowywali dom i podtrzymywali kult wielkiego człowieka.",
+      "Dzisiejsi zwiedzający odkrywają posiadłość ukształtowaną przez XVIII i XIX wiek: zarazem zamek, dom pisarza i miejsce pamięci."
+    ],
+    "lifeTitle": "Wolter w najważniejszych datach",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "21 listopada w Paryżu przychodzi na świat François-Marie Arouet, syn notariusza."
+      },
+      {
+        "year": "1704",
+        "text": "Uczy się u jezuitów w Collège Louis-le-Grand, gdzie zakochuje się w literaturze i teatrze."
+      },
+      {
+        "year": "1717",
+        "text": "Za satyryczne wiersze trafia na prawie rok do Bastylii; potem przyjmuje nazwisko Voltaire i w 1718 roku odnosi triumf tragedią Edyp."
+      },
+      {
+        "year": "1726",
+        "text": "Wygnanie w Anglii: odkrywa Newtona, Locke’a i angielską wolność, którą sławi w Listach filozoficznych (1734)."
+      },
+      {
+        "year": "1734",
+        "text": "W Cirey, u boku Émilie du Châtelet, spędza piętnaście lat na nauce, badaniach i pisaniu."
+      },
+      {
+        "year": "1750",
+        "text": "Zaproszony przez Fryderyka II Pruskiego do Potsdamu, zostaje tam prawie trzy lata, po czym popada w konflikt z królem."
+      },
+      {
+        "year": "1755",
+        "text": "Osiada w Les Délices w Genewie, a potem szuka większej swobody tuż za granicą."
+      },
+      {
+        "year": "1758",
+        "text": "Kupuje posiadłość Ferney; Kandyd ukazuje się rok później, w 1759 roku."
+      },
+      {
+        "year": "1762",
+        "text": "Początek sprawy Calasa: publikuje Traktat o tolerancji (1763) i w 1765 roku doprowadza do rehabilitacji protestanta Jeana Calasa."
+      },
+      {
+        "year": "1778",
+        "text": "W lutym triumfalny powrót do Paryża; umiera tam 30 maja w wieku 83 lat."
+      },
+      {
+        "year": "1791",
+        "text": "Jego szczątki zostają przeniesione do Panthéonu: rewolucja oddaje hołd obrońcy wolności."
+      }
+    ],
+    "quotesTitle": "Wolter w cytatach",
+    "quotes": [
+      {
+        "text": "Trzeba uprawiać nasz ogród.",
+        "source": "Kandyd (1759)"
+      },
+      {
+        "text": "Praca oddala od nas trzy wielkie zła: nudę, występek i niedostatek.",
+        "source": "Kandyd (1759)"
+      },
+      {
+        "text": "Lepsze jest wrogiem dobrego.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "Rzeczy zbyteczne — rzecz bardzo potrzebna.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "Zrobiłem trochę dobrego; to moje najlepsze dzieło.",
+        "source": "List do Horacego (1772)"
+      }
+    ],
+    "mythTitle": "Słynny cytat… który nie jest jego",
+    "mythText": "„Nie zgadzam się z tym, co mówisz, ale oddam życie, abyś miał prawo to powiedzieć” — tych słów nie napisał Wolter. W 1906 roku ujęła tak jego postawę jego angielska biografka Evelyn Beatrice Hall. Sylvie ma w zanadrzu wiele takich historii, którymi podzieli się podczas zwiedzania!",
+    "ctaTitle": "Odwiedź Woltera w jego domu",
+    "ctaText": "Najlepszym sposobem, by poznać Woltera, jest zwiedzenie jego domu i ogrodów z akredytowaną przewodniczką."
+  },
+  "pricing": {
+    "title": "Cennik",
+    "lead": "Przejrzyste pakiety dla jednej osoby i dla całej grupy. Ceny zwiedzania z przewodnikiem, w euro.",
+    "excluded": "Bilet wstępu do zamku nie jest wliczony: jego cenę ustala Centre des monuments nationaux i dolicza się ją do ceny zwiedzania.",
+    "policy": "Rezerwacja jest potwierdzana na piśmie wraz z warunkami płatności i anulowania.",
+    "labels": {
+      "perPerson": "za osobę",
+      "child": "7–17 lat",
+      "under7": "poniżej 7 lat bezpłatnie",
+      "flat": "cena ryczałtowa",
+      "upTo6": "do 6 osób",
+      "from4": "od 4 osób",
+      "from10": "grupy od 10 osób",
+      "minimum": "minimum",
+      "from": "od",
+      "onRequest": "na zapytanie",
+      "quote": "wycena indywidualna",
+      "saturday": "Sobota, 9:30–12:30",
+      "book": "Zarezerwuj",
+      "payCard": "Zapłać kartą",
+      "payPaypal": "PayPal",
+      "payNote": "Bezpieczna płatność przez Stripe lub PayPal."
+    },
+    "packages": {
+      "classic": {
+        "name": "Zwiedzanie klasyczne",
+        "desc": "Zamek i ogrody Woltera w około 1 godzinę i 15 minut."
+      },
+      "private": {
+        "name": "Zwiedzanie prywatne",
+        "desc": "Przewodniczka tylko dla Ciebie i Twoich bliskich, o wybranej przez Ciebie porze."
+      },
+      "group": {
+        "name": "Cena dla grup",
+        "desc": "Dla grup od 10 osób, do 30 osób na przewodnika."
+      },
+      "market": {
+        "name": "Sobota: zamek i targ",
+        "desc": "Zamek i jego ogrody, a potem spacer z przewodnikiem po targu w Ferney-Voltaire aż do pomnika „patriarchy”, zanim targ zostanie zamknięty o 13:00."
+      },
+      "thematic": {
+        "name": "Zwiedzanie tematyczne",
+        "desc": "Oświecenie, Wolter i Genewa, literatura: zwiedzanie przygotowane na zamówienie dla Twojej grupy."
+      },
+      "corporate": {
+        "name": "Firmy",
+        "desc": "Team building, wyjazdy motywacyjne i zwiedzanie towarzyszące Twoim wydarzeniom."
+      }
+    }
   },
   "notFound": {
     "title": "Nie znaleziono strony",

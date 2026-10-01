@@ -14,12 +14,34 @@
       toggle.querySelector(".sr-only").textContent = toggle.getAttribute(open ? "data-label-close" : "data-label-open");
     };
     toggle.addEventListener("click", function () {
+      document.documentElement.classList.add("nav-anim");
       setOpen(toggle.getAttribute("aria-expanded") !== "true");
     });
     nav.addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setOpen(false); toggle.focus(); }
     });
+  }
+
+  // Collapse the header menu into the menu button when the labels do not
+  // fit on one line (German, Dutch or Spanish need far more room than
+  // Chinese). Remembers the needed width for the next page load.
+  var root = document.documentElement, headerInner = document.querySelector(".header-inner");
+  if (headerInner) {
+    var key = "navw-" + root.lang;
+    var fit = function () {
+      if (nav && nav.classList.contains("is-open")) return;
+      root.classList.remove("nav-compact");
+      var over = headerInner.scrollWidth - headerInner.clientWidth;
+      try {
+        if (over > 0) localStorage.setItem(key, String(window.innerWidth + over + 8));
+        else if (+localStorage.getItem(key) > window.innerWidth) localStorage.setItem(key, String(window.innerWidth));
+      } catch (e) {}
+      if (over > 0) root.classList.add("nav-compact");
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   }
 
   // Remember the language choice so "/" sends returning visitors home.

@@ -16,7 +16,8 @@ export default {
     "corporate": "Firmen",
     "group": "Gruppen",
     "seniors": "Seniorengruppen",
-    "thematic": "Themenführungen"
+    "thematic": "Themenführungen",
+    "voltaire": "Voltaire"
   },
   "cta": {
     "book": "Führung buchen",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Themenführungen: Aufklärung & Literatur | Schloss Voltaire",
       "description": "Themenführungen in Ferney-Voltaire: Geschichte der Aufklärung, Voltaire und Genf, literarische Führung im Schloss Voltaire, Schlossleben und Gärten."
+    },
+    "voltaire": {
+      "title": "Voltaire in Ferney: Biografie, Zitate und Schloss",
+      "description": "Wer war Voltaire? Sein Leben in Daten, berühmte Zitate und die Geschichte des Château de Voltaire in Ferney, wo der Philosoph fast zwanzig Jahre lebte."
     }
   },
   "ogImageAlt": "Illustration des Schlosses Voltaire in Ferney – Führungen mit Sylvie",
@@ -99,21 +104,21 @@ export default {
     "note": "Das Château de Voltaire ist ein nationales Baudenkmal, das vom Centre des monuments nationaux verwaltet wird; dieses legt auch die Eintrittspreise fest."
   },
   "home": {
-    "eyebrow": "Offizielle Gästeführerin · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Akkreditierte Gästeführerin · Château de Voltaire · Ferney-Voltaire",
     "h1": "Führungen im Schloss Voltaire und in Ferney-Voltaire, mit Sylvie",
     "lead": "Treten Sie ein in das Haus, in dem Voltaire fast zwanzig Jahre lebte. Ich erzähle Ihnen vom Menschen, seinen Kämpfen und seinem Landgut – im Tempo Ihrer Gruppe und in Ihrer Sprache.",
     "heroNote": "15 Minuten vom Flughafen Genf (GVA)",
     "introTitle": "Willkommen bei Voltaire",
     "introText": [
-      "Mein Name ist Sylvie, ich bin offizielle Gästeführerin im Château de Voltaire. Hier schrieb der Philosoph zwischen 1759 und 1778, empfing Gäste aus ganz Europa, verteidigte Verfolgte und machte aus einem Weiler eine Stadt.",
+      "Ich heiße Sylvie und bin akkreditierte Gästeführerin und Privatführerin am Château de Voltaire, wo ich seit mehr als 8 Jahren Führungen leite. Hier hat der Philosoph zwischen 1759 und 1778 geschrieben, ganz Europa empfangen, Verfolgte verteidigt und aus einem Weiler eine Stadt gemacht.",
       "Meine Aufgabe ist es, diese Geschichte lebendig werden zu lassen. Anekdoten, Briefe, Gegenstände, Gärten: Jede Führung bereite ich für mein Publikum vor – ob neugierige Familie, Firmenteam oder Schulklasse."
     ],
     "introLink": "Mehr über mich",
     "valuesTitle": "Warum mit mir?",
     "values": [
       {
-        "title": "Offizielle Führerin vor Ort",
-        "text": "Ich kenne jeden Raum, jeden Weg – und die Geschichten, die auf keiner Infotafel stehen."
+        "title": "Eine akkreditierte Gästeführerin des Anwesens",
+        "text": "Mehr als 8 Jahre Führungen im Schloss: Ich kenne jeden Raum, jeden Weg und die Geschichten, die auf keiner Infotafel stehen."
       },
       {
         "title": "Vier Sprachen",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "Zu den Führungen",
       "imgAlt": "Das Schloss Voltaire, nur wenige Minuten von Genf"
-    }
+    },
+    "voltaireLink": "Voltaire entdecken",
+    "saturdayEyebrow": "Samstagvormittags"
   },
   "tours": {
     "h1": "Führungen im Schloss Voltaire",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, Ihre Führerin im Schloss Voltaire",
-    "lead": "Als offizielle Gästeführerin, Erzählerin und Liebhaberin der Aufklärung teile ich seit vielen Jahren die Geschichte von Voltaires Landgut mit Besuchern aus aller Welt.",
+    "lead": "Als akkreditierte Gästeführerin, Erzählerin und Liebhaberin der Aufklärung bringe ich seit mehr als 8 Jahren Besuchern aus aller Welt die Geschichte von Voltaires Anwesen nahe.",
     "portraitAlt": "Porträt von Sylvie, Gästeführerin im Château de Voltaire",
     "storyTitle": "Meine Geschichte mit Voltaire",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "Auf einen Blick",
     "facts": [
-      "Offizielle Gästeführerin im Château de Voltaire",
+      "Seit mehr als 8 Jahren akkreditierte Gästeführerin am Château de Voltaire",
       "Führungen auf Deutsch, Französisch, Englisch und Russisch",
       "Gruppen, Firmen, Senioren, Schulen und Einzelgäste",
       "Ansässig in Ferney-Voltaire, vor den Toren Genfs"
@@ -467,14 +474,7 @@ export default {
         "q": "Gibt es die Führung auch auf Englisch?",
         "a": "Ja. Alle Führungen, auch die historische Führung durch Ferney-Voltaire, gibt es auf Englisch sowie auf Deutsch, Französisch und Russisch."
       }
-    ],
-    "pricesTitle": "Preise",
-    "prices": [
-      "Der Preis der Führung hängt von Gruppengröße, Dauer und Sprache ab. Sie erhalten innerhalb von 48 Stunden ein klares, persönliches Angebot.",
-      "Der Eintritt ins Schloss wird vom Centre des monuments nationaux festgelegt und separat ausgewiesen.",
-      "Firmen, Vereine und Reiseveranstalter erhalten eine Rechnung."
-    ],
-    "pricesLink": "Angebot anfragen"
+    ]
   },
   "contact": {
     "h1": "Führung buchen oder Angebot anfragen",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Voltaire in Ferney: der Mensch, sein Werk, sein Zuhause",
+    "lead": "Philosoph, Schriftsteller, Verteidiger der Verfolgten und Bauherr: Entdecken Sie, wer Voltaire war, bevor Sie sein Haus betreten.",
+    "chateauTitle": "Das Château de Voltaire in Ferney",
+    "chateau": [
+      "1758 kauft François-Marie Arouet, genannt Voltaire, im Alter von 64 Jahren das Gut Ferney, unmittelbar vor den Toren Genfs. Fast zwanzig Jahre lebt er dort, schreibt einige seiner berühmtesten Werke und führt große Justizkämpfe im Namen von Toleranz und Gerechtigkeit.",
+      "Zu Lebzeiten von Besuchern aus ganz Europa gefeiert, wird er nach seinem Tod 1778 verherrlicht – bis zu seiner Überführung in das Panthéon 1791. Die nachfolgenden Besitzer gestalten das Haus um und halten den Kult um den großen Mann lebendig.",
+      "Heute entdecken Besucher ein vom 18. und 19. Jahrhundert geprägtes Anwesen: Schloss, Schriftstellerhaus und Erinnerungsort zugleich."
+    ],
+    "lifeTitle": "Voltaire in Daten",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "François-Marie Arouet, Sohn eines Notars, wird am 21. November in Paris geboren."
+      },
+      {
+        "year": "1704",
+        "text": "Er besucht das Jesuitenkolleg Collège Louis-le-Grand und entdeckt dort seine Leidenschaft für Literatur und Theater."
+      },
+      {
+        "year": "1717",
+        "text": "Wegen satirischer Verse sitzt er fast ein Jahr in der Bastille; danach nennt er sich Voltaire und feiert 1718 mit seiner Tragödie Ödipus einen Triumph."
+      },
+      {
+        "year": "1726",
+        "text": "Exil in England: Er entdeckt Newton, Locke und die englische Freiheit, die er in den Philosophischen Briefen (1734) rühmt."
+      },
+      {
+        "year": "1734",
+        "text": "In Cirey teilt er mit Émilie du Châtelet fünfzehn Jahre des Studiums, der Wissenschaft und des Schreibens."
+      },
+      {
+        "year": "1750",
+        "text": "Auf Einladung Friedrichs II. von Preußen geht er nach Potsdam, wo er fast drei Jahre bleibt, bevor er sich mit dem König überwirft."
+      },
+      {
+        "year": "1755",
+        "text": "Er lässt sich auf Les Délices in Genf nieder und sucht dann mehr Freiheit gleich jenseits der Grenze."
+      },
+      {
+        "year": "1758",
+        "text": "Er kauft das Gut Ferney; Candide erscheint im folgenden Jahr, 1759."
+      },
+      {
+        "year": "1762",
+        "text": "Beginn der Affäre Calas: Er veröffentlicht die Abhandlung über die Toleranz (1763) und erreicht 1765 die Rehabilitierung des Protestanten Jean Calas."
+      },
+      {
+        "year": "1778",
+        "text": "Triumphale Rückkehr nach Paris im Februar; dort stirbt er am 30. Mai im Alter von 83 Jahren."
+      },
+      {
+        "year": "1791",
+        "text": "Seine sterblichen Überreste werden ins Panthéon überführt: Die Revolution ehrt den Vorkämpfer der Freiheit."
+      }
+    ],
+    "quotesTitle": "Voltaire in eigenen Worten",
+    "quotes": [
+      {
+        "text": "Wir müssen unseren Garten bestellen.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Die Arbeit hält drei große Übel von uns fern: die Langeweile, das Laster und die Not.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Das Bessere ist der Feind des Guten.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "Das Überflüssige, eine sehr notwendige Sache.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "Ich habe ein wenig Gutes getan; das ist mein bestes Werk.",
+        "source": "Epistel an Horaz (1772)"
+      }
+    ],
+    "mythTitle": "Ein berühmtes Zitat … das nicht von ihm stammt",
+    "mythText": "„Ich missbillige, was Sie sagen, aber ich werde bis zum Tod Ihr Recht verteidigen, es zu sagen“ stammt nicht von Voltaire. Seine englische Biografin Evelyn Beatrice Hall schrieb den Satz 1906, um seine Haltung zusammenzufassen. Geschichten wie diese erzählt Ihnen Sylvie bei der Führung noch viele!",
+    "ctaTitle": "Besuchen Sie Voltaire bei sich zu Hause",
+    "ctaText": "Voltaire lernt man am besten kennen, wenn man sein Haus und seine Gärten mit einer akkreditierten Gästeführerin besucht."
+  },
+  "pricing": {
+    "title": "Preise",
+    "lead": "Klare Angebote, für eine Person wie für eine ganze Gruppe. Preise der Führung in Euro.",
+    "excluded": "Der Eintritt ins Schloss ist nicht inbegriffen: Er wird vom Centre des monuments nationaux festgelegt und kommt zum Preis der Führung hinzu.",
+    "policy": "Ihre Buchung wird schriftlich bestätigt, zusammen mit den Zahlungs- und Stornierungsbedingungen.",
+    "labels": {
+      "perPerson": "pro Person",
+      "child": "7–17 Jahre",
+      "under7": "unter 7 Jahren kostenlos",
+      "flat": "Pauschalpreis",
+      "upTo6": "bis 6 Personen",
+      "from4": "ab 4 Personen",
+      "from10": "Gruppen ab 10 Personen",
+      "minimum": "Minimum",
+      "from": "ab",
+      "onRequest": "auf Anfrage",
+      "quote": "nach Angebot",
+      "saturday": "Samstag, 9:30–12:30 Uhr",
+      "book": "Buchen",
+      "payCard": "Mit Karte bezahlen",
+      "payPaypal": "PayPal",
+      "payNote": "Sichere Zahlung über Stripe oder PayPal."
+    },
+    "packages": {
+      "classic": {
+        "name": "Klassische Führung",
+        "desc": "Voltaires Schloss und Gärten in etwa 1 Stunde 15 Minuten."
+      },
+      "private": {
+        "name": "Private Führung",
+        "desc": "Ihre Gästeführerin ganz für Sie und Ihre Begleiter, zur Uhrzeit Ihrer Wahl."
+      },
+      "group": {
+        "name": "Gruppentarif",
+        "desc": "Für Gruppen ab 10 Personen, bis zu 30 pro Gästeführer."
+      },
+      "market": {
+        "name": "Samstag: Schloss & Markt",
+        "desc": "Das Schloss und seine Gärten, dann ein geführter Bummel über den Markt von Ferney-Voltaire bis zur Statue des „Patriarchen“, bevor der Markt um 13 Uhr schließt."
+      },
+      "thematic": {
+        "name": "Themenführung",
+        "desc": "Die Aufklärung, Voltaire und Genf, Literatur: eine Führung, auf Anfrage für Ihre Gruppe vorbereitet."
+      },
+      "corporate": {
+        "name": "Unternehmen",
+        "desc": "Teambuilding, Incentives und Führungen rund um Ihre Veranstaltungen."
+      }
+    }
   },
   "notFound": {
     "title": "Seite nicht gefunden",

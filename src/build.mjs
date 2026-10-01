@@ -11,7 +11,7 @@ import { favicon } from "./art.mjs";
 import { photos, details } from "./gallery.mjs";
 import {
   pathFor, urlFor,
-  homePage, toursPage, aboutPage, galleryPage, landingPage, galleryImages, VIDEOS, practicalPage, contactPage, notFoundPage, rootPage,
+  homePage, toursPage, aboutPage, galleryPage, landingPage, voltairePage, galleryImages, VIDEOS, practicalPage, contactPage, notFoundPage, rootPage,
 } from "./templates.mjs";
 
 
@@ -26,6 +26,7 @@ const renderers = {
   home: homePage, tours: toursPage, about: aboutPage, gallery: galleryPage, practical: practicalPage, contact: contactPage,
   group: (t) => landingPage(t, "group"), corporate: (t) => landingPage(t, "corporate"),
   seniors: (t) => landingPage(t, "seniors"), thematic: (t) => landingPage(t, "thematic"),
+  voltaire: voltairePage,
 };
 
 checkTranslations();

@@ -36,7 +36,7 @@ export const site = {
   // { group: { from: 180 }, corporate: { from: 250 }, seniors: { from: 180 },
   //   thematic: { from: 200 } }. Leave empty until Sylvie confirms prices.
   currency: "EUR",
-  prices: {},
+  prices: { group: { from: 20 }, seniors: { from: 20 }, thematic: { from: 28 }, corporate: { from: 390 } },
 
   address: {
     name: "Château de Voltaire",
@@ -80,16 +80,16 @@ export const tourLanguages = ["fr", "en", "de", "ru"];
 
 // Page keys → localized slugs. "" is the language home page. A slug may
 // contain "/" for sub-pages; `parents` sets their breadcrumb parent.
-export const pages = ["home", "tours", "group", "corporate", "seniors", "thematic", "about", "gallery", "practical", "contact"];
+export const pages = ["home", "tours", "group", "corporate", "seniors", "thematic", "voltaire", "about", "gallery", "practical", "contact"];
 export const parents = { corporate: "group", seniors: "group" };
-export const headerPages = ["tours", "group", "thematic", "about", "gallery", "practical"];
+export const headerPages = ["tours", "group", "thematic", "voltaire", "about", "gallery", "practical"];
 
-const enSlugs = { home: "", tours: "tours", group: "group-tours", corporate: "group-tours/corporate-groups", seniors: "group-tours/senior-groups", thematic: "thematic-tours", about: "about", gallery: "gallery", practical: "practical-info", contact: "contact" };
+const enSlugs = { home: "", tours: "tours", group: "group-tours", corporate: "group-tours/corporate-groups", seniors: "group-tours/senior-groups", thematic: "thematic-tours", voltaire: "voltaire", about: "about", gallery: "gallery", practical: "practical-info", contact: "contact" };
 const localSlugs = {
-  fr: { home: "", tours: "visites", group: "visites-de-groupe", corporate: "visites-de-groupe/entreprises", seniors: "visites-de-groupe/seniors", thematic: "visites-thematiques", about: "a-propos", gallery: "galerie", practical: "infos-pratiques", contact: "contact" },
+  fr: { home: "", tours: "visites", group: "visites-de-groupe", corporate: "visites-de-groupe/entreprises", seniors: "visites-de-groupe/seniors", thematic: "visites-thematiques", voltaire: "voltaire", about: "a-propos", gallery: "galerie", practical: "infos-pratiques", contact: "contact" },
   en: enSlugs,
-  de: { home: "", tours: "fuehrungen", group: "gruppenfuehrungen", corporate: "gruppenfuehrungen/firmen", seniors: "gruppenfuehrungen/senioren", thematic: "themenfuehrungen", about: "ueber-mich", gallery: "galerie", practical: "praktische-infos", contact: "kontakt" },
-  ru: { home: "", tours: "ekskursii", group: "gruppovye-ekskursii", corporate: "gruppovye-ekskursii/kompanii", seniors: "gruppovye-ekskursii/starshee-pokolenie", thematic: "tematicheskie-ekskursii", about: "obo-mne", gallery: "galereya", practical: "prakticheskaya-informatsiya", contact: "kontakty" },
+  de: { home: "", tours: "fuehrungen", group: "gruppenfuehrungen", corporate: "gruppenfuehrungen/firmen", seniors: "gruppenfuehrungen/senioren", thematic: "themenfuehrungen", voltaire: "voltaire", about: "ueber-mich", gallery: "galerie", practical: "praktische-infos", contact: "kontakt" },
+  ru: { home: "", tours: "ekskursii", group: "gruppovye-ekskursii", corporate: "gruppovye-ekskursii/kompanii", seniors: "gruppovye-ekskursii/starshee-pokolenie", thematic: "tematicheskie-ekskursii", voltaire: "volter", about: "obo-mne", gallery: "galereya", practical: "prakticheskaya-informatsiya", contact: "kontakty" },
 };
 // Other languages use the English slugs.
 export const slugs = Object.fromEntries(Object.keys(langMeta).map((l) => [l, localSlugs[l] || enSlugs]));
@@ -119,3 +119,24 @@ export const tourCategories = [
 
 // Values offered by the "group type" select on the booking form.
 export const groupTypes = ["individual", "private", "corporate", "school", "seniors", "tourist"];
+
+// Price list (guiding fee in euros; château admission is never included).
+// Each line: amount + unit label, optional note label (keys of
+// t.pricing.labels). `stripe` / `paypal`: payment links created in Sylvie's
+// Stripe and PayPal accounts; the pay buttons only appear once they are set.
+export const packages = [
+  { id: "classic", contactType: "individual", lines: [
+    { amount: 28, unit: "perPerson" }, { amount: 14, unit: "child" }, { amount: 0, unit: "under7" },
+  ], stripe: "", paypal: "" },
+  { id: "private", contactType: "individual", lines: [{ amount: 170, unit: "flat", note: "upTo6" }], stripe: "", paypal: "" },
+  { id: "group", contactType: "tourist", lines: [
+    { amount: 20, unit: "perPerson", note: "from10" }, { amount: 200, unit: "minimum" },
+  ], stripe: "", paypal: "" },
+  { id: "market", contactType: "private", saturday: true, photo: "/assets/gallery/15-statue-voltaire-marche-ferney-voltaire.jpg", lines: [
+    { amount: 45, unit: "perPerson", note: "from4" }, { amount: 36, unit: "perPerson", note: "from10" },
+  ], stripe: "", paypal: "" },
+  { id: "thematic", contactType: "private", lines: [
+    { amount: 39, unit: "perPerson", note: "onRequest" }, { amount: 28, unit: "perPerson", note: "from10" }, { amount: 280, unit: "minimum" },
+  ], stripe: "", paypal: "" },
+  { id: "corporate", contactType: "corporate", lines: [{ amount: 390, unit: "from", note: "quote" }], stripe: "", paypal: "" },
+];

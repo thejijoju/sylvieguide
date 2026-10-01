@@ -16,7 +16,8 @@ export default {
     "corporate": "Companies",
     "group": "Group tours",
     "seniors": "Senior groups",
-    "thematic": "Thematic tours"
+    "thematic": "Thematic tours",
+    "voltaire": "Voltaire"
   },
   "cta": {
     "book": "Book a Tour",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Enlightenment & Literary Tours | Château de Voltaire, Ferney",
       "description": "Thematic guided tours in Ferney-Voltaire: Enlightenment history, Voltaire and Geneva, literary tours of the Château de Voltaire, château life and gardens."
+    },
+    "voltaire": {
+      "title": "Voltaire in Ferney: Biography, Quotes and His Château",
+      "description": "Who was Voltaire? His life in key dates, famous quotes and the story of the Château de Voltaire in Ferney, where the philosopher lived for nearly twenty years."
     }
   },
   "ogImageAlt": "Illustration of the Château de Voltaire in Ferney — guided tours with Sylvie",
@@ -99,21 +104,21 @@ export default {
     "note": "The Château de Voltaire is a national monument managed by the Centre des monuments nationaux, which sets the monument’s admission fees."
   },
   "home": {
-    "eyebrow": "Official guide · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Accredited guide · Château de Voltaire · Ferney-Voltaire",
     "h1": "Guided tours of the Château de Voltaire & Ferney-Voltaire, with Sylvie",
     "lead": "Step inside the house where Voltaire lived for nearly twenty years. I’ll tell you about the man, his battles and his estate — at your group’s pace and in your language.",
     "heroNote": "15 minutes from Geneva Airport (GVA)",
     "introTitle": "Welcome to Voltaire’s home",
     "introText": [
-      "My name is Sylvie and I am an official guide and private guide at the Château de Voltaire. Here, between 1759 and 1778, the philosopher wrote, entertained the whole of Europe, defended the persecuted and turned a hamlet into a town.",
+      "My name is Sylvie, accredited guide and private guide at the Château de Voltaire, where I have been guiding for more than 8 years. Here, between 1759 and 1778, the philosopher wrote, entertained the whole of Europe, defended the persecuted and turned a hamlet into a town.",
       "My job is to bring that story to life. Anecdotes, letters, objects, gardens: every tour is prepared for the people in front of me, whether a curious family, a corporate team or a class of twelve-year-olds."
     ],
     "introLink": "Read my story",
     "valuesTitle": "Why tour with me",
     "values": [
       {
-        "title": "An official guide of the estate",
-        "text": "I know every room, every path, and the stories you won’t find on the information panels."
+        "title": "An accredited guide of the estate",
+        "text": "More than 8 years of tours at the château: I know every room, every path, and the stories you won’t find on the information panels."
       },
       {
         "title": "Four languages",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "See the tours",
       "imgAlt": "The Château de Voltaire, a short trip from Geneva"
-    }
+    },
+    "voltaireLink": "Discover Voltaire",
+    "saturdayEyebrow": "On Saturday mornings"
   },
   "tours": {
     "h1": "Guided tours of the Château de Voltaire",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, your guide at the Château de Voltaire",
-    "lead": "Official guide, storyteller and Enlightenment enthusiast, I have spent many years sharing the history of Voltaire’s estate with visitors from all over the world.",
+    "lead": "Accredited guide, storyteller and Enlightenment enthusiast, I have been sharing the history of Voltaire’s estate with visitors from all over the world for more than 8 years.",
     "portraitAlt": "Portrait of Sylvie, guide at the Château de Voltaire",
     "storyTitle": "My story with Voltaire",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "At a glance",
     "facts": [
-      "Official guide at the Château de Voltaire",
+      "Accredited guide at the Château de Voltaire for more than 8 years",
       "Tours in English, French, German and Russian",
       "Groups, companies, seniors, schools and individuals",
       "Based in Ferney-Voltaire, on the doorstep of Geneva"
@@ -467,14 +474,7 @@ export default {
         "q": "Is the historical tour of Ferney-Voltaire available in English?",
         "a": "Yes. Every tour, including the historical tour of Ferney-Voltaire and the château, is available in English, as well as French, German and Russian."
       }
-    ],
-    "pricesTitle": "Prices",
-    "prices": [
-      "Guiding fees depend on the size of the group, the length of the visit and the language. You receive a clear, personal quote within 48 hours.",
-      "Admission to the château is set by the Centre des monuments nationaux and is shown separately.",
-      "Companies, associations and tour operators receive an invoice."
-    ],
-    "pricesLink": "Request a quote"
+    ]
   },
   "contact": {
     "h1": "Book a tour or request a quote",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Voltaire in Ferney: the man, his work, his home",
+    "lead": "Philosopher, writer, defender of the persecuted and builder: discover who Voltaire was before you step inside his house.",
+    "chateauTitle": "The Château de Voltaire in Ferney",
+    "chateau": [
+      "In 1758, aged 64, François-Marie Arouet, known as Voltaire, bought the Ferney estate, just outside Geneva. He lived there for nearly twenty years, wrote some of his most famous works there and fought great legal battles in the name of tolerance and justice.",
+      "Celebrated in his lifetime by visitors from all over Europe, he was glorified after his death in 1778, up to his entry into the Panthéon in 1791. Successive owners then transformed the house and kept alive the cult of the great man.",
+      "Today’s visitors discover an estate shaped by the 18th and 19th centuries: at once a château, a writer’s house and a place of memory."
+    ],
+    "lifeTitle": "Voltaire in key dates",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "François-Marie Arouet, son of a notary, is born in Paris on 21 November."
+      },
+      {
+        "year": "1704",
+        "text": "He studies with the Jesuits at the Collège Louis-le-Grand, where he falls in love with literature and theatre."
+      },
+      {
+        "year": "1717",
+        "text": "Imprisoned in the Bastille for almost a year for satirical verses; he then takes the name Voltaire and triumphs with his tragedy Oedipus in 1718."
+      },
+      {
+        "year": "1726",
+        "text": "Exile in England: he discovers Newton, Locke and English liberty, which he celebrates in the Philosophical Letters (1734)."
+      },
+      {
+        "year": "1734",
+        "text": "At Cirey, with Émilie du Châtelet, he shares fifteen years of study, science and writing."
+      },
+      {
+        "year": "1750",
+        "text": "Invited by Frederick II of Prussia to Potsdam, he stays almost three years before falling out with the king."
+      },
+      {
+        "year": "1755",
+        "text": "He settles at Les Délices in Geneva, then seeks more freedom just across the border."
+      },
+      {
+        "year": "1758",
+        "text": "He buys the Ferney estate; Candide appears the following year, in 1759."
+      },
+      {
+        "year": "1762",
+        "text": "The Calas affair begins: he publishes the Treatise on Tolerance (1763) and wins the rehabilitation of the Protestant Jean Calas in 1765."
+      },
+      {
+        "year": "1778",
+        "text": "A triumphant return to Paris in February; he dies there on 30 May, aged 83."
+      },
+      {
+        "year": "1791",
+        "text": "His remains are moved to the Panthéon: the Revolution honours the champion of liberty."
+      }
+    ],
+    "quotesTitle": "Voltaire in his own words",
+    "quotes": [
+      {
+        "text": "We must cultivate our garden.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Work keeps at bay three great evils: boredom, vice and need.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "The best is the enemy of the good.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "The superfluous, a very necessary thing.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "I have done a little good; that is my best work.",
+        "source": "Epistle to Horace (1772)"
+      }
+    ],
+    "mythTitle": "A famous quote… that isn’t his",
+    "mythText": "“I disapprove of what you say, but I will defend to the death your right to say it” was not written by Voltaire. His English biographer Evelyn Beatrice Hall wrote it in 1906 to sum up his attitude. Sylvie has many stories like this one to share during the tour!",
+    "ctaTitle": "Meet Voltaire at home",
+    "ctaText": "The best way to know Voltaire is to visit his house and gardens with an accredited guide."
+  },
+  "pricing": {
+    "title": "Prices",
+    "lead": "Clear packages, for one person or a whole group. Prices for the guided tour, in euros.",
+    "excluded": "Admission to the château is not included: it is set by the Centre des monuments nationaux and comes on top of the tour price.",
+    "policy": "Your booking is confirmed in writing, together with the payment and cancellation terms.",
+    "labels": {
+      "perPerson": "per person",
+      "child": "ages 7–17",
+      "under7": "free under 7",
+      "flat": "flat rate",
+      "upTo6": "up to 6 people",
+      "from4": "from 4 people",
+      "from10": "groups from 10 people",
+      "minimum": "minimum",
+      "from": "from",
+      "onRequest": "on request",
+      "quote": "on quote",
+      "saturday": "Saturday, 9:30 am – 12:30 pm",
+      "book": "Book",
+      "payCard": "Pay by card",
+      "payPaypal": "PayPal",
+      "payNote": "Secure payment by Stripe or PayPal."
+    },
+    "packages": {
+      "classic": {
+        "name": "Classic tour",
+        "desc": "Voltaire’s château and gardens, in about 1 hour 15 minutes."
+      },
+      "private": {
+        "name": "Private tour",
+        "desc": "Your guide just for you and your companions, at the time you choose."
+      },
+      "group": {
+        "name": "Group rate",
+        "desc": "For groups of 10 people or more, up to 30 per guide."
+      },
+      "market": {
+        "name": "Saturday: château & market",
+        "desc": "The château and its gardens, then a guided stroll through the Ferney-Voltaire market to the statue of the “patriarch”, before the market closes at 1 pm."
+      },
+      "thematic": {
+        "name": "Thematic tour",
+        "desc": "The Enlightenment, Voltaire and Geneva, literature: a tour prepared on request for your group."
+      },
+      "corporate": {
+        "name": "Companies",
+        "desc": "Team building, incentives and tours around your events."
+      }
+    }
   },
   "notFound": {
     "title": "Page not found",

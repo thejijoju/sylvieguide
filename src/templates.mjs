@@ -1,4 +1,4 @@
-import { site, languages, langMeta, pages, parents, headerPages, tourLanguages, slugs, tourCategories, groupTypes } from "./config.mjs";
+import { site, languages, langMeta, pages, parents, headerPages, tourLanguages, slugs, tourCategories, groupTypes, packages } from "./config.mjs";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -148,7 +148,11 @@ function langSwitcher(t, page, extraClass = "") {
 // version stays indexable.
 function languageScript(t, page) {
   const alternates = Object.fromEntries(languages.map((l) => [l, pathFor(l, page)]));
-  return `<script>(function(){try{var a=${JSON.stringify(alternates)},cur=${JSON.stringify(t.lang)},s=null;try{s=localStorage.getItem("lang")}catch(e){}
+  // nav-compact: the header menu is collapsed whenever its labels do not fit
+  // (widths vary a lot between languages). main.js measures it; the width it
+  // saved last time avoids a flash of the wide menu on the next page.
+  return `<script>(function(){try{var w=+localStorage.getItem("navw-${t.lang}");if(w&&innerWidth<w)document.documentElement.classList.add("nav-compact")}catch(e){}})();
+(function(){try{var a=${JSON.stringify(alternates)},cur=${JSON.stringify(t.lang)},s=null;try{s=localStorage.getItem("lang")}catch(e){}
 if(/bot|crawl|spider|slurp|lighthouse|inspection|preview|facebookexternalhit|embedly|whatsapp|telegram|headless/i.test(navigator.userAgent)||/[?&]lang=keep/.test(location.search))return;
 if(s){if(s!==cur&&a[s])location.replace(a[s]+location.search+location.hash);return}
 var p=navigator.languages||[navigator.language||""];for(var i=0;i<p.length;i++){var c=String(p[i]).slice(0,2).toLowerCase();if(a[c]){if(c!==cur)location.replace(a[c]+location.search+location.hash);return}}}catch(e){}})();</script>`;
@@ -497,7 +501,8 @@ export function homePage(t) {
       <h2 id="intro-title">${esc(h.introTitle)}</h2>
       ${ornament}
       ${h.introText.map((p) => `<p>${esc(p)}</p>`).join("")}
-      <a class="text-link" href="${pathFor(t.lang, "about")}">${esc(h.introLink)} ${icon("arrow")}</a>
+      <p class="link-row"><a class="text-link" href="${pathFor(t.lang, "about")}">${esc(h.introLink)} ${icon("arrow")}</a>
+      <a class="text-link" href="${pathFor(t.lang, "voltaire")}">${esc(h.voltaireLink)} ${icon("arrow")}</a></p>
     </div>
   </div>
 </section>
@@ -542,6 +547,8 @@ ${featuredQuote(t)}
     <figure class="daytrip-photo"><img src="/assets/img/chateau-de-voltaire-facade.jpg" alt="${esc(h.daytrip.imgAlt)}" width="640" height="480" loading="lazy" decoding="async"></figure>
   </div>
 </section>
+
+${saturdaySection(t)}
 
 <section class="section" aria-labelledby="themes-title">
   <div class="container">
@@ -873,6 +880,147 @@ function offerLd(t, key) {
   };
 }
 
+// ---------------------------------------------------------------- prices
+
+const money = (t, amount) =>
+  new Intl.NumberFormat(langMeta[t.lang].locale.replace("_", "-"), { style: "currency", currency: site.currency || "EUR", maximumFractionDigits: 0 }).format(amount);
+
+function priceLine(t, line) {
+  const L = t.pricing.labels;
+  const note = line.note ? ` <span class="price-note">· ${esc(L[line.note])}</span>` : "";
+  if (line.unit === "under7") return `<li class="price-free">${esc(L.under7)}</li>`;
+  if (line.unit === "minimum") return `<li class="price-min">${esc(L.minimum)} ${money(t, line.amount)}</li>`;
+  if (line.unit === "from") return `<li><span class="price-from">${esc(L.from)}</span> <strong>${money(t, line.amount)}</strong>${note}</li>`;
+  return `<li><strong>${money(t, line.amount)}</strong> ${esc(L[line.unit])}${note}</li>`;
+}
+
+function packageCard(t, pk) {
+  const P = t.pricing;
+  const name = P.packages[pk.id].name;
+  const book = `${pathFor(t.lang, "contact")}?type=${pk.contactType}&tour=${pk.id === "market" ? "market" : pk.id}#booking`;
+  const pay = [
+    pk.stripe ? `<a class="btn btn-primary btn-sm" href="${esc(pk.stripe)}" rel="noopener" target="_blank">${esc(P.labels.payCard)}</a>` : "",
+    pk.paypal ? `<a class="btn btn-outline btn-sm" href="${esc(pk.paypal)}" rel="noopener" target="_blank">${esc(P.labels.payPaypal)}</a>` : "",
+  ].join("");
+  return `<article class="card price-card${pk.saturday ? " price-card-featured" : ""}" id="price-${pk.id}">
+      ${pk.saturday ? `<p class="price-tag">${icon("clock")}${esc(P.labels.saturday)}</p>` : ""}
+      <h3>${esc(name)}</h3>
+      <p>${esc(P.packages[pk.id].desc)}</p>
+      <ul class="price-lines">${pk.lines.map((l) => priceLine(t, l)).join("")}</ul>
+      <div class="btn-row">${pay}<a class="btn ${pay ? "btn-outline" : "btn-primary"} btn-sm" href="${book}">${esc(P.labels.book)}</a></div>
+    </article>`;
+}
+
+export function pricingSection(t) {
+  const P = t.pricing;
+  const anyPay = packages.some((pk) => pk.stripe || pk.paypal);
+  return `<section class="section" id="prices" aria-labelledby="prices-title">
+  <div class="container">
+    <h2 id="prices-title" class="section-title">${esc(P.title)}</h2>
+    ${ornament}
+    <p class="section-lead">${esc(P.lead)}</p>
+    <div class="price-grid">${packages.map((pk) => packageCard(t, pk)).join("")}</div>
+    <p class="price-excluded">${icon("key")}${esc(P.excluded)}</p>
+    <p class="price-policy">${esc(P.policy)}${anyPay ? " " + esc(P.labels.payNote) : ""}</p>
+  </div>
+</section>`;
+}
+
+// Home page: the Saturday château & market package, with the statue photo.
+function saturdaySection(t) {
+  const pk = packages.find((p) => p.saturday);
+  if (!pk) return "";
+  const P = t.pricing;
+  return `<section class="section section-tinted saturday" aria-labelledby="saturday-title">
+  <div class="container daytrip-grid">
+    <figure class="daytrip-photo"><img src="${pk.photo}" alt="${esc(P.packages[pk.id].name)} — Ferney-Voltaire" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+    <div>
+      <p class="eyebrow">${esc(t.home.saturdayEyebrow)} · ${esc(P.labels.saturday)}</p>
+      <h2 id="saturday-title">${esc(P.packages[pk.id].name)}</h2>
+      ${ornament}
+      <p>${esc(P.packages[pk.id].desc)}</p>
+      <ul class="price-lines">${pk.lines.map((l) => priceLine(t, l)).join("")}</ul>
+      <p class="btn-row"><a class="btn btn-primary" href="${pathFor(t.lang, "contact")}?type=${pk.contactType}&tour=market#booking">${esc(P.labels.book)}</a>
+      <a class="btn btn-outline" href="${pathFor(t.lang, "practical")}#prices">${esc(P.title)}</a></p>
+    </div>
+  </div>
+</section>`;
+}
+
+// All packages as an OfferCatalog (structured data), admission excluded.
+function offerCatalogLd(t) {
+  return {
+    "@type": "OfferCatalog",
+    "@id": `${urlFor(t.lang, "practical")}#prices`,
+    name: t.pricing.title,
+    itemListElement: packages.map((pk) => {
+      const main = pk.lines.find((l) => l.amount > 0);
+      return {
+        "@type": "Offer",
+        name: t.pricing.packages[pk.id].name,
+        description: t.pricing.packages[pk.id].desc,
+        price: main.amount,
+        priceCurrency: site.currency || "EUR",
+        url: `${urlFor(t.lang, "practical")}#price-${pk.id}`,
+        seller: { "@id": `${site.origin}/#business` },
+      };
+    }),
+  };
+}
+
+// ---------------------------------------------------------------- Voltaire page
+
+export function voltairePage(t) {
+  const v = t.voltaire;
+  const body = `
+${pageHero(t, "voltaire", v.h1, v.lead)}
+<section class="section">
+  <div class="container intro-grid">
+    <figure class="portrait"><img src="/assets/img/chateau-de-voltaire-facade.jpg" alt="${esc(t.footer.photoAlt)}" width="640" height="480" loading="lazy" decoding="async"></figure>
+    <div>
+      <h2>${esc(v.chateauTitle)}</h2>
+      ${ornament}
+      ${v.chateau.map((x) => `<p>${esc(x)}</p>`).join("")}
+    </div>
+  </div>
+</section>
+<section class="section section-tinted" aria-labelledby="life-title">
+  <div class="container narrow">
+    <h2 id="life-title" class="section-title">${esc(v.lifeTitle)}</h2>
+    ${ornament}
+    <ol class="timeline">${v.timeline.map((e) => `<li><span class="timeline-year">${esc(e.year)}</span><p>${esc(e.text)}</p></li>`).join("")}</ol>
+  </div>
+</section>
+<section class="section quotes-section" aria-labelledby="quotes-title">
+  <div class="container">
+    <h2 id="quotes-title" class="section-title">${esc(v.quotesTitle)}</h2>
+    ${ornament}
+    <div class="quote-grid">${v.quotes
+      .map((q) => `<figure class="quote-card"><blockquote lang="${t.lang}"><p>${quoted(t, q.text)}</p></blockquote><figcaption>Voltaire, <cite>${esc(q.source)}</cite></figcaption></figure>`)
+      .join("")}</div>
+  </div>
+</section>
+<section class="section section-tinted">
+  <div class="container narrow myth">
+    <h2>${esc(v.mythTitle)}</h2>
+    <p>${esc(v.mythText)}</p>
+  </div>
+</section>
+${ctaBand(t, v.ctaTitle, v.ctaText)}`;
+  const person = {
+    "@type": "Person",
+    "@id": `${site.origin}/#voltaire`,
+    name: "Voltaire",
+    alternateName: "François-Marie Arouet",
+    birthDate: "1694-11-21",
+    deathDate: "1778-05-30",
+    birthPlace: { "@type": "Place", name: "Paris" },
+    deathPlace: { "@type": "Place", name: "Paris" },
+    sameAs: ["https://www.wikidata.org/wiki/Q9068"],
+  };
+  return layout(t, "voltaire", body, [person, { "@type": "WebPage", "@id": `${urlFor(t.lang, "voltaire")}#webpage`, about: { "@id": `${site.origin}/#voltaire` } }]);
+}
+
 export function aboutPage(t) {
   const a = t.about;
   const body = `
@@ -935,14 +1083,7 @@ ${pageHero(t, "practical", p.h1, p.lead)}
     </div>
   </div>
 </section>
-<section class="section" aria-labelledby="prices-title">
-  <div class="container narrow prices">
-    <h2 id="prices-title" class="section-title">${esc(p.pricesTitle)}</h2>
-    ${ornament}
-    <ul class="checklist checklist-lg">${p.prices.map((x) => `<li>${icon("check")}${esc(x)}</li>`).join("")}</ul>
-    <p class="center"><a class="btn btn-primary" href="${pathFor(t.lang, "contact")}?type=tourist#booking">${esc(p.pricesLink)}</a></p>
-  </div>
-</section>
+${pricingSection(t)}
 <section class="section section-tinted" aria-labelledby="dur-title">
   <div class="container two-col">
     <div>
@@ -980,7 +1121,7 @@ ${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
-  return layout(t, "practical", body, [faqLd]);
+  return layout(t, "practical", body, [faqLd, offerCatalogLd(t)]);
 }
 
 export function contactPage(t) {

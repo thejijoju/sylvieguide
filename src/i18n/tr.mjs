@@ -16,7 +16,8 @@ export default {
     "corporate": "Şirketler",
     "group": "Grup turları",
     "seniors": "Emekli grupları",
-    "thematic": "Tematik turlar"
+    "thematic": "Tematik turlar",
+    "voltaire": "Voltaire"
   },
   "cta": {
     "book": "Tur rezervasyonu yapın",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Aydınlanma ve Edebiyat Turları | Château de Voltaire, Ferney",
       "description": "Ferney-Voltaire'de tematik rehberli turlar: Aydınlanma tarihi, Voltaire ve Cenevre, Château de Voltaire'de edebiyat turları, şato yaşamı ve bahçeler."
+    },
+    "voltaire": {
+      "title": "Ferney’de Voltaire: Biyografi, Sözler ve Château de Voltaire",
+      "description": "Voltaire kimdi? Önemli tarihlerle hayatı, ünlü sözleri ve filozofun yaklaşık yirmi yıl yaşadığı Ferney’deki Château de Voltaire’in hikâyesi."
     }
   },
   "ogImageAlt": "Ferney'deki Château de Voltaire illüstrasyonu — Sylvie ile rehberli turlar",
@@ -99,21 +104,21 @@ export default {
     "note": "Château de Voltaire, Centre des monuments nationaux tarafından yönetilen ulusal bir anıttır; anıtın giriş ücretlerini de bu kurum belirler."
   },
   "home": {
-    "eyebrow": "Resmî rehber · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Akredite rehber · Château de Voltaire · Ferney-Voltaire",
     "h1": "Sylvie ile Château de Voltaire (Voltaire Şatosu) ve Ferney-Voltaire rehberli turları",
     "lead": "Voltaire'in yaklaşık yirmi yıl yaşadığı evin içine adım atın. Size bu adamı, mücadelelerini ve malikânesini anlatacağım — grubunuzun temposunda; İngilizce, Fransızca, Almanca veya Rusça.",
     "heroNote": "Cenevre Havalimanı'na (GVA) 15 dakika",
     "introTitle": "Voltaire'in evine hoş geldiniz",
     "introText": [
-      "Adım Sylvie; Château de Voltaire'de resmî rehber ve özel rehberim. Filozof burada, 1759 ile 1778 arasında yazdı, tüm Avrupa'yı ağırladı, zulme uğrayanları savundu ve küçük bir köyü bir kasabaya dönüştürdü.",
+      "Adım Sylvie; 8 yılı aşkın süredir tur yaptırdığım Château de Voltaire’de akredite rehber ve özel rehberim. Filozof burada, 1759 ile 1778 arasında yazdı, bütün Avrupa’yı ağırladı, zulme uğrayanları savundu ve bir köyü kasabaya dönüştürdü.",
       "Benim işim bu hikâyeyi canlandırmak. Anekdotlar, mektuplar, eşyalar, bahçeler: her turu karşımdaki insanlara göre hazırlarım; meraklı bir aile, kurumsal bir ekip ya da on iki yaşındaki çocuklardan oluşan bir sınıf olsun."
     ],
     "introLink": "Hikâyemi okuyun",
     "valuesTitle": "Neden benimle tur yapmalısınız",
     "values": [
       {
-        "title": "Malikânenin resmî rehberi",
-        "text": "Her odayı, her yolu ve bilgi panolarında bulamayacağınız hikâyeleri biliyorum."
+        "title": "Mekânın akredite rehberi",
+        "text": "Şatoda 8 yılı aşkın tur deneyimi: her odayı, her yolu ve bilgi panolarında bulamayacağınız hikâyeleri biliyorum."
       },
       {
         "title": "Dört dil",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "Turları görün",
       "imgAlt": "Cenevre'ye kısa bir mesafedeki Château de Voltaire"
-    }
+    },
+    "voltaireLink": "Voltaire’i keşfedin",
+    "saturdayEyebrow": "Cumartesi sabahları"
   },
   "tours": {
     "h1": "Château de Voltaire rehberli turları",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, Château de Voltaire'deki rehberiniz",
-    "lead": "Resmî rehber, hikâye anlatıcısı ve Aydınlanma tutkunu olarak uzun yıllardır Voltaire'in malikânesinin tarihini dünyanın dört bir yanından gelen ziyaretçilerle paylaşıyorum.",
+    "lead": "Akredite rehber, hikâye anlatıcısı ve Aydınlanma tutkunu olarak 8 yılı aşkın süredir Voltaire’in malikânesinin tarihini dünyanın dört bir yanından gelen ziyaretçilerle paylaşıyorum.",
     "portraitAlt": "Château de Voltaire rehberi Sylvie'nin portresi",
     "storyTitle": "Voltaire ile hikâyem",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "Bir bakışta",
     "facts": [
-      "Château de Voltaire'in resmî rehberi",
+      "8 yılı aşkın süredir Château de Voltaire’de akredite rehber",
       "İngilizce, Fransızca, Almanca ve Rusça turlar",
       "Gruplar, şirketler, emekliler, okullar ve bireysel ziyaretçiler",
       "Cenevre'nin yanı başında, Ferney-Voltaire'de"
@@ -467,14 +474,7 @@ export default {
         "q": "Ferney-Voltaire tarih turu İngilizce yapılıyor mu?",
         "a": "Evet. Ferney-Voltaire ve şato tarih turu dahil her tur İngilizce, ayrıca Fransızca, Almanca ve Rusça olarak sunulmaktadır."
       }
-    ],
-    "pricesTitle": "Fiyatlar",
-    "prices": [
-      "Rehberlik ücretleri grubun büyüklüğüne, ziyaretin süresine ve dile bağlıdır. 48 saat içinde net ve kişisel bir teklif alırsınız.",
-      "Şato giriş ücreti Centre des monuments nationaux tarafından belirlenir ve ayrıca gösterilir.",
-      "Şirketlere, derneklere ve tur operatörlerine fatura kesilir."
-    ],
-    "pricesLink": "Teklif isteyin"
+    ]
   },
   "contact": {
     "h1": "Tur rezervasyonu yapın veya teklif isteyin",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Ferney’de Voltaire: insan, eser, ev",
+    "lead": "Filozof, yazar, zulme uğrayanların savunucusu ve kurucu: evine adım atmadan önce Voltaire’in kim olduğunu keşfedin.",
+    "chateauTitle": "Ferney’deki Château de Voltaire (Voltaire Şatosu)",
+    "chateau": [
+      "1758’de, 64 yaşındayken, Voltaire olarak tanınan François-Marie Arouet, Cenevre’nin hemen dışındaki Ferney malikânesini satın aldı. Burada yaklaşık yirmi yıl yaşadı, en ünlü eserlerinden bazılarını burada yazdı ve hoşgörü ile adalet adına büyük hukuk mücadeleleri verdi.",
+      "Hayattayken Avrupa’nın dört bir yanından gelen ziyaretçilerce el üstünde tutulan Voltaire, 1778’deki ölümünün ardından yüceltildi; bu yüceltme 1791’de Panthéon’a girişine kadar sürdü. Ardından gelen sahipler evi dönüştürdü ve büyük adamın kültünü yaşattı.",
+      "Bugünün ziyaretçileri 18. ve 19. yüzyılların biçimlendirdiği bir malikâne keşfediyor: aynı anda hem bir şato, hem bir yazar evi, hem de bir hafıza mekânı."
+    ],
+    "lifeTitle": "Önemli tarihlerle Voltaire",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "Bir noterin oğlu olan François-Marie Arouet, 21 Kasım’da Paris’te doğar."
+      },
+      {
+        "year": "1704",
+        "text": "Collège Louis-le-Grand’da Cizvitlerin yanında okur; burada edebiyata ve tiyatroya gönül verir."
+      },
+      {
+        "year": "1717",
+        "text": "Hiciv dizeleri yüzünden yaklaşık bir yıl Bastille’de hapsedilir; ardından Voltaire adını alır ve 1718’de Oidipus trajedisiyle büyük bir zafer kazanır."
+      },
+      {
+        "year": "1726",
+        "text": "İngiltere’de sürgün: Newton’ı, Locke’u ve İngiliz özgürlüğünü keşfeder; bu özgürlüğü Felsefe Mektupları’nda (1734) över."
+      },
+      {
+        "year": "1734",
+        "text": "Cirey’de, Émilie du Châtelet’nin yanında, on beş yıl boyunca çalışmayı, bilimi ve yazıyı paylaşır."
+      },
+      {
+        "year": "1750",
+        "text": "Prusya Kralı II. Friedrich tarafından Potsdam’a davet edilir; kralla arası bozulmadan önce orada yaklaşık üç yıl kalır."
+      },
+      {
+        "year": "1755",
+        "text": "Cenevre’de Les Délices’e yerleşir, ardından sınırın hemen öte yanında daha fazla özgürlük arar."
+      },
+      {
+        "year": "1758",
+        "text": "Ferney malikânesini satın alır; Candide ertesi yıl, 1759’da yayımlanır."
+      },
+      {
+        "year": "1762",
+        "text": "Calas davası başlar: Hoşgörü Üzerine İnceleme’yi (1763) yayımlar ve 1765’te Protestan Jean Calas’nın itibarının iadesini sağlar."
+      },
+      {
+        "year": "1778",
+        "text": "Şubat’ta Paris’e görkemli bir dönüş; 30 Mayıs’ta, 83 yaşında orada ölür."
+      },
+      {
+        "year": "1791",
+        "text": "Naaşı Panthéon’a taşınır: Devrim, özgürlüğün savunucusunu onurlandırır."
+      }
+    ],
+    "quotesTitle": "Kendi sözleriyle Voltaire",
+    "quotes": [
+      {
+        "text": "Bahçemizi işlemeliyiz.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Çalışmak bizden üç büyük kötülüğü uzak tutar: can sıkıntısını, ahlaksızlığı ve yoksulluğu.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "En iyi, iyinin düşmanıdır.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "Gereksiz olan, pek gerekli bir şey.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "Biraz iyilik yaptım; bu benim en iyi eserimdir.",
+        "source": "Horatius’a Mektup (1772)"
+      }
+    ],
+    "mythTitle": "Ünlü bir söz… ama onun değil",
+    "mythText": "“Düşüncelerinize katılmıyorum ama onları söyleme hakkınızı ölümüne savunacağım” sözü Voltaire’e ait değildir. Bu sözü, onun tavrını özetlemek için 1906’da İngiliz biyografi yazarı Evelyn Beatrice Hall yazmıştır. Sylvie’nin tur sırasında anlatacağı buna benzer daha pek çok hikâyesi var!",
+    "ctaTitle": "Voltaire’le evinde tanışın",
+    "ctaText": "Voltaire’i tanımanın en iyi yolu, evini ve bahçelerini akredite bir rehberle gezmektir."
+  },
+  "pricing": {
+    "title": "Fiyatlar",
+    "lead": "Tek kişi için de, bütün bir grup için de anlaşılır paketler. Rehberli tur fiyatları, euro cinsinden.",
+    "excluded": "Şatoya giriş ücreti dahil değildir: Centre des monuments nationaux tarafından belirlenir ve tur fiyatına eklenir.",
+    "policy": "Rezervasyonunuz, ödeme ve iptal koşullarıyla birlikte yazılı olarak onaylanır.",
+    "labels": {
+      "perPerson": "kişi başı",
+      "child": "7–17 yaş",
+      "under7": "7 yaş altı ücretsiz",
+      "flat": "sabit ücret",
+      "upTo6": "en fazla 6 kişi",
+      "from4": "4 kişiden itibaren",
+      "from10": "10 kişi ve üzeri gruplar",
+      "minimum": "en az",
+      "from": "başlangıç fiyatı",
+      "onRequest": "talep üzerine",
+      "quote": "teklif üzerine",
+      "saturday": "Cumartesi, 09.30 – 12.30",
+      "book": "Rezervasyon yap",
+      "payCard": "Kartla öde",
+      "payPaypal": "PayPal",
+      "payNote": "Stripe veya PayPal ile güvenli ödeme."
+    },
+    "packages": {
+      "classic": {
+        "name": "Klasik tur",
+        "desc": "Voltaire’in şatosu ve bahçeleri, yaklaşık 1 saat 15 dakikada."
+      },
+      "private": {
+        "name": "Özel tur",
+        "desc": "Rehberiniz yalnızca sizin ve yanınızdakiler için, seçtiğiniz saatte."
+      },
+      "group": {
+        "name": "Grup tarifesi",
+        "desc": "10 kişi ve üzeri gruplar için, rehber başına en fazla 30 kişi."
+      },
+      "market": {
+        "name": "Cumartesi: şato ve pazar",
+        "desc": "Şato ve bahçeleri, ardından pazar saat 13.00’te kapanmadan önce, Ferney-Voltaire pazarında “patrik” heykeline kadar rehberli bir yürüyüş."
+      },
+      "thematic": {
+        "name": "Tematik tur",
+        "desc": "Aydınlanma, Voltaire ve Cenevre, edebiyat: grubunuz için talep üzerine hazırlanan bir tur."
+      },
+      "corporate": {
+        "name": "Şirketler",
+        "desc": "Takım çalışması etkinlikleri, teşvik programları ve etkinlikleriniz etrafında turlar."
+      }
+    }
   },
   "notFound": {
     "title": "Sayfa bulunamadı",

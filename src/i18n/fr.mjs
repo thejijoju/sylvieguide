@@ -16,7 +16,8 @@ export default {
     "corporate": "Entreprises",
     "group": "Groupes",
     "seniors": "Groupes seniors",
-    "thematic": "Visites thématiques"
+    "thematic": "Visites thématiques",
+    "voltaire": "Voltaire"
   },
   "cta": {
     "book": "Réserver une visite",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Visites thématiques Lumières & littérature | Château de Voltaire",
       "description": "Visites guidées thématiques à Ferney-Voltaire : histoire des Lumières, Voltaire et Genève, visite littéraire du Château de Voltaire, vie au château et jardins."
+    },
+    "voltaire": {
+      "title": "Voltaire à Ferney : biographie, citations et château",
+      "description": "Qui était Voltaire ? Biographie, dates clés, citations célèbres et histoire du Château de Voltaire à Ferney, où le philosophe vécut près de vingt ans."
     }
   },
   "ogImageAlt": "Le Château de Voltaire à Ferney, illustration — visites guidées avec Sylvie",
@@ -99,21 +104,21 @@ export default {
     "note": "Le Château de Voltaire est un monument national géré par le Centre des monuments nationaux. Les droits d’entrée du monument sont fixés par celui-ci."
   },
   "home": {
-    "eyebrow": "Guide officielle · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Guide accréditée · Château de Voltaire · Ferney-Voltaire",
     "h1": "Visites guidées du Château de Voltaire et de Ferney-Voltaire, avec Sylvie",
     "lead": "Franchissez le seuil de la demeure où Voltaire vécut près de vingt ans. Je vous raconte l’homme, ses combats et son domaine, au rythme de votre groupe et dans votre langue.",
     "heroNote": "À 15 minutes de l’aéroport de Genève (GVA)",
     "introTitle": "Bienvenue chez Voltaire",
     "introText": [
-      "Je m’appelle Sylvie et je suis guide officielle au Château de Voltaire. Ici, entre 1759 et 1778, le philosophe a écrit, reçu l’Europe entière, défendu les persécutés et transformé un hameau en ville.",
+      "Je m’appelle Sylvie, guide accréditée du Château de Voltaire, où je fais visiter depuis plus de 8 ans. Ici, entre 1759 et 1778, le philosophe a écrit, reçu l’Europe entière, défendu les persécutés et transformé un hameau en ville.",
       "Mon métier : rendre cette histoire vivante. Anecdotes, lettres, objets, jardins : chaque visite est préparée pour celles et ceux qui m’écoutent, qu’il s’agisse d’une famille curieuse, d’un comité d’entreprise ou d’une classe de quatrième."
     ],
     "introLink": "Découvrir mon parcours",
     "valuesTitle": "Pourquoi visiter avec moi",
     "values": [
       {
-        "title": "Une guide officielle du lieu",
-        "text": "Je connais chaque pièce, chaque allée et les histoires qui ne figurent pas sur les panneaux."
+        "title": "Une guide accréditée du lieu",
+        "text": "Plus de 8 ans de visites au château : je connais chaque pièce, chaque allée et les histoires qui ne figurent pas sur les panneaux."
       },
       {
         "title": "Quatre langues",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "Voir les visites",
       "imgAlt": "Le Château de Voltaire, à quelques minutes de Genève"
-    }
+    },
+    "voltaireLink": "Découvrir Voltaire",
+    "saturdayEyebrow": "Le samedi matin"
   },
   "tours": {
     "h1": "Visites guidées au Château de Voltaire",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, votre guide au Château de Voltaire",
-    "lead": "Guide officielle, conteuse et passionnée des Lumières, je partage depuis de nombreuses années l’histoire du domaine de Voltaire avec des visiteurs du monde entier.",
+    "lead": "Guide accréditée, conteuse et passionnée des Lumières, je fais découvrir le domaine de Voltaire depuis plus de 8 ans à des visiteurs du monde entier.",
     "portraitAlt": "Portrait de Sylvie, guide au Château de Voltaire",
     "storyTitle": "Mon histoire avec Voltaire",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "En bref",
     "facts": [
-      "Guide officielle au Château de Voltaire",
+      "Guide accréditée au Château de Voltaire depuis plus de 8 ans",
       "Visites en français, anglais, allemand et russe",
       "Groupes, entreprises, seniors, scolaires et particuliers",
       "Basée à Ferney-Voltaire, aux portes de Genève"
@@ -467,14 +474,7 @@ export default {
         "q": "La visite est-elle possible en anglais ?",
         "a": "Oui. Toutes les visites, y compris la visite historique de Ferney-Voltaire, sont proposées en anglais, ainsi qu’en français, en allemand et en russe."
       }
-    ],
-    "pricesTitle": "Tarifs",
-    "prices": [
-      "Le tarif de guidage dépend de la taille du groupe, de la durée de la visite et de la langue. Vous recevez un devis clair et personnalisé sous 48 heures.",
-      "Le droit d’entrée du château est fixé par le Centre des monuments nationaux et indiqué séparément.",
-      "Les entreprises, associations et voyagistes reçoivent une facture."
-    ],
-    "pricesLink": "Demander un devis"
+    ]
   },
   "contact": {
     "h1": "Réserver une visite ou demander un devis",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Voltaire à Ferney : l’homme, l’œuvre, la demeure",
+    "lead": "Philosophe, écrivain, défenseur des persécutés et bâtisseur : découvrez qui était Voltaire avant de franchir le seuil de sa maison.",
+    "chateauTitle": "Le Château de Voltaire à Ferney",
+    "chateau": [
+      "En 1758, à 64 ans, François-Marie Arouet, dit Voltaire, achète le domaine de Ferney, à deux pas de Genève. Il y vit près de vingt ans, y écrit certaines de ses œuvres les plus célèbres et y mène de grands combats judiciaires au nom de la tolérance et de la justice.",
+      "Fêté de son vivant par des visiteurs venus de toute l’Europe, il est glorifié après sa mort, en 1778, jusqu’à son entrée au Panthéon en 1791. Ses propriétaires successifs transforment ensuite la demeure et y entretiennent le culte du grand homme.",
+      "Le visiteur découvre aujourd’hui un domaine hérité des XVIIIe et XIXe siècles : à la fois château, maison d’écrivain et lieu de mémoire."
+    ],
+    "lifeTitle": "Voltaire en quelques dates",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "Naissance à Paris, le 21 novembre, de François-Marie Arouet, fils d’un notaire."
+      },
+      {
+        "year": "1704",
+        "text": "Élève des jésuites au collège Louis-le-Grand, il s’y passionne pour les lettres et le théâtre."
+      },
+      {
+        "year": "1717",
+        "text": "Embastillé près d’un an pour des vers satiriques ; il prend ensuite le nom de Voltaire et triomphe avec sa tragédie Œdipe en 1718."
+      },
+      {
+        "year": "1726",
+        "text": "Exil en Angleterre : il y découvre Newton, Locke et la liberté anglaise, qu’il célèbre dans les Lettres philosophiques (1734)."
+      },
+      {
+        "year": "1734",
+        "text": "À Cirey, auprès d’Émilie du Châtelet, il partage quinze années d’études, de sciences et d’écriture."
+      },
+      {
+        "year": "1750",
+        "text": "Invité par Frédéric II de Prusse à Potsdam, il y séjourne près de trois ans avant de se brouiller avec le roi."
+      },
+      {
+        "year": "1755",
+        "text": "Il s’installe aux Délices, à Genève, puis cherche plus de liberté de l’autre côté de la frontière."
+      },
+      {
+        "year": "1758",
+        "text": "Achat du domaine de Ferney ; Candide paraît l’année suivante, en 1759."
+      },
+      {
+        "year": "1762",
+        "text": "Début de l’affaire Calas : il publie le Traité sur la tolérance (1763) et obtient la réhabilitation du protestant Jean Calas en 1765."
+      },
+      {
+        "year": "1778",
+        "text": "Retour triomphal à Paris en février ; il y meurt le 30 mai, à 83 ans."
+      },
+      {
+        "year": "1791",
+        "text": "Ses cendres sont transférées au Panthéon : la Révolution rend hommage au défenseur de la liberté."
+      }
+    ],
+    "quotesTitle": "Voltaire en citations",
+    "quotes": [
+      {
+        "text": "Il faut cultiver notre jardin.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Le travail éloigne de nous trois grands maux : l’ennui, le vice et le besoin.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Le mieux est l’ennemi du bien.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "Le superflu, chose très nécessaire.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "J’ai fait un peu de bien ; c’est mon meilleur ouvrage.",
+        "source": "Épître à Horace (1772)"
+      }
+    ],
+    "mythTitle": "Une citation célèbre… qui n’est pas de lui",
+    "mythText": "« Je ne suis pas d’accord avec ce que vous dites, mais je me battrai jusqu’à la mort pour que vous ayez le droit de le dire » : cette phrase n’est pas de Voltaire. Elle a été écrite en 1906 par sa biographe anglaise Evelyn Beatrice Hall pour résumer son attitude. Des histoires comme celle-ci, Sylvie vous en raconte beaucoup pendant la visite !",
+    "ctaTitle": "Rencontrez Voltaire chez lui",
+    "ctaText": "Le meilleur moyen de connaître Voltaire, c’est de visiter sa maison et ses jardins avec une guide accréditée."
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "lead": "Des formules claires, pour une personne comme pour un groupe. Prix de la visite guidée, en euros.",
+    "excluded": "Le billet d’entrée du château n’est pas inclus : il est fixé par le Centre des monuments nationaux et s’ajoute au prix de la visite.",
+    "policy": "Votre réservation est confirmée par écrit, avec les conditions de paiement et d’annulation.",
+    "labels": {
+      "perPerson": "par personne",
+      "child": "de 7 à 17 ans",
+      "under7": "gratuit pour les moins de 7 ans",
+      "flat": "forfait",
+      "upTo6": "jusqu’à 6 personnes",
+      "from4": "dès 4 personnes",
+      "from10": "groupes dès 10 personnes",
+      "minimum": "minimum",
+      "from": "à partir de",
+      "onRequest": "sur demande",
+      "quote": "sur devis",
+      "saturday": "Samedi, 9 h 30 – 12 h 30",
+      "book": "Réserver",
+      "payCard": "Payer par carte",
+      "payPaypal": "PayPal",
+      "payNote": "Paiement sécurisé par Stripe ou PayPal."
+    },
+    "packages": {
+      "classic": {
+        "name": "Visite classique",
+        "desc": "Le château et les jardins de Voltaire, en 1 h 15 environ."
+      },
+      "private": {
+        "name": "Visite privée",
+        "desc": "Votre guide rien que pour vous et vos proches, à l’horaire de votre choix."
+      },
+      "group": {
+        "name": "Tarif groupe",
+        "desc": "Pour les groupes à partir de 10 personnes, jusqu’à 30 par guide."
+      },
+      "market": {
+        "name": "Samedi : château & marché",
+        "desc": "Le château et ses jardins, puis une promenade guidée dans le marché de Ferney-Voltaire jusqu’à la statue du « patriarche », avant la fermeture du marché à 13 h."
+      },
+      "thematic": {
+        "name": "Visite thématique",
+        "desc": "Les Lumières, Voltaire et Genève, la littérature : une visite préparée sur demande pour votre groupe."
+      },
+      "corporate": {
+        "name": "Entreprises",
+        "desc": "Team building, incentives et visites autour de vos événements."
+      }
+    }
   },
   "notFound": {
     "title": "Page introuvable",

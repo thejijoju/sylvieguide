@@ -16,7 +16,8 @@ export default {
     "corporate": "Aziende",
     "group": "Visite di gruppo",
     "seniors": "Gruppi senior",
-    "thematic": "Visite tematiche"
+    "thematic": "Visite tematiche",
+    "voltaire": "Voltaire"
   },
   "cta": {
     "book": "Prenota una visita",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Visite tematiche: Illuminismo e letteratura | Château de Voltaire",
       "description": "Visite guidate tematiche a Ferney-Voltaire: storia dell’Illuminismo, Voltaire e Ginevra, percorso letterario nel castello, vita quotidiana e giardini."
+    },
+    "voltaire": {
+      "title": "Voltaire a Ferney: biografia, citazioni e castello",
+      "description": "Chi era Voltaire? La sua vita in date chiave, le citazioni celebri e la storia del Château de Voltaire a Ferney, dove il filosofo visse per quasi vent’anni."
     }
   },
   "ogImageAlt": "Illustrazione del Château de Voltaire a Ferney: visite guidate con Sylvie",
@@ -99,21 +104,21 @@ export default {
     "note": "Il Château de Voltaire è un monumento nazionale gestito dal Centre des monuments nationaux, che stabilisce le tariffe d’ingresso al monumento."
   },
   "home": {
-    "eyebrow": "Guida ufficiale · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Guida accreditata · Château de Voltaire · Ferney-Voltaire",
     "h1": "Visita guidata del Château de Voltaire e di Ferney-Voltaire, con Sylvie",
     "lead": "Entrate nella casa dove Voltaire visse per quasi vent’anni. Vi racconterò l’uomo, le sue battaglie e la sua tenuta, al ritmo del vostro gruppo e in inglese, francese, tedesco o russo.",
     "heroNote": "A 15 minuti dall’aeroporto di Ginevra (GVA)",
     "introTitle": "Benvenuti a casa di Voltaire",
     "introText": [
-      "Mi chiamo Sylvie e sono guida ufficiale e guida privata al Château de Voltaire. Qui, tra il 1759 e il 1778, il filosofo scrisse, ricevette mezza Europa, difese i perseguitati e trasformò un borgo in una cittadina.",
+      "Mi chiamo Sylvie e sono guida accreditata e guida privata al Château de Voltaire, dove accompagno i visitatori da più di 8 anni. Qui, tra il 1759 e il 1778, il filosofo scrisse, accolse l’Europa intera, difese i perseguitati e trasformò un borgo in una città.",
       "Il mio mestiere è far rivivere questa storia. Aneddoti, lettere, oggetti, giardini: preparo ogni visita per le persone che ho davanti, che si tratti di una famiglia curiosa, di un team aziendale o di una classe di ragazzi di dodici anni."
     ],
     "introLink": "Scopri la mia storia",
     "valuesTitle": "Perché visitare il castello con me",
     "values": [
       {
-        "title": "Una guida ufficiale della tenuta",
-        "text": "Conosco ogni sala, ogni sentiero e le storie che non troverete sui pannelli informativi."
+        "title": "Una guida accreditata del luogo",
+        "text": "Più di 8 anni di visite al castello: conosco ogni sala, ogni viale e le storie che non troverete sui pannelli informativi."
       },
       {
         "title": "Quattro lingue",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "Vedi le visite",
       "imgAlt": "Il Château de Voltaire, a pochi minuti da Ginevra"
-    }
+    },
+    "voltaireLink": "Scopri Voltaire",
+    "saturdayEyebrow": "Il sabato mattina"
   },
   "tours": {
     "h1": "Visite guidate del Château de Voltaire",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, la vostra guida al Château de Voltaire",
-    "lead": "Guida ufficiale, narratrice e appassionata di Illuminismo, da molti anni condivido la storia della tenuta di Voltaire con visitatori di tutto il mondo.",
+    "lead": "Guida accreditata, narratrice e appassionata dell’Illuminismo, da più di 8 anni racconto la storia della tenuta di Voltaire a visitatori di tutto il mondo.",
     "portraitAlt": "Ritratto di Sylvie, guida al Château de Voltaire",
     "storyTitle": "La mia storia con Voltaire",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "In breve",
     "facts": [
-      "Guida ufficiale al Château de Voltaire",
+      "Guida accreditata al Château de Voltaire da più di 8 anni",
       "Visite in inglese, francese, tedesco e russo",
       "Gruppi, aziende, senior, scuole e privati",
       "Con base a Ferney-Voltaire, alle porte di Ginevra"
@@ -467,14 +474,7 @@ export default {
         "q": "Il tour storico di Ferney-Voltaire è disponibile in inglese?",
         "a": "Sì. Tutte le visite, compreso il tour storico di Ferney-Voltaire e del castello, sono disponibili in inglese, oltre che in francese, tedesco e russo."
       }
-    ],
-    "pricesTitle": "Prezzi",
-    "prices": [
-      "Le tariffe di guida dipendono dalla dimensione del gruppo, dalla durata della visita e dalla lingua. Riceverete un preventivo chiaro e personalizzato entro 48 ore.",
-      "Il biglietto d’ingresso al castello è stabilito dal Centre des monuments nationaux ed è indicato separatamente.",
-      "Aziende, associazioni e tour operator ricevono regolare fattura."
-    ],
-    "pricesLink": "Richiedi un preventivo"
+    ]
   },
   "contact": {
     "h1": "Prenota una visita o richiedi un preventivo",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Voltaire a Ferney: l’uomo, l’opera, la dimora",
+    "lead": "Filosofo, scrittore, difensore dei perseguitati e costruttore: scoprite chi era Voltaire prima di varcare la soglia della sua casa.",
+    "chateauTitle": "Il Château de Voltaire a Ferney",
+    "chateau": [
+      "Nel 1758, a 64 anni, François-Marie Arouet, detto Voltaire, acquista la tenuta di Ferney, a due passi da Ginevra. Vi abita per quasi vent’anni, vi scrive alcune delle sue opere più celebri e vi conduce grandi battaglie giudiziarie in nome della tolleranza e della giustizia.",
+      "Celebrato in vita da visitatori giunti da tutta Europa, dopo la morte, nel 1778, viene glorificato fino al suo ingresso nel Panthéon nel 1791. I proprietari successivi trasformano poi la dimora e vi mantengono vivo il culto del grand’uomo.",
+      "Oggi il visitatore scopre una tenuta plasmata dal XVIII e dal XIX secolo: al tempo stesso castello, casa di scrittore e luogo della memoria."
+    ],
+    "lifeTitle": "Voltaire in date chiave",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "François-Marie Arouet, figlio di un notaio, nasce a Parigi il 21 novembre."
+      },
+      {
+        "year": "1704",
+        "text": "Studia dai gesuiti al Collège Louis-le-Grand, dove si appassiona alle lettere e al teatro."
+      },
+      {
+        "year": "1717",
+        "text": "Rinchiuso quasi un anno nella Bastiglia per alcuni versi satirici; in seguito assume il nome di Voltaire e trionfa con la tragedia Edipo nel 1718."
+      },
+      {
+        "year": "1726",
+        "text": "Esilio in Inghilterra: scopre Newton, Locke e la libertà inglese, che celebra nelle Lettere filosofiche (1734)."
+      },
+      {
+        "year": "1734",
+        "text": "A Cirey, accanto a Émilie du Châtelet, condivide quindici anni di studio, scienza e scrittura."
+      },
+      {
+        "year": "1750",
+        "text": "Invitato da Federico II di Prussia a Potsdam, vi soggiorna quasi tre anni prima di guastarsi con il re."
+      },
+      {
+        "year": "1755",
+        "text": "Si stabilisce a Les Délices, a Ginevra, poi cerca più libertà appena oltre il confine."
+      },
+      {
+        "year": "1758",
+        "text": "Acquista la tenuta di Ferney; Candido esce l’anno seguente, nel 1759."
+      },
+      {
+        "year": "1762",
+        "text": "Inizia l’affare Calas: pubblica il Trattato sulla tolleranza (1763) e ottiene la riabilitazione del protestante Jean Calas nel 1765."
+      },
+      {
+        "year": "1778",
+        "text": "Ritorno trionfale a Parigi a febbraio; vi muore il 30 maggio, a 83 anni."
+      },
+      {
+        "year": "1791",
+        "text": "Le sue spoglie vengono traslate al Panthéon: la Rivoluzione rende omaggio al paladino della libertà."
+      }
+    ],
+    "quotesTitle": "Voltaire con le sue parole",
+    "quotes": [
+      {
+        "text": "Bisogna coltivare il nostro giardino.",
+        "source": "Candido (1759)"
+      },
+      {
+        "text": "Il lavoro allontana da noi tre grandi mali: la noia, il vizio e il bisogno.",
+        "source": "Candido (1759)"
+      },
+      {
+        "text": "Il meglio è nemico del bene.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "Il superfluo, cosa molto necessaria.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "Ho fatto un po’ di bene; è la mia opera migliore.",
+        "source": "Epistola a Orazio (1772)"
+      }
+    ],
+    "mythTitle": "Una citazione famosa… che non è sua",
+    "mythText": "«Non sono d’accordo con quello che dici, ma difenderò fino alla morte il tuo diritto di dirlo» non è di Voltaire. La scrisse nel 1906 la sua biografa inglese Evelyn Beatrice Hall per riassumerne l’atteggiamento. Sylvie ha tante storie come questa da raccontarvi durante la visita!",
+    "ctaTitle": "Incontrate Voltaire a casa sua",
+    "ctaText": "Il modo migliore per conoscere Voltaire è visitare la sua casa e i suoi giardini con una guida accreditata."
+  },
+  "pricing": {
+    "title": "Tariffe",
+    "lead": "Formule chiare, per una persona come per un intero gruppo. Prezzi della visita guidata, in euro.",
+    "excluded": "Il biglietto d’ingresso al castello non è incluso: è stabilito dal Centre des monuments nationaux e si aggiunge al prezzo della visita.",
+    "policy": "La prenotazione viene confermata per iscritto, insieme alle condizioni di pagamento e di cancellazione.",
+    "labels": {
+      "perPerson": "a persona",
+      "child": "dai 7 ai 17 anni",
+      "under7": "gratis sotto i 7 anni",
+      "flat": "forfait",
+      "upTo6": "fino a 6 persone",
+      "from4": "da 4 persone",
+      "from10": "gruppi da 10 persone",
+      "minimum": "minimo",
+      "from": "da",
+      "onRequest": "su richiesta",
+      "quote": "su preventivo",
+      "saturday": "Sabato, 9:30–12:30",
+      "book": "Prenota",
+      "payCard": "Paga con carta",
+      "payPaypal": "PayPal",
+      "payNote": "Pagamento sicuro con Stripe o PayPal."
+    },
+    "packages": {
+      "classic": {
+        "name": "Visita classica",
+        "desc": "Il castello e i giardini di Voltaire, in circa 1 ora e 15 minuti."
+      },
+      "private": {
+        "name": "Visita privata",
+        "desc": "La vostra guida tutta per voi e i vostri accompagnatori, all’orario che preferite."
+      },
+      "group": {
+        "name": "Tariffa gruppi",
+        "desc": "Per gruppi da 10 persone in su, fino a 30 per guida."
+      },
+      "market": {
+        "name": "Sabato: castello e mercato",
+        "desc": "Il castello e i suoi giardini, poi una passeggiata guidata nel mercato di Ferney-Voltaire fino alla statua del «patriarca», prima della chiusura del mercato alle 13."
+      },
+      "thematic": {
+        "name": "Visita tematica",
+        "desc": "L’Illuminismo, Voltaire e Ginevra, la letteratura: una visita preparata su richiesta per il vostro gruppo."
+      },
+      "corporate": {
+        "name": "Aziende",
+        "desc": "Team building, incentive e visite legate ai vostri eventi."
+      }
+    }
   },
   "notFound": {
     "title": "Pagina non trovata",

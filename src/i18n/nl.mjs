@@ -16,7 +16,8 @@ export default {
     "corporate": "Bedrijven",
     "group": "Groepsrondleidingen",
     "seniors": "Seniorengroepen",
-    "thematic": "Themarondleidingen"
+    "thematic": "Themarondleidingen",
+    "voltaire": "Voltaire"
   },
   "cta": {
     "book": "Boek een rondleiding",
@@ -62,6 +63,10 @@ export default {
     "thematic": {
       "title": "Themarondleidingen Verlichting & literatuur | Château de Voltaire",
       "description": "Themarondleidingen in Ferney-Voltaire: de geschiedenis van de Verlichting, Voltaire en Genève, literaire rondleidingen, het kasteelleven en de tuinen."
+    },
+    "voltaire": {
+      "title": "Voltaire in Ferney: biografie, citaten en zijn kasteel",
+      "description": "Wie was Voltaire? Zijn leven in jaartallen, beroemde citaten en het verhaal van het Château de Voltaire in Ferney, waar de filosoof bijna twintig jaar woonde."
     }
   },
   "ogImageAlt": "Illustratie van het Château de Voltaire in Ferney — rondleidingen met Sylvie",
@@ -99,21 +104,21 @@ export default {
     "note": "Het Château de Voltaire is een nationaal monument, beheerd door het Centre des monuments nationaux, dat de toegangsprijzen van het monument vaststelt."
   },
   "home": {
-    "eyebrow": "Officiële gids · Château de Voltaire · Ferney-Voltaire",
+    "eyebrow": "Erkende gids · Château de Voltaire · Ferney-Voltaire",
     "h1": "Rondleidingen door het Château de Voltaire & Ferney-Voltaire, met Sylvie",
     "lead": "Stap binnen in het huis waar Voltaire bijna twintig jaar woonde. Ik vertel u over de man, zijn strijd en zijn landgoed — in het tempo van uw groep, in het Engels, Frans, Duits of Russisch.",
     "heroNote": "15 minuten van Geneva Airport (GVA)",
     "introTitle": "Welkom bij Voltaire thuis",
     "introText": [
-      "Ik ben Sylvie, officiële gids en privégids in het Château de Voltaire. Hier schreef de filosoof tussen 1759 en 1778, ontving hij heel Europa, verdedigde hij de vervolgden en maakte hij van een gehucht een stadje.",
+      "Ik ben Sylvie, erkende gids en privégids in het Château de Voltaire, waar ik al meer dan 8 jaar rondleidingen geef. Hier schreef de filosoof tussen 1759 en 1778, ontving hij heel Europa, verdedigde hij de vervolgden en maakte hij van een gehucht een stad.",
       "Mijn werk is dat verhaal tot leven te brengen. Anekdotes, brieven, voorwerpen, tuinen: elke rondleiding bereid ik voor op de mensen die voor me staan, of dat nu een nieuwsgierig gezin is, een bedrijfsteam of een klas twaalfjarigen."
     ],
     "introLink": "Lees mijn verhaal",
     "valuesTitle": "Waarom een rondleiding met mij",
     "values": [
       {
-        "title": "Officiële gids van het landgoed",
-        "text": "Ik ken elke zaal, elk pad en de verhalen die u niet op de informatieborden vindt."
+        "title": "Een erkende gids van het landgoed",
+        "text": "Meer dan 8 jaar rondleidingen in het kasteel: ik ken elke kamer, elk pad en de verhalen die u niet op de informatieborden vindt."
       },
       {
         "title": "Vier talen",
@@ -185,7 +190,9 @@ export default {
       ],
       "link": "Bekijk de rondleidingen",
       "imgAlt": "Het Château de Voltaire, op korte afstand van Genève"
-    }
+    },
+    "voltaireLink": "Ontdek Voltaire",
+    "saturdayEyebrow": "Op zaterdagochtend"
   },
   "tours": {
     "h1": "Rondleidingen door het Château de Voltaire",
@@ -323,7 +330,7 @@ export default {
   },
   "about": {
     "h1": "Sylvie, uw gids in het Château de Voltaire",
-    "lead": "Als officiële gids, verhalenverteller en liefhebber van de Verlichting deel ik al vele jaren de geschiedenis van Voltaires landgoed met bezoekers uit de hele wereld.",
+    "lead": "Als erkende gids, verteller en liefhebber van de Verlichting deel ik al meer dan 8 jaar de geschiedenis van Voltaires landgoed met bezoekers uit de hele wereld.",
     "portraitAlt": "Portret van Sylvie, gids in het Château de Voltaire",
     "storyTitle": "Mijn verhaal met Voltaire",
     "story": [
@@ -347,7 +354,7 @@ export default {
     ],
     "factsTitle": "In het kort",
     "facts": [
-      "Officiële gids in het Château de Voltaire",
+      "Al meer dan 8 jaar erkende gids in het Château de Voltaire",
       "Rondleidingen in het Engels, Frans, Duits en Russisch",
       "Groepen, bedrijven, senioren, scholen en particulieren",
       "Gevestigd in Ferney-Voltaire, vlak bij Genève"
@@ -467,14 +474,7 @@ export default {
         "q": "Is de historische rondleiding door Ferney-Voltaire in het Engels beschikbaar?",
         "a": "Ja. Elke rondleiding, ook de historische rondleiding door Ferney-Voltaire en het kasteel, is beschikbaar in het Engels, en ook in het Frans, Duits en Russisch."
       }
-    ],
-    "pricesTitle": "Prijzen",
-    "prices": [
-      "Het gidstarief hangt af van de groepsgrootte, de duur van het bezoek en de taal. U ontvangt binnen 48 uur een duidelijke, persoonlijke offerte.",
-      "De toegangsprijs van het kasteel wordt vastgesteld door het Centre des monuments nationaux en staat apart vermeld.",
-      "Bedrijven, verenigingen en touroperators ontvangen een factuur."
-    ],
-    "pricesLink": "Offerte aanvragen"
+    ]
   },
   "contact": {
     "h1": "Boek een rondleiding of vraag een offerte aan",
@@ -767,6 +767,140 @@ export default {
         "rating": 5
       }
     ]
+  },
+  "voltaire": {
+    "h1": "Voltaire in Ferney: de man, zijn werk, zijn huis",
+    "lead": "Filosoof, schrijver, verdediger van de vervolgden en bouwer: ontdek wie Voltaire was voordat u zijn huis binnenstapt.",
+    "chateauTitle": "Het Château de Voltaire in Ferney",
+    "chateau": [
+      "In 1758 kocht François-Marie Arouet, beter bekend als Voltaire, op 64-jarige leeftijd het landgoed Ferney, vlak bij Genève. Hij woonde er bijna twintig jaar, schreef er enkele van zijn beroemdste werken en voerde er grote juridische strijd in naam van verdraagzaamheid en rechtvaardigheid.",
+      "Bij leven gevierd door bezoekers uit heel Europa, werd hij na zijn dood in 1778 verheerlijkt, tot aan zijn bijzetting in het Panthéon in 1791. De opeenvolgende eigenaren verbouwden het huis vervolgens en hielden de verering van de grote man levend.",
+      "Bezoekers ontdekken vandaag een landgoed dat gevormd is door de 18e en 19e eeuw: tegelijk kasteel, schrijvershuis en plaats van herinnering."
+    ],
+    "lifeTitle": "Voltaire in jaartallen",
+    "timeline": [
+      {
+        "year": "1694",
+        "text": "François-Marie Arouet, zoon van een notaris, wordt op 21 november in Parijs geboren."
+      },
+      {
+        "year": "1704",
+        "text": "Hij studeert bij de jezuïeten aan het Collège Louis-le-Grand, waar hij verliefd wordt op literatuur en theater."
+      },
+      {
+        "year": "1717",
+        "text": "Wegens satirische verzen bijna een jaar opgesloten in de Bastille; daarna neemt hij de naam Voltaire aan en triomfeert hij in 1718 met zijn tragedie Oedipus."
+      },
+      {
+        "year": "1726",
+        "text": "Ballingschap in Engeland: hij ontdekt Newton, Locke en de Engelse vrijheid, die hij bezingt in de Filosofische brieven (1734)."
+      },
+      {
+        "year": "1734",
+        "text": "In Cirey deelt hij met Émilie du Châtelet vijftien jaar van studie, wetenschap en schrijven."
+      },
+      {
+        "year": "1750",
+        "text": "Op uitnodiging van Frederik II van Pruisen gaat hij naar Potsdam, waar hij bijna drie jaar blijft voordat hij met de koning breekt."
+      },
+      {
+        "year": "1755",
+        "text": "Hij vestigt zich in Les Délices in Genève en zoekt daarna meer vrijheid net over de grens."
+      },
+      {
+        "year": "1758",
+        "text": "Hij koopt het landgoed Ferney; Candide verschijnt het jaar daarop, in 1759."
+      },
+      {
+        "year": "1762",
+        "text": "Begin van de zaak-Calas: hij publiceert de Verhandeling over de verdraagzaamheid (1763) en bereikt in 1765 het eerherstel van de protestant Jean Calas."
+      },
+      {
+        "year": "1778",
+        "text": "Triomfantelijke terugkeer naar Parijs in februari; hij sterft er op 30 mei, 83 jaar oud."
+      },
+      {
+        "year": "1791",
+        "text": "Zijn stoffelijk overschot wordt overgebracht naar het Panthéon: de Revolutie eert de voorvechter van de vrijheid."
+      }
+    ],
+    "quotesTitle": "Voltaire in zijn eigen woorden",
+    "quotes": [
+      {
+        "text": "Wij moeten onze tuin bewerken.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Werk houdt drie grote kwaden op afstand: verveling, ondeugd en armoede.",
+        "source": "Candide (1759)"
+      },
+      {
+        "text": "Het betere is de vijand van het goede.",
+        "source": "La Bégueule (1772)"
+      },
+      {
+        "text": "Het overbodige, een zeer noodzakelijk ding.",
+        "source": "Le Mondain (1736)"
+      },
+      {
+        "text": "Ik heb een beetje goed gedaan; dat is mijn beste werk.",
+        "source": "Brief aan Horatius (1772)"
+      }
+    ],
+    "mythTitle": "Een beroemd citaat… dat niet van hem is",
+    "mythText": "“Ik ben het niet eens met wat u zegt, maar ik zal tot de dood uw recht verdedigen om het te zeggen” is niet door Voltaire geschreven. Zijn Engelse biografe Evelyn Beatrice Hall schreef het in 1906 om zijn houding samen te vatten. Sylvie heeft nog veel meer van zulke verhalen voor u tijdens de rondleiding!",
+    "ctaTitle": "Ontmoet Voltaire bij hem thuis",
+    "ctaText": "De beste manier om Voltaire te leren kennen is zijn huis en tuinen te bezoeken met een erkende gids."
+  },
+  "pricing": {
+    "title": "Prijzen",
+    "lead": "Duidelijke formules, voor één persoon of een hele groep. Prijzen van de rondleiding, in euro.",
+    "excluded": "De toegang tot het kasteel is niet inbegrepen: die wordt vastgesteld door het Centre des monuments nationaux en komt bovenop de prijs van de rondleiding.",
+    "policy": "Uw boeking wordt schriftelijk bevestigd, samen met de betalings- en annuleringsvoorwaarden.",
+    "labels": {
+      "perPerson": "per persoon",
+      "child": "7–17 jaar",
+      "under7": "gratis onder 7 jaar",
+      "flat": "vaste prijs",
+      "upTo6": "tot 6 personen",
+      "from4": "vanaf 4 personen",
+      "from10": "groepen vanaf 10 personen",
+      "minimum": "minimum",
+      "from": "vanaf",
+      "onRequest": "op aanvraag",
+      "quote": "op offerte",
+      "saturday": "Zaterdag, 9.30 – 12.30 uur",
+      "book": "Boeken",
+      "payCard": "Betalen met kaart",
+      "payPaypal": "PayPal",
+      "payNote": "Veilig betalen via Stripe of PayPal."
+    },
+    "packages": {
+      "classic": {
+        "name": "Klassieke rondleiding",
+        "desc": "Het kasteel en de tuinen van Voltaire, in ongeveer 1 uur en 15 minuten."
+      },
+      "private": {
+        "name": "Privérondleiding",
+        "desc": "Uw gids alleen voor u en uw gezelschap, op het tijdstip van uw keuze."
+      },
+      "group": {
+        "name": "Groepstarief",
+        "desc": "Voor groepen vanaf 10 personen, tot 30 per gids."
+      },
+      "market": {
+        "name": "Zaterdag: kasteel & markt",
+        "desc": "Het kasteel en de tuinen, daarna een begeleide wandeling over de markt van Ferney-Voltaire naar het standbeeld van de “patriarch”, voordat de markt om 13.00 uur sluit."
+      },
+      "thematic": {
+        "name": "Thematische rondleiding",
+        "desc": "De Verlichting, Voltaire en Genève, literatuur: een rondleiding op aanvraag voorbereid voor uw groep."
+      },
+      "corporate": {
+        "name": "Bedrijven",
+        "desc": "Teambuilding, incentives en rondleidingen rond uw evenementen."
+      }
+    }
   },
   "notFound": {
     "title": "Pagina niet gevonden",
