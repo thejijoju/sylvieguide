@@ -395,6 +395,15 @@ cite { font-style: italic; }
 .hero-badge { display: inline-flex; align-items: center; gap: 10px; margin: 22px 0 0; padding: 8px 16px; background: #eef1e2; color: #3f5a2e; font-weight: 600; font-size: .95rem; border-inline-start: 3px solid #5f7a45; }
 .hero-badge .icon { color: #5f7a45; }
 
+/* ---------- reviews */
+.review { margin: 0; padding: clamp(28px, 4vw, 44px); background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--gold); text-align: center; }
+.stars { display: flex; justify-content: center; gap: 4px; margin: 0 0 18px; }
+.star { width: 24px; height: 24px; fill: #c9a24a; }
+.review blockquote { margin: 0; }
+.review blockquote p { font-family: var(--font-quote); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.45; color: var(--ink); margin: 0 0 18px; }
+.review figcaption { font-family: var(--font-display); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+:lang(ar) .review figcaption, :lang(zh) .review figcaption, :lang(ja) .review figcaption, :lang(ko) .review figcaption, :lang(hi) .review figcaption { letter-spacing: 0; text-transform: none; }
+
 /* ---------- inner pages */
 .page-hero { padding: clamp(40px, 6vw, 80px) 0 clamp(36px, 5vw, 64px); border-bottom: 1px solid var(--line); }
 .page-hero .lead { max-width: 780px; margin: 0; }

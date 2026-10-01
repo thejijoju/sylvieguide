@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Choose your theme",
     "ctaText": "Tell me what interests your group: I will propose a thematic itinerary and a quote within 48 hours."
   },
+  "reviews": {
+    "title": "What visitors say",
+    "starsLabel": "Rating: 5 out of 5",
+    "items": [
+      {
+        "text": "I loved the visit and all the details Sylvie gave us. If she had written a biography of Voltaire, I would have bought it straight away!",
+        "author": "Member of a senior group · October 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Page not found",
     "text": "This page seems to have wandered off down one of the park’s paths.",

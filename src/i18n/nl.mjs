@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Kies uw thema",
     "ctaText": "Vertel me wat uw groep interesseert: ik stel binnen 48 uur een thematisch programma en een offerte voor."
   },
+  "reviews": {
+    "title": "Wat bezoekers zeggen",
+    "starsLabel": "Beoordeling: 5 van 5",
+    "items": [
+      {
+        "text": "Ik vond de rondleiding geweldig, met zoveel details van Sylvie. Als zij een biografie van Voltaire had geschreven, had ik die meteen gekocht!",
+        "author": "Lid van een seniorengroep · oktober 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Pagina niet gevonden",
     "text": "Deze pagina is blijkbaar afgedwaald over een van de paden in het park.",

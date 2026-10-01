@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Elija su tema",
     "ctaText": "Cuénteme qué le interesa a su grupo: le propondré un itinerario temático y un presupuesto en un plazo de 48 horas."
   },
+  "reviews": {
+    "title": "Lo que dicen los visitantes",
+    "starsLabel": "Valoración: 5 de 5",
+    "items": [
+      {
+        "text": "¡Me encantó la visita y todos los detalles que nos dio Sylvie! Si hubiera escrito una biografía de Voltaire, la habría comprado enseguida.",
+        "author": "Miembro de un grupo de mayores · octubre de 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Página no encontrada",
     "text": "Parece que esta página se ha perdido por uno de los senderos del parque.",

@@ -65,6 +65,12 @@ structure exactly.
 Ferney-Voltaire, coach parking on site, and 15 minutes from Geneva Airport (GVA) and
 Palexpo. If any of these change, update them in `src/i18n/*.mjs` (all 16 languages).
 
+**Visitor reviews:** add genuine reviews to `reviews.items` in each `src/i18n/*.mjs` (text,
+author, rating). They show with stars on the home page and the Senior groups page. They
+are deliberately not marked up as `Review`/`AggregateRating`: Google treats reviews a
+business publishes about itself as self-serving. For stars in search results, collect
+reviews on Google Business Profile.
+
 **Search-result extras:** add starting prices in `site.prices` in `src/config.mjs`, and they
 appear as offers in structured data. Review stars need real reviews (Google Business Profile,
 TripAdvisor); never add invented ratings.

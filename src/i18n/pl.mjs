@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Wybierz temat",
     "ctaText": "Proszę napisać, co interesuje Państwa grupę: w ciągu 48 godzin zaproponuję tematyczną trasę i wycenę."
   },
+  "reviews": {
+    "title": "Co mówią zwiedzający",
+    "starsLabel": "Ocena: 5 na 5",
+    "items": [
+      {
+        "text": "Zwiedzanie było wspaniałe, a Sylvie opowiedziała nam tyle szczegółów! Gdyby napisała biografię Woltera, od razu bym ją kupił(a).",
+        "author": "Uczestnik grupy seniorów · październik 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Nie znaleziono strony",
     "text": "Ta strona chyba zabłądziła na jednej z parkowych ścieżek.",

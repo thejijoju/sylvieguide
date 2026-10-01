@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Choisissez votre thème",
     "ctaText": "Dites-moi ce qui intéresse votre groupe : je vous propose un itinéraire thématique et un devis sous 48 heures."
   },
+  "reviews": {
+    "title": "Ce qu’en disent les visiteurs",
+    "starsLabel": "Note : 5 sur 5",
+    "items": [
+      {
+        "text": "J’ai adoré la visite et tous les détails que Sylvie nous a donnés. Si elle avait écrit une biographie de Voltaire, je l’aurais achetée tout de suite !",
+        "author": "Membre d’un groupe seniors · octobre 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Page introuvable",
     "text": "Cette page semble s’être égarée dans les allées du parc.",

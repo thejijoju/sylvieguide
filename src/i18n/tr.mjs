@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Temanızı seçin",
     "ctaText": "Grubunuzun neyle ilgilendiğini bana anlatın: 48 saat içinde tematik bir program ve teklif önereceğim."
   },
+  "reviews": {
+    "title": "Ziyaretçiler ne diyor",
+    "starsLabel": "Puan: 5 üzerinden 5",
+    "items": [
+      {
+        "text": "Turu çok sevdim; Sylvie bize o kadar çok ayrıntı anlattı ki! Voltaire’in biyografisini yazsaydı, hemen satın alırdım.",
+        "author": "Emekli grubundan bir katılımcı · Ekim 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Sayfa bulunamadı",
     "text": "Bu sayfa parkın patikalarından birinde kaybolmuş gibi görünüyor.",

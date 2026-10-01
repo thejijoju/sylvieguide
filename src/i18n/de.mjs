@@ -757,6 +757,17 @@ export default {
     "ctaTitle": "Wählen Sie Ihr Thema",
     "ctaText": "Sagen Sie mir, was Ihre Gruppe interessiert: Sie erhalten innerhalb von 48 Stunden ein Themenprogramm und ein Angebot."
   },
+  "reviews": {
+    "title": "Was Besucher sagen",
+    "starsLabel": "Bewertung: 5 von 5",
+    "items": [
+      {
+        "text": "Ich habe die Führung geliebt und all die Details, die Sylvie uns erzählt hat. Hätte sie eine Voltaire-Biografie geschrieben, ich hätte sie sofort gekauft!",
+        "author": "Mitglied einer Seniorengruppe · Oktober 2026",
+        "rating": 5
+      }
+    ]
+  },
   "notFound": {
     "title": "Seite nicht gefunden",
     "text": "Diese Seite hat sich wohl in den Alleen des Parks verlaufen.",

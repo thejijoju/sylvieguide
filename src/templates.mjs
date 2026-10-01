@@ -444,6 +444,30 @@ export function videoLd(t, key) {
   };
 }
 
+// Visitor reviews (real ones only, from src/i18n/*.mjs → reviews). Shown on
+// the page with stars but deliberately NOT marked up as Review/AggregateRating:
+// Google treats reviews a business publishes about itself as self-serving.
+const STAR = '<svg class="star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>';
+function reviewsSection(t, tinted = false) {
+  const r = t.reviews;
+  if (!r?.items?.length) return "";
+  return `<section class="section reviews${tinted ? " section-tinted" : ""}" aria-labelledby="reviews-title">
+  <div class="container narrow">
+    <h2 id="reviews-title" class="section-title">${esc(r.title)}</h2>
+    ${ornament}
+    ${r.items
+      .map(
+        (item) => `<figure class="review">
+      <p class="stars" role="img" aria-label="${esc(r.starsLabel)}">${STAR.repeat(item.rating)}</p>
+      <blockquote><p>${quoted(t, item.text)}</p></blockquote>
+      <figcaption>${esc(item.author)}</figcaption>
+    </figure>`,
+      )
+      .join("")}
+  </div>
+</section>`;
+}
+
 export function homePage(t) {
   const h = t.home;
   const contact = pathFor(t.lang, "contact");
@@ -541,6 +565,8 @@ ${featuredQuote(t)}
   </div>
 </section>
 ${photos.length ? lightbox(t) : ""}
+
+${reviewsSection(t)}
 
 <section class="section section-tinted" aria-labelledby="steps-title">
   <div class="container">
@@ -801,6 +827,7 @@ ${pageHero(t, key, d.h1, d.lead)}
     <aside class="pull-quote note-box"><h2>${esc(d.noteTitle)}</h2><p>${esc(d.noteText)}</p></aside>
   </div>
 </section>
+${key === "seniors" ? reviewsSection(t) : ""}
 <section class="section section-tinted" aria-labelledby="landing-faq-title">
   <div class="container narrow">
     <h2 id="landing-faq-title" class="section-title">${esc(d.faqTitle)}</h2>

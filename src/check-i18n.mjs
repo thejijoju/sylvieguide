@@ -28,6 +28,8 @@ const walk = (a, b, path) => {
   } else if (typeof a === "string") {
     if (typeof b !== "string") problems.push(`${path}: should be a string`);
     else if (!b.trim() || /undefined|TODO|TRANSLATE/.test(b)) problems.push(`${path}: empty or placeholder`);
+  } else if (typeof a === "number") {
+    if (b !== a) problems.push(`${path}: should be ${a}`);
   }
 };
 walk(ref, t, lang);
