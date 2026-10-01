@@ -4,8 +4,11 @@ A multilingual (FR · EN · DE · RU) static website for Sylvie, an official gui
 Château de Voltaire in Ferney-Voltaire. It is built to win group bookings (companies,
 senior clubs, schools, tour operators) and individual tours.
 
-`dist/` is the ready-to-deploy site, with no framework and no runtime dependencies. Upload it
-to any static host: Netlify, Vercel, Cloudflare Pages, GitHub Pages or OVH.
+`dist/` is the ready-to-deploy site, with no framework and no runtime dependencies.
+
+**Hosting (Netlify, Cloudflare Pages or Vercel):** import this repository and set the
+*build command* to `npm run build` and the *publish directory* to `dist`. Every change
+pushed to GitHub, including photos uploaded from the web, then goes live automatically.
 
 ## Pages (×4 languages = 24 pages)
 
@@ -53,10 +56,13 @@ Then check the copy in `src/i18n/*.mjs`:
   rewrite them in her own words and add real facts: years of experience, qualifications, a
   real testimonial. No testimonials were invented on purpose.
 - Confirm the practical details with the monument: meeting points, parking, bus access and accessibility.
-- **Gallery photos:** drop the files into `src/assets/gallery/` and list them, with a caption
-  in each language, in `src/gallery.mjs`. Until then the gallery shows six framed
-  placeholders. The home page shows the first three photos, and the gallery page opens them
-  in a lightbox.
+- **Gallery photos:** upload them to `src/assets/gallery/`. On GitHub you can do this
+  from the web: open the folder, then *Add file → Upload files*. Every image there appears
+  automatically, sorted by file name. Prefix names with `01-`, `02-`… to set the order. The
+  caption comes from the name, so `03-les-charmilles.jpg` becomes "Les charmilles"; add
+  translated captions in `src/gallery.mjs` if you like. Keep each photo under ~400 KB, about
+  2000 px wide. While the folder is empty the gallery shows six placeholders. The home page
+  shows the first three photos, and the gallery page opens them in a lightbox.
 - **Portrait and hero:** a real photo of Sylvie should replace the portrait placeholder
   (`portraitSvg` in `src/art.mjs`). For the hero, a wide photo of the château can replace the
   illustration: put an `<img>` inside `.hero-media` in `src/templates.mjs`. It is styled as a

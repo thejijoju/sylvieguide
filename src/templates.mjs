@@ -515,7 +515,7 @@ function featuredQuote(t) {
 // in src/gallery.mjs.
 function galleryGrid(t, limit = Infinity) {
   const items = photos.length
-    ? photos.map((p) => ({ src: `/assets/gallery/${p.file}`, caption: p.caption[t.lang] || p.caption.fr }))
+    ? photos.map((p) => ({ src: `/assets/gallery/${encodeURIComponent(p.file)}`, caption: p.caption[t.lang] || p.caption.fr }))
     : t.gallery.placeholders.map((caption) => ({ src: null, caption }));
   return `<ul class="gallery-grid" data-gallery>${items
     .slice(0, limit)
@@ -546,7 +546,7 @@ ${featuredQuote(t)}
 ${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
   const imageLd = photos.map((p) => ({
     "@type": "ImageObject",
-    contentUrl: `${site.origin}/assets/gallery/${p.file}`,
+    contentUrl: `${site.origin}/assets/gallery/${encodeURIComponent(p.file)}`,
     caption: p.caption[t.lang] || p.caption.fr,
   }));
   return layout(t, "gallery", body, imageLd.length ? [{ "@type": "ImageGallery", "@id": `${urlFor(t.lang, "gallery")}#gallery`, name: g.h1, image: imageLd }] : []);
