@@ -477,7 +477,10 @@ export function homePage(t) {
   const themes = tourCategories.find((c) => c.id === "thematic").tours;
   const body = `
 <section class="hero">
-  <div class="hero-media">${chateauSvg({ title: t.ogImageAlt, cover: true })}</div>
+  <div class="hero-media"><picture>
+    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" sizes="100vw">
+    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1470" height="780" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async">
+  </picture></div>
   <div class="container hero-content">
     <p class="eyebrow">${esc(h.eyebrow)}</p>
     <h1>${esc(h.h1)}</h1>
