@@ -110,7 +110,7 @@ function head(t, page, { title, description }, og = null) {
   <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney-800.webp" imagesrcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" imagesizes="100vw" fetchpriority="high">` : ""}
+  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney.jpg" fetchpriority="high">` : ""}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="${fontsUrl(t.lang)}">
@@ -517,10 +517,7 @@ export function homePage(t) {
   const themes = tourCategories.find((c) => c.id === "thematic").tours;
   const body = `
 <section class="hero">
-  <div class="hero-media"><picture>
-    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" sizes="100vw">
-    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1470" height="800" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async">
-  </picture></div>
+  <div class="hero-media"><img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1500" height="1125" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async"></div>
   <div class="container hero-content">
     <h1>${esc(h.h1)}</h1>
     <div class="btn-row">
