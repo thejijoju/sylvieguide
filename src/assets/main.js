@@ -4,6 +4,14 @@
 (function () {
   "use strict";
 
+  // Header: translucent gold once the page is scrolled
+  var siteHeader = document.querySelector("[data-header]");
+  if (siteHeader) {
+    var onScroll = function () { siteHeader.classList.toggle("is-scrolled", window.scrollY > 12); };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   // Mobile navigation
   var toggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-nav]");

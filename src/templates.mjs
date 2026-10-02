@@ -110,7 +110,7 @@ function head(t, page, { title, description }, og = null) {
   <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney-800.webp" imagesrcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1340w" imagesizes="100vw" fetchpriority="high">` : ""}
+  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney-800.webp" imagesrcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" imagesizes="100vw" fetchpriority="high">` : ""}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="${fontsUrl(t.lang)}">
@@ -518,8 +518,8 @@ export function homePage(t) {
   const body = `
 <section class="hero">
   <div class="hero-media"><picture>
-    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1340w" sizes="100vw">
-    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1340" height="700" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async">
+    <source type="image/webp" srcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1470w" sizes="100vw">
+    <img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1470" height="800" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async">
   </picture></div>
   <div class="container hero-content">
     <h1>${esc(h.h1)}</h1>
@@ -1081,6 +1081,7 @@ ${pageHero(t, "voltaire", v.h1, v.lead)}
 </section>
 <section class="section section-tinted" aria-labelledby="life-title">
   <div class="container narrow">
+    <figure class="oval-portrait"><span class="oval-frame"><img src="/assets/img/voltaire-buste-marbre-portrait.jpg" alt="Voltaire — Château de Voltaire, Ferney-Voltaire" width="480" height="634" loading="lazy" decoding="async"></span></figure>
     <h2 id="life-title" class="section-title">${esc(v.lifeTitle)}</h2>
     ${ornament}
     <ol class="timeline">${v.timeline.map((e) => `<li><span class="timeline-year">${esc(e.year)}</span><p>${esc(e.text)}</p></li>`).join("")}</ol>
@@ -1111,6 +1112,7 @@ ${ctaBand(t, v.ctaTitle, v.ctaText)}`;
     deathDate: "1778-05-30",
     birthPlace: { "@type": "Place", name: "Paris" },
     deathPlace: { "@type": "Place", name: "Paris" },
+    image: `${site.origin}/assets/img/voltaire-buste-marbre-portrait.jpg`,
     sameAs: ["https://www.wikidata.org/wiki/Q9068"],
   };
   return layout(t, "voltaire", body, [person, { "@type": "WebPage", "@id": `${urlFor(t.lang, "voltaire")}#webpage`, about: { "@id": `${site.origin}/#voltaire` } }]);
