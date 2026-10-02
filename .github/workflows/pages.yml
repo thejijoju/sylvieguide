@@ -41,3 +41,22 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell Bing, Yandex, Naver, Seznam and Yep about every page right away
+  # (IndexNow). Google does not use IndexNow; it reads the sitemap.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ping IndexNow
+        run: |
+          KEY=$(node -e 'import("./src/config.mjs").then(m => console.log(m.site.indexNowKey || ""))')
+          [ -n "$KEY" ] || exit 0
+          sleep 60
+          URLS=$(curl -fsS https://www.guidevoltaire.com/sitemap.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' | jq -R . | jq -s .)
+          jq -n --arg key "$KEY" --argjson urls "$URLS" \
+            '{host: "www.guidevoltaire.com", key: $key, keyLocation: ("https://www.guidevoltaire.com/" + $key + ".txt"), urlList: $urls}' > body.json
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -H "Content-Type: application/json; charset=utf-8" \
+            --data @body.json https://api.indexnow.org/indexnow

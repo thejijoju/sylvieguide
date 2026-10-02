@@ -36,6 +36,10 @@ export const site = {
   // content="…" value). Leave empty until you have them.
   verification: { google: "", bing: "", yandex: "" },
 
+  // IndexNow key (Bing, Yandex, Naver, Seznam, Yep): the build publishes
+  // /<key>.txt and the publish workflow pings IndexNow with every URL.
+  indexNowKey: "ccfca409a358c84b56fd450e32478cba",
+
   // Optional starting prices (guiding fee) for structured data, e.g.
   // { group: { from: 180 }, corporate: { from: 250 }, seniors: { from: 180 },
   //   thematic: { from: 200 } }. Leave empty until Sylvie confirms prices.

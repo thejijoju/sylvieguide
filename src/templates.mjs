@@ -63,7 +63,7 @@ const fmtDuration = (t, min) => {
 
 function head(t, page, { title, description }, og = null) {
   const canonical = urlFor(t.lang, page);
-  const ogImage = og?.url || `${site.origin}/assets/og/og-${ogLang(t.lang)}.png`;
+  const ogImage = og?.url || `${site.origin}/assets/og/og-${ogLang(t.lang)}.jpg`;
   const alternates = languages
     .map((l) => `<link rel="alternate" hreflang="${l}" href="${urlFor(l, page)}">`)
     .join("\n  ");
@@ -97,7 +97,7 @@ function head(t, page, { title, description }, og = null) {
   <meta property="og:image" content="${ogImage}">
   ${og?.width || !og ? `<meta property="og:image:width" content="${og?.width || 1200}">
   <meta property="og:image:height" content="${og?.height || 630}">` : ""}
-  <meta property="og:image:alt" content="${esc(og?.alt || t.ogImageAlt)}">
+  <meta property="og:image:alt" content="${esc(og?.alt || t.home.daytrip.imgAlt)}">
   <meta property="og:locale" content="${t.locale}">
   ${otherLocales}
   <meta name="twitter:card" content="summary_large_image">
@@ -110,6 +110,7 @@ function head(t, page, { title, description }, og = null) {
   <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney-800.webp" imagesrcset="/assets/img/hero-chateau-de-voltaire-ferney-800.webp 800w, /assets/img/hero-chateau-de-voltaire-ferney.webp 1340w" imagesizes="100vw" fetchpriority="high">` : ""}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="${fontsUrl(t.lang)}">
@@ -126,7 +127,7 @@ export const FONTS_URL = fontsUrl("en");
 
 const here = dirname(fileURLToPath(import.meta.url));
 // Languages without their own social card share the English one.
-const ogLang = (lang) => (existsSync(join(here, "assets", "og", `og-${lang}.png`)) ? lang : "en");
+const ogLang = (lang) => (existsSync(join(here, "assets", "og", `og-${lang}.jpg`)) ? lang : "en");
 const flagImg = (l, size = 20) =>
   `<img class="flag" src="/assets/flags/${langMeta[l].flag}.svg" alt="" width="${size}" height="${Math.round(size * 0.75)}" loading="lazy" decoding="async">`;
 
@@ -273,6 +274,7 @@ function baseGraph(t, page) {
       jobTitle: stripTags(t.home.eyebrow.split("·")[0].trim()),
       knowsLanguage: ["fr", "en", "de", "ru"],
       worksFor: { "@id": `${site.origin}/#business` },
+      knowsAbout: ["Voltaire", "Château de Voltaire", "Enlightenment"],
       image: site.origin + SYLVIE_PHOTO,
       ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
       url: urlFor(t.lang, "about"),
@@ -285,11 +287,17 @@ function baseGraph(t, page) {
       url: urlFor(t.lang, "home"),
       ...(site.email ? { email: site.email } : {}),
       ...(site.phone ? { telephone: site.phone } : {}),
-      image: `${site.origin}/assets/og/og-${t.lang}.png`,
+      image: [HERO_PHOTO, SYLVIE_PHOTO, `/assets/og/og-${ogLang(t.lang)}.jpg`].map((u) => site.origin + u),
       address: addr,
+      hasMap: MAP_URL,
       areaServed: ["Ferney-Voltaire", "Pays de Gex", "Genève", "Geneva"],
       founder: { "@id": `${site.origin}/#sylvie` },
-      logo: `${site.origin}/assets/apple-touch-icon.png`,
+      employee: { "@id": `${site.origin}/#sylvie` },
+      logo: `${site.origin}/assets/icon-512.png`,
+      priceRange: `${money(t, Math.min(...packages.flatMap((pk) => pk.lines.map((l) => l.amount)).filter((a) => a > 0)))}–${money(t, Math.max(...packages.flatMap((pk) => pk.lines.map((l) => l.amount))))}`,
+      currenciesAccepted: site.currency || "EUR",
+      hasOfferCatalog: { "@id": `${urlFor(t.lang, "prices")}#packages` },
+      knowsAbout: ["Voltaire", "Château de Voltaire", "Ferney-Voltaire", "Enlightenment", "18th-century history"],
       ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
       availableLanguage: ["French", "English", "German", "Russian"],
     },
@@ -297,8 +305,14 @@ function baseGraph(t, page) {
       "@type": ["TouristAttraction", "LandmarksOrHistoricalBuildings"],
       "@id": `${site.origin}/#chateau`,
       name: "Château de Voltaire",
+      description: stripTags(t.voltaire.chateau[0]),
+      image: site.origin + HERO_PHOTO,
       address: addr,
-      sameAs: ["https://www.chateau-ferney-voltaire.fr/"],
+      hasMap: MAP_URL,
+      publicAccess: true,
+      isAccessibleForFree: false,
+      touristType: ["Cultural tourism", "Heritage tourism", "Literary tourism"],
+      sameAs: ["https://www.chateau-ferney-voltaire.fr/", "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Voltaire"],
     },
     {
       "@type": "WebPage",
@@ -411,6 +425,8 @@ export const VIDEOS = {
   welcome: { page: "home", text: "video", src: "/assets/video/sylvie-accueil.mp4", webm: "/assets/video/sylvie-accueil.webm", poster: "/assets/video/sylvie-accueil-poster.jpg", seconds: 10, width: 720, height: 1280, preload: "metadata" },
   park: { page: "about", text: "video2", src: "/assets/video/sylvie-parc.mp4", webm: "/assets/video/sylvie-parc.webm", poster: "/assets/video/sylvie-parc-poster.jpg", seconds: 23, width: 720, height: 1280, preload: "none" },
 };
+const HERO_PHOTO = "/assets/img/hero-chateau-de-voltaire-ferney.jpg";
+const MAP_URL = `https://www.openstreetmap.org/search?query=${encodeURIComponent("Château de Voltaire, Ferney-Voltaire")}`;
 const SYLVIE_PHOTO = "/assets/img/sylvie-guide-chateau-de-voltaire.jpg";
 
 function videoFigure(t, key) {

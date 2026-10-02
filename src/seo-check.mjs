@@ -114,6 +114,8 @@ const targets = {
     ["enlightenment history tour ferney voltaire", "thematic"], ["voltaire and geneva history guided visit", "thematic"],
     ["literary tour chateau de voltaire", "thematic"], ["thematic guided tours ferney voltaire", "thematic"],
     ["group booking chateau de voltaire guided visits", "group"],
+    ["chateau de voltaire guided tour prices", "prices"], ["book private tour chateau de voltaire", "prices"],
+    ["saturday market tour ferney voltaire", "prices"],
   ],
   fr: [
     ["visite guidée château de voltaire", "home"], ["visite guidée ferney voltaire", "home"], ["que faire autour de genève", "home"],
@@ -126,6 +128,8 @@ const targets = {
     ["histoire des lumières ferney voltaire", "thematic"], ["voltaire et genève visite guidée", "thematic"],
     ["visite littéraire château de voltaire", "thematic"], ["visites guidées thématiques ferney voltaire", "thematic"],
     ["réservation visites guidées groupe château de voltaire", "group"],
+    ["tarifs visite guidée château de voltaire", "prices"], ["réservation visite privée château de voltaire", "prices"],
+    ["visite marché samedi ferney voltaire", "prices"],
   ],
 };
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[’'-]/g, " ");

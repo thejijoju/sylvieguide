@@ -6,7 +6,7 @@ import { mkdir, writeFile, rm, cp } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { site, languages, pages } from "./config.mjs";
+import { site, languages, pages, langMeta } from "./config.mjs";
 import { photos, details } from "./gallery.mjs";
 import {
   pathFor, urlFor,
@@ -58,6 +58,25 @@ await write("index.html", rootPage(all));
 await write("404.html", notFoundPage(en));
 await cp(join(here, "assets"), join(out, "assets"), { recursive: true });
 await cp(join(here, "assets", "favicon.ico"), join(out, "favicon.ico"));
+if (site.indexNowKey) await write(`${site.indexNowKey}.txt`, site.indexNowKey);
+
+// llms.txt: a plain summary with the key pages, for AI search assistants.
+const llmsPages = ["home", "tours", "prices", "group", "corporate", "seniors", "thematic", "voltaire", "about", "gallery", "practical", "contact"];
+await write("llms.txt", `# ${site.brand}
+
+> ${en.meta.home.description}
+
+Sylvie is an accredited guide at the Château de Voltaire in Ferney-Voltaire (France), working with the château for more than 8 years. Tours in French, English, German and Russian; every visit includes Voltaire's gardens. 15 minutes from Geneva Airport and Palexpo, TPG bus lines 60/61, coach parking on site. Prices cover the guiding fee only; the château admission is paid on site.
+
+## English
+${llmsPages.map((p) => `- [${en.meta[p].title}](${site.origin}${pathFor("en", p)}): ${en.meta[p].description}`).join("\n")}
+
+## Français
+${llmsPages.map((p) => `- [${fr.meta[p].title}](${site.origin}${pathFor("fr", p)}): ${fr.meta[p].description}`).join("\n")}
+
+## Other languages
+${languages.filter((l) => !["en", "fr"].includes(l)).map((l) => `- [${langMeta[l].name}](${site.origin}${pathFor(l, "home")})`).join("\n")}
+`);
 await write("site.webmanifest", JSON.stringify({
   name: "Sylvie · Château de Voltaire", short_name: "Sylvie", start_url: "/", display: "browser",
   background_color: "#ffffff", theme_color: "#111111",
