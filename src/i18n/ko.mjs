@@ -17,7 +17,8 @@ export default {
     "group": "단체 투어",
     "seniors": "시니어 단체",
     "thematic": "테마 투어",
-    "voltaire": "볼테르"
+    "voltaire": "볼테르",
+    "prices": "요금"
   },
   "cta": {
     "book": "투어 예약하기",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "페르네의 볼테르: 생애, 명언, Château de Voltaire",
       "description": "볼테르는 어떤 사람이었을까요? 주요 연표로 보는 그의 생애와 유명한 명언, 그리고 제네바 근교 페르네에 있는 볼테르 성(Château de Voltaire)의 이야기를 소개합니다. 철학자는 이곳에서 20년 가까이 살며 관용과 정의를 위해 싸웠습니다."
+    },
+    "prices": {
+      "title": "요금 및 예약 — Château de Voltaire 가이드 투어",
+      "description": "실비와 함께하는 Château de Voltaire 가이드 투어 요금: 클래식, 프라이빗, 단체, 토요 시장, 테마 투어. 원하는 상품을 고르고 총액을 바로 확인한 뒤 간편하게 예약하세요. 공인 가이드 실비가 24시간 이내에 일정을 확인해 드립니다."
     }
   },
   "ogImageAlt": "페르네의 볼테르 성(Château de Voltaire) 일러스트 — 실비와 함께하는 가이드 투어",
@@ -900,6 +905,74 @@ export default {
         "name": "기업",
         "desc": "팀 빌딩, 인센티브 투어, 행사와 연계한 투어."
       }
+    }
+  },
+  "prices": {
+    "h1": "요금 및 예약",
+    "lead": "투어를 선택하면 요금을 바로 확인하고 몇 번의 클릭만으로 예약할 수 있습니다. 표시된 요금은 가이드 비용만 해당하며, 성 입장권은 현장에서 구매하셔야 합니다.",
+    "choose": "선택",
+    "orderTitle": "투어 예약하기",
+    "orderLead": "상품을 선택하고 정보를 입력해 주세요. 입력하는 대로 요금이 바로 반영됩니다. 실비가 24시간 이내에 가능 여부를 확인해 드립니다.",
+    "steps": [
+      "투어 선택",
+      "예약자 정보",
+      "결제"
+    ],
+    "fields": {
+      "package": "상품",
+      "theme": "투어 테마",
+      "themeChoose": "테마를 선택하세요",
+      "themeOther": "기타 테마 (아래에 적어 주세요)",
+      "themeDetails": "관심 있는 내용을 실비에게 알려 주세요",
+      "themeDetailsPlaceholder": "예: 볼테르와 칼라스 사건, 계몽주의 시대의 여성들, 계절마다 달라지는 정원…",
+      "people": "인원",
+      "adults": "성인",
+      "children": "7–17세 어린이",
+      "infants": "7세 미만 어린이",
+      "date": "희망 날짜",
+      "saturdayOnly": "이 상품은 토요일 오전에만 이용할 수 있습니다.",
+      "language": "투어 언어"
+    },
+    "summary": {
+      "title": "예상 요금",
+      "total": "예상 총액",
+      "quote": "요금은 견적 문의가 필요합니다. 실비가 맞춤 견적을 보내 드립니다.",
+      "excluded": "성 입장권은 포함되어 있지 않습니다 (현장 결제).",
+      "minPeople": "이 상품은 최소 {n}명부터 이용할 수 있습니다.",
+      "maxPeople": "이 상품은 최대 {n}명까지 이용할 수 있습니다.",
+      "choosePackage": "상품을 선택하면 요금이 표시됩니다."
+    },
+    "payment": {
+      "title": "결제",
+      "card": "지금 카드로 결제 (Stripe)",
+      "paypal": "지금 PayPal로 결제",
+      "later": "실비가 날짜를 확정한 후 결제",
+      "soon": "카드 및 PayPal 온라인 결제는 곧 제공될 예정입니다. 현재는 실비가 먼저 날짜를 확정한 뒤 결제 방법을 안내해 드립니다.",
+      "redirect": "예약이 전송되었습니다. 안전한 결제 페이지로 이동합니다…"
+    },
+    "submit": "예약 보내기",
+    "seeAll": "전체 요금 보기 및 예약"
+  },
+  "weather": {
+    "title": "Ferney-Voltaire 날씨",
+    "lead": "방문 계획을 세워 보세요. 날짜를 선택하면 일기 예보를 확인할 수 있습니다. 투어는 대부분 실내에서 진행되며, 정원은 사계절 내내 아름답습니다.",
+    "dayLabel": "날짜 선택",
+    "max": "최고",
+    "min": "최저",
+    "rain": "강수 확률",
+    "loading": "일기 예보를 불러오는 중…",
+    "error": "지금은 일기 예보를 확인할 수 없습니다.",
+    "source": "일기 예보: Open-Meteo",
+    "codes": {
+      "clear": "맑음",
+      "partly": "구름 조금",
+      "cloudy": "흐림",
+      "fog": "안개",
+      "drizzle": "이슬비",
+      "rain": "비",
+      "snow": "눈",
+      "showers": "소나기",
+      "storm": "뇌우"
     }
   },
   "notFound": {

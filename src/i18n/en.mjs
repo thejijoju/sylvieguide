@@ -17,7 +17,8 @@ export default {
     "group": "Group tours",
     "seniors": "Senior groups",
     "thematic": "Thematic tours",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Prices"
   },
   "cta": {
     "book": "Book a Tour",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire in Ferney: Biography, Quotes and His Château",
       "description": "Who was Voltaire? His life in key dates, famous quotes and the story of the Château de Voltaire in Ferney, where the philosopher lived for nearly twenty years."
+    },
+    "prices": {
+      "title": "Prices & booking — Château de Voltaire guided tours",
+      "description": "Prices for Sylvie's guided tours of the Château de Voltaire: classic, private, group, Saturday market and thematic visits. Choose, see your total, book."
     }
   },
   "ogImageAlt": "Illustration of the Château de Voltaire in Ferney — guided tours with Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Companies",
         "desc": "Team building, incentives and tours around your events."
       }
+    }
+  },
+  "prices": {
+    "h1": "Prices & booking",
+    "lead": "Choose your visit, see the price straight away and book in a few clicks. Guiding fee only: the château's entrance ticket is paid on site.",
+    "choose": "Choose",
+    "orderTitle": "Book your visit",
+    "orderLead": "Select a package and fill in your details: the price updates as you go. Sylvie confirms availability within 24 hours.",
+    "steps": [
+      "Your visit",
+      "Your details",
+      "Payment"
+    ],
+    "fields": {
+      "package": "Package",
+      "theme": "Theme of your visit",
+      "themeChoose": "Choose a theme",
+      "themeOther": "Another theme (describe it below)",
+      "themeDetails": "Tell Sylvie what interests you",
+      "themeDetailsPlaceholder": "For example: Voltaire and the Calas affair, women of the Enlightenment, the gardens through the seasons…",
+      "people": "Number of people",
+      "adults": "Adults",
+      "children": "Children aged 7–17",
+      "infants": "Children under 7",
+      "date": "Preferred date",
+      "saturdayOnly": "This package is only available on Saturday mornings.",
+      "language": "Tour language"
+    },
+    "summary": {
+      "title": "Your price",
+      "total": "Estimated total",
+      "quote": "Price on quote: Sylvie will send you a tailored offer.",
+      "excluded": "Château entrance ticket not included (paid on site).",
+      "minPeople": "Minimum {n} people for this package.",
+      "maxPeople": "Up to {n} people for this package.",
+      "choosePackage": "Choose a package to see the price."
+    },
+    "payment": {
+      "title": "Payment",
+      "card": "Pay now by card (Stripe)",
+      "paypal": "Pay now with PayPal",
+      "later": "Pay once Sylvie has confirmed the date",
+      "soon": "Online payment by card and PayPal is coming soon. For now, Sylvie confirms your date first and then sends you the payment details.",
+      "redirect": "Your booking has been sent. Taking you to the secure payment page…"
+    },
+    "submit": "Send my booking",
+    "seeAll": "See all prices and book"
+  },
+  "weather": {
+    "title": "Weather in Ferney-Voltaire",
+    "lead": "Plan your visit: choose a day to see the forecast. Most of the tour is indoors, and the gardens are lovely in every season.",
+    "dayLabel": "Choose a day",
+    "max": "max",
+    "min": "min",
+    "rain": "Chance of rain",
+    "loading": "Loading the forecast…",
+    "error": "The forecast is not available right now.",
+    "source": "Forecast: Open-Meteo",
+    "codes": {
+      "clear": "Sunny",
+      "partly": "Partly cloudy",
+      "cloudy": "Cloudy",
+      "fog": "Fog",
+      "drizzle": "Drizzle",
+      "rain": "Rain",
+      "snow": "Snow",
+      "showers": "Showers",
+      "storm": "Thunderstorms"
     }
   },
   "notFound": {

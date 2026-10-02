@@ -17,7 +17,8 @@ export default {
     "group": "Groepsrondleidingen",
     "seniors": "Seniorengroepen",
     "thematic": "Themarondleidingen",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Tarieven"
   },
   "cta": {
     "book": "Boek een rondleiding",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire in Ferney: biografie, citaten en zijn kasteel",
       "description": "Wie was Voltaire? Zijn leven in jaartallen, beroemde citaten en het verhaal van het Château de Voltaire in Ferney, waar de filosoof bijna twintig jaar woonde."
+    },
+    "prices": {
+      "title": "Tarieven & reserveren — rondleidingen in het Château de Voltaire",
+      "description": "Tarieven voor de rondleidingen van Sylvie in het Château de Voltaire: klassiek, privé, groep, zaterdagmarkt en thematisch. Kies, bekijk uw totaal en boek direct."
     }
   },
   "ogImageAlt": "Illustratie van het Château de Voltaire in Ferney — rondleidingen met Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Bedrijven",
         "desc": "Teambuilding, incentives en rondleidingen rond uw evenementen."
       }
+    }
+  },
+  "prices": {
+    "h1": "Tarieven & reserveren",
+    "lead": "Kies uw bezoek, zie meteen de prijs en reserveer in een paar klikken. Alleen de gidskosten: het toegangskaartje voor het kasteel betaalt u ter plaatse.",
+    "choose": "Kiezen",
+    "orderTitle": "Reserveer uw bezoek",
+    "orderLead": "Kies een arrangement en vul uw gegevens in: de prijs wordt direct bijgewerkt. Sylvie bevestigt de beschikbaarheid binnen 24 uur.",
+    "steps": [
+      "Uw bezoek",
+      "Uw gegevens",
+      "Betaling"
+    ],
+    "fields": {
+      "package": "Arrangement",
+      "theme": "Thema van uw bezoek",
+      "themeChoose": "Kies een thema",
+      "themeOther": "Een ander thema (beschrijf het hieronder)",
+      "themeDetails": "Vertel Sylvie wat u interesseert",
+      "themeDetailsPlaceholder": "Bijvoorbeeld: Voltaire en de zaak-Calas, vrouwen van de Verlichting, de tuinen door de seizoenen heen…",
+      "people": "Aantal personen",
+      "adults": "Volwassenen",
+      "children": "Kinderen van 7–17 jaar",
+      "infants": "Kinderen onder 7 jaar",
+      "date": "Gewenste datum",
+      "saturdayOnly": "Dit arrangement is alleen op zaterdagochtend beschikbaar.",
+      "language": "Taal van de rondleiding"
+    },
+    "summary": {
+      "title": "Uw prijs",
+      "total": "Geschat totaal",
+      "quote": "Prijs op aanvraag: Sylvie stuurt u een offerte op maat.",
+      "excluded": "Toegangskaartje voor het kasteel niet inbegrepen (ter plaatse te betalen).",
+      "minPeople": "Minimaal {n} personen voor dit arrangement.",
+      "maxPeople": "Maximaal {n} personen voor dit arrangement.",
+      "choosePackage": "Kies een arrangement om de prijs te zien."
+    },
+    "payment": {
+      "title": "Betaling",
+      "card": "Nu betalen met kaart (Stripe)",
+      "paypal": "Nu betalen met PayPal",
+      "later": "Betalen zodra Sylvie de datum heeft bevestigd",
+      "soon": "Online betalen met kaart en PayPal is binnenkort mogelijk. Voorlopig bevestigt Sylvie eerst uw datum en stuurt u daarna de betaalgegevens.",
+      "redirect": "Uw reservering is verzonden. U wordt doorgestuurd naar de beveiligde betaalpagina…"
+    },
+    "submit": "Reservering versturen",
+    "seeAll": "Alle tarieven bekijken en reserveren"
+  },
+  "weather": {
+    "title": "Het weer in Ferney-Voltaire",
+    "lead": "Plan uw bezoek: kies een dag om de weersverwachting te zien. De rondleiding vindt grotendeels binnen plaats, en de tuinen zijn in elk seizoen prachtig.",
+    "dayLabel": "Kies een dag",
+    "max": "max",
+    "min": "min",
+    "rain": "Kans op regen",
+    "loading": "Weersverwachting laden…",
+    "error": "De weersverwachting is momenteel niet beschikbaar.",
+    "source": "Weersverwachting: Open-Meteo",
+    "codes": {
+      "clear": "Zonnig",
+      "partly": "Half bewolkt",
+      "cloudy": "Bewolkt",
+      "fog": "Mist",
+      "drizzle": "Motregen",
+      "rain": "Regen",
+      "snow": "Sneeuw",
+      "showers": "Buien",
+      "storm": "Onweer"
     }
   },
   "notFound": {

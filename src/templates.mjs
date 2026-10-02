@@ -82,7 +82,7 @@ function head(t, page, { title, description }, og = null) {
   <link rel="canonical" href="${canonical}">
   ${alternates}
   <link rel="alternate" hreflang="x-default" href="${xDefault}">
-  <meta name="theme-color" content="#1f2a44">
+  <meta name="theme-color" content="#111111">
   ${site.verification.google ? `<meta name="google-site-verification" content="${esc(site.verification.google)}">` : ""}
   ${site.verification.bing ? `<meta name="msvalidate.01" content="${esc(site.verification.bing)}">` : ""}
   ${site.verification.yandex ? `<meta name="yandex-verification" content="${esc(site.verification.yandex)}">` : ""}
@@ -105,8 +105,11 @@ function head(t, page, { title, description }, og = null) {
   <meta name="twitter:description" content="${esc(description)}">
   <meta name="twitter:image" content="${ogImage}">
 
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="${fontsUrl(t.lang)}">
@@ -517,6 +520,8 @@ export function homePage(t) {
   </div>
 </section>
 
+${weatherSection(t)}
+
 <section class="section section-tinted" aria-labelledby="values-title">
   <div class="container">
     <h2 id="values-title" class="section-title">${esc(h.valuesTitle)}</h2>
@@ -904,34 +909,44 @@ function priceLine(t, line) {
   return `<li><strong>${money(t, line.amount)}</strong> ${esc(L[line.unit])}${note}</li>`;
 }
 
+// Link that opens the booking form on the prices page with a package chosen.
+const orderLink = (t, id) => `${pathFor(t.lang, "prices")}?package=${id}#order`;
+
 function packageCard(t, pk) {
   const P = t.pricing;
-  const name = P.packages[pk.id].name;
-  const book = `${pathFor(t.lang, "contact")}?type=${pk.contactType}&tour=${pk.id === "market" ? "market" : pk.id}#booking`;
-  const pay = [
-    pk.stripe ? `<a class="btn btn-primary btn-sm" href="${esc(pk.stripe)}" rel="noopener" target="_blank">${esc(P.labels.payCard)}</a>` : "",
-    pk.paypal ? `<a class="btn btn-outline btn-sm" href="${esc(pk.paypal)}" rel="noopener" target="_blank">${esc(P.labels.payPaypal)}</a>` : "",
-  ].join("");
   return `<article class="card price-card${pk.saturday ? " price-card-featured" : ""}" id="price-${pk.id}">
       ${pk.saturday ? `<p class="price-tag">${icon("clock")}${esc(P.labels.saturday)}</p>` : ""}
-      <h3>${esc(name)}</h3>
+      <h3>${esc(P.packages[pk.id].name)}</h3>
       <p>${esc(P.packages[pk.id].desc)}</p>
       <ul class="price-lines">${pk.lines.map((l) => priceLine(t, l)).join("")}</ul>
-      <div class="btn-row">${pay}<a class="btn ${pay ? "btn-outline" : "btn-primary"} btn-sm" href="${book}">${esc(P.labels.book)}</a></div>
+      <div class="btn-row"><a class="btn btn-primary btn-sm" href="${orderLink(t, pk.id)}" data-choose="${pk.id}">${esc(t.prices.choose)}</a></div>
     </article>`;
 }
 
-export function pricingSection(t) {
+function pricingSection(t) {
   const P = t.pricing;
-  const anyPay = packages.some((pk) => pk.stripe || pk.paypal);
-  return `<section class="section" id="prices" aria-labelledby="prices-title">
+  return `<section class="section" id="packages" aria-labelledby="prices-title">
   <div class="container">
     <h2 id="prices-title" class="section-title">${esc(P.title)}</h2>
     ${ornament}
     <p class="section-lead">${esc(P.lead)}</p>
     <div class="price-grid">${packages.map((pk) => packageCard(t, pk)).join("")}</div>
     <p class="price-excluded">${icon("key")}${esc(P.excluded)}</p>
-    <p class="price-policy">${esc(P.policy)}${anyPay ? " " + esc(P.labels.payNote) : ""}</p>
+    <p class="price-policy">${esc(P.policy)}</p>
+  </div>
+</section>`;
+}
+
+// Practical page: a short pointer to the prices page.
+function pricesTeaser(t) {
+  const P = t.pricing;
+  return `<section class="section" id="prices" aria-labelledby="prices-teaser-title">
+  <div class="container narrow prices-teaser">
+    <h2 id="prices-teaser-title" class="section-title">${esc(P.title)}</h2>
+    ${ornament}
+    <p class="section-lead">${esc(P.lead)}</p>
+    <p class="price-excluded">${icon("key")}${esc(P.excluded)}</p>
+    <p class="btn-row btn-row-center"><a class="btn btn-primary" href="${pathFor(t.lang, "prices")}">${esc(t.prices.seeAll)}</a></p>
   </div>
 </section>`;
 }
@@ -950,8 +965,8 @@ function saturdaySection(t) {
       ${ornament}
       <p>${esc(P.packages[pk.id].desc)}</p>
       <ul class="price-lines">${pk.lines.map((l) => priceLine(t, l)).join("")}</ul>
-      <p class="btn-row"><a class="btn btn-primary" href="${pathFor(t.lang, "contact")}?type=${pk.contactType}&tour=market#booking">${esc(P.labels.book)}</a>
-      <a class="btn btn-outline" href="${pathFor(t.lang, "practical")}#prices">${esc(P.title)}</a></p>
+      <p class="btn-row"><a class="btn btn-primary" href="${orderLink(t, pk.id)}">${esc(P.labels.book)}</a>
+      <a class="btn btn-outline" href="${pathFor(t.lang, "prices")}">${esc(P.title)}</a></p>
     </div>
   </div>
 </section>`;
@@ -961,7 +976,7 @@ function saturdaySection(t) {
 function offerCatalogLd(t) {
   return {
     "@type": "OfferCatalog",
-    "@id": `${urlFor(t.lang, "practical")}#prices`,
+    "@id": `${urlFor(t.lang, "prices")}#packages`,
     name: t.pricing.title,
     itemListElement: packages.map((pk) => {
       const main = pk.lines.find((l) => l.amount > 0);
@@ -971,11 +986,170 @@ function offerCatalogLd(t) {
         description: t.pricing.packages[pk.id].desc,
         price: main.amount,
         priceCurrency: site.currency || "EUR",
-        url: `${urlFor(t.lang, "practical")}#price-${pk.id}`,
+        url: `${urlFor(t.lang, "prices")}#price-${pk.id}`,
         seller: { "@id": `${site.origin}/#business` },
       };
     }),
   };
+}
+
+// Prices page: every package, then one booking form where the visitor picks
+// a package (and a theme for thematic visits), sees the estimated total and
+// chooses how to pay. Pay-now options only appear once Sylvie's Stripe
+// payment links / PayPal.me name are set in config.
+export function pricesPage(t) {
+  const P = t.pricing;
+  const X = t.prices;
+  const F = X.fields;
+  const c = t.contact;
+  const f = c.fields;
+  const req = `<span class="req" aria-hidden="true">*</span>`;
+  const themes = tourCategories.find((cat) => cat.id === "thematic").tours;
+  const anyPay = Boolean(site.paypalMe) || packages.some((pk) => pk.stripe);
+  const rules = Object.fromEntries(packages.map((pk) => [pk.id, { ...pk.calc, stripe: pk.stripe || "", saturday: Boolean(pk.saturday), name: P.packages[pk.id].name }]));
+  const allBut = (...ids) => packages.map((pk) => pk.id).filter((id) => !ids.includes(id)).join(" ");
+  const field = (html, showFor = "") => `<div class="field${showFor ? " field-cond" : ""}"${showFor ? ` data-show-for="${showFor}" hidden` : ""}>${html}</div>`;
+  const step = (n, title) => `<legend class="order-legend"><span class="step-num">${n}</span>${esc(title)}</legend>`;
+
+  const body = `
+${pageHero(t, "prices", X.h1, X.lead)}
+${pricingSection(t)}
+<section class="section section-tinted" id="order" aria-labelledby="order-title">
+  <div class="container order-grid">
+    <form class="card booking-form order-form" action="${esc(site.formEndpoint || "#order")}" method="post" novalidate data-booking-form data-order
+      data-endpoint="${esc(site.formEndpoint)}" data-email="${esc(site.email)}" data-subject="${esc(c.mailSubject)} — ${esc(X.h1)}"
+      data-msg-success="${esc(c.success)}" data-msg-error="${esc(c.error)}" data-msg-invalid="${esc(c.invalid)}"
+      data-msg-sending="${esc(f.sending)}" data-msg-redirect="${esc(X.payment.redirect)}"
+      data-msg-min="${esc(X.summary.minPeople)}" data-msg-max="${esc(X.summary.maxPeople)}" data-msg-saturday="${esc(F.saturdayOnly)}"
+      data-msg-quote="${esc(X.summary.quote)}" data-msg-choose="${esc(X.summary.choosePackage)}"
+      data-locale="${langMeta[t.lang].locale.replace("_", "-")}" data-currency="${site.currency || "EUR"}"
+      data-paypal="${esc(site.paypalMe)}" data-rules="${esc(JSON.stringify(rules))}">
+      <h2 id="order-title">${esc(X.orderTitle)}</h2>
+      <p class="form-note">${esc(X.orderLead)} ${req} = ${esc(f.required)}</p>
+
+      <fieldset class="order-step">
+        ${step(1, X.steps[0])}
+        <div class="package-options">
+          ${packages.map((pk) => `<label class="package-option">
+            <input type="radio" name="package" value="${pk.id}" required>
+            <span class="po-body"><span class="po-name">${esc(P.packages[pk.id].name)}</span>
+            <span class="po-price">${stripTags(priceLine(t, pk.lines[0]))}</span></span>
+          </label>`).join("")}
+        </div>
+        <div class="form-grid">
+          ${field(`<label for="o-theme">${esc(F.theme)} ${req}</label>
+            <select id="o-theme" name="theme" required disabled>
+              <option value="">${esc(F.themeChoose)}</option>
+              ${themes.map((th) => `<option value="${esc(t.tours.items[th.id].title)}">${esc(t.tours.items[th.id].title)}</option>`).join("")}
+              <option value="other">${esc(F.themeOther)}</option>
+            </select>`, "thematic")}
+          ${field(`<label for="o-theme-details">${esc(F.themeDetails)}</label>
+            <textarea id="o-theme-details" name="theme_details" rows="3" placeholder="${esc(F.themeDetailsPlaceholder)}" disabled></textarea>`, "thematic")}
+          ${field(`<label for="o-adults">${esc(F.adults)} ${req}</label>
+            <input id="o-adults" name="adults" type="number" min="1" max="60" value="2" inputmode="numeric" required disabled>`, "classic")}
+          ${field(`<label for="o-children">${esc(F.children)}</label>
+            <input id="o-children" name="children" type="number" min="0" max="60" value="0" inputmode="numeric" disabled>`, "classic")}
+          ${field(`<label for="o-infants">${esc(F.infants)}</label>
+            <input id="o-infants" name="infants" type="number" min="0" max="30" value="0" inputmode="numeric" disabled>`, "classic")}
+          ${field(`<label for="o-people">${esc(F.people)} ${req}</label>
+            <input id="o-people" name="people" type="number" min="1" max="200" value="2" inputmode="numeric" required disabled>`, allBut("classic"))}
+          <div class="field">
+            <label for="o-date">${esc(F.date)} ${req}</label>
+            <input id="o-date" name="preferred_date" type="date" required>
+            <p class="field-hint" data-show-for="market" hidden>${esc(F.saturdayOnly)}</p>
+          </div>
+          <div class="field">
+            <label for="o-lang">${esc(F.language)} ${req}</label>
+            <select id="o-lang" name="tour_language" required>
+              ${tourLanguages.map((l) => `<option value="${langMeta[l].name}"${l === (tourLanguages.includes(t.lang) ? t.lang : "en") ? " selected" : ""}>${langMeta[l].name}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="order-step">
+        ${step(2, X.steps[1])}
+        <div class="form-grid">
+          <div class="field">
+            <label for="o-name">${esc(f.name)} ${req}</label>
+            <input id="o-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="o-email">${esc(f.email)} ${req}</label>
+            <input id="o-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="o-phone">${esc(f.phone)}</label>
+            <input id="o-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field field-full">
+            <label for="o-message">${esc(f.message)}</label>
+            <textarea id="o-message" name="message" rows="4" placeholder="${esc(f.messagePlaceholder)}"></textarea>
+          </div>
+          <div class="field field-full hp" aria-hidden="true">
+            <label for="o-website">Website</label>
+            <input id="o-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="order-step">
+        ${step(3, X.steps[2])}
+        <div class="pay-options">
+          ${packages.some((pk) => pk.stripe) ? `<label class="pay-option" data-pay="card" hidden><input type="radio" name="payment" value="card">${icon("card")}<span>${esc(X.payment.card)}</span></label>` : ""}
+          ${site.paypalMe ? `<label class="pay-option" data-pay="paypal" hidden><input type="radio" name="payment" value="paypal"><span class="pp-mark" aria-hidden="true">P</span><span>${esc(X.payment.paypal)}</span></label>` : ""}
+          <label class="pay-option"><input type="radio" name="payment" value="later" checked>${icon("calendar")}<span>${esc(X.payment.later)}</span></label>
+        </div>
+        ${anyPay ? "" : `<p class="field-hint">${esc(X.payment.soon)}</p>`}
+      </fieldset>
+
+      <input type="hidden" name="estimated_total" value="">
+      <input type="hidden" name="site_language" value="${t.lang}">
+      <div class="field field-check">
+        <input id="o-consent" name="consent" type="checkbox" value="yes" required>
+        <label for="o-consent">${esc(f.consent)} ${req}</label>
+      </div>
+      <div class="form-status" role="status" aria-live="polite" data-form-status></div>
+      <button class="btn btn-primary btn-block" type="submit">${esc(X.submit)}</button>
+      <p class="form-privacy">${esc(c.privacy)}</p>
+    </form>
+
+    <aside class="order-summary" aria-labelledby="summary-title">
+      <div class="card summary-card">
+        <h2 id="summary-title">${esc(X.summary.title)}</h2>
+        <p class="summary-package" data-summary-package>${esc(X.summary.choosePackage)}</p>
+        <ul class="summary-lines" data-summary-lines></ul>
+        <p class="summary-total"><span>${esc(X.summary.total)}</span> <strong data-summary-total>—</strong></p>
+        <p class="summary-warn" data-summary-warn role="alert" hidden></p>
+        <p class="price-excluded">${icon("key")}${esc(X.summary.excluded)}</p>
+      </div>
+    </aside>
+  </div>
+</section>`;
+  return layout(t, "prices", body, [offerCatalogLd(t)]);
+}
+
+// Home page: Ferney-Voltaire forecast for the coming days (Open-Meteo, no
+// key needed). The section stays hidden without JavaScript.
+function weatherSection(t) {
+  const W = t.weather;
+  return `<section class="section weather" aria-labelledby="weather-title" data-weather hidden
+  data-locale="${langMeta[t.lang].locale.replace("_", "-")}" data-codes="${esc(JSON.stringify(W.codes))}"
+  data-max="${esc(W.max)}" data-min="${esc(W.min)}" data-rain="${esc(W.rain)}" data-error="${esc(W.error)}">
+  <div class="container weather-grid">
+    <div class="weather-intro">
+      <p class="eyebrow">Ferney-Voltaire · 46.26° N, 6.11° E</p>
+      <h2 id="weather-title">${esc(W.title)}</h2>
+      ${ornament}
+      <p>${esc(W.lead)}</p>
+    </div>
+    <div class="weather-card">
+      <div class="weather-now" data-weather-now aria-live="polite"><p class="weather-loading">${esc(W.loading)}</p></div>
+      <div class="weather-days" role="group" aria-label="${esc(W.dayLabel)}" data-weather-days></div>
+      <p class="weather-source">${esc(W.source)}</p>
+    </div>
+  </div>
+</section>`;
 }
 
 // ---------------------------------------------------------------- Voltaire page
@@ -1093,7 +1267,7 @@ ${pageHero(t, "practical", p.h1, p.lead)}
     </div>
   </div>
 </section>
-${pricingSection(t)}
+${pricesTeaser(t)}
 <section class="section section-tinted" aria-labelledby="dur-title">
   <div class="container two-col">
     <div>
@@ -1131,7 +1305,7 @@ ${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
-  return layout(t, "practical", body, [faqLd, offerCatalogLd(t)]);
+  return layout(t, "practical", body, [faqLd]);
 }
 
 export function contactPage(t) {
@@ -1230,7 +1404,8 @@ export function notFoundPage(t) {
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 — ${esc(t.notFound.title)} | ${esc(site.brand)}</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="${fontsUrl(t.lang)}">
   <link rel="stylesheet" href="/assets/styles.css?v=${ASSET_VERSION}">
 </head>
@@ -1271,8 +1446,9 @@ export function rootPage(all) {
   <meta property="og:image" content="${site.origin}/assets/og/og-fr.png">
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#1f2a44">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <script>
     (function () {
       var langs = ${JSON.stringify(languages)}, pick = null;

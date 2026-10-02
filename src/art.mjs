@@ -108,6 +108,8 @@ const icons = {
   car: '<path d="M4 16V12l2-5h12l2 5v4Z"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/><path d="M4 12h16"/>',
   bus: '<rect x="5" y="3" width="14" height="15" rx="2"/><path d="M5 11h14M8 21v-3M16 21v-3"/>',
   plane: '<path d="M2 14l20-8-6 14-3-6Z"/><path d="M13 14 22 6"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  card: '<rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   access: '<circle cx="12" cy="4.5" r="1.5"/><path d="M12 7v6h5l2 6M12 10h5"/><path d="M9 11a5 5 0 1 0 6 8"/>',
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
@@ -124,4 +126,3 @@ export function icon(name, cls = "icon") {
   return `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${icons[name] || ""}</svg>`;
 }
 
-export const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1f2a44"/><circle cx="32" cy="32" r="24" fill="none" stroke="#b8955a" stroke-width="2"/><text x="32" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#f6efe0">S</text></svg>`;

@@ -17,7 +17,8 @@ export default {
     "group": "Visitas de grupo",
     "seniors": "Grupos de seniores",
     "thematic": "Visitas temáticas",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Preços"
   },
   "cta": {
     "book": "Reservar uma visita",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire em Ferney: biografia, citações e o seu castelo",
       "description": "Quem foi Voltaire? A sua vida em datas-chave, citações célebres e a história do Château de Voltaire em Ferney, onde o filósofo viveu quase vinte anos."
+    },
+    "prices": {
+      "title": "Preços e reservas — visitas guiadas ao Château de Voltaire",
+      "description": "Preços das visitas guiadas da Sylvie ao Château de Voltaire: clássica, privada, em grupo, mercado de sábado e temática. Escolha, veja o total e reserve."
     }
   },
   "ogImageAlt": "Ilustração do Château de Voltaire em Ferney — visitas guiadas com a Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Empresas",
         "desc": "Team building, viagens de incentivo e visitas em torno dos seus eventos."
       }
+    }
+  },
+  "prices": {
+    "h1": "Preços e reservas",
+    "lead": "Escolha a sua visita, veja o preço de imediato e reserve em poucos cliques. Apenas o serviço de guia: o bilhete de entrada no castelo é pago no local.",
+    "choose": "Escolher",
+    "orderTitle": "Reserve a sua visita",
+    "orderLead": "Selecione uma modalidade e indique os seus dados: o preço é atualizado à medida que avança. A Sylvie confirma a disponibilidade no prazo de 24 horas.",
+    "steps": [
+      "A sua visita",
+      "Os seus dados",
+      "Pagamento"
+    ],
+    "fields": {
+      "package": "Modalidade",
+      "theme": "Tema da visita",
+      "themeChoose": "Escolha um tema",
+      "themeOther": "Outro tema (descreva-o abaixo)",
+      "themeDetails": "Diga à Sylvie o que lhe interessa",
+      "themeDetailsPlaceholder": "Por exemplo: Voltaire e o caso Calas, as mulheres do Iluminismo, os jardins ao longo das estações…",
+      "people": "Número de pessoas",
+      "adults": "Adultos",
+      "children": "Crianças dos 7 aos 17 anos",
+      "infants": "Crianças com menos de 7 anos",
+      "date": "Data pretendida",
+      "saturdayOnly": "Esta modalidade só está disponível aos sábados de manhã.",
+      "language": "Idioma da visita"
+    },
+    "summary": {
+      "title": "O seu preço",
+      "total": "Total estimado",
+      "quote": "Preço sob consulta: a Sylvie envia-lhe uma proposta personalizada.",
+      "excluded": "Bilhete de entrada no castelo não incluído (pago no local).",
+      "minPeople": "Mínimo de {n} pessoas para esta modalidade.",
+      "maxPeople": "Até {n} pessoas para esta modalidade.",
+      "choosePackage": "Escolha uma modalidade para ver o preço."
+    },
+    "payment": {
+      "title": "Pagamento",
+      "card": "Pagar agora com cartão (Stripe)",
+      "paypal": "Pagar agora com PayPal",
+      "later": "Pagar depois de a Sylvie confirmar a data",
+      "soon": "O pagamento online com cartão e PayPal estará disponível em breve. Por enquanto, a Sylvie confirma primeiro a data e depois envia-lhe os dados para pagamento.",
+      "redirect": "A sua reserva foi enviada. A redirecionar para a página de pagamento seguro…"
+    },
+    "submit": "Enviar a minha reserva",
+    "seeAll": "Ver todos os preços e reservar"
+  },
+  "weather": {
+    "title": "O tempo em Ferney-Voltaire",
+    "lead": "Prepare a sua visita: escolha um dia para ver a previsão. A visita decorre sobretudo no interior, e os jardins são encantadores em qualquer estação.",
+    "dayLabel": "Escolha um dia",
+    "max": "máx.",
+    "min": "mín.",
+    "rain": "Probabilidade de chuva",
+    "loading": "A carregar a previsão…",
+    "error": "A previsão não está disponível de momento.",
+    "source": "Previsão: Open-Meteo",
+    "codes": {
+      "clear": "Sol",
+      "partly": "Parcialmente nublado",
+      "cloudy": "Nublado",
+      "fog": "Nevoeiro",
+      "drizzle": "Chuvisco",
+      "rain": "Chuva",
+      "snow": "Neve",
+      "showers": "Aguaceiros",
+      "storm": "Trovoada"
     }
   },
   "notFound": {

@@ -23,6 +23,10 @@ export const site = {
   // back to opening the visitor's e-mail client with the request pre-filled.
   formEndpoint: "",
 
+  // PayPal.me username (paypal.me/<name>): lets the prices page send visitors
+  // to PayPal with the exact amount of their booking. Empty = no PayPal button.
+  paypalMe: "",
+
   // Profiles that belong to Sylvie (Instagram, Facebook, LinkedIn,
   // TripAdvisor, Google Business Profile…). Search engines use them to tie
   // the site to her. Full URLs.
@@ -80,16 +84,16 @@ export const tourLanguages = ["fr", "en", "de", "ru"];
 
 // Page keys → localized slugs. "" is the language home page. A slug may
 // contain "/" for sub-pages; `parents` sets their breadcrumb parent.
-export const pages = ["home", "tours", "group", "corporate", "seniors", "thematic", "voltaire", "about", "gallery", "practical", "contact"];
+export const pages = ["home", "tours", "group", "corporate", "seniors", "thematic", "prices", "voltaire", "about", "gallery", "practical", "contact"];
 export const parents = { corporate: "group", seniors: "group" };
-export const headerPages = ["tours", "group", "thematic", "voltaire", "about", "gallery", "practical"];
+export const headerPages = ["tours", "group", "thematic", "prices", "voltaire", "about", "gallery", "practical"];
 
-const enSlugs = { home: "", tours: "tours", group: "group-tours", corporate: "group-tours/corporate-groups", seniors: "group-tours/senior-groups", thematic: "thematic-tours", voltaire: "voltaire", about: "about", gallery: "gallery", practical: "practical-info", contact: "contact" };
+const enSlugs = { home: "", tours: "tours", group: "group-tours", corporate: "group-tours/corporate-groups", seniors: "group-tours/senior-groups", thematic: "thematic-tours", prices: "prices", voltaire: "voltaire", about: "about", gallery: "gallery", practical: "practical-info", contact: "contact" };
 const localSlugs = {
-  fr: { home: "", tours: "visites", group: "visites-de-groupe", corporate: "visites-de-groupe/entreprises", seniors: "visites-de-groupe/seniors", thematic: "visites-thematiques", voltaire: "voltaire", about: "a-propos", gallery: "galerie", practical: "infos-pratiques", contact: "contact" },
+  fr: { home: "", tours: "visites", group: "visites-de-groupe", corporate: "visites-de-groupe/entreprises", seniors: "visites-de-groupe/seniors", thematic: "visites-thematiques", prices: "tarifs", voltaire: "voltaire", about: "a-propos", gallery: "galerie", practical: "infos-pratiques", contact: "contact" },
   en: enSlugs,
-  de: { home: "", tours: "fuehrungen", group: "gruppenfuehrungen", corporate: "gruppenfuehrungen/firmen", seniors: "gruppenfuehrungen/senioren", thematic: "themenfuehrungen", voltaire: "voltaire", about: "ueber-mich", gallery: "galerie", practical: "praktische-infos", contact: "kontakt" },
-  ru: { home: "", tours: "ekskursii", group: "gruppovye-ekskursii", corporate: "gruppovye-ekskursii/kompanii", seniors: "gruppovye-ekskursii/starshee-pokolenie", thematic: "tematicheskie-ekskursii", voltaire: "volter", about: "obo-mne", gallery: "galereya", practical: "prakticheskaya-informatsiya", contact: "kontakty" },
+  de: { home: "", tours: "fuehrungen", group: "gruppenfuehrungen", corporate: "gruppenfuehrungen/firmen", seniors: "gruppenfuehrungen/senioren", thematic: "themenfuehrungen", prices: "preise", voltaire: "voltaire", about: "ueber-mich", gallery: "galerie", practical: "praktische-infos", contact: "kontakt" },
+  ru: { home: "", tours: "ekskursii", group: "gruppovye-ekskursii", corporate: "gruppovye-ekskursii/kompanii", seniors: "gruppovye-ekskursii/starshee-pokolenie", thematic: "tematicheskie-ekskursii", prices: "tseny", voltaire: "volter", about: "obo-mne", gallery: "galereya", practical: "prakticheskaya-informatsiya", contact: "kontakty" },
 };
 // Other languages use the English slugs.
 export const slugs = Object.fromEntries(Object.keys(langMeta).map((l) => [l, localSlugs[l] || enSlugs]));
@@ -124,19 +128,21 @@ export const groupTypes = ["individual", "private", "corporate", "school", "seni
 // Each line: amount + unit label, optional note label (keys of
 // t.pricing.labels). `stripe` / `paypal`: payment links created in Sylvie's
 // Stripe and PayPal accounts; the pay buttons only appear once they are set.
+// `calc`: how the prices page computes the estimated total (per adult/child,
+// flat rate, per person with a minimum, or price tiers by group size).
 export const packages = [
-  { id: "classic", contactType: "individual", lines: [
+  { id: "classic", calc: { adult: 28, child: 14 }, contactType: "individual", lines: [
     { amount: 28, unit: "perPerson" }, { amount: 14, unit: "child" }, { amount: 0, unit: "under7" },
   ], stripe: "", paypal: "" },
-  { id: "private", contactType: "individual", lines: [{ amount: 170, unit: "flat", note: "upTo6" }], stripe: "", paypal: "" },
-  { id: "group", contactType: "tourist", lines: [
+  { id: "private", calc: { flat: 170, max: 6 }, contactType: "individual", lines: [{ amount: 170, unit: "flat", note: "upTo6" }], stripe: "", paypal: "" },
+  { id: "group", calc: { perPerson: 20, min: 10, minimum: 200 }, contactType: "tourist", lines: [
     { amount: 20, unit: "perPerson", note: "from10" }, { amount: 200, unit: "minimum" },
   ], stripe: "", paypal: "" },
-  { id: "market", contactType: "private", saturday: true, photo: "/assets/gallery/15-statue-voltaire-marche-ferney-voltaire.jpg", lines: [
+  { id: "market", calc: { tiers: [[10, 36], [4, 45]], min: 4 }, contactType: "private", saturday: true, photo: "/assets/gallery/15-statue-voltaire-marche-ferney-voltaire.jpg", lines: [
     { amount: 45, unit: "perPerson", note: "from4" }, { amount: 36, unit: "perPerson", note: "from10" },
   ], stripe: "", paypal: "" },
-  { id: "thematic", contactType: "private", lines: [
+  { id: "thematic", calc: { tiers: [[10, 28], [1, 39]], theme: true }, contactType: "private", lines: [
     { amount: 39, unit: "perPerson", note: "onRequest" }, { amount: 28, unit: "perPerson", note: "from10" }, { amount: 280, unit: "minimum" },
   ], stripe: "", paypal: "" },
-  { id: "corporate", contactType: "corporate", lines: [{ amount: 390, unit: "from", note: "quote" }], stripe: "", paypal: "" },
+  { id: "corporate", calc: { quote: true }, contactType: "corporate", lines: [{ amount: 390, unit: "from", note: "quote" }], stripe: "", paypal: "" },
 ];

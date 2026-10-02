@@ -17,7 +17,8 @@ export default {
     "group": "Wycieczki grupowe",
     "seniors": "Grupy seniorów",
     "thematic": "Zwiedzanie tematyczne",
-    "voltaire": "Wolter"
+    "voltaire": "Wolter",
+    "prices": "Cennik"
   },
   "cta": {
     "book": "Zarezerwuj zwiedzanie",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Wolter w Ferney: biografia, cytaty i jego zamek",
       "description": "Kim był Wolter? Jego życie w najważniejszych datach, słynne cytaty i historia Château de Voltaire w Ferney, gdzie filozof mieszkał blisko dwadzieścia lat."
+    },
+    "prices": {
+      "title": "Cennik i rezerwacja — zwiedzanie Château de Voltaire z przewodniczką",
+      "description": "Ceny zwiedzania Château de Voltaire z przewodniczką Sylvie: wizyta klasyczna, prywatna, grupowa, sobotni targ i tematyczna. Wybierz, sprawdź cenę, zarezerwuj."
     }
   },
   "ogImageAlt": "Ilustracja przedstawiająca Château de Voltaire w Ferney — zwiedzanie z przewodnikiem z Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Firmy",
         "desc": "Team building, wyjazdy motywacyjne i zwiedzanie towarzyszące Twoim wydarzeniom."
       }
+    }
+  },
+  "prices": {
+    "h1": "Cennik i rezerwacja",
+    "lead": "Wybierz wizytę, od razu zobacz cenę i zarezerwuj w kilku kliknięciach. Cena obejmuje wyłącznie usługę przewodnicką: bilet wstępu do zamku opłaca się na miejscu.",
+    "choose": "Wybierz",
+    "orderTitle": "Zarezerwuj wizytę",
+    "orderLead": "Wybierz pakiet i podaj swoje dane: cena aktualizuje się na bieżąco. Sylvie potwierdzi dostępność w ciągu 24 godzin.",
+    "steps": [
+      "Wizyta",
+      "Dane kontaktowe",
+      "Płatność"
+    ],
+    "fields": {
+      "package": "Pakiet",
+      "theme": "Temat wizyty",
+      "themeChoose": "Wybierz temat",
+      "themeOther": "Inny temat (opisz go poniżej)",
+      "themeDetails": "Napisz Sylvie, co Cię interesuje",
+      "themeDetailsPlaceholder": "Na przykład: Voltaire i sprawa Calasa, kobiety epoki oświecenia, ogrody w różnych porach roku…",
+      "people": "Liczba osób",
+      "adults": "Dorośli",
+      "children": "Dzieci w wieku 7–17 lat",
+      "infants": "Dzieci poniżej 7 lat",
+      "date": "Preferowana data",
+      "saturdayOnly": "Ten pakiet jest dostępny wyłącznie w soboty przed południem.",
+      "language": "Język zwiedzania"
+    },
+    "summary": {
+      "title": "Twoja cena",
+      "total": "Szacunkowa suma",
+      "quote": "Cena ustalana indywidualnie: Sylvie prześle Ci ofertę dopasowaną do Twoich potrzeb.",
+      "excluded": "Bilet wstępu do zamku nie jest wliczony w cenę (płatny na miejscu).",
+      "minPeople": "Minimalna liczba osób dla tego pakietu: {n}.",
+      "maxPeople": "Maksymalna liczba osób dla tego pakietu: {n}.",
+      "choosePackage": "Wybierz pakiet, aby zobaczyć cenę."
+    },
+    "payment": {
+      "title": "Płatność",
+      "card": "Zapłać teraz kartą (Stripe)",
+      "paypal": "Zapłać teraz przez PayPal",
+      "later": "Zapłać po potwierdzeniu terminu przez Sylvie",
+      "soon": "Płatność online kartą i przez PayPal będzie dostępna już wkrótce. Na razie Sylvie najpierw potwierdza termin, a następnie przesyła dane do płatności.",
+      "redirect": "Rezerwacja została wysłana. Trwa przekierowanie na bezpieczną stronę płatności…"
+    },
+    "submit": "Wyślij rezerwację",
+    "seeAll": "Zobacz cały cennik i zarezerwuj"
+  },
+  "weather": {
+    "title": "Pogoda w Ferney-Voltaire",
+    "lead": "Zaplanuj wizytę: wybierz dzień, aby zobaczyć prognozę. Zwiedzanie odbywa się głównie wewnątrz, a ogrody są piękne o każdej porze roku.",
+    "dayLabel": "Wybierz dzień",
+    "max": "maks.",
+    "min": "min.",
+    "rain": "Szansa opadów",
+    "loading": "Wczytywanie prognozy…",
+    "error": "Prognoza jest obecnie niedostępna.",
+    "source": "Prognoza: Open-Meteo",
+    "codes": {
+      "clear": "Słonecznie",
+      "partly": "Częściowe zachmurzenie",
+      "cloudy": "Pochmurno",
+      "fog": "Mgła",
+      "drizzle": "Mżawka",
+      "rain": "Deszcz",
+      "snow": "Śnieg",
+      "showers": "Przelotne opady",
+      "storm": "Burze"
     }
   },
   "notFound": {

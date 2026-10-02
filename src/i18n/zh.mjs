@@ -17,7 +17,8 @@ export default {
     "group": "团体参观",
     "seniors": "老年团",
     "thematic": "主题导览",
-    "voltaire": "伏尔泰"
+    "voltaire": "伏尔泰",
+    "prices": "价格"
   },
   "cta": {
     "book": "预约导览",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "伏尔泰在费尔奈：生平、名言与 Château de Voltaire",
       "description": "伏尔泰是谁？本页按关键年代梳理这位启蒙哲学家的一生，收录他最著名的名言，并讲述日内瓦近郊费尔奈的伏尔泰城堡（Château de Voltaire）的历史——哲学家在这里生活了近二十年，写下传世之作，为宽容与正义而战。参观之前，先来认识伏尔泰。"
+    },
+    "prices": {
+      "title": "价格与预订 — Château de Voltaire 导览参观",
+      "description": "西尔维带您参观 Château de Voltaire 的导览价格一览：经典导览、私人导览、团体导览、周六集市导览与主题导览。选择套餐，即时查看总价，在线轻松预订。持证导游，提供多种语言讲解，并于 24 小时内确认您的预约日期。"
     }
   },
   "ogImageAlt": "费尔奈伏尔泰城堡（Château de Voltaire）插画——西尔维导览",
@@ -900,6 +905,74 @@ export default {
         "name": "企业",
         "desc": "团队建设、奖励旅游，以及配合您活动安排的导览。"
       }
+    }
+  },
+  "prices": {
+    "h1": "价格与预订",
+    "lead": "选择您的参观项目，立即查看价格，轻点几下即可完成预订。此处仅为导览费用，城堡门票请在现场购买。",
+    "choose": "选择",
+    "orderTitle": "预订您的参观",
+    "orderLead": "请选择套餐并填写您的信息，价格会随之实时更新。西尔维将在 24 小时内确认是否有空。",
+    "steps": [
+      "您的参观",
+      "您的信息",
+      "付款"
+    ],
+    "fields": {
+      "package": "套餐",
+      "theme": "参观主题",
+      "themeChoose": "请选择主题",
+      "themeOther": "其他主题（请在下方说明）",
+      "themeDetails": "告诉西尔维您感兴趣的内容",
+      "themeDetailsPlaceholder": "例如：伏尔泰与卡拉斯案、启蒙时代的女性、四季变换中的花园……",
+      "people": "人数",
+      "adults": "成人",
+      "children": "7–17 岁儿童",
+      "infants": "7 岁以下儿童",
+      "date": "期望日期",
+      "saturdayOnly": "此套餐仅在周六上午提供。",
+      "language": "导览语言"
+    },
+    "summary": {
+      "title": "您的价格",
+      "total": "预计总价",
+      "quote": "价格需询价：西尔维将为您发送量身定制的报价。",
+      "excluded": "不含城堡门票（请在现场购买）。",
+      "minPeople": "此套餐至少需 {n} 人。",
+      "maxPeople": "此套餐最多可容纳 {n} 人。",
+      "choosePackage": "请选择套餐以查看价格。"
+    },
+    "payment": {
+      "title": "付款",
+      "card": "立即刷卡支付（Stripe）",
+      "paypal": "立即使用 PayPal 支付",
+      "later": "待西尔维确认日期后再付款",
+      "soon": "银行卡和 PayPal 在线支付即将上线。目前，西尔维会先确认您的日期，再将付款方式发送给您。",
+      "redirect": "您的预订已发送。正在跳转至安全支付页面……"
+    },
+    "submit": "提交预订",
+    "seeAll": "查看全部价格并预订"
+  },
+  "weather": {
+    "title": "Ferney-Voltaire 天气",
+    "lead": "提前规划您的参观：选择日期即可查看天气预报。导览大部分在室内进行，而花园四季皆美。",
+    "dayLabel": "选择日期",
+    "max": "最高",
+    "min": "最低",
+    "rain": "降雨概率",
+    "loading": "正在加载天气预报……",
+    "error": "暂时无法获取天气预报。",
+    "source": "天气预报：Open-Meteo",
+    "codes": {
+      "clear": "晴",
+      "partly": "多云间晴",
+      "cloudy": "多云",
+      "fog": "雾",
+      "drizzle": "毛毛雨",
+      "rain": "雨",
+      "snow": "雪",
+      "showers": "阵雨",
+      "storm": "雷雨"
     }
   },
   "notFound": {

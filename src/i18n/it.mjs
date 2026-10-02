@@ -17,7 +17,8 @@ export default {
     "group": "Visite di gruppo",
     "seniors": "Gruppi senior",
     "thematic": "Visite tematiche",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Tariffe"
   },
   "cta": {
     "book": "Prenota una visita",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire a Ferney: biografia, citazioni e castello",
       "description": "Chi era Voltaire? La sua vita in date chiave, le citazioni celebri e la storia del Château de Voltaire a Ferney, dove il filosofo visse per quasi vent’anni."
+    },
+    "prices": {
+      "title": "Tariffe e prenotazione — visite guidate al Château de Voltaire",
+      "description": "Tariffe delle visite guidate di Sylvie al Château de Voltaire: classica, privata, di gruppo, mercato del sabato e tematica. Scelga, veda il totale, prenoti."
     }
   },
   "ogImageAlt": "Illustrazione del Château de Voltaire a Ferney: visite guidate con Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Aziende",
         "desc": "Team building, incentive e visite legate ai vostri eventi."
       }
+    }
+  },
+  "prices": {
+    "h1": "Tariffe e prenotazione",
+    "lead": "Scelga la visita, veda subito il prezzo e prenoti in pochi clic. Solo servizio di guida: il biglietto d’ingresso al castello si paga in loco.",
+    "choose": "Seleziona",
+    "orderTitle": "Prenota la visita",
+    "orderLead": "Selezioni una formula e inserisca i Suoi dati: il prezzo si aggiorna man mano. Sylvie conferma la disponibilità entro 24 ore.",
+    "steps": [
+      "La visita",
+      "I Suoi dati",
+      "Pagamento"
+    ],
+    "fields": {
+      "package": "Formula",
+      "theme": "Tema della visita",
+      "themeChoose": "Scelga un tema",
+      "themeOther": "Un altro tema (da descrivere qui sotto)",
+      "themeDetails": "Racconti a Sylvie cosa Le interessa",
+      "themeDetailsPlaceholder": "Per esempio: Voltaire e l’affare Calas, le donne dell’Illuminismo, i giardini nelle diverse stagioni…",
+      "people": "Numero di persone",
+      "adults": "Adulti",
+      "children": "Bambini e ragazzi dai 7 ai 17 anni",
+      "infants": "Bambini sotto i 7 anni",
+      "date": "Data preferita",
+      "saturdayOnly": "Questa formula è disponibile solo il sabato mattina.",
+      "language": "Lingua della visita"
+    },
+    "summary": {
+      "title": "Il Suo prezzo",
+      "total": "Totale stimato",
+      "quote": "Prezzo su preventivo: Sylvie invierà un’offerta su misura.",
+      "excluded": "Biglietto d’ingresso al castello non incluso (da pagare in loco).",
+      "minPeople": "Minimo {n} persone per questa formula.",
+      "maxPeople": "Fino a {n} persone per questa formula.",
+      "choosePackage": "Scelga una formula per vedere il prezzo."
+    },
+    "payment": {
+      "title": "Pagamento",
+      "card": "Paga ora con carta (Stripe)",
+      "paypal": "Paga ora con PayPal",
+      "later": "Paga dopo la conferma della data da parte di Sylvie",
+      "soon": "Il pagamento online con carta e PayPal sarà disponibile a breve. Per ora Sylvie conferma prima la data e poi invia le indicazioni per il pagamento.",
+      "redirect": "Prenotazione inviata. Reindirizzamento alla pagina di pagamento sicuro…"
+    },
+    "submit": "Invia la prenotazione",
+    "seeAll": "Tutte le tariffe e prenotazione"
+  },
+  "weather": {
+    "title": "Il meteo a Ferney-Voltaire",
+    "lead": "Organizzi la visita: scelga un giorno per vedere le previsioni. La visita si svolge soprattutto al chiuso e i giardini sono splendidi in ogni stagione.",
+    "dayLabel": "Scelga un giorno",
+    "max": "max",
+    "min": "min",
+    "rain": "Probabilità di pioggia",
+    "loading": "Caricamento delle previsioni…",
+    "error": "Le previsioni non sono disponibili al momento.",
+    "source": "Previsioni: Open-Meteo",
+    "codes": {
+      "clear": "Soleggiato",
+      "partly": "Parzialmente nuvoloso",
+      "cloudy": "Nuvoloso",
+      "fog": "Nebbia",
+      "drizzle": "Pioviggine",
+      "rain": "Pioggia",
+      "snow": "Neve",
+      "showers": "Rovesci",
+      "storm": "Temporali"
     }
   },
   "notFound": {

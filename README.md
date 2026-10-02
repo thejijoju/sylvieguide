@@ -78,12 +78,18 @@ TripAdvisor); never add invented ratings.
 
 All placeholders live in **`src/config.mjs`**:
 
-1. `origin`: **done: `https://www.guidevoltaire.com`** (domain at Namecheap, hosted on Netlify; set `www.guidevoltaire.com` as the primary domain in Netlify so `guidevoltaire.com` redirects to it).
-2. `email`, `phone`, `phoneHref`: Sylvie's real contact details.
+1. `origin`: **done: `https://www.guidevoltaire.com`** (domain at Namecheap, hosted on GitHub Pages).
+2. `email`, `phone`: deliberately empty. Visitors contact Sylvie through the forms only.
 3. `formEndpoint`: a form service URL that accepts JSON, for example Formspree
-   (`https://formspree.io/f/xxxx`). If it is left empty, the form opens the visitor's mail app
-   with the request pre-filled. That works, but a form service converts better.
-4. Group sizes and durations in `tourCategories`, if Sylvie's offer differs.
+   (`https://formspree.io/f/xxxx`) or Web3Forms. **Until it is set, the contact form and the
+   booking form on the prices page cannot deliver requests** (they show an error message).
+4. Payments on the prices page (`/en/prices/`, `/fr/tarifs/`…): set `paypalMe` (the name in
+   `paypal.me/<name>`) to offer "Pay now with PayPal" with the exact total, and the `stripe`
+   field of each package in `packages` (a Stripe Payment Link) to offer card payment. The
+   booking is always sent first, then the visitor is taken to the payment page. With
+   neither set, visitors book and Sylvie sends payment details after confirming the date.
+   Prices and the rules for the live total (`calc`) are in `packages` too.
+5. Group sizes and durations in `tourCategories`, if Sylvie's offer differs.
 
 Then check the copy in `src/i18n/*.mjs`:
 

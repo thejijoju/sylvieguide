@@ -17,7 +17,8 @@ export default {
     "group": "Groupes",
     "seniors": "Groupes seniors",
     "thematic": "Visites thématiques",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Tarifs"
   },
   "cta": {
     "book": "Réserver une visite",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire à Ferney : biographie, citations et château",
       "description": "Qui était Voltaire ? Biographie, dates clés, citations célèbres et histoire du Château de Voltaire à Ferney, où le philosophe vécut près de vingt ans."
+    },
+    "prices": {
+      "title": "Tarifs et réservation — visites guidées du Château de Voltaire",
+      "description": "Tarifs des visites guidées du Château de Voltaire avec Sylvie : visite classique, privée, groupe, marché du samedi, thématique. Choisissez, voyez le prix, réservez."
     }
   },
   "ogImageAlt": "Le Château de Voltaire à Ferney, illustration — visites guidées avec Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Entreprises",
         "desc": "Team building, incentives et visites autour de vos événements."
       }
+    }
+  },
+  "prices": {
+    "h1": "Tarifs et réservation",
+    "lead": "Choisissez votre visite, voyez le prix tout de suite et réservez en quelques clics. Tarifs de guidage uniquement : le billet d’entrée du château se règle sur place.",
+    "choose": "Choisir",
+    "orderTitle": "Réservez votre visite",
+    "orderLead": "Choisissez une formule et indiquez vos coordonnées : le prix se met à jour au fur et à mesure. Sylvie confirme la disponibilité sous 24 heures.",
+    "steps": [
+      "Votre visite",
+      "Vos coordonnées",
+      "Paiement"
+    ],
+    "fields": {
+      "package": "Formule",
+      "theme": "Thème de votre visite",
+      "themeChoose": "Choisissez un thème",
+      "themeOther": "Un autre thème (décrivez-le ci-dessous)",
+      "themeDetails": "Dites à Sylvie ce qui vous intéresse",
+      "themeDetailsPlaceholder": "Par exemple : Voltaire et l’affaire Calas, les femmes des Lumières, les jardins au fil des saisons…",
+      "people": "Nombre de personnes",
+      "adults": "Adultes",
+      "children": "Enfants de 7 à 17 ans",
+      "infants": "Enfants de moins de 7 ans",
+      "date": "Date souhaitée",
+      "saturdayOnly": "Cette formule n’est proposée que le samedi matin.",
+      "language": "Langue de la visite"
+    },
+    "summary": {
+      "title": "Votre prix",
+      "total": "Total estimé",
+      "quote": "Prix sur devis : Sylvie vous envoie une offre sur mesure.",
+      "excluded": "Billet d’entrée du château non compris (à régler sur place).",
+      "minPeople": "Minimum {n} personnes pour cette formule.",
+      "maxPeople": "Jusqu’à {n} personnes pour cette formule.",
+      "choosePackage": "Choisissez une formule pour voir le prix."
+    },
+    "payment": {
+      "title": "Paiement",
+      "card": "Payer maintenant par carte (Stripe)",
+      "paypal": "Payer maintenant avec PayPal",
+      "later": "Payer après confirmation de la date par Sylvie",
+      "soon": "Le paiement en ligne par carte et PayPal arrive bientôt. Pour l’instant, Sylvie confirme d’abord votre date puis vous envoie les modalités de paiement.",
+      "redirect": "Votre réservation est envoyée. Redirection vers la page de paiement sécurisée…"
+    },
+    "submit": "Envoyer ma réservation",
+    "seeAll": "Voir tous les tarifs et réserver"
+  },
+  "weather": {
+    "title": "La météo à Ferney-Voltaire",
+    "lead": "Préparez votre visite : choisissez un jour pour voir les prévisions. La visite se déroule surtout à l’intérieur, et les jardins sont beaux en toute saison.",
+    "dayLabel": "Choisissez un jour",
+    "max": "max",
+    "min": "min",
+    "rain": "Risque de pluie",
+    "loading": "Chargement des prévisions…",
+    "error": "Les prévisions ne sont pas disponibles pour le moment.",
+    "source": "Prévisions : Open-Meteo",
+    "codes": {
+      "clear": "Ensoleillé",
+      "partly": "Éclaircies",
+      "cloudy": "Nuageux",
+      "fog": "Brouillard",
+      "drizzle": "Bruine",
+      "rain": "Pluie",
+      "snow": "Neige",
+      "showers": "Averses",
+      "storm": "Orages"
     }
   },
   "notFound": {

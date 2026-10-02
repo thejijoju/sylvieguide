@@ -17,7 +17,8 @@ export default {
     "group": "Grup turları",
     "seniors": "Emekli grupları",
     "thematic": "Tematik turlar",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Fiyatlar"
   },
   "cta": {
     "book": "Tur rezervasyonu yapın",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Ferney’de Voltaire: Biyografi, Sözler ve Château de Voltaire",
       "description": "Voltaire kimdi? Önemli tarihlerle hayatı, ünlü sözleri ve filozofun yaklaşık yirmi yıl yaşadığı Ferney’deki Château de Voltaire’in hikâyesi."
+    },
+    "prices": {
+      "title": "Fiyatlar ve rezervasyon — Château de Voltaire rehberli turları",
+      "description": "Sylvie eşliğinde Château de Voltaire rehberli tur fiyatları: klasik, özel, grup, cumartesi pazarı ve tematik turlar. Seçin, toplamı görün, rezervasyon yapın."
     }
   },
   "ogImageAlt": "Ferney'deki Château de Voltaire illüstrasyonu — Sylvie ile rehberli turlar",
@@ -900,6 +905,74 @@ export default {
         "name": "Şirketler",
         "desc": "Takım çalışması etkinlikleri, teşvik programları ve etkinlikleriniz etrafında turlar."
       }
+    }
+  },
+  "prices": {
+    "h1": "Fiyatlar ve rezervasyon",
+    "lead": "Turunuzu seçin, fiyatı hemen görün ve birkaç tıklamayla rezervasyon yapın. Fiyatlar yalnızca rehberlik ücretini kapsar: şatonun giriş bileti yerinde ödenir.",
+    "choose": "Seç",
+    "orderTitle": "Turunuzu ayırtın",
+    "orderLead": "Bir paket seçin ve bilgilerinizi girin: fiyat anında güncellenir. Sylvie müsaitlik durumunu 24 saat içinde onaylar.",
+    "steps": [
+      "Turunuz",
+      "Bilgileriniz",
+      "Ödeme"
+    ],
+    "fields": {
+      "package": "Paket",
+      "theme": "Turunuzun teması",
+      "themeChoose": "Bir tema seçin",
+      "themeOther": "Başka bir tema (aşağıda açıklayın)",
+      "themeDetails": "Sylvie’ye ilgi alanlarınızı anlatın",
+      "themeDetailsPlaceholder": "Örneğin: Voltaire ve Calas davası, Aydınlanma Çağı’nın kadınları, mevsimler boyunca bahçeler…",
+      "people": "Kişi sayısı",
+      "adults": "Yetişkinler",
+      "children": "7–17 yaş arası çocuklar",
+      "infants": "7 yaş altı çocuklar",
+      "date": "Tercih edilen tarih",
+      "saturdayOnly": "Bu paket yalnızca cumartesi sabahları sunulmaktadır.",
+      "language": "Tur dili"
+    },
+    "summary": {
+      "title": "Fiyatınız",
+      "total": "Tahmini toplam",
+      "quote": "Fiyat teklif üzerine: Sylvie size özel bir teklif gönderecek.",
+      "excluded": "Şato giriş bileti dahil değildir (yerinde ödenir).",
+      "minPeople": "Bu paket için en az {n} kişi.",
+      "maxPeople": "Bu paket için en fazla {n} kişi.",
+      "choosePackage": "Fiyatı görmek için bir paket seçin."
+    },
+    "payment": {
+      "title": "Ödeme",
+      "card": "Şimdi kartla öde (Stripe)",
+      "paypal": "Şimdi PayPal ile öde",
+      "later": "Sylvie tarihi onayladıktan sonra öde",
+      "soon": "Kart ve PayPal ile çevrimiçi ödeme çok yakında. Şimdilik Sylvie önce tarihinizi onaylar, ardından size ödeme bilgilerini gönderir.",
+      "redirect": "Rezervasyonunuz gönderildi. Güvenli ödeme sayfasına yönlendiriliyorsunuz…"
+    },
+    "submit": "Rezervasyonumu gönder",
+    "seeAll": "Tüm fiyatları gör ve rezervasyon yap"
+  },
+  "weather": {
+    "title": "Ferney-Voltaire’de hava durumu",
+    "lead": "Ziyaretinizi planlayın: tahmini görmek için bir gün seçin. Turun büyük bölümü kapalı alanda geçer; bahçeler ise her mevsim çok güzeldir.",
+    "dayLabel": "Bir gün seçin",
+    "max": "en yüksek",
+    "min": "en düşük",
+    "rain": "Yağmur olasılığı",
+    "loading": "Hava tahmini yükleniyor…",
+    "error": "Hava tahmini şu anda kullanılamıyor.",
+    "source": "Tahmin: Open-Meteo",
+    "codes": {
+      "clear": "Güneşli",
+      "partly": "Parçalı bulutlu",
+      "cloudy": "Bulutlu",
+      "fog": "Sisli",
+      "drizzle": "Çisenti",
+      "rain": "Yağmurlu",
+      "snow": "Karlı",
+      "showers": "Sağanak",
+      "storm": "Gök gürültülü fırtına"
     }
   },
   "notFound": {

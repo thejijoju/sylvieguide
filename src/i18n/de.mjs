@@ -17,7 +17,8 @@ export default {
     "group": "Gruppen",
     "seniors": "Seniorengruppen",
     "thematic": "Themenführungen",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Preise"
   },
   "cta": {
     "book": "Führung buchen",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire in Ferney: Biografie, Zitate und Schloss",
       "description": "Wer war Voltaire? Sein Leben in Daten, berühmte Zitate und die Geschichte des Château de Voltaire in Ferney, wo der Philosoph fast zwanzig Jahre lebte."
+    },
+    "prices": {
+      "title": "Preise & Buchung — Führungen im Château de Voltaire",
+      "description": "Preise für Sylvies Führungen im Château de Voltaire: klassisch, privat, für Gruppen, Samstagsmarkt oder thematisch. Auswählen, Gesamtpreis sehen, buchen."
     }
   },
   "ogImageAlt": "Illustration des Schlosses Voltaire in Ferney – Führungen mit Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Unternehmen",
         "desc": "Teambuilding, Incentives und Führungen rund um Ihre Veranstaltungen."
       }
+    }
+  },
+  "prices": {
+    "h1": "Preise & Buchung",
+    "lead": "Wählen Sie Ihre Führung, sehen Sie sofort den Preis und buchen Sie mit wenigen Klicks. Die Preise gelten nur für die Führung: Der Eintritt ins Schloss wird vor Ort bezahlt.",
+    "choose": "Auswählen",
+    "orderTitle": "Führung buchen",
+    "orderLead": "Wählen Sie ein Angebot und geben Sie Ihre Daten ein: Der Preis wird laufend aktualisiert. Sylvie bestätigt die Verfügbarkeit innerhalb von 24 Stunden.",
+    "steps": [
+      "Ihre Führung",
+      "Ihre Daten",
+      "Zahlung"
+    ],
+    "fields": {
+      "package": "Angebot",
+      "theme": "Thema Ihrer Führung",
+      "themeChoose": "Thema auswählen",
+      "themeOther": "Ein anderes Thema (bitte unten beschreiben)",
+      "themeDetails": "Was interessiert Sie besonders?",
+      "themeDetailsPlaceholder": "Zum Beispiel: Voltaire und die Calas-Affäre, Frauen der Aufklärung, die Gärten im Wandel der Jahreszeiten…",
+      "people": "Anzahl der Personen",
+      "adults": "Erwachsene",
+      "children": "Kinder von 7 bis 17 Jahren",
+      "infants": "Kinder unter 7 Jahren",
+      "date": "Wunschtermin",
+      "saturdayOnly": "Dieses Angebot gibt es nur samstagvormittags.",
+      "language": "Sprache der Führung"
+    },
+    "summary": {
+      "title": "Ihr Preis",
+      "total": "Voraussichtlicher Gesamtpreis",
+      "quote": "Preis auf Anfrage: Sylvie schickt Ihnen ein individuelles Angebot.",
+      "excluded": "Eintritt ins Schloss nicht inbegriffen (vor Ort zu bezahlen).",
+      "minPeople": "Mindestens {n} Personen für dieses Angebot.",
+      "maxPeople": "Bis zu {n} Personen für dieses Angebot.",
+      "choosePackage": "Wählen Sie ein Angebot, um den Preis zu sehen."
+    },
+    "payment": {
+      "title": "Zahlung",
+      "card": "Jetzt mit Karte bezahlen (Stripe)",
+      "paypal": "Jetzt mit PayPal bezahlen",
+      "later": "Nach Bestätigung des Termins durch Sylvie bezahlen",
+      "soon": "Die Online-Zahlung per Karte und PayPal ist bald verfügbar. Bis dahin bestätigt Sylvie zuerst Ihren Termin und sendet Ihnen dann die Zahlungsinformationen.",
+      "redirect": "Ihre Buchung wurde gesendet. Sie werden zur sicheren Zahlungsseite weitergeleitet…"
+    },
+    "submit": "Buchung absenden",
+    "seeAll": "Alle Preise ansehen und buchen"
+  },
+  "weather": {
+    "title": "Das Wetter in Ferney-Voltaire",
+    "lead": "Planen Sie Ihren Besuch: Wählen Sie einen Tag, um die Vorhersage zu sehen. Die Führung findet größtenteils drinnen statt, und die Gärten sind zu jeder Jahreszeit sehenswert.",
+    "dayLabel": "Tag auswählen",
+    "max": "max.",
+    "min": "min.",
+    "rain": "Regenrisiko",
+    "loading": "Vorhersage wird geladen…",
+    "error": "Die Vorhersage ist derzeit nicht verfügbar.",
+    "source": "Vorhersage: Open-Meteo",
+    "codes": {
+      "clear": "Sonnig",
+      "partly": "Teils bewölkt",
+      "cloudy": "Bewölkt",
+      "fog": "Nebel",
+      "drizzle": "Nieselregen",
+      "rain": "Regen",
+      "snow": "Schnee",
+      "showers": "Schauer",
+      "storm": "Gewitter"
     }
   },
   "notFound": {

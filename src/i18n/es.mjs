@@ -17,7 +17,8 @@ export default {
     "group": "Visitas para grupos",
     "seniors": "Grupos de mayores",
     "thematic": "Visitas temáticas",
-    "voltaire": "Voltaire"
+    "voltaire": "Voltaire",
+    "prices": "Precios"
   },
   "cta": {
     "book": "Reservar una visita",
@@ -67,6 +68,10 @@ export default {
     "voltaire": {
       "title": "Voltaire en Ferney: biografía, citas y castillo",
       "description": "¿Quién fue Voltaire? Su vida en fechas clave, citas célebres y la historia del Château de Voltaire en Ferney, donde el filósofo vivió casi veinte años."
+    },
+    "prices": {
+      "title": "Precios y reservas — visitas guiadas al Château de Voltaire",
+      "description": "Precios de las visitas guiadas de Sylvie al Château de Voltaire: clásica, privada, en grupo, mercado del sábado y temática. Elija, vea el total y reserve."
     }
   },
   "ogImageAlt": "Ilustración del Château de Voltaire en Ferney: visitas guiadas con Sylvie",
@@ -900,6 +905,74 @@ export default {
         "name": "Empresas",
         "desc": "Team building, viajes de incentivo y visitas en torno a sus eventos."
       }
+    }
+  },
+  "prices": {
+    "h1": "Precios y reservas",
+    "lead": "Elija su visita, vea el precio al instante y reserve en pocos clics. Solo incluye el servicio de guía: la entrada al castillo se paga in situ.",
+    "choose": "Elegir",
+    "orderTitle": "Reserve su visita",
+    "orderLead": "Seleccione una modalidad e indique sus datos: el precio se actualiza sobre la marcha. Sylvie confirma la disponibilidad en un plazo de 24 horas.",
+    "steps": [
+      "Su visita",
+      "Sus datos",
+      "Pago"
+    ],
+    "fields": {
+      "package": "Modalidad",
+      "theme": "Tema de la visita",
+      "themeChoose": "Elija un tema",
+      "themeOther": "Otro tema (descríbalo a continuación)",
+      "themeDetails": "Cuéntele a Sylvie qué le interesa",
+      "themeDetailsPlaceholder": "Por ejemplo: Voltaire y el caso Calas, las mujeres de la Ilustración, los jardines a lo largo de las estaciones…",
+      "people": "Número de personas",
+      "adults": "Adultos",
+      "children": "Niños de 7 a 17 años",
+      "infants": "Niños menores de 7 años",
+      "date": "Fecha deseada",
+      "saturdayOnly": "Esta modalidad solo está disponible los sábados por la mañana.",
+      "language": "Idioma de la visita"
+    },
+    "summary": {
+      "title": "Su precio",
+      "total": "Total estimado",
+      "quote": "Precio a consultar: Sylvie le enviará una propuesta a medida.",
+      "excluded": "Entrada al castillo no incluida (se paga in situ).",
+      "minPeople": "Mínimo {n} personas para esta modalidad.",
+      "maxPeople": "Hasta {n} personas para esta modalidad.",
+      "choosePackage": "Elija una modalidad para ver el precio."
+    },
+    "payment": {
+      "title": "Pago",
+      "card": "Pagar ahora con tarjeta (Stripe)",
+      "paypal": "Pagar ahora con PayPal",
+      "later": "Pagar cuando Sylvie confirme la fecha",
+      "soon": "Muy pronto podrá pagar en línea con tarjeta y PayPal. Por ahora, Sylvie confirma primero la fecha y después le envía los datos para el pago.",
+      "redirect": "Su reserva se ha enviado. Redirigiendo a la página de pago seguro…"
+    },
+    "submit": "Enviar mi reserva",
+    "seeAll": "Ver todos los precios y reservar"
+  },
+  "weather": {
+    "title": "El tiempo en Ferney-Voltaire",
+    "lead": "Prepare su visita: elija un día para ver la previsión. La visita se desarrolla sobre todo en interiores, y los jardines son preciosos en cualquier estación.",
+    "dayLabel": "Elija un día",
+    "max": "máx.",
+    "min": "mín.",
+    "rain": "Probabilidad de lluvia",
+    "loading": "Cargando la previsión…",
+    "error": "La previsión no está disponible en este momento.",
+    "source": "Previsión: Open-Meteo",
+    "codes": {
+      "clear": "Soleado",
+      "partly": "Parcialmente nublado",
+      "cloudy": "Nublado",
+      "fog": "Niebla",
+      "drizzle": "Llovizna",
+      "rain": "Lluvia",
+      "snow": "Nieve",
+      "showers": "Chubascos",
+      "storm": "Tormentas"
     }
   },
   "notFound": {

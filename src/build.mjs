@@ -7,11 +7,10 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { site, languages, pages } from "./config.mjs";
-import { favicon } from "./art.mjs";
 import { photos, details } from "./gallery.mjs";
 import {
   pathFor, urlFor,
-  homePage, toursPage, aboutPage, galleryPage, landingPage, voltairePage, galleryImages, VIDEOS, practicalPage, contactPage, notFoundPage, rootPage,
+  homePage, toursPage, aboutPage, galleryPage, landingPage, voltairePage, pricesPage, galleryImages, VIDEOS, practicalPage, contactPage, notFoundPage, rootPage,
 } from "./templates.mjs";
 
 
@@ -26,7 +25,7 @@ const renderers = {
   home: homePage, tours: toursPage, about: aboutPage, gallery: galleryPage, practical: practicalPage, contact: contactPage,
   group: (t) => landingPage(t, "group"), corporate: (t) => landingPage(t, "corporate"),
   seniors: (t) => landingPage(t, "seniors"), thematic: (t) => landingPage(t, "thematic"),
-  voltaire: voltairePage,
+  voltaire: voltairePage, prices: pricesPage,
 };
 
 checkTranslations();
@@ -58,7 +57,12 @@ for (const lang of languages) {
 await write("index.html", rootPage(all));
 await write("404.html", notFoundPage(en));
 await cp(join(here, "assets"), join(out, "assets"), { recursive: true });
-await write("assets/favicon.svg", favicon);
+await cp(join(here, "assets", "favicon.ico"), join(out, "favicon.ico"));
+await write("site.webmanifest", JSON.stringify({
+  name: "Sylvie · Château de Voltaire", short_name: "Sylvie", start_url: "/", display: "browser",
+  background_color: "#ffffff", theme_color: "#111111",
+  icons: [{ src: "/assets/icon-192.png", sizes: "192x192", type: "image/png" }, { src: "/assets/icon-512.png", sizes: "512x512", type: "image/png" }],
+}));
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
