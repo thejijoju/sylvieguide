@@ -33,7 +33,7 @@ const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 await mkdir(join(here, "assets", "og"), { recursive: true });
 
 const dataUri = (file, mime) => `data:${mime};base64,${readFileSync(join(here, "assets", file)).toString("base64")}`;
-const photo = dataUri("img/hero-chateau-de-voltaire-ferney.jpg", "image/jpeg");
+const photo = dataUri("img/hero-chateau-de-voltaire-ferney-1280.jpg", "image/jpeg");
 const bust = dataUri("img/voltaire-buste-marbre.jpg", "image/jpeg");
 
 // Chinese, Japanese, Korean and Hindi need fonts this machine may not have;

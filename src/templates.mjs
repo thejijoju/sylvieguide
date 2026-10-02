@@ -110,7 +110,7 @@ function head(t, page, { title, description }, og = null) {
   <link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney.jpg" fetchpriority="high">` : ""}
+  ${page === "home" ? `<link rel="preload" as="image" href="/assets/img/hero-chateau-de-voltaire-ferney-1920.jpg" imagesrcset="/assets/img/hero-chateau-de-voltaire-ferney-828.jpg 828w, /assets/img/hero-chateau-de-voltaire-ferney-1280.jpg 1280w, /assets/img/hero-chateau-de-voltaire-ferney-1920.jpg 1920w, /assets/img/hero-chateau-de-voltaire-ferney-2560.jpg 2560w" imagesizes="100vw" fetchpriority="high">` : ""}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="${fontsUrl(t.lang)}">
@@ -446,7 +446,7 @@ function chateauHoursLd() {
     })),
   ).filter((h) => h.validThrough >= new Date().toISOString().slice(0, 10));
 }
-const HERO_PHOTO = "/assets/img/hero-chateau-de-voltaire-ferney.jpg";
+const HERO_PHOTO = "/assets/img/hero-chateau-de-voltaire-ferney-1920.jpg";
 const MAP_URL = `https://www.openstreetmap.org/search?query=${encodeURIComponent("Château de Voltaire, Ferney-Voltaire")}`;
 const SYLVIE_PHOTO = "/assets/img/sylvie-guide-chateau-de-voltaire.jpg";
 
@@ -517,7 +517,7 @@ export function homePage(t) {
   const themes = tourCategories.find((c) => c.id === "thematic").tours;
   const body = `
 <section class="hero">
-  <div class="hero-media"><img src="/assets/img/hero-chateau-de-voltaire-ferney.jpg" width="1500" height="1125" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async"></div>
+  <div class="hero-media"><img src="/assets/img/hero-chateau-de-voltaire-ferney-1920.jpg" srcset="/assets/img/hero-chateau-de-voltaire-ferney-828.jpg 828w, /assets/img/hero-chateau-de-voltaire-ferney-1280.jpg 1280w, /assets/img/hero-chateau-de-voltaire-ferney-1920.jpg 1920w, /assets/img/hero-chateau-de-voltaire-ferney-2560.jpg 2560w" sizes="100vw" width="1920" height="1440" alt="${esc(h.daytrip.imgAlt)}" fetchpriority="high" decoding="async"></div>
   <div class="container hero-content">
     <h1>${esc(h.h1)}</h1>
     <div class="btn-row">
