@@ -67,7 +67,7 @@ for (const file of pages) {
     if (!html.includes(`property="${p}"`)) errors.push(`${where}: missing ${p}`);
   }
   const ogImage = (html.match(/<meta property="og:image" content="([^"]*)"/) || [])[1] || "";
-  if (ogImage && !existsSync(join(dist, ogImage.replace(site.origin, "")))) errors.push(`${where}: og:image file missing (${ogImage})`);
+  if (ogImage && !existsSync(join(dist, ogImage.replace(site.origin, "").split("?")[0]))) errors.push(`${where}: og:image file missing (${ogImage})`);
 
   // Headings
   const h1s = html.match(/<h1[\s>]/g) || [];

@@ -4,6 +4,8 @@
 
 import { mkdir, writeFile, rm, cp } from "node:fs/promises";
 import { dirname, join } from "node:path";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 import { site, languages, pages, langMeta } from "./config.mjs";
@@ -40,10 +42,23 @@ if (uncaptioned.length) console.warn(`Gallery photos without a title/legend in s
 await rm(out, { recursive: true, force: true });
 await mkdir(join(out, "assets"), { recursive: true });
 
+// Cache busting: every image/video URL in the HTML gets ?v=<content hash>,
+// so a replaced photo (same file name) is never served from an old cache.
+const hashes = new Map();
+const fingerprint = (url) => {
+  if (!hashes.has(url)) {
+    const file = join(here, decodeURIComponent(url).replace(/^\//, ""));
+    hashes.set(url, existsSync(file) ? createHash("sha1").update(readFileSync(file)).digest("hex").slice(0, 8) : "");
+  }
+  return hashes.get(url) ? `${url}?v=${hashes.get(url)}` : url;
+};
+const versionAssets = (html) =>
+  html.replace(/\/assets\/(?:img|gallery|video|og)\/[^"'\s?,)<>]+\.(?:jpe?g|png|webp|mp4|webm)(?!\?)/g, fingerprint);
+
 const write = async (rel, content) => {
   const file = join(out, rel);
   await mkdir(dirname(file), { recursive: true });
-  await writeFile(file, content);
+  await writeFile(file, rel.endsWith(".html") ? versionAssets(content) : content);
 };
 
 let count = 0;
