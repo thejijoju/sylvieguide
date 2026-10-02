@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "Visita pretendida:",
     "success": "Obrigada! O seu pedido foi enviado. Respondo no prazo de 48 horas.",
-    "error": "O envio falhou. Tente novamente ou escreva-me diretamente por e-mail.",
+    "error": "Não foi possível enviar. Tente novamente dentro de momentos.",
     "invalid": "Preencha os campos obrigatórios.",
     "directTitle": "Contacte-me diretamente",
     "directText": "Prefere telefone ou e-mail? Também me pode contactar assim.",

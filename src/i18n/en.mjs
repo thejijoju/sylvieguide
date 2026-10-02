@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "Tour of interest:",
     "success": "Thank you! Your request has been sent. I’ll reply within 48 hours.",
-    "error": "Sending failed. Please try again or email me directly.",
+    "error": "Sending failed. Please try again in a moment.",
     "invalid": "Please complete the required fields.",
     "directTitle": "Contact me directly",
     "directText": "Prefer phone or email? You can reach me that way too.",

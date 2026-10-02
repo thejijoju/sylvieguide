@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "Visite souhaitée :",
     "success": "Merci ! Votre demande a bien été envoyée. Je vous réponds sous 48 heures.",
-    "error": "L’envoi n’a pas abouti. Merci de réessayer ou de m’écrire directement par e-mail.",
+    "error": "L’envoi n’a pas abouti. Merci de réessayer dans un instant.",
     "invalid": "Merci de compléter les champs obligatoires.",
     "directTitle": "Me joindre directement",
     "directText": "Vous préférez le téléphone ou l’e-mail ? Je suis joignable aussi par ces moyens.",

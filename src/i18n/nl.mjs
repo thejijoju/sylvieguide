@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "Gewenste rondleiding:",
     "success": "Dank u wel! Uw aanvraag is verstuurd. Ik antwoord binnen 48 uur.",
-    "error": "Verzenden is mislukt. Probeer het opnieuw of mail me rechtstreeks.",
+    "error": "Verzenden is mislukt. Probeer het zo meteen opnieuw.",
     "invalid": "Vul de verplichte velden in.",
     "directTitle": "Neem rechtstreeks contact op",
     "directText": "Liever telefoon of e-mail? Ook zo kunt u mij bereiken.",

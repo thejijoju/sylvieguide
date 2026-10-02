@@ -294,7 +294,10 @@
     var data = {};
     new FormData(form).forEach(function (v, k) { if (k !== "website" && k !== "consent") data[k] = v; });
 
-    var endpoint = form.getAttribute("data-endpoint");
+    // The endpoint is stored reversed and base64-encoded so the e-mail address
+    // it contains is not readable in the page source.
+    var endpoint = "";
+    try { endpoint = atob(form.getAttribute("data-endpoint") || "").split("").reverse().join(""); } catch (err) {}
     if (!endpoint) {
       // No form service connected: say so instead of silently failing.
       show(form.getAttribute("data-msg-error"), "error");
@@ -325,17 +328,7 @@
         form.reset();
         show(form.getAttribute("data-msg-success"), "success");
       })
-      .catch(function () {
-        show(form.getAttribute("data-msg-error") + " ", "error");
-        // The message invites visitors to write directly: give them the address.
-        var addr = (endpoint.match(/[^/]+@[^/]+$/) || [])[0];
-        if (addr) {
-          var a = document.createElement("a");
-          a.href = "mailto:" + addr + "?subject=" + encodeURIComponent(payload._subject);
-          a.textContent = addr;
-          status.appendChild(a);
-        }
-      })
+      .catch(function () { show(form.getAttribute("data-msg-error"), "error"); })
       .then(function () { submit.disabled = false; submit.textContent = label; });
   });
 })();

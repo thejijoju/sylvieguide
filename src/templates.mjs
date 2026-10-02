@@ -1247,14 +1247,15 @@ export function contactPage(t) {
     ...Object.fromEntries(packages.map((pk) => [pk.id, t.pricing.packages[pk.id].name])),
   };
   const themes = tourCategories.find((cat) => cat.id === "thematic").tours;
-  // Without JavaScript the form posts straight to FormSubmit (non-AJAX URL).
-  const action = site.formEndpoint ? site.formEndpoint.replace("/ajax/", "/") : "#booking";
+  // The endpoint (which contains the e-mail address) is only given to the
+  // script, reversed and base64-encoded, so the address never appears as text.
+  const endpointEnc = site.formEndpoint ? Buffer.from([...site.formEndpoint].reverse().join("")).toString("base64") : "";
   const body = `
 ${pageHero(t, "contact", c.h1, c.lead)}
 <section class="section" id="booking">
   <div class="container contact-grid">
-    <form class="card booking-form" action="${esc(action)}" method="post"${site.formEndpoint ? "" : ' enctype="text/plain"'} novalidate data-booking-form
-      data-endpoint="${esc(site.formEndpoint)}"
+    <form class="card booking-form" action="#booking" method="post" novalidate data-booking-form
+      data-endpoint="${endpointEnc}"
       data-msg-success="${esc(c.success)}" data-msg-error="${esc(c.error)}"
       data-msg-invalid="${esc(c.invalid)}" data-msg-sending="${esc(f.sending)}" data-tour-prefix="${esc(c.tourPrefix)}"
       data-tours="${esc(JSON.stringify(tourTitles))}">

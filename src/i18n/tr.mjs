@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "İlgilenilen tur:",
     "success": "Teşekkürler! Talebiniz gönderildi. 48 saat içinde yanıt vereceğim.",
-    "error": "Gönderim başarısız oldu. Lütfen tekrar deneyin veya bana doğrudan e-posta gönderin.",
+    "error": "Gönderilemedi. Lütfen birazdan tekrar deneyin.",
     "invalid": "Lütfen zorunlu alanları doldurun.",
     "directTitle": "Bana doğrudan ulaşın",
     "directText": "Telefon veya e-postayı mı tercih edersiniz? Bana bu yollarla da ulaşabilirsiniz.",

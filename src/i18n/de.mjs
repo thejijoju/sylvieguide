@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "Gewünschte Führung:",
     "success": "Vielen Dank! Ihre Anfrage wurde gesendet. Ich antworte innerhalb von 48 Stunden.",
-    "error": "Das Senden ist fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt eine E-Mail.",
+    "error": "Das Senden ist fehlgeschlagen. Bitte versuchen Sie es gleich noch einmal.",
     "invalid": "Bitte füllen Sie die Pflichtfelder aus.",
     "directTitle": "Direkter Kontakt",
     "directText": "Lieber per Telefon oder E-Mail? Auch so erreichen Sie mich.",

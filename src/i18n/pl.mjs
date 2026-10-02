@@ -536,7 +536,7 @@ export default {
     },
     "tourPrefix": "Interesujące mnie zwiedzanie:",
     "success": "Dziękuję! Zapytanie zostało wysłane. Odpowiem w ciągu 48 godzin.",
-    "error": "Wysyłanie nie powiodło się. Proszę spróbować ponownie lub napisać do mnie bezpośrednio.",
+    "error": "Nie udało się wysłać. Spróbuj ponownie za chwilę.",
     "invalid": "Proszę wypełnić wymagane pola.",
     "directTitle": "Kontakt bezpośredni",
     "directText": "Wolą Państwo telefon lub e-mail? Można się ze mną skontaktować również w ten sposób.",
