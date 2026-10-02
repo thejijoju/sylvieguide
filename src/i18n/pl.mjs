@@ -405,6 +405,28 @@ export default {
         "text": "Najbliższe węzły komunikacyjne to Międzynarodowy Port Lotniczy Genewa (GVA) i dworzec Genève-Cornavin."
       }
     ],
+    "hoursTitle": "Godziny otwarcia zamku",
+    "hoursLead": "Château de Voltaire wraz z parkiem jest otwarty codziennie.",
+    "hoursRows": [
+      [
+        "1 kwietnia – 30 września",
+        "10:00–18:00"
+      ],
+      [
+        "1 października – 31 marca",
+        "10:00–17:00"
+      ]
+    ],
+    "hoursNotes": [
+      "Ostatnie wejście do zabytku 45 minut przed zamknięciem; sale są opróżniane 15 minut przed zamknięciem.",
+      "Zamknięte 1 stycznia, 1 maja i 25 grudnia.",
+      "1, 5, 16 i 26 października 2026 r. posiadłość jest wyjątkowo zamknięta w godz. 13:00–14:00 (ostatnie wejście o 12:15, ponowne otwarcie o 14:00)."
+    ],
+    "hoursSource": "Godziny otwarcia i ceny biletów ustala Centre des monuments nationaux.",
+    "admissionTitle": "Wstęp do zamku",
+    "admissionPrice": "7,50 € od osoby",
+    "admissionText": "Zwiedzając z Sylvie, profesjonalistką z branży turystycznej, płacą Państwo cenę grupową bez minimalnej liczby uczestników: 7,50 € od osoby zamiast 9 €, płatne na miejscu. Bilet obejmuje cały zabytek wraz z parkiem.",
+    "admissionFree": "Wstęp bezpłatny: osoby poniżej 18 lat (z rodziną, z wyjątkiem grup szkolnych); osoby w wieku 18–25 lat będące obywatelami Unii Europejskiej oraz legalnie mieszkający we Francji obywatele państw spoza Europy; osoby z niepełnosprawnością i ich opiekun; osoby poszukujące pracy (zaświadczenie wystawione nie wcześniej niż 6 miesięcy temu); posiadacze karty Pass éducation (francuska legitymacja nauczycielska). Wstęp bezpłatny dla wszystkich w pierwszą niedzielę miesiąca, od listopada do marca.",
     "durationTitle": "Czas trwania zwiedzania",
     "durationLead": "Podany czas jest orientacyjny i można go dostosować do Państwa harmonogramu.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "Czy bilet wstępu do zamku jest wliczony w cenę?",
-        "a": "Bilet wstępu do zabytku jest niezależny od usługi przewodnickiej. W mojej wycenie jasno wskazuję, co jest wliczone."
+        "a": "Nie. Bilet do zamku opłaca się na miejscu: 7,50 € od osoby (cena grupowa, obowiązująca przy zwiedzaniu z przewodniczką), bezpłatnie dla osób poniżej 18 lat zwiedzających z rodziną. Cena wycieczki obejmuje usługę przewodnicką."
       },
       {
         "q": "Czy można zwiedzać z dziećmi?",
@@ -490,7 +512,7 @@ export default {
       "email": "E-mail",
       "phone": "Telefon (opcjonalnie)",
       "groupType": "Rodzaj grupy",
-      "groupSize": "Liczba osób",
+      "groupSize": "Liczba uczestników",
       "date": "Preferowana data",
       "language": "Język zwiedzania",
       "message": "Wiadomość",
@@ -499,7 +521,10 @@ export default {
       "required": "wymagane",
       "choose": "Wybierz…",
       "submit": "Wyślij zapytanie",
-      "sending": "Wysyłanie…"
+      "sending": "Wysyłanie…",
+      "thematic": "Zwiedzanie tematyczne?",
+      "themeNo": "Nie, klasyczne zwiedzanie",
+      "themeOther": "Tak, inny temat (proszę opisać go w wiadomości)"
     },
     "groupTypes": {
       "individual": "Osoba indywidualna / rodzina",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "Interesujące mnie zwiedzanie:",
     "success": "Dziękuję! Zapytanie zostało wysłane. Odpowiem w ciągu 48 godzin.",
-    "mailtoNotice": "Otworzy się Państwa program pocztowy z gotową wiadomością — wystarczy ją wysłać.",
     "error": "Wysyłanie nie powiodło się. Proszę spróbować ponownie lub napisać do mnie bezpośrednio.",
     "invalid": "Proszę wypełnić wymagane pola.",
-    "mailSubject": "Zapytanie o zwiedzanie z przewodnikiem – Château de Voltaire",
     "directTitle": "Kontakt bezpośredni",
     "directText": "Wolą Państwo telefon lub e-mail? Można się ze mną skontaktować również w ten sposób.",
     "responseTitle": "Co dalej",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Cennik",
     "lead": "Przejrzyste pakiety dla jednej osoby i dla całej grupy. Ceny zwiedzania z przewodnikiem, w euro.",
-    "excluded": "Bilet wstępu do zamku nie jest wliczony: jego cenę ustala Centre des monuments nationaux i dolicza się ją do ceny zwiedzania.",
+    "excluded": "Wstęp do zamku nie jest wliczony w cenę: 7,50 € od osoby (cena grupowa przy zwiedzaniu z Sylvie), płatne na miejscu.",
     "policy": "Rezerwacja jest potwierdzana na piśmie wraz z warunkami płatności i anulowania.",
     "labels": {
       "perPerson": "za osobę",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Cennik i rezerwacja",
-    "lead": "Wybierz wizytę, od razu zobacz cenę i zarezerwuj w kilku kliknięciach. Cena obejmuje wyłącznie usługę przewodnicką: bilet wstępu do zamku opłaca się na miejscu.",
-    "choose": "Wybierz",
-    "orderTitle": "Zarezerwuj wizytę",
-    "orderLead": "Wybierz pakiet i podaj swoje dane: cena aktualizuje się na bieżąco. Sylvie potwierdzi dostępność w ciągu 24 godzin.",
-    "steps": [
-      "Wizyta",
-      "Dane kontaktowe",
-      "Płatność"
-    ],
-    "fields": {
-      "package": "Pakiet",
-      "theme": "Temat wizyty",
-      "themeChoose": "Wybierz temat",
-      "themeOther": "Inny temat (opisz go poniżej)",
-      "themeDetails": "Napisz Sylvie, co Cię interesuje",
-      "themeDetailsPlaceholder": "Na przykład: Voltaire i sprawa Calasa, kobiety epoki oświecenia, ogrody w różnych porach roku…",
-      "people": "Liczba osób",
-      "adults": "Dorośli",
-      "children": "Dzieci w wieku 7–17 lat",
-      "infants": "Dzieci poniżej 7 lat",
-      "date": "Preferowana data",
-      "saturdayOnly": "Ten pakiet jest dostępny wyłącznie w soboty przed południem.",
-      "language": "Język zwiedzania"
-    },
-    "summary": {
-      "title": "Twoja cena",
-      "total": "Szacunkowa suma",
-      "quote": "Cena ustalana indywidualnie: Sylvie prześle Ci ofertę dopasowaną do Twoich potrzeb.",
-      "excluded": "Bilet wstępu do zamku nie jest wliczony w cenę (płatny na miejscu).",
-      "minPeople": "Minimalna liczba osób dla tego pakietu: {n}.",
-      "maxPeople": "Maksymalna liczba osób dla tego pakietu: {n}.",
-      "choosePackage": "Wybierz pakiet, aby zobaczyć cenę."
-    },
-    "payment": {
-      "title": "Płatność",
-      "card": "Zapłać teraz kartą (Stripe)",
-      "paypal": "Zapłać teraz przez PayPal",
-      "later": "Zapłać po potwierdzeniu terminu przez Sylvie",
-      "soon": "Płatność online kartą i przez PayPal będzie dostępna już wkrótce. Na razie Sylvie najpierw potwierdza termin, a następnie przesyła dane do płatności.",
-      "redirect": "Rezerwacja została wysłana. Trwa przekierowanie na bezpieczną stronę płatności…"
-    },
-    "submit": "Wyślij rezerwację",
+    "lead": "Proszę wybrać zwiedzanie i wysłać zapytanie – zajmie to minutę. Ceny dotyczą usługi przewodnickiej; bilet do zamku (7,50 € od osoby) opłaca się na miejscu.",
     "seeAll": "Zobacz cały cennik i zarezerwuj"
   },
   "weather": {

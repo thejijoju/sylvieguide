@@ -312,6 +312,7 @@ function baseGraph(t, page) {
       publicAccess: true,
       isAccessibleForFree: false,
       touristType: ["Cultural tourism", "Heritage tourism", "Literary tourism"],
+      openingHoursSpecification: chateauHoursLd(),
       sameAs: ["https://www.chateau-ferney-voltaire.fr/", "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Voltaire"],
     },
     {
@@ -425,6 +426,26 @@ export const VIDEOS = {
   welcome: { page: "home", text: "video", src: "/assets/video/sylvie-accueil.mp4", webm: "/assets/video/sylvie-accueil.webm", poster: "/assets/video/sylvie-accueil-poster.jpg", seconds: 10, width: 720, height: 1280, preload: "metadata" },
   park: { page: "about", text: "video2", src: "/assets/video/sylvie-parc.mp4", webm: "/assets/video/sylvie-parc.webm", poster: "/assets/video/sylvie-parc-poster.jpg", seconds: 23, width: 720, height: 1280, preload: "none" },
 };
+// Château opening hours (Centre des monuments nationaux): every day,
+// 10:00–18:00 from 1 April to 30 September, 10:00–17:00 the rest of the year.
+const CHATEAU_HOURS = [
+  { from: "04-01", to: "09-30", opens: "10:00", closes: "18:00" },
+  { from: "10-01", to: "03-31", opens: "10:00", closes: "17:00" },
+];
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+function chateauHoursLd() {
+  const y = new Date().getFullYear();
+  return [y - 1, y, y + 1].flatMap((year) =>
+    CHATEAU_HOURS.map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: DAYS,
+      opens: h.opens,
+      closes: h.closes,
+      validFrom: `${year}-${h.from}`,
+      validThrough: `${h.to < h.from ? year + 1 : year}-${h.to}`,
+    })),
+  ).filter((h) => h.validThrough >= new Date().toISOString().slice(0, 10));
+}
 const HERO_PHOTO = "/assets/img/hero-chateau-de-voltaire-ferney.jpg";
 const MAP_URL = `https://www.openstreetmap.org/search?query=${encodeURIComponent("Château de Voltaire, Ferney-Voltaire")}`;
 const SYLVIE_PHOTO = "/assets/img/sylvie-guide-chateau-de-voltaire.jpg";
@@ -925,8 +946,8 @@ function priceLine(t, line) {
   return `<li><strong>${money(t, line.amount)}</strong> ${esc(L[line.unit])}${note}</li>`;
 }
 
-// Link that opens the booking form on the prices page with a package chosen.
-const orderLink = (t, id) => `${pathFor(t.lang, "prices")}?package=${id}#order`;
+// Link to the request form with the group type and the package noted.
+const orderLink = (t, id) => `${pathFor(t.lang, "contact")}?type=${packages.find((pk) => pk.id === id).contactType}&tour=${id}#booking`;
 
 function packageCard(t, pk) {
   const P = t.pricing;
@@ -935,7 +956,7 @@ function packageCard(t, pk) {
       <h3>${esc(P.packages[pk.id].name)}</h3>
       <p>${esc(P.packages[pk.id].desc)}</p>
       <ul class="price-lines">${pk.lines.map((l) => priceLine(t, l)).join("")}</ul>
-      <div class="btn-row"><a class="btn btn-primary btn-sm" href="${orderLink(t, pk.id)}" data-choose="${pk.id}">${esc(t.prices.choose)}</a></div>
+      <div class="btn-row"><a class="btn btn-primary btn-sm" href="${orderLink(t, pk.id)}">${esc(t.pricing.labels.book)}</a></div>
     </article>`;
 }
 
@@ -1009,139 +1030,13 @@ function offerCatalogLd(t) {
   };
 }
 
-// Prices page: every package, then one booking form where the visitor picks
-// a package (and a theme for thematic visits), sees the estimated total and
-// chooses how to pay. Pay-now options only appear once Sylvie's Stripe
-// payment links / PayPal.me name are set in config.
+// Prices page: every package; "Book" opens the request form.
 export function pricesPage(t) {
-  const P = t.pricing;
   const X = t.prices;
-  const F = X.fields;
-  const c = t.contact;
-  const f = c.fields;
-  const req = `<span class="req" aria-hidden="true">*</span>`;
-  const themes = tourCategories.find((cat) => cat.id === "thematic").tours;
-  const anyPay = Boolean(site.paypalMe) || packages.some((pk) => pk.stripe);
-  const rules = Object.fromEntries(packages.map((pk) => [pk.id, { ...pk.calc, stripe: pk.stripe || "", saturday: Boolean(pk.saturday), name: P.packages[pk.id].name }]));
-  const allBut = (...ids) => packages.map((pk) => pk.id).filter((id) => !ids.includes(id)).join(" ");
-  const field = (html, showFor = "") => `<div class="field${showFor ? " field-cond" : ""}"${showFor ? ` data-show-for="${showFor}" hidden` : ""}>${html}</div>`;
-  const step = (n, title) => `<legend class="order-legend"><span class="step-num">${n}</span>${esc(title)}</legend>`;
-
   const body = `
 ${pageHero(t, "prices", X.h1, X.lead)}
 ${pricingSection(t)}
-<section class="section section-tinted" id="order" aria-labelledby="order-title">
-  <div class="container order-grid">
-    <form class="card booking-form order-form" action="${esc(site.formEndpoint || "#order")}" method="post" novalidate data-booking-form data-order
-      data-endpoint="${esc(site.formEndpoint)}" data-email="${esc(site.email)}" data-subject="${esc(c.mailSubject)} — ${esc(X.h1)}"
-      data-msg-success="${esc(c.success)}" data-msg-error="${esc(c.error)}" data-msg-invalid="${esc(c.invalid)}"
-      data-msg-sending="${esc(f.sending)}" data-msg-redirect="${esc(X.payment.redirect)}"
-      data-msg-min="${esc(X.summary.minPeople)}" data-msg-max="${esc(X.summary.maxPeople)}" data-msg-saturday="${esc(F.saturdayOnly)}"
-      data-msg-quote="${esc(X.summary.quote)}" data-msg-choose="${esc(X.summary.choosePackage)}"
-      data-locale="${langMeta[t.lang].locale.replace("_", "-")}" data-currency="${site.currency || "EUR"}"
-      data-paypal="${esc(site.paypalMe)}" data-rules="${esc(JSON.stringify(rules))}">
-      <h2 id="order-title">${esc(X.orderTitle)}</h2>
-      <p class="form-note">${esc(X.orderLead)} ${req} = ${esc(f.required)}</p>
-
-      <fieldset class="order-step">
-        ${step(1, X.steps[0])}
-        <div class="package-options">
-          ${packages.map((pk) => `<label class="package-option">
-            <input type="radio" name="package" value="${pk.id}" required>
-            <span class="po-body"><span class="po-name">${esc(P.packages[pk.id].name)}</span>
-            <span class="po-price">${stripTags(priceLine(t, pk.lines[0]))}</span></span>
-          </label>`).join("")}
-        </div>
-        <div class="form-grid">
-          ${field(`<label for="o-theme">${esc(F.theme)} ${req}</label>
-            <select id="o-theme" name="theme" required disabled>
-              <option value="">${esc(F.themeChoose)}</option>
-              ${themes.map((th) => `<option value="${esc(t.tours.items[th.id].title)}">${esc(t.tours.items[th.id].title)}</option>`).join("")}
-              <option value="other">${esc(F.themeOther)}</option>
-            </select>`, "thematic")}
-          ${field(`<label for="o-theme-details">${esc(F.themeDetails)}</label>
-            <textarea id="o-theme-details" name="theme_details" rows="3" placeholder="${esc(F.themeDetailsPlaceholder)}" disabled></textarea>`, "thematic")}
-          ${field(`<label for="o-adults">${esc(F.adults)} ${req}</label>
-            <input id="o-adults" name="adults" type="number" min="1" max="60" value="2" inputmode="numeric" required disabled>`, "classic")}
-          ${field(`<label for="o-children">${esc(F.children)}</label>
-            <input id="o-children" name="children" type="number" min="0" max="60" value="0" inputmode="numeric" disabled>`, "classic")}
-          ${field(`<label for="o-infants">${esc(F.infants)}</label>
-            <input id="o-infants" name="infants" type="number" min="0" max="30" value="0" inputmode="numeric" disabled>`, "classic")}
-          ${field(`<label for="o-people">${esc(F.people)} ${req}</label>
-            <input id="o-people" name="people" type="number" min="1" max="200" value="2" inputmode="numeric" required disabled>`, allBut("classic"))}
-          <div class="field">
-            <label for="o-date">${esc(F.date)} ${req}</label>
-            <input id="o-date" name="preferred_date" type="date" required>
-            <p class="field-hint" data-show-for="market" hidden>${esc(F.saturdayOnly)}</p>
-          </div>
-          <div class="field">
-            <label for="o-lang">${esc(F.language)} ${req}</label>
-            <select id="o-lang" name="tour_language" required>
-              ${tourLanguages.map((l) => `<option value="${langMeta[l].name}"${l === (tourLanguages.includes(t.lang) ? t.lang : "en") ? " selected" : ""}>${langMeta[l].name}</option>`).join("")}
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset class="order-step">
-        ${step(2, X.steps[1])}
-        <div class="form-grid">
-          <div class="field">
-            <label for="o-name">${esc(f.name)} ${req}</label>
-            <input id="o-name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="o-email">${esc(f.email)} ${req}</label>
-            <input id="o-email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="o-phone">${esc(f.phone)}</label>
-            <input id="o-phone" name="phone" type="tel" autocomplete="tel">
-          </div>
-          <div class="field field-full">
-            <label for="o-message">${esc(f.message)}</label>
-            <textarea id="o-message" name="message" rows="4" placeholder="${esc(f.messagePlaceholder)}"></textarea>
-          </div>
-          <div class="field field-full hp" aria-hidden="true">
-            <label for="o-website">Website</label>
-            <input id="o-website" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset class="order-step">
-        ${step(3, X.steps[2])}
-        <div class="pay-options">
-          ${packages.some((pk) => pk.stripe) ? `<label class="pay-option" data-pay="card" hidden><input type="radio" name="payment" value="card">${icon("card")}<span>${esc(X.payment.card)}</span></label>` : ""}
-          ${site.paypalMe ? `<label class="pay-option" data-pay="paypal" hidden><input type="radio" name="payment" value="paypal"><span class="pp-mark" aria-hidden="true">P</span><span>${esc(X.payment.paypal)}</span></label>` : ""}
-          <label class="pay-option"><input type="radio" name="payment" value="later" checked>${icon("calendar")}<span>${esc(X.payment.later)}</span></label>
-        </div>
-        ${anyPay ? "" : `<p class="field-hint">${esc(X.payment.soon)}</p>`}
-      </fieldset>
-
-      <input type="hidden" name="estimated_total" value="">
-      <input type="hidden" name="site_language" value="${t.lang}">
-      <div class="field field-check">
-        <input id="o-consent" name="consent" type="checkbox" value="yes" required>
-        <label for="o-consent">${esc(f.consent)} ${req}</label>
-      </div>
-      <div class="form-status" role="status" aria-live="polite" data-form-status></div>
-      <button class="btn btn-primary btn-block" type="submit">${esc(X.submit)}</button>
-      <p class="form-privacy">${esc(c.privacy)}</p>
-    </form>
-
-    <aside class="order-summary" aria-labelledby="summary-title">
-      <div class="card summary-card">
-        <h2 id="summary-title">${esc(X.summary.title)}</h2>
-        <p class="summary-package" data-summary-package>${esc(X.summary.choosePackage)}</p>
-        <ul class="summary-lines" data-summary-lines></ul>
-        <p class="summary-total"><span>${esc(X.summary.total)}</span> <strong data-summary-total>—</strong></p>
-        <p class="summary-warn" data-summary-warn role="alert" hidden></p>
-        <p class="price-excluded">${icon("key")}${esc(X.summary.excluded)}</p>
-      </div>
-    </aside>
-  </div>
-</section>`;
+${ctaBand(t, t.home.ctaTitle, t.home.ctaText)}`;
   return layout(t, "prices", body, [offerCatalogLd(t)]);
 }
 
@@ -1283,6 +1178,25 @@ ${pageHero(t, "practical", p.h1, p.lead)}
     </div>
   </div>
 </section>
+<section class="section" id="hours" aria-labelledby="hours-title">
+  <div class="container two-col hours-grid">
+    <div>
+      <h2 id="hours-title">${icon("clock", "icon icon-title")} ${esc(p.hoursTitle)}</h2>
+      <p>${esc(p.hoursLead)}</p>
+      <table class="duration-table">
+        <tbody>${p.hoursRows.map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td>${esc(v)}</td></tr>`).join("")}</tbody>
+      </table>
+      <ul class="hours-notes">${p.hoursNotes.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+      <p class="hours-source">${esc(p.hoursSource)}</p>
+    </div>
+    <div class="card admission-card">
+      <h2>${icon("key", "icon icon-title")} ${esc(p.admissionTitle)}</h2>
+      <p class="admission-price">${esc(p.admissionPrice)}</p>
+      <p>${esc(p.admissionText)}</p>
+      <p class="admission-free">${esc(p.admissionFree)}</p>
+    </div>
+  </div>
+</section>
 ${pricesTeaser(t)}
 <section class="section section-tinted" aria-labelledby="dur-title">
   <div class="container two-col">
@@ -1328,15 +1242,21 @@ export function contactPage(t) {
   const c = t.contact;
   const f = c.fields;
   const req = `<span class="req" aria-hidden="true">*</span>`;
-  const tourTitles = Object.fromEntries(Object.keys(t.tours.items).map((id) => [id, t.tours.items[id].title]));
-  const action = site.formEndpoint || (site.email ? `mailto:${site.email}` : "#booking");
+  // ?tour=… pre-fills the message: tours and price packages (packages win).
+  const tourTitles = {
+    ...Object.fromEntries(Object.keys(t.tours.items).map((id) => [id, t.tours.items[id].title])),
+    ...Object.fromEntries(packages.map((pk) => [pk.id, t.pricing.packages[pk.id].name])),
+  };
+  const themes = tourCategories.find((cat) => cat.id === "thematic").tours;
+  // Without JavaScript the form posts straight to FormSubmit (non-AJAX URL).
+  const action = site.formEndpoint ? site.formEndpoint.replace("/ajax/", "/") : "#booking";
   const body = `
 ${pageHero(t, "contact", c.h1, c.lead)}
 <section class="section" id="booking">
   <div class="container contact-grid">
     <form class="card booking-form" action="${esc(action)}" method="post"${site.formEndpoint ? "" : ' enctype="text/plain"'} novalidate data-booking-form
-      data-endpoint="${esc(site.formEndpoint)}" data-email="${esc(site.email)}" data-subject="${esc(c.mailSubject)}"
-      data-msg-success="${esc(c.success)}" data-msg-mailto="${esc(c.mailtoNotice)}" data-msg-error="${esc(c.error)}"
+      data-endpoint="${esc(site.formEndpoint)}"
+      data-msg-success="${esc(c.success)}" data-msg-error="${esc(c.error)}"
       data-msg-invalid="${esc(c.invalid)}" data-msg-sending="${esc(f.sending)}" data-tour-prefix="${esc(c.tourPrefix)}"
       data-tours="${esc(JSON.stringify(tourTitles))}">
       <h2>${esc(c.formTitle)}</h2>
@@ -1362,8 +1282,16 @@ ${pageHero(t, "contact", c.h1, c.lead)}
           </select>
         </div>
         <div class="field">
-          <label for="f-size">${esc(f.groupSize)}</label>
-          <input id="f-size" name="group_size" type="number" min="1" max="500" inputmode="numeric">
+          <label for="f-size">${esc(f.groupSize)} ${req}</label>
+          <input id="f-size" name="group_size" type="number" min="1" max="500" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="f-theme">${esc(f.thematic)} ${req}</label>
+          <select id="f-theme" name="theme" required>
+            <option value="no">${esc(f.themeNo)}</option>
+            ${themes.map((th) => `<option value="${th.id}">${esc(t.tours.items[th.id].title)}</option>`).join("")}
+            <option value="other">${esc(f.themeOther)}</option>
+          </select>
         </div>
         <div class="field">
           <label for="f-date">${esc(f.date)} ${req}</label>

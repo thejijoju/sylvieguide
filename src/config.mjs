@@ -18,14 +18,12 @@ export const site = {
   email: "",
   phone: "",
 
-  // Where the booking form is POSTed (Formspree, Basin, Getform, your own
-  // endpoint…). It must accept a JSON body. Leave empty and the form falls
-  // back to opening the visitor's e-mail client with the request pre-filled.
-  formEndpoint: "",
-
-  // PayPal.me username (paypal.me/<name>): lets the prices page send visitors
-  // to PayPal with the exact amount of their booking. Empty = no PayPal button.
-  paypalMe: "",
+  // Where the booking form is POSTed as JSON. FormSubmit (formsubmit.co)
+  // e-mails each request to the address in the URL; the very first request
+  // triggers a one-time activation e-mail to that address. After activating,
+  // FormSubmit offers a random alias: replace the address with it so the
+  // e-mail no longer appears in the page source.
+  formEndpoint: "https://formsubmit.co/ajax/jirel.kuenen@gmail.com",
 
   // Profiles that belong to Sylvie (Instagram, Facebook, LinkedIn,
   // TripAdvisor, Google Business Profile…). Search engines use them to tie
@@ -130,23 +128,21 @@ export const groupTypes = ["individual", "private", "corporate", "school", "seni
 
 // Price list (guiding fee in euros; château admission is never included).
 // Each line: amount + unit label, optional note label (keys of
-// t.pricing.labels). `stripe` / `paypal`: payment links created in Sylvie's
-// Stripe and PayPal accounts; the pay buttons only appear once they are set.
-// `calc`: how the prices page computes the estimated total (per adult/child,
-// flat rate, per person with a minimum, or price tiers by group size).
+// t.pricing.labels). `contactType` pre-selects the group type on the
+// request form when a visitor picks this package.
 export const packages = [
-  { id: "classic", calc: { adult: 28, child: 14 }, contactType: "individual", lines: [
+  { id: "classic", contactType: "individual", lines: [
     { amount: 28, unit: "perPerson" }, { amount: 14, unit: "child" }, { amount: 0, unit: "under7" },
-  ], stripe: "", paypal: "" },
-  { id: "private", calc: { flat: 170, max: 6 }, contactType: "individual", lines: [{ amount: 170, unit: "flat", note: "upTo6" }], stripe: "", paypal: "" },
-  { id: "group", calc: { perPerson: 20, min: 10, minimum: 200 }, contactType: "tourist", lines: [
+  ] },
+  { id: "private", contactType: "individual", lines: [{ amount: 170, unit: "flat", note: "upTo6" }] },
+  { id: "group", contactType: "tourist", lines: [
     { amount: 20, unit: "perPerson", note: "from10" }, { amount: 200, unit: "minimum" },
-  ], stripe: "", paypal: "" },
-  { id: "market", calc: { tiers: [[10, 36], [4, 45]], min: 4 }, contactType: "private", saturday: true, photo: "/assets/gallery/15-statue-voltaire-marche-ferney-voltaire.jpg", lines: [
+  ] },
+  { id: "market", contactType: "private", saturday: true, photo: "/assets/gallery/15-statue-voltaire-marche-ferney-voltaire.jpg", lines: [
     { amount: 45, unit: "perPerson", note: "from4" }, { amount: 36, unit: "perPerson", note: "from10" },
-  ], stripe: "", paypal: "" },
-  { id: "thematic", calc: { tiers: [[10, 28], [1, 39]], theme: true }, contactType: "private", lines: [
+  ] },
+  { id: "thematic", contactType: "private", lines: [
     { amount: 39, unit: "perPerson", note: "onRequest" }, { amount: 28, unit: "perPerson", note: "from10" }, { amount: 280, unit: "minimum" },
-  ], stripe: "", paypal: "" },
-  { id: "corporate", calc: { quote: true }, contactType: "corporate", lines: [{ amount: 390, unit: "from", note: "quote" }], stripe: "", paypal: "" },
+  ] },
+  { id: "corporate", contactType: "corporate", lines: [{ amount: 390, unit: "from", note: "quote" }] },
 ];

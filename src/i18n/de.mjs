@@ -405,6 +405,28 @@ export default {
         "text": "Der internationale Flughafen Genf (GVA) und der Bahnhof Genève-Cornavin sind die nächsten Knotenpunkte."
       }
     ],
+    "hoursTitle": "Öffnungszeiten des Schlosses",
+    "hoursLead": "Das Château de Voltaire und sein Park sind täglich geöffnet.",
+    "hoursRows": [
+      [
+        "1. April – 30. September",
+        "10–18 Uhr"
+      ],
+      [
+        "1. Oktober – 31. März",
+        "10–17 Uhr"
+      ]
+    ],
+    "hoursNotes": [
+      "Letzter Einlass in das Monument 45 Minuten vor Schließung; die Räume werden 15 Minuten vor Schließung geräumt.",
+      "Geschlossen am 1. Januar, 1. Mai und 25. Dezember.",
+      "Am 1., 5., 16. und 26. Oktober 2026 schließt das Anwesen ausnahmsweise von 13 bis 14 Uhr (letzter Einlass 12:15 Uhr, Wiederöffnung um 14 Uhr)."
+    ],
+    "hoursSource": "Öffnungszeiten und Eintrittspreise werden vom Centre des monuments nationaux festgelegt.",
+    "admissionTitle": "Eintritt ins Schloss",
+    "admissionPrice": "7,50 € pro Person",
+    "admissionText": "Wenn Sie mit Sylvie, einer Tourismusfachfrau, kommen, zahlen Sie den Gruppentarif ohne Mindestteilnehmerzahl: 7,50 € pro Person statt 9 €, zahlbar vor Ort. Das Ticket gilt für das gesamte Monument und seinen Park.",
+    "admissionFree": "Freier Eintritt: unter 18-Jährige (mit der Familie, ausgenommen Schulgruppen); 18–25-Jährige aus der Europäischen Union sowie Nicht-EU-Bürger gleichen Alters mit regulärem Wohnsitz in Frankreich; Menschen mit Behinderung und ihre Begleitperson; Arbeitsuchende (Bescheinigung nicht älter als 6 Monate); Inhaber des Pass éducation (Ausweis für Lehrkräfte in Frankreich). Am ersten Sonntag im Monat von November bis März für alle kostenlos.",
     "durationTitle": "Dauer der Führungen",
     "durationLead": "Die Angaben sind Richtwerte und lassen sich an Ihr Programm anpassen.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "Ist der Eintritt ins Schloss inbegriffen?",
-        "a": "Der Eintritt in das Monument ist von der Führungsleistung getrennt. Mein Angebot weist klar aus, was enthalten ist."
+        "a": "Nein. Das Schlossticket wird vor Ort bezahlt: 7,50 € pro Person (Gruppentarif, der gilt, wenn Sie mit einer Gästeführerin kommen), für unter 18-Jährige mit ihrer Familie kostenlos. Der Preis der Führung deckt die Führungsleistung ab."
       },
       {
         "q": "Können wir mit Kindern kommen?",
@@ -490,7 +512,7 @@ export default {
       "email": "E-Mail",
       "phone": "Telefon (optional)",
       "groupType": "Art der Gruppe",
-      "groupSize": "Anzahl Personen",
+      "groupSize": "Anzahl der Teilnehmenden",
       "date": "Wunschtermin",
       "language": "Sprache der Führung",
       "message": "Ihre Nachricht",
@@ -499,7 +521,10 @@ export default {
       "required": "Pflichtfeld",
       "choose": "Bitte wählen …",
       "submit": "Anfrage senden",
-      "sending": "Wird gesendet …"
+      "sending": "Wird gesendet …",
+      "thematic": "Themenführung?",
+      "themeNo": "Nein, eine klassische Führung",
+      "themeOther": "Ja, ein anderes Thema (beschreiben Sie es in Ihrer Nachricht)"
     },
     "groupTypes": {
       "individual": "Einzelperson / Familie",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "Gewünschte Führung:",
     "success": "Vielen Dank! Ihre Anfrage wurde gesendet. Ich antworte innerhalb von 48 Stunden.",
-    "mailtoNotice": "Ihr E-Mail-Programm öffnet sich mit Ihrer vorausgefüllten Anfrage – Sie müssen sie nur noch absenden.",
     "error": "Das Senden ist fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt eine E-Mail.",
     "invalid": "Bitte füllen Sie die Pflichtfelder aus.",
-    "mailSubject": "Anfrage Führung – Château de Voltaire",
     "directTitle": "Direkter Kontakt",
     "directText": "Lieber per Telefon oder E-Mail? Auch so erreichen Sie mich.",
     "responseTitle": "So geht es weiter",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Preise",
     "lead": "Klare Angebote, für eine Person wie für eine ganze Gruppe. Preise der Führung in Euro.",
-    "excluded": "Der Eintritt ins Schloss ist nicht inbegriffen: Er wird vom Centre des monuments nationaux festgelegt und kommt zum Preis der Führung hinzu.",
+    "excluded": "Der Eintritt ins Schloss ist nicht inbegriffen: 7,50 € pro Person (Gruppentarif bei einer Führung mit Sylvie), zahlbar vor Ort.",
     "policy": "Ihre Buchung wird schriftlich bestätigt, zusammen mit den Zahlungs- und Stornierungsbedingungen.",
     "labels": {
       "perPerson": "pro Person",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Preise & Buchung",
-    "lead": "Wählen Sie Ihre Führung, sehen Sie sofort den Preis und buchen Sie mit wenigen Klicks. Die Preise gelten nur für die Führung: Der Eintritt ins Schloss wird vor Ort bezahlt.",
-    "choose": "Auswählen",
-    "orderTitle": "Führung buchen",
-    "orderLead": "Wählen Sie ein Angebot und geben Sie Ihre Daten ein: Der Preis wird laufend aktualisiert. Sylvie bestätigt die Verfügbarkeit innerhalb von 24 Stunden.",
-    "steps": [
-      "Ihre Führung",
-      "Ihre Daten",
-      "Zahlung"
-    ],
-    "fields": {
-      "package": "Angebot",
-      "theme": "Thema Ihrer Führung",
-      "themeChoose": "Thema auswählen",
-      "themeOther": "Ein anderes Thema (bitte unten beschreiben)",
-      "themeDetails": "Was interessiert Sie besonders?",
-      "themeDetailsPlaceholder": "Zum Beispiel: Voltaire und die Calas-Affäre, Frauen der Aufklärung, die Gärten im Wandel der Jahreszeiten…",
-      "people": "Anzahl der Personen",
-      "adults": "Erwachsene",
-      "children": "Kinder von 7 bis 17 Jahren",
-      "infants": "Kinder unter 7 Jahren",
-      "date": "Wunschtermin",
-      "saturdayOnly": "Dieses Angebot gibt es nur samstagvormittags.",
-      "language": "Sprache der Führung"
-    },
-    "summary": {
-      "title": "Ihr Preis",
-      "total": "Voraussichtlicher Gesamtpreis",
-      "quote": "Preis auf Anfrage: Sylvie schickt Ihnen ein individuelles Angebot.",
-      "excluded": "Eintritt ins Schloss nicht inbegriffen (vor Ort zu bezahlen).",
-      "minPeople": "Mindestens {n} Personen für dieses Angebot.",
-      "maxPeople": "Bis zu {n} Personen für dieses Angebot.",
-      "choosePackage": "Wählen Sie ein Angebot, um den Preis zu sehen."
-    },
-    "payment": {
-      "title": "Zahlung",
-      "card": "Jetzt mit Karte bezahlen (Stripe)",
-      "paypal": "Jetzt mit PayPal bezahlen",
-      "later": "Nach Bestätigung des Termins durch Sylvie bezahlen",
-      "soon": "Die Online-Zahlung per Karte und PayPal ist bald verfügbar. Bis dahin bestätigt Sylvie zuerst Ihren Termin und sendet Ihnen dann die Zahlungsinformationen.",
-      "redirect": "Ihre Buchung wurde gesendet. Sie werden zur sicheren Zahlungsseite weitergeleitet…"
-    },
-    "submit": "Buchung absenden",
+    "lead": "Wählen Sie Ihre Führung und senden Sie Ihre Anfrage in einer Minute. Die Preise gelten für die Führung; das Schlossticket (7,50 € pro Person) wird vor Ort bezahlt.",
     "seeAll": "Alle Preise ansehen und buchen"
   },
   "weather": {

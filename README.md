@@ -80,15 +80,15 @@ All placeholders live in **`src/config.mjs`**:
 
 1. `origin`: **done: `https://www.guidevoltaire.com`** (domain at Namecheap, hosted on GitHub Pages).
 2. `email`, `phone`: deliberately empty. Visitors contact Sylvie through the forms only.
-3. `formEndpoint`: a form service URL that accepts JSON, for example Formspree
-   (`https://formspree.io/f/xxxx`) or Web3Forms. **Until it is set, the contact form and the
-   booking form on the prices page cannot deliver requests** (they show an error message).
-4. Payments on the prices page (`/en/prices/`, `/fr/tarifs/`…): set `paypalMe` (the name in
-   `paypal.me/<name>`) to offer "Pay now with PayPal" with the exact total, and the `stripe`
-   field of each package in `packages` (a Stripe Payment Link) to offer card payment. The
-   booking is always sent first, then the visitor is taken to the payment page. With
-   neither set, visitors book and Sylvie sends payment details after confirming the date.
-   Prices and the rules for the live total (`calc`) are in `packages` too.
+3. `formEndpoint`: **set to FormSubmit** (`https://formsubmit.co/ajax/<address>`), which
+   e-mails every request from the contact page to that address. The first request sent
+   triggers a one-time activation e-mail from FormSubmit: click the link in it. FormSubmit
+   then offers a random alias; put it in place of the address so the address is no longer
+   in the page source. The e-mail lists name, email (reply goes straight to the visitor),
+   group type, participants, thematic visit, date, tour language and message.
+4. Prices are in `packages`; château admission (€7.50 group rate) and opening hours are in
+   the translations (`practical.hours*`, `practical.admission*`) and in `CHATEAU_HOURS`
+   (templates.mjs) for structured data.
 5. Group sizes and durations in `tourCategories`, if Sylvie's offer differs.
 
 Then check the copy in `src/i18n/*.mjs`:

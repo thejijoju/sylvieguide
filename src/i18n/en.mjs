@@ -405,6 +405,28 @@ export default {
         "text": "Geneva International Airport (GVA) and Genève-Cornavin station are the nearest hubs."
       }
     ],
+    "hoursTitle": "Château opening hours",
+    "hoursLead": "The Château de Voltaire and its park are open every day.",
+    "hoursRows": [
+      [
+        "1 April – 30 September",
+        "10 am – 6 pm"
+      ],
+      [
+        "1 October – 31 March",
+        "10 am – 5 pm"
+      ]
+    ],
+    "hoursNotes": [
+      "Last access to the monument 45 minutes before closing; the rooms are cleared 15 minutes before closing.",
+      "Closed on 1 January, 1 May and 25 December.",
+      "On 1, 5, 16 and 26 October 2026 the estate closes from 1 pm to 2 pm (last entry 12:15 pm, reopening at 2 pm)."
+    ],
+    "hoursSource": "Opening hours and admission set by the Centre des monuments nationaux.",
+    "admissionTitle": "Château admission",
+    "admissionPrice": "€7.50 per person",
+    "admissionText": "When you visit with Sylvie, a tourism professional, you pay the group rate with no minimum number: €7.50 per person instead of €9, paid on site. The ticket covers the whole monument and its park.",
+    "admissionFree": "Free admission: under-18s (with their family, outside school groups); 18–25-year-olds from the European Union and non-EU residents of France; disabled visitors and their companion; jobseekers (certificate less than 6 months old); Pass éducation holders. Free for everyone on the first Sunday of the month from November to March.",
     "durationTitle": "Tour durations",
     "durationLead": "Durations are indicative and can be adapted to your schedule.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "Is admission to the château included?",
-        "a": "The monument’s admission fee is separate from the guiding service. My quote states clearly what is included."
+        "a": "No. The château ticket is paid on site: €7.50 per person (the group rate, which applies when you visit with a guide), free for under-18s visiting with their family. The tour price covers the guiding."
       },
       {
         "q": "Can we visit with children?",
@@ -490,7 +512,7 @@ export default {
       "email": "Email",
       "phone": "Phone (optional)",
       "groupType": "Group type",
-      "groupSize": "Number of people",
+      "groupSize": "Number of participants",
       "date": "Preferred date",
       "language": "Tour language",
       "message": "Your message",
@@ -499,7 +521,10 @@ export default {
       "required": "required",
       "choose": "Choose…",
       "submit": "Send my request",
-      "sending": "Sending…"
+      "sending": "Sending…",
+      "thematic": "Thematic visit?",
+      "themeNo": "No, a classic visit",
+      "themeOther": "Yes, another theme (describe it in your message)"
     },
     "groupTypes": {
       "individual": "Individual / family",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "Tour of interest:",
     "success": "Thank you! Your request has been sent. I’ll reply within 48 hours.",
-    "mailtoNotice": "Your email app will open with your request pre-filled — just press send.",
     "error": "Sending failed. Please try again or email me directly.",
     "invalid": "Please complete the required fields.",
-    "mailSubject": "Guided tour request – Château de Voltaire",
     "directTitle": "Contact me directly",
     "directText": "Prefer phone or email? You can reach me that way too.",
     "responseTitle": "What happens next",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Prices",
     "lead": "Clear packages, for one person or a whole group. Prices for the guided tour, in euros.",
-    "excluded": "Admission to the château is not included: it is set by the Centre des monuments nationaux and comes on top of the tour price.",
+    "excluded": "Château admission is not included: €7.50 per person (group rate when you visit with Sylvie), paid on site.",
     "policy": "Your booking is confirmed in writing, together with the payment and cancellation terms.",
     "labels": {
       "perPerson": "per person",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Prices & booking",
-    "lead": "Choose your visit, see the price straight away and book in a few clicks. Guiding fee only: the château's entrance ticket is paid on site.",
-    "choose": "Choose",
-    "orderTitle": "Book your visit",
-    "orderLead": "Select a package and fill in your details: the price updates as you go. Sylvie confirms availability within 24 hours.",
-    "steps": [
-      "Your visit",
-      "Your details",
-      "Payment"
-    ],
-    "fields": {
-      "package": "Package",
-      "theme": "Theme of your visit",
-      "themeChoose": "Choose a theme",
-      "themeOther": "Another theme (describe it below)",
-      "themeDetails": "Tell Sylvie what interests you",
-      "themeDetailsPlaceholder": "For example: Voltaire and the Calas affair, women of the Enlightenment, the gardens through the seasons…",
-      "people": "Number of people",
-      "adults": "Adults",
-      "children": "Children aged 7–17",
-      "infants": "Children under 7",
-      "date": "Preferred date",
-      "saturdayOnly": "This package is only available on Saturday mornings.",
-      "language": "Tour language"
-    },
-    "summary": {
-      "title": "Your price",
-      "total": "Estimated total",
-      "quote": "Price on quote: Sylvie will send you a tailored offer.",
-      "excluded": "Château entrance ticket not included (paid on site).",
-      "minPeople": "Minimum {n} people for this package.",
-      "maxPeople": "Up to {n} people for this package.",
-      "choosePackage": "Choose a package to see the price."
-    },
-    "payment": {
-      "title": "Payment",
-      "card": "Pay now by card (Stripe)",
-      "paypal": "Pay now with PayPal",
-      "later": "Pay once Sylvie has confirmed the date",
-      "soon": "Online payment by card and PayPal is coming soon. For now, Sylvie confirms your date first and then sends you the payment details.",
-      "redirect": "Your booking has been sent. Taking you to the secure payment page…"
-    },
-    "submit": "Send my booking",
+    "lead": "Choose your visit and send your request in a minute. Prices are for the guiding; the château ticket (€7.50 per person) is paid on site.",
     "seeAll": "See all prices and book"
   },
   "weather": {

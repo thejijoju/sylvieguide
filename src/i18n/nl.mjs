@@ -405,6 +405,28 @@ export default {
         "text": "De internationale luchthaven van Genève (GVA) en station Genève-Cornavin liggen het dichtstbij."
       }
     ],
+    "hoursTitle": "Openingstijden van het kasteel",
+    "hoursLead": "Het Château de Voltaire en het park zijn elke dag open.",
+    "hoursRows": [
+      [
+        "1 april – 30 september",
+        "10.00–18.00 uur"
+      ],
+      [
+        "1 oktober – 31 maart",
+        "10.00–17.00 uur"
+      ]
+    ],
+    "hoursNotes": [
+      "Laatste toegang tot het monument 45 minuten voor sluitingstijd; de zalen worden 15 minuten voor sluitingstijd ontruimd.",
+      "Gesloten op 1 januari, 1 mei en 25 december.",
+      "Op 1, 5, 16 en 26 oktober 2026 is het domein uitzonderlijk gesloten van 13.00 tot 14.00 uur (laatste toegang 12.15 uur, weer open om 14.00 uur)."
+    ],
+    "hoursSource": "Openingstijden en toegangsprijzen vastgesteld door het Centre des monuments nationaux.",
+    "admissionTitle": "Toegang tot het kasteel",
+    "admissionPrice": "€ 7,50 per persoon",
+    "admissionText": "Bij een bezoek met Sylvie, toeristisch professional, betaalt u het groepstarief zonder minimumaantal deelnemers: € 7,50 per persoon in plaats van € 9, ter plaatse te betalen. Het ticket geeft toegang tot het hele monument en het park.",
+    "admissionFree": "Gratis toegang: jongeren onder 18 jaar (met hun gezin, niet in schoolgroepen); 18- tot 25-jarigen uit de Europese Unie en niet-Europese ingezetenen met verblijfsrecht in Frankrijk; bezoekers met een beperking en hun begeleider; werkzoekenden (verklaring van minder dan 6 maanden oud); houders van de Pass éducation (Franse lerarenpas). Gratis voor iedereen op de eerste zondag van de maand, van november tot en met maart.",
     "durationTitle": "Duur van de rondleidingen",
     "durationLead": "De tijden zijn indicatief en kunnen aan uw planning worden aangepast.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "Is de toegang tot het kasteel inbegrepen?",
-        "a": "De toegangsprijs van het monument staat los van de gidsdienst. In mijn offerte staat duidelijk wat inbegrepen is."
+        "a": "Nee. Het kasteelticket betaalt u ter plaatse: € 7,50 per persoon (het groepstarief, dat geldt wanneer u met een gids komt), gratis voor jongeren onder 18 jaar met hun gezin. De prijs van de rondleiding dekt de begeleiding door de gids."
       },
       {
         "q": "Kunnen we met kinderen komen?",
@@ -490,7 +512,7 @@ export default {
       "email": "E-mail",
       "phone": "Telefoon (optioneel)",
       "groupType": "Type groep",
-      "groupSize": "Aantal personen",
+      "groupSize": "Aantal deelnemers",
       "date": "Voorkeursdatum",
       "language": "Taal van de rondleiding",
       "message": "Uw bericht",
@@ -499,7 +521,10 @@ export default {
       "required": "verplicht",
       "choose": "Kies…",
       "submit": "Aanvraag versturen",
-      "sending": "Bezig met versturen…"
+      "sending": "Bezig met versturen…",
+      "thematic": "Themabezoek?",
+      "themeNo": "Nee, een klassiek bezoek",
+      "themeOther": "Ja, een ander thema (beschrijf het in uw bericht)"
     },
     "groupTypes": {
       "individual": "Particulier / gezin",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "Gewenste rondleiding:",
     "success": "Dank u wel! Uw aanvraag is verstuurd. Ik antwoord binnen 48 uur.",
-    "mailtoNotice": "Uw e-mailprogramma opent met uw aanvraag al ingevuld — u hoeft alleen nog op verzenden te klikken.",
     "error": "Verzenden is mislukt. Probeer het opnieuw of mail me rechtstreeks.",
     "invalid": "Vul de verplichte velden in.",
-    "mailSubject": "Aanvraag rondleiding – Château de Voltaire",
     "directTitle": "Neem rechtstreeks contact op",
     "directText": "Liever telefoon of e-mail? Ook zo kunt u mij bereiken.",
     "responseTitle": "Hoe gaat het verder",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Prijzen",
     "lead": "Duidelijke formules, voor één persoon of een hele groep. Prijzen van de rondleiding, in euro.",
-    "excluded": "De toegang tot het kasteel is niet inbegrepen: die wordt vastgesteld door het Centre des monuments nationaux en komt bovenop de prijs van de rondleiding.",
+    "excluded": "De toegang tot het kasteel is niet inbegrepen: € 7,50 per persoon (groepstarief bij een bezoek met Sylvie), ter plaatse te betalen.",
     "policy": "Uw boeking wordt schriftelijk bevestigd, samen met de betalings- en annuleringsvoorwaarden.",
     "labels": {
       "perPerson": "per persoon",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Tarieven & reserveren",
-    "lead": "Kies uw bezoek, zie meteen de prijs en reserveer in een paar klikken. Alleen de gidskosten: het toegangskaartje voor het kasteel betaalt u ter plaatse.",
-    "choose": "Kiezen",
-    "orderTitle": "Reserveer uw bezoek",
-    "orderLead": "Kies een arrangement en vul uw gegevens in: de prijs wordt direct bijgewerkt. Sylvie bevestigt de beschikbaarheid binnen 24 uur.",
-    "steps": [
-      "Uw bezoek",
-      "Uw gegevens",
-      "Betaling"
-    ],
-    "fields": {
-      "package": "Arrangement",
-      "theme": "Thema van uw bezoek",
-      "themeChoose": "Kies een thema",
-      "themeOther": "Een ander thema (beschrijf het hieronder)",
-      "themeDetails": "Vertel Sylvie wat u interesseert",
-      "themeDetailsPlaceholder": "Bijvoorbeeld: Voltaire en de zaak-Calas, vrouwen van de Verlichting, de tuinen door de seizoenen heen…",
-      "people": "Aantal personen",
-      "adults": "Volwassenen",
-      "children": "Kinderen van 7–17 jaar",
-      "infants": "Kinderen onder 7 jaar",
-      "date": "Gewenste datum",
-      "saturdayOnly": "Dit arrangement is alleen op zaterdagochtend beschikbaar.",
-      "language": "Taal van de rondleiding"
-    },
-    "summary": {
-      "title": "Uw prijs",
-      "total": "Geschat totaal",
-      "quote": "Prijs op aanvraag: Sylvie stuurt u een offerte op maat.",
-      "excluded": "Toegangskaartje voor het kasteel niet inbegrepen (ter plaatse te betalen).",
-      "minPeople": "Minimaal {n} personen voor dit arrangement.",
-      "maxPeople": "Maximaal {n} personen voor dit arrangement.",
-      "choosePackage": "Kies een arrangement om de prijs te zien."
-    },
-    "payment": {
-      "title": "Betaling",
-      "card": "Nu betalen met kaart (Stripe)",
-      "paypal": "Nu betalen met PayPal",
-      "later": "Betalen zodra Sylvie de datum heeft bevestigd",
-      "soon": "Online betalen met kaart en PayPal is binnenkort mogelijk. Voorlopig bevestigt Sylvie eerst uw datum en stuurt u daarna de betaalgegevens.",
-      "redirect": "Uw reservering is verzonden. U wordt doorgestuurd naar de beveiligde betaalpagina…"
-    },
-    "submit": "Reservering versturen",
+    "lead": "Kies uw bezoek en verstuur uw aanvraag in een minuut. De prijzen gelden voor de rondleiding; het kasteelticket (€ 7,50 per persoon) betaalt u ter plaatse.",
     "seeAll": "Alle tarieven bekijken en reserveren"
   },
   "weather": {

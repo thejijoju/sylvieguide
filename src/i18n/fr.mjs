@@ -405,6 +405,28 @@ export default {
         "text": "L’aéroport international de Genève (GVA) et la gare de Genève-Cornavin sont les accès les plus proches."
       }
     ],
+    "hoursTitle": "Horaires d’ouverture du château",
+    "hoursLead": "Le Château de Voltaire et son parc sont ouverts tous les jours.",
+    "hoursRows": [
+      [
+        "Du 1er avril au 30 septembre",
+        "10 h – 18 h"
+      ],
+      [
+        "Du 1er octobre au 31 mars",
+        "10 h – 17 h"
+      ]
+    ],
+    "hoursNotes": [
+      "Dernier accès au monument 45 minutes avant la fermeture ; évacuation des salles 15 minutes avant la fermeture.",
+      "Fermé les 1er janvier, 1er mai et 25 décembre.",
+      "Les 1er, 5, 16 et 26 octobre 2026, le domaine ferme exceptionnellement de 13 h à 14 h (dernière entrée à 12 h 15, réouverture à 14 h)."
+    ],
+    "hoursSource": "Horaires et tarifs d’entrée fixés par le Centre des monuments nationaux.",
+    "admissionTitle": "Entrée du château",
+    "admissionPrice": "7,50 € par personne",
+    "admissionText": "En visite avec Sylvie, professionnelle du tourisme, vous bénéficiez du tarif groupe sans minimum d’effectif : 7,50 € par personne au lieu de 9 €, à régler sur place. Le billet donne accès à l’ensemble du monument et à son parc.",
+    "admissionFree": "Gratuité : moins de 18 ans (en famille, hors groupes scolaires) ; 18-25 ans ressortissants de l’Union européenne et résidents réguliers non européens en France ; personnes en situation de handicap et leur accompagnateur ; demandeurs d’emploi (attestation de moins de 6 mois) ; titulaires du Pass éducation. Gratuit pour tous le premier dimanche du mois, de novembre à mars.",
     "durationTitle": "Durée des visites",
     "durationLead": "Les durées indiquées sont indicatives et peuvent être adaptées à votre programme.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "Le droit d’entrée au château est-il inclus ?",
-        "a": "Le droit d’entrée du monument est distinct de la prestation de guidage. Mon devis précise clairement ce qui est inclus."
+        "a": "Non. Le billet du château se règle sur place : 7,50 € par personne (tarif groupe, appliqué lorsque vous venez avec une guide), gratuit pour les moins de 18 ans en famille. Le prix de la visite couvre le guidage."
       },
       {
         "q": "Peut-on visiter avec des enfants ?",
@@ -490,7 +512,7 @@ export default {
       "email": "E-mail",
       "phone": "Téléphone (facultatif)",
       "groupType": "Type de groupe",
-      "groupSize": "Nombre de personnes",
+      "groupSize": "Nombre de participants",
       "date": "Date souhaitée",
       "language": "Langue de la visite",
       "message": "Votre message",
@@ -499,7 +521,10 @@ export default {
       "required": "obligatoire",
       "choose": "Choisir…",
       "submit": "Envoyer ma demande",
-      "sending": "Envoi en cours…"
+      "sending": "Envoi en cours…",
+      "thematic": "Visite thématique ?",
+      "themeNo": "Non, une visite classique",
+      "themeOther": "Oui, un autre thème (décrivez-le dans votre message)"
     },
     "groupTypes": {
       "individual": "Particulier / famille",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "Visite souhaitée :",
     "success": "Merci ! Votre demande a bien été envoyée. Je vous réponds sous 48 heures.",
-    "mailtoNotice": "Votre messagerie va s’ouvrir avec votre demande pré-remplie : il ne vous reste qu’à l’envoyer.",
     "error": "L’envoi n’a pas abouti. Merci de réessayer ou de m’écrire directement par e-mail.",
     "invalid": "Merci de compléter les champs obligatoires.",
-    "mailSubject": "Demande de visite guidée – Château de Voltaire",
     "directTitle": "Me joindre directement",
     "directText": "Vous préférez le téléphone ou l’e-mail ? Je suis joignable aussi par ces moyens.",
     "responseTitle": "Ce qui se passe ensuite",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Tarifs",
     "lead": "Des formules claires, pour une personne comme pour un groupe. Prix de la visite guidée, en euros.",
-    "excluded": "Le billet d’entrée du château n’est pas inclus : il est fixé par le Centre des monuments nationaux et s’ajoute au prix de la visite.",
+    "excluded": "L’entrée du château n’est pas comprise : 7,50 € par personne (tarif groupe en visite avec Sylvie), à régler sur place.",
     "policy": "Votre réservation est confirmée par écrit, avec les conditions de paiement et d’annulation.",
     "labels": {
       "perPerson": "par personne",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Tarifs et réservation",
-    "lead": "Choisissez votre visite, voyez le prix tout de suite et réservez en quelques clics. Tarifs de guidage uniquement : le billet d’entrée du château se règle sur place.",
-    "choose": "Choisir",
-    "orderTitle": "Réservez votre visite",
-    "orderLead": "Choisissez une formule et indiquez vos coordonnées : le prix se met à jour au fur et à mesure. Sylvie confirme la disponibilité sous 24 heures.",
-    "steps": [
-      "Votre visite",
-      "Vos coordonnées",
-      "Paiement"
-    ],
-    "fields": {
-      "package": "Formule",
-      "theme": "Thème de votre visite",
-      "themeChoose": "Choisissez un thème",
-      "themeOther": "Un autre thème (décrivez-le ci-dessous)",
-      "themeDetails": "Dites à Sylvie ce qui vous intéresse",
-      "themeDetailsPlaceholder": "Par exemple : Voltaire et l’affaire Calas, les femmes des Lumières, les jardins au fil des saisons…",
-      "people": "Nombre de personnes",
-      "adults": "Adultes",
-      "children": "Enfants de 7 à 17 ans",
-      "infants": "Enfants de moins de 7 ans",
-      "date": "Date souhaitée",
-      "saturdayOnly": "Cette formule n’est proposée que le samedi matin.",
-      "language": "Langue de la visite"
-    },
-    "summary": {
-      "title": "Votre prix",
-      "total": "Total estimé",
-      "quote": "Prix sur devis : Sylvie vous envoie une offre sur mesure.",
-      "excluded": "Billet d’entrée du château non compris (à régler sur place).",
-      "minPeople": "Minimum {n} personnes pour cette formule.",
-      "maxPeople": "Jusqu’à {n} personnes pour cette formule.",
-      "choosePackage": "Choisissez une formule pour voir le prix."
-    },
-    "payment": {
-      "title": "Paiement",
-      "card": "Payer maintenant par carte (Stripe)",
-      "paypal": "Payer maintenant avec PayPal",
-      "later": "Payer après confirmation de la date par Sylvie",
-      "soon": "Le paiement en ligne par carte et PayPal arrive bientôt. Pour l’instant, Sylvie confirme d’abord votre date puis vous envoie les modalités de paiement.",
-      "redirect": "Votre réservation est envoyée. Redirection vers la page de paiement sécurisée…"
-    },
-    "submit": "Envoyer ma réservation",
+    "lead": "Choisissez votre visite et envoyez votre demande en une minute. Les tarifs concernent le guidage ; le billet du château (7,50 € par personne) se règle sur place.",
     "seeAll": "Voir tous les tarifs et réserver"
   },
   "weather": {

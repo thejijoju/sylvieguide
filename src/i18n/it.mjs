@@ -405,6 +405,28 @@ export default {
         "text": "L’aeroporto internazionale di Ginevra (GVA) e la stazione di Genève-Cornavin sono gli snodi più vicini."
       }
     ],
+    "hoursTitle": "Orari di apertura del castello",
+    "hoursLead": "Il Château de Voltaire e il suo parco sono aperti tutti i giorni.",
+    "hoursRows": [
+      [
+        "Dal 1° aprile al 30 settembre",
+        "10:00 – 18:00"
+      ],
+      [
+        "Dal 1° ottobre al 31 marzo",
+        "10:00 – 17:00"
+      ]
+    ],
+    "hoursNotes": [
+      "Ultimo accesso al monumento 45 minuti prima della chiusura; le sale vengono sgomberate 15 minuti prima della chiusura.",
+      "Chiuso il 1° gennaio, il 1° maggio e il 25 dicembre.",
+      "Il 1°, 5, 16 e 26 ottobre 2026 la tenuta chiude eccezionalmente dalle 13:00 alle 14:00 (ultimo ingresso alle 12:15, riapertura alle 14:00)."
+    ],
+    "hoursSource": "Orari e tariffe d’ingresso stabiliti dal Centre des monuments nationaux.",
+    "admissionTitle": "Ingresso al castello",
+    "admissionPrice": "7,50 € a persona",
+    "admissionText": "Visitando il castello con Sylvie, professionista del turismo, usufruisce della tariffa gruppi senza numero minimo di partecipanti: 7,50 € a persona invece di 9 €, da pagare in loco. Il biglietto dà accesso all’intero monumento e al suo parco.",
+    "admissionFree": "Ingresso gratuito: minori di 18 anni (in famiglia, esclusi i gruppi scolastici); giovani di 18-25 anni cittadini dell’Unione europea e residenti regolari extra-UE in Francia; persone con disabilità e il loro accompagnatore; persone in cerca di lavoro (attestato di meno di 6 mesi); titolari del Pass éducation (tessera degli insegnanti francesi). Gratuito per tutti la prima domenica del mese, da novembre a marzo.",
     "durationTitle": "Durata delle visite",
     "durationLead": "Le durate sono indicative e possono essere adattate ai vostri orari.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "L’ingresso al castello è incluso?",
-        "a": "Il biglietto d’ingresso al monumento è separato dal servizio di guida. Il mio preventivo indica chiaramente cosa è incluso."
+        "a": "No. Il biglietto del castello si paga in loco: 7,50 € a persona (tariffa gruppi, applicata quando viene con una guida), gratuito per i minori di 18 anni in famiglia. Il prezzo della visita copre il servizio di guida."
       },
       {
         "q": "Si può visitare con i bambini?",
@@ -490,7 +512,7 @@ export default {
       "email": "E-mail",
       "phone": "Telefono (facoltativo)",
       "groupType": "Tipo di gruppo",
-      "groupSize": "Numero di persone",
+      "groupSize": "Numero di partecipanti",
       "date": "Data preferita",
       "language": "Lingua della visita",
       "message": "Il vostro messaggio",
@@ -499,7 +521,10 @@ export default {
       "required": "obbligatorio",
       "choose": "Scegli…",
       "submit": "Invia la richiesta",
-      "sending": "Invio in corso…"
+      "sending": "Invio in corso…",
+      "thematic": "Visita tematica?",
+      "themeNo": "No, una visita classica",
+      "themeOther": "Sì, un altro tema (lo descriva nel suo messaggio)"
     },
     "groupTypes": {
       "individual": "Privato / famiglia",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "Visita di interesse:",
     "success": "Grazie! La vostra richiesta è stata inviata. Vi risponderò entro 48 ore.",
-    "mailtoNotice": "Si aprirà il vostro programma di posta con la richiesta già compilata: basta premere invio.",
     "error": "Invio non riuscito. Riprovate oppure scrivetemi direttamente via e-mail.",
     "invalid": "Compilate i campi obbligatori.",
-    "mailSubject": "Richiesta di visita guidata – Château de Voltaire",
     "directTitle": "Contattatemi direttamente",
     "directText": "Preferite il telefono o l’e-mail? Potete raggiungermi anche così.",
     "responseTitle": "Cosa succede dopo",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Tariffe",
     "lead": "Formule chiare, per una persona come per un intero gruppo. Prezzi della visita guidata, in euro.",
-    "excluded": "Il biglietto d’ingresso al castello non è incluso: è stabilito dal Centre des monuments nationaux e si aggiunge al prezzo della visita.",
+    "excluded": "L’ingresso al castello non è incluso: 7,50 € a persona (tariffa gruppi con Sylvie), da pagare in loco.",
     "policy": "La prenotazione viene confermata per iscritto, insieme alle condizioni di pagamento e di cancellazione.",
     "labels": {
       "perPerson": "a persona",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Tariffe e prenotazione",
-    "lead": "Scelga la visita, veda subito il prezzo e prenoti in pochi clic. Solo servizio di guida: il biglietto d’ingresso al castello si paga in loco.",
-    "choose": "Seleziona",
-    "orderTitle": "Prenota la visita",
-    "orderLead": "Selezioni una formula e inserisca i Suoi dati: il prezzo si aggiorna man mano. Sylvie conferma la disponibilità entro 24 ore.",
-    "steps": [
-      "La visita",
-      "I Suoi dati",
-      "Pagamento"
-    ],
-    "fields": {
-      "package": "Formula",
-      "theme": "Tema della visita",
-      "themeChoose": "Scelga un tema",
-      "themeOther": "Un altro tema (da descrivere qui sotto)",
-      "themeDetails": "Racconti a Sylvie cosa Le interessa",
-      "themeDetailsPlaceholder": "Per esempio: Voltaire e l’affare Calas, le donne dell’Illuminismo, i giardini nelle diverse stagioni…",
-      "people": "Numero di persone",
-      "adults": "Adulti",
-      "children": "Bambini e ragazzi dai 7 ai 17 anni",
-      "infants": "Bambini sotto i 7 anni",
-      "date": "Data preferita",
-      "saturdayOnly": "Questa formula è disponibile solo il sabato mattina.",
-      "language": "Lingua della visita"
-    },
-    "summary": {
-      "title": "Il Suo prezzo",
-      "total": "Totale stimato",
-      "quote": "Prezzo su preventivo: Sylvie invierà un’offerta su misura.",
-      "excluded": "Biglietto d’ingresso al castello non incluso (da pagare in loco).",
-      "minPeople": "Minimo {n} persone per questa formula.",
-      "maxPeople": "Fino a {n} persone per questa formula.",
-      "choosePackage": "Scelga una formula per vedere il prezzo."
-    },
-    "payment": {
-      "title": "Pagamento",
-      "card": "Paga ora con carta (Stripe)",
-      "paypal": "Paga ora con PayPal",
-      "later": "Paga dopo la conferma della data da parte di Sylvie",
-      "soon": "Il pagamento online con carta e PayPal sarà disponibile a breve. Per ora Sylvie conferma prima la data e poi invia le indicazioni per il pagamento.",
-      "redirect": "Prenotazione inviata. Reindirizzamento alla pagina di pagamento sicuro…"
-    },
-    "submit": "Invia la prenotazione",
+    "lead": "Scelga la sua visita e invii la richiesta in un minuto. I prezzi si riferiscono al servizio di guida; il biglietto del castello (7,50 € a persona) si paga in loco.",
     "seeAll": "Tutte le tariffe e prenotazione"
   },
   "weather": {

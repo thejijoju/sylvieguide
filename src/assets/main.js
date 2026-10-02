@@ -221,7 +221,7 @@
       .catch(function () { now.innerHTML = '<p class="weather-loading"></p>'; now.firstChild.textContent = weather.getAttribute("data-error"); });
   }
 
-  // Booking form (contact page) and order form (prices page)
+  // Booking request form (contact page)
   var form = document.querySelector("[data-booking-form]");
   if (!form) return;
 
@@ -232,12 +232,15 @@
   // Pre-fill from links such as ?type=corporate&tour=enlightenment
   var type = params.get("type");
   var typeSelect = form.elements.group_type;
-  if (type && typeSelect && typeSelect.querySelector('option[value="' + CSS.escape(type) + '"]')) typeSelect.value = type;
+  if (type && typeSelect.querySelector('option[value="' + CSS.escape(type) + '"]')) typeSelect.value = type;
 
   var tours = {};
   try { tours = JSON.parse(form.getAttribute("data-tours") || "{}"); } catch (e) {}
   var tour = params.get("tour");
-  if (tour && tours[tour] && form.elements.message && !form.elements.message.value) {
+  var themeSelect = form.elements.theme;
+  if (tour && themeSelect.querySelector('option[value="' + CSS.escape(tour) + '"]')) themeSelect.value = tour;
+  else if (tour === "thematic") themeSelect.value = themeSelect.options[1].value;
+  if (tour && tours[tour] && !form.elements.message.value) {
     form.elements.message.value = form.getAttribute("data-tour-prefix") + " " + tours[tour] + "\n\n";
   }
 
@@ -252,119 +255,17 @@
     status.className = "form-status" + (kind ? " is-" + kind : "");
   };
 
-  // Prices page: package choice, conditional fields, live estimated total.
-  var order = form.hasAttribute("data-order") ? form : null;
-  var orderTotal = null;
-  if (order) {
-    var rules = JSON.parse(order.getAttribute("data-rules"));
-    var fmt = new Intl.NumberFormat(order.getAttribute("data-locale"), { style: "currency", currency: order.getAttribute("data-currency"), maximumFractionDigits: 0 });
-    var el = order.elements;
-    var sumPackage = document.querySelector("[data-summary-package]");
-    var sumLines = document.querySelector("[data-summary-lines]");
-    var sumTotal = document.querySelector("[data-summary-total]");
-    var sumWarn = document.querySelector("[data-summary-warn]");
-    var num = function (input) { var n = parseInt(input.value, 10); return isNaN(n) || n < 0 ? 0 : n; };
-    var chosen = function () { var r = order.querySelector('input[name="package"]:checked'); return r ? r.value : ""; };
-    var line = function (text) { var li = document.createElement("li"); li.textContent = text; sumLines.appendChild(li); };
-
-    var update = function () {
-      var id = chosen();
-      var rule = rules[id];
-      // Show only the fields that apply to this package (hidden ones are disabled, so not required).
-      order.querySelectorAll("[data-show-for]").forEach(function (box) {
-        var on = !!id && box.getAttribute("data-show-for").split(" ").indexOf(id) > -1;
-        box.hidden = !on;
-        box.querySelectorAll("input, select, textarea").forEach(function (x) { x.disabled = !on; });
-      });
-      el.theme_details.required = id === "thematic" && el.theme.value === "other";
-      order.querySelectorAll("[data-pay]").forEach(function (opt) {
-        var ok = rule && !rule.quote && (opt.getAttribute("data-pay") === "paypal" || !!rule.stripe);
-        opt.hidden = !ok;
-        if (!ok && opt.querySelector("input").checked) el.payment.value = "later";
-      });
-
-      sumLines.innerHTML = "";
-      sumWarn.hidden = true;
-      el.people.setCustomValidity("");
-      el.preferred_date.setCustomValidity("");
-      orderTotal = null;
-      if (!rule) { sumPackage.textContent = order.getAttribute("data-msg-choose"); sumTotal.textContent = "—"; return; }
-      sumPackage.textContent = rule.name;
-      var warn = "";
-      var n = num(el.people);
-      if (rule.quote) {
-        sumTotal.textContent = "—";
-        line(order.getAttribute("data-msg-quote"));
-      } else {
-        var total = 0;
-        if (rule.adult) {
-          var a = num(el.adults), c = num(el.children), i = num(el.infants);
-          total = a * rule.adult + c * rule.child;
-          line(a + " × " + fmt.format(rule.adult));
-          if (c) line(c + " × " + fmt.format(rule.child));
-          if (i) line(i + " × " + fmt.format(0));
-        } else if (rule.flat) {
-          total = rule.flat;
-          line(fmt.format(rule.flat));
-          if (n > rule.max) warn = order.getAttribute("data-msg-max").replace("{n}", rule.max);
-        } else if (rule.perPerson) {
-          total = Math.max(n * rule.perPerson, rule.minimum || 0);
-          line(n + " × " + fmt.format(rule.perPerson));
-        } else if (rule.tiers) {
-          var tier = rule.tiers.filter(function (x) { return n >= x[0]; })[0] || rule.tiers[rule.tiers.length - 1];
-          total = Math.max(n * tier[1], rule.minimum || 0);
-          line(n + " × " + fmt.format(tier[1]));
-        }
-        if (rule.min && n < rule.min) warn = order.getAttribute("data-msg-min").replace("{n}", rule.min);
-        orderTotal = total;
-        sumTotal.textContent = fmt.format(total);
-      }
-      if (warn) { sumWarn.textContent = warn; sumWarn.hidden = false; el.people.setCustomValidity(warn); }
-      if (rule.saturday && el.preferred_date.value && new Date(el.preferred_date.value + "T12:00:00Z").getUTCDay() !== 6) {
-        el.preferred_date.setCustomValidity(order.getAttribute("data-msg-saturday"));
-        sumWarn.textContent = order.getAttribute("data-msg-saturday");
-        sumWarn.hidden = false;
-      }
-      el.estimated_total.value = orderTotal == null ? "" : fmt.format(orderTotal);
-    };
-    order.addEventListener("change", update);
-    order.addEventListener("input", update);
-
-    // Package cards above the form: pick the package and jump to the form.
-    var pick = function (id) {
-      var radio = order.querySelector('input[name="package"][value="' + CSS.escape(id) + '"]');
-      if (radio) { radio.checked = true; update(); }
-      return !!radio;
-    };
-    document.querySelectorAll("[data-choose]").forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        if (!pick(a.getAttribute("data-choose"))) return;
-        e.preventDefault();
-        document.getElementById("order").scrollIntoView({ behavior: "smooth" });
-        history.replaceState(null, "", "?package=" + a.getAttribute("data-choose") + "#order");
-      });
-    });
-    if (params.get("package")) pick(params.get("package"));
-    update();
-
-    // After the booking is sent: go to the payment page when asked to pay now.
-    form._afterSend = function () {
-      var rule = rules[chosen()];
-      var pay = el.payment.value;
-      var url = "";
-      if (pay === "card" && rule && rule.stripe) url = rule.stripe;
-      if (pay === "paypal" && orderTotal) url = "https://www.paypal.me/" + encodeURIComponent(order.getAttribute("data-paypal")) + "/" + orderTotal + order.getAttribute("data-currency");
-      if (!url) return false;
-      show(order.getAttribute("data-msg-redirect"), "success");
-      setTimeout(function () { location.href = url; }, 1200);
-      return true;
-    };
-  }
-
-
   form.addEventListener("input", function (e) {
     if (e.target.getAttribute("aria-invalid") === "true" && e.target.checkValidity()) e.target.removeAttribute("aria-invalid");
   });
+
+  // Field names → labels used in the e-mail Sylvie receives (always English,
+  // whatever the visitor's language).
+  var MAIL_LABELS = {
+    name: "Name", email: "Email", phone: "Phone", group_type: "Type of group", group_size: "Participants",
+    theme: "Thematic visit", preferred_date: "Preferred date", tour_language: "Tour language",
+    message: "Message", site_language: "Website language",
+  };
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -383,51 +284,50 @@
     if (form.elements.website.value) return; // honeypot: silently drop bots
 
     var data = {};
-    new FormData(form).forEach(function (v, k) { if (k !== "website") data[k] = v; });
-    var labels = {};
-    Array.prototype.forEach.call(form.querySelectorAll("label[for]"), function (l) {
-      var el = document.getElementById(l.htmlFor);
-      if (el && el.name) labels[el.name] = l.textContent.replace("*", "").trim();
-    });
-    if (order && rules[data.package]) data.package = rules[data.package].name;
-    if (typeSelect && typeSelect.value) data.group_type = typeSelect.options[typeSelect.selectedIndex].text;
+    new FormData(form).forEach(function (v, k) { if (k !== "website" && k !== "consent") data[k] = v; });
 
     var endpoint = form.getAttribute("data-endpoint");
-    if (!endpoint && !form.getAttribute("data-email")) {
-      // No form service connected yet: say so instead of silently failing.
+    if (!endpoint) {
+      // No form service connected: say so instead of silently failing.
       show(form.getAttribute("data-msg-error"), "error");
       return;
     }
-    if (!endpoint) {
-      // No form service configured: hand the request to the visitor's mail app.
-      var lines = Object.keys(data).filter(function (k) { return k !== "consent"; }).map(function (k) {
-        return (labels[k] || k) + ": " + data[k];
-      });
-      location.href = "mailto:" + form.getAttribute("data-email") +
-        "?subject=" + encodeURIComponent(form.getAttribute("data-subject")) +
-        "&body=" + encodeURIComponent(lines.join("\n"));
-      show(form.getAttribute("data-msg-mailto"), "success");
-      return;
-    }
+
+    var payload = {
+      _subject: "Nouvelle demande de visite – " + data.name + " (" + data.group_size + " pers., " + data.preferred_date + ")",
+      _replyto: data.email,
+      _template: "table",
+      _captcha: "false",
+    };
+    Object.keys(MAIL_LABELS).forEach(function (k) { if (data[k]) payload[MAIL_LABELS[k]] = data[k]; });
 
     var label = submit.textContent;
     submit.disabled = true;
     submit.textContent = form.getAttribute("data-msg-sending");
-    data._subject = form.getAttribute("data-subject");
 
     fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     })
-      .then(function (res) {
-        if (!res.ok) throw new Error(res.status);
-        if (form._afterSend && form._afterSend()) return;
+      .then(function (res) { return res.json().catch(function () { return {}; }).then(function (body) { return { ok: res.ok, body: body }; }); })
+      .then(function (r) {
+        // FormSubmit answers 200 with success "false" when something is wrong.
+        if (!r.ok || String(r.body.success) === "false") throw new Error(r.body.message || "error");
         form.reset();
-        if (order) order.dispatchEvent(new Event("change"));
         show(form.getAttribute("data-msg-success"), "success");
       })
-      .catch(function () { show(form.getAttribute("data-msg-error"), "error"); })
+      .catch(function () {
+        show(form.getAttribute("data-msg-error") + " ", "error");
+        // The message invites visitors to write directly: give them the address.
+        var addr = (endpoint.match(/[^/]+@[^/]+$/) || [])[0];
+        if (addr) {
+          var a = document.createElement("a");
+          a.href = "mailto:" + addr + "?subject=" + encodeURIComponent(payload._subject);
+          a.textContent = addr;
+          status.appendChild(a);
+        }
+      })
       .then(function () { submit.disabled = false; submit.textContent = label; });
   });
 })();

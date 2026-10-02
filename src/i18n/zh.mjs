@@ -405,6 +405,28 @@ export default {
         "text": "最近的交通枢纽为日内瓦国际机场（GVA）和日内瓦科尔纳万火车站（Genève-Cornavin）。"
       }
     ],
+    "hoursTitle": "城堡开放时间",
+    "hoursLead": "Château de Voltaire（伏尔泰城堡）及其园林每天开放。",
+    "hoursRows": [
+      [
+        "4月1日至9月30日",
+        "10:00–18:00"
+      ],
+      [
+        "10月1日至3月31日",
+        "10:00–17:00"
+      ]
+    ],
+    "hoursNotes": [
+      "闭馆前45分钟停止入场；闭馆前15分钟开始清场。",
+      "1月1日、5月1日和12月25日闭馆。",
+      "2026年10月1日、5日、16日和26日，园区于13:00–14:00临时闭园（最后入场时间12:15，14:00重新开放）。"
+    ],
+    "hoursSource": "开放时间及门票价格由 Centre des monuments nationaux（法国国家古迹中心）制定。",
+    "admissionTitle": "城堡门票",
+    "admissionPrice": "每人 7.50 欧元",
+    "admissionText": "与旅游专业人士西尔维一同参观时，您可享受团体票价，且不设最低人数：每人 7.50 欧元（原价 9 欧元），现场支付。门票包含整个古迹及其园林。",
+    "admissionFree": "免费入场：未满18岁者（随家人参观，学校团体除外）；18–25岁的欧盟公民，以及在法国合法居住的18–25岁非欧盟居民；残障人士及其陪同者；求职者（需持6个月内开具的证明）；Pass éducation（法国教师通行证）持有者。每年11月至次年3月，每月第一个星期日对所有人免费开放。",
     "durationTitle": "导览时长",
     "durationLead": "时长仅供参考，可根据您的日程调整。",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "费用包含城堡门票吗？",
-        "a": "古迹门票与导览服务分开计费。我的报价会清楚注明包含的内容。"
+        "a": "不包含。城堡门票需现场支付：每人 7.50 欧元（团体票价，与导游同行时适用），未满18岁者随家人参观免费。参观费用涵盖导览服务。"
       },
       {
         "q": "可以带孩子参观吗？",
@@ -490,7 +512,7 @@ export default {
       "email": "电子邮箱",
       "phone": "电话（选填）",
       "groupType": "团体类型",
-      "groupSize": "人数",
+      "groupSize": "参加人数",
       "date": "期望日期",
       "language": "讲解语言（英/法/德/俄）",
       "message": "留言",
@@ -499,7 +521,10 @@ export default {
       "required": "必填",
       "choose": "请选择……",
       "submit": "发送需求",
-      "sending": "发送中……"
+      "sending": "发送中……",
+      "thematic": "主题参观？",
+      "themeNo": "不，常规参观",
+      "themeOther": "是，其他主题（请在留言中说明）"
     },
     "groupTypes": {
       "individual": "散客 / 家庭",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "感兴趣的导览：",
     "success": "谢谢！您的需求已发送。我将在48小时内回复。",
-    "mailtoNotice": "您的邮件应用将打开并自动填好需求内容——只需点击发送。",
     "error": "发送失败。请重试，或直接给我发送电子邮件。",
     "invalid": "请填写必填项。",
-    "mailSubject": "导览预约 – 伏尔泰城堡 Château de Voltaire",
     "directTitle": "直接联系我",
     "directText": "更喜欢电话或电子邮件？也可以通过这些方式联系我。",
     "responseTitle": "接下来的流程",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "价格",
     "lead": "清晰的套餐，无论一人还是整团均适用。以下为导览价格，单位为欧元。",
-    "excluded": "城堡门票不包含在内：门票价格由法国国家古迹中心（Centre des monuments nationaux）制定，需在导览费用之外另行支付。",
+    "excluded": "不含城堡门票：每人 7.50 欧元（与西尔维同行参观时的团体票价），现场支付。",
     "policy": "您的预订将以书面形式确认，并附上付款及取消条款。",
     "labels": {
       "perPerson": "每人",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "价格与预订",
-    "lead": "选择您的参观项目，立即查看价格，轻点几下即可完成预订。此处仅为导览费用，城堡门票请在现场购买。",
-    "choose": "选择",
-    "orderTitle": "预订您的参观",
-    "orderLead": "请选择套餐并填写您的信息，价格会随之实时更新。西尔维将在 24 小时内确认是否有空。",
-    "steps": [
-      "您的参观",
-      "您的信息",
-      "付款"
-    ],
-    "fields": {
-      "package": "套餐",
-      "theme": "参观主题",
-      "themeChoose": "请选择主题",
-      "themeOther": "其他主题（请在下方说明）",
-      "themeDetails": "告诉西尔维您感兴趣的内容",
-      "themeDetailsPlaceholder": "例如：伏尔泰与卡拉斯案、启蒙时代的女性、四季变换中的花园……",
-      "people": "人数",
-      "adults": "成人",
-      "children": "7–17 岁儿童",
-      "infants": "7 岁以下儿童",
-      "date": "期望日期",
-      "saturdayOnly": "此套餐仅在周六上午提供。",
-      "language": "导览语言"
-    },
-    "summary": {
-      "title": "您的价格",
-      "total": "预计总价",
-      "quote": "价格需询价：西尔维将为您发送量身定制的报价。",
-      "excluded": "不含城堡门票（请在现场购买）。",
-      "minPeople": "此套餐至少需 {n} 人。",
-      "maxPeople": "此套餐最多可容纳 {n} 人。",
-      "choosePackage": "请选择套餐以查看价格。"
-    },
-    "payment": {
-      "title": "付款",
-      "card": "立即刷卡支付（Stripe）",
-      "paypal": "立即使用 PayPal 支付",
-      "later": "待西尔维确认日期后再付款",
-      "soon": "银行卡和 PayPal 在线支付即将上线。目前，西尔维会先确认您的日期，再将付款方式发送给您。",
-      "redirect": "您的预订已发送。正在跳转至安全支付页面……"
-    },
-    "submit": "提交预订",
+    "lead": "选择您的参观项目，一分钟即可发送预约申请。所列价格为导览费用；城堡门票（每人 7.50 欧元）需现场支付。",
     "seeAll": "查看全部价格并预订"
   },
   "weather": {

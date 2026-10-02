@@ -405,6 +405,28 @@ export default {
         "text": "En yakın ulaşım noktaları Cenevre Uluslararası Havalimanı (GVA) ve Genève-Cornavin istasyonudur."
       }
     ],
+    "hoursTitle": "Şatonun ziyaret saatleri",
+    "hoursLead": "Château de Voltaire ve parkı her gün açıktır.",
+    "hoursRows": [
+      [
+        "1 Nisan – 30 Eylül",
+        "10.00–18.00"
+      ],
+      [
+        "1 Ekim – 31 Mart",
+        "10.00–17.00"
+      ]
+    ],
+    "hoursNotes": [
+      "Anıta son giriş kapanıştan 45 dakika öncedir; salonlar kapanıştan 15 dakika önce boşaltılır.",
+      "1 Ocak, 1 Mayıs ve 25 Aralık tarihlerinde kapalıdır.",
+      "1, 5, 16 ve 26 Ekim 2026 tarihlerinde alan istisnai olarak 13.00–14.00 arasında kapalıdır (son giriş 12.15, yeniden açılış 14.00)."
+    ],
+    "hoursSource": "Ziyaret saatleri ve giriş ücretleri Centre des monuments nationaux tarafından belirlenir.",
+    "admissionTitle": "Şatoya giriş",
+    "admissionPrice": "Kişi başı 7,50 €",
+    "admissionText": "Turizm profesyoneli Sylvie ile yapacağınız ziyarette, asgari kişi sayısı şartı olmadan grup tarifesinden yararlanırsınız: 9 € yerine kişi başı 7,50 €, ödeme yerinde yapılır. Bilet, anıtın tamamına ve parkına giriş sağlar.",
+    "admissionFree": "Ücretsiz giriş: 18 yaş altı (aileleriyle birlikte, okul grupları hariç); 18-25 yaş arası Avrupa Birliği vatandaşları ile Fransa'da yasal olarak ikamet eden Avrupa dışı ülke vatandaşları; engelli ziyaretçiler ve refakatçileri; iş arayanlar (6 aydan eski olmayan belge ile); Pass éducation (Fransız öğretmen kartı) sahipleri. Kasım ayından mart ayına kadar her ayın ilk pazar günü giriş herkes için ücretsizdir.",
     "durationTitle": "Tur süreleri",
     "durationLead": "Süreler yaklaşıktır ve programınıza göre uyarlanabilir.",
     "durationRows": [
@@ -461,7 +483,7 @@ export default {
       },
       {
         "q": "Şato giriş ücreti dahil mi?",
-        "a": "Anıtın giriş ücreti rehberlik hizmetinden ayrıdır. Teklifimde nelerin dahil olduğu açıkça belirtilir."
+        "a": "Hayır. Şato bileti yerinde ödenir: kişi başı 7,50 € (rehberle geldiğinizde uygulanan grup tarifesi); aileleriyle gelen 18 yaş altı ziyaretçiler için ücretsizdir. Tur ücreti rehberlik hizmetini kapsar."
       },
       {
         "q": "Çocuklarla ziyaret edebilir miyiz?",
@@ -490,7 +512,7 @@ export default {
       "email": "E-posta",
       "phone": "Telefon (isteğe bağlı)",
       "groupType": "Grup türü",
-      "groupSize": "Kişi sayısı",
+      "groupSize": "Katılımcı sayısı",
       "date": "Tercih edilen tarih",
       "language": "Tur dili",
       "message": "Mesajınız",
@@ -499,7 +521,10 @@ export default {
       "required": "zorunlu",
       "choose": "Seçin…",
       "submit": "Talebimi gönder",
-      "sending": "Gönderiliyor…"
+      "sending": "Gönderiliyor…",
+      "thematic": "Temalı ziyaret mi?",
+      "themeNo": "Hayır, klasik bir ziyaret",
+      "themeOther": "Evet, başka bir tema (mesajınızda açıklayın)"
     },
     "groupTypes": {
       "individual": "Bireysel / aile",
@@ -511,10 +536,8 @@ export default {
     },
     "tourPrefix": "İlgilenilen tur:",
     "success": "Teşekkürler! Talebiniz gönderildi. 48 saat içinde yanıt vereceğim.",
-    "mailtoNotice": "E-posta uygulamanız talebiniz önceden doldurulmuş olarak açılacak — yalnızca gönder'e basın.",
     "error": "Gönderim başarısız oldu. Lütfen tekrar deneyin veya bana doğrudan e-posta gönderin.",
     "invalid": "Lütfen zorunlu alanları doldurun.",
-    "mailSubject": "Rehberli tur talebi – Château de Voltaire",
     "directTitle": "Bana doğrudan ulaşın",
     "directText": "Telefon veya e-postayı mı tercih edersiniz? Bana bu yollarla da ulaşabilirsiniz.",
     "responseTitle": "Sonraki adımlar",
@@ -860,7 +883,7 @@ export default {
   "pricing": {
     "title": "Fiyatlar",
     "lead": "Tek kişi için de, bütün bir grup için de anlaşılır paketler. Rehberli tur fiyatları, euro cinsinden.",
-    "excluded": "Şatoya giriş ücreti dahil değildir: Centre des monuments nationaux tarafından belirlenir ve tur fiyatına eklenir.",
+    "excluded": "Şato girişi fiyata dahil değildir: kişi başı 7,50 € (Sylvie ile yapılan ziyaretlerde grup tarifesi), ödeme yerinde yapılır.",
     "policy": "Rezervasyonunuz, ödeme ve iptal koşullarıyla birlikte yazılı olarak onaylanır.",
     "labels": {
       "perPerson": "kişi başı",
@@ -909,48 +932,7 @@ export default {
   },
   "prices": {
     "h1": "Fiyatlar ve rezervasyon",
-    "lead": "Turunuzu seçin, fiyatı hemen görün ve birkaç tıklamayla rezervasyon yapın. Fiyatlar yalnızca rehberlik ücretini kapsar: şatonun giriş bileti yerinde ödenir.",
-    "choose": "Seç",
-    "orderTitle": "Turunuzu ayırtın",
-    "orderLead": "Bir paket seçin ve bilgilerinizi girin: fiyat anında güncellenir. Sylvie müsaitlik durumunu 24 saat içinde onaylar.",
-    "steps": [
-      "Turunuz",
-      "Bilgileriniz",
-      "Ödeme"
-    ],
-    "fields": {
-      "package": "Paket",
-      "theme": "Turunuzun teması",
-      "themeChoose": "Bir tema seçin",
-      "themeOther": "Başka bir tema (aşağıda açıklayın)",
-      "themeDetails": "Sylvie’ye ilgi alanlarınızı anlatın",
-      "themeDetailsPlaceholder": "Örneğin: Voltaire ve Calas davası, Aydınlanma Çağı’nın kadınları, mevsimler boyunca bahçeler…",
-      "people": "Kişi sayısı",
-      "adults": "Yetişkinler",
-      "children": "7–17 yaş arası çocuklar",
-      "infants": "7 yaş altı çocuklar",
-      "date": "Tercih edilen tarih",
-      "saturdayOnly": "Bu paket yalnızca cumartesi sabahları sunulmaktadır.",
-      "language": "Tur dili"
-    },
-    "summary": {
-      "title": "Fiyatınız",
-      "total": "Tahmini toplam",
-      "quote": "Fiyat teklif üzerine: Sylvie size özel bir teklif gönderecek.",
-      "excluded": "Şato giriş bileti dahil değildir (yerinde ödenir).",
-      "minPeople": "Bu paket için en az {n} kişi.",
-      "maxPeople": "Bu paket için en fazla {n} kişi.",
-      "choosePackage": "Fiyatı görmek için bir paket seçin."
-    },
-    "payment": {
-      "title": "Ödeme",
-      "card": "Şimdi kartla öde (Stripe)",
-      "paypal": "Şimdi PayPal ile öde",
-      "later": "Sylvie tarihi onayladıktan sonra öde",
-      "soon": "Kart ve PayPal ile çevrimiçi ödeme çok yakında. Şimdilik Sylvie önce tarihinizi onaylar, ardından size ödeme bilgilerini gönderir.",
-      "redirect": "Rezervasyonunuz gönderildi. Güvenli ödeme sayfasına yönlendiriliyorsunuz…"
-    },
-    "submit": "Rezervasyonumu gönder",
+    "lead": "Ziyaretinizi seçin ve talebinizi bir dakikada gönderin. Fiyatlar rehberlik hizmeti içindir; şato bileti (kişi başı 7,50 €) yerinde ödenir.",
     "seeAll": "Tüm fiyatları gör ve rezervasyon yap"
   },
   "weather": {
