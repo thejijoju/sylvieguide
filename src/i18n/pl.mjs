@@ -110,7 +110,7 @@ export default {
   },
   "home": {
     "eyebrow": "Akredytowana przewodniczka · Château de Voltaire · Ferney-Voltaire",
-    "h1": "Zwiedzanie z przewodnikiem Château de Voltaire i Ferney-Voltaire z Sylvie",
+    "h1": "Zwiedzanie z przewodnikiem Château de Voltaire",
     "lead": "Zapraszam do domu, w którym Voltaire mieszkał przez prawie dwadzieścia lat. Opowiem Państwu o tym człowieku, jego walkach i jego posiadłości — w tempie Państwa grupy, po angielsku, francusku, niemiecku lub rosyjsku.",
     "heroNote": "15 minut od lotniska w Genewie (GVA)",
     "introTitle": "Witamy w domu Voltaire’a",

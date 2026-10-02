@@ -110,7 +110,7 @@ export default {
   },
   "home": {
     "eyebrow": "Erkende gids · Château de Voltaire · Ferney-Voltaire",
-    "h1": "Rondleidingen door het Château de Voltaire & Ferney-Voltaire, met Sylvie",
+    "h1": "Rondleidingen door het Château de Voltaire",
     "lead": "Stap binnen in het huis waar Voltaire bijna twintig jaar woonde. Ik vertel u over de man, zijn strijd en zijn landgoed — in het tempo van uw groep, in het Engels, Frans, Duits of Russisch.",
     "heroNote": "15 minuten van Geneva Airport (GVA)",
     "introTitle": "Welkom bij Voltaire thuis",

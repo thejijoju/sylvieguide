@@ -110,7 +110,7 @@ export default {
   },
   "home": {
     "eyebrow": "Guía acreditada · Château de Voltaire · Ferney-Voltaire",
-    "h1": "Visita guiada del Château de Voltaire y Ferney-Voltaire, con Sylvie",
+    "h1": "Visita guiada del Château de Voltaire",
     "lead": "Entre en la casa donde Voltaire vivió casi veinte años. Le hablaré del hombre, de sus combates y de su finca, al ritmo de su grupo y en inglés, francés, alemán o ruso.",
     "heroNote": "A 15 minutos del aeropuerto de Ginebra (GVA)",
     "introTitle": "Bienvenidos a casa de Voltaire",

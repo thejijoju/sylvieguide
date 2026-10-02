@@ -110,7 +110,7 @@ export default {
   },
   "home": {
     "eyebrow": "Akkreditierte Gästeführerin · Château de Voltaire · Ferney-Voltaire",
-    "h1": "Führungen im Schloss Voltaire und in Ferney-Voltaire, mit Sylvie",
+    "h1": "Führungen im Schloss Voltaire",
     "lead": "Treten Sie ein in das Haus, in dem Voltaire fast zwanzig Jahre lebte. Ich erzähle Ihnen vom Menschen, seinen Kämpfen und seinem Landgut – im Tempo Ihrer Gruppe und in Ihrer Sprache.",
     "heroNote": "15 Minuten vom Flughafen Genf (GVA)",
     "introTitle": "Willkommen bei Voltaire",

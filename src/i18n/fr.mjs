@@ -110,7 +110,7 @@ export default {
   },
   "home": {
     "eyebrow": "Guide accréditée · Château de Voltaire · Ferney-Voltaire",
-    "h1": "Visites guidées du Château de Voltaire et de Ferney-Voltaire, avec Sylvie",
+    "h1": "Visites guidées du Château de Voltaire",
     "lead": "Franchissez le seuil de la demeure où Voltaire vécut près de vingt ans. Je vous raconte l’homme, ses combats et son domaine, au rythme de votre groupe et dans votre langue.",
     "heroNote": "À 15 minutes de l’aéroport de Genève (GVA)",
     "introTitle": "Bienvenue chez Voltaire",

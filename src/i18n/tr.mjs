@@ -110,7 +110,7 @@ export default {
   },
   "home": {
     "eyebrow": "Akredite rehber · Château de Voltaire · Ferney-Voltaire",
-    "h1": "Sylvie ile Château de Voltaire (Voltaire Şatosu) ve Ferney-Voltaire rehberli turları",
+    "h1": "Château de Voltaire (Voltaire Şatosu) rehberli turları",
     "lead": "Voltaire'in yaklaşık yirmi yıl yaşadığı evin içine adım atın. Size bu adamı, mücadelelerini ve malikânesini anlatacağım — grubunuzun temposunda; İngilizce, Fransızca, Almanca veya Rusça.",
     "heroNote": "Cenevre Havalimanı'na (GVA) 15 dakika",
     "introTitle": "Voltaire'in evine hoş geldiniz",
